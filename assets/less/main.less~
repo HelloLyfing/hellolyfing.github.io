@@ -31,8 +31,3 @@
 // LAYOUT =====================================================
 // Page level layout styles ===================================
 @import "page.less";
-
-pre {
-    padding: 6px;
-    background-color: #eeeeee;
-}
