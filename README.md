@@ -1,8 +1,10 @@
 ##This Blog is powered by Jekyll using the HPSTR Theme.
 ------------------------
-Visit My Blog : [http://LanFengMing.com][http://lanfengming.com]
------------------------
-#View more about the theme this blog is using.
+
+Visit My Blog : [LanFengMing.com](http://lanfengming.com)  
+
+Or View more about the theme this blog is using.
+
 ## HPSTR Jekyll Theme
 
 They say three times the charm, so here is another free responsive Jekyll theme for you. I've learned a ton since open sourcing my first two themes [on Github](http://github.com/mmistakes), and wanted to try a few new things this time around. If you've used my previous themes most of this should be familiar territory...
