@@ -8,15 +8,18 @@ tags: [trick, Tech]
 
 这年头，能刹那间打动你的音乐真的不多了。
 好不容易遇到一首触动自己的音乐，怎么能放过拿它做手机铃声或晨起闹钟或各种短铃声的机会呢？
-****
+-------
 你平常会用哪些稀奇古怪，难用、效果又差的软件剪辑音乐呢？
 去百度、Google里搜一下，好嘛，一堆，还不知道好不好用，效果怎么样，还得下载，还得学着怎么用，还得忍受下到傻逼软件或流浪软件的愤怒...好嘛...  
 欢迎跟我来到21世纪~~~
-****
+
+-------
+
 吐槽结束，干货分享开始！  
+<!--more-->
 如题所著，这款音乐剪辑工具无需下载，是直接在线使用的。它的**特点如下**： 
 
-<!-- more -->
+
 
 + 仅支持**MP3格式**的音乐(其他格式未做测试)  
 + 支持**无损切割**(192kbps的处理完还是192k，320k的处理完还是320k) 
@@ -26,7 +29,9 @@ tags: [trick, Tech]
 
 高手请直接前往在线工具网址<a href="http://cut-mp3.com" target="_blank">cut-mp3.com</a>体验试用。  
 不知道怎么用、或者想知道详尽用法的人跟着往下看。
-****
+
+-------
+
 1) 打开网址：<a href="http://cut-mp3.com" target="_blank">cut-mp3.com</a>  
   
 2) 稍等片刻，工具载入完成后出现如下画面，点**Open file**上传本地音乐
@@ -61,7 +66,9 @@ tags: [trick, Tech]
 
 8) 等待片刻，点击 **Downlaod** 按钮即可下载剪切后的音乐！  
 ![](http://ww2.sinaimg.cn/large/6480dca9jw1e6piwnaxe4j20lz0dujtj.jpg)  
-****
+
+-------
+
 <a href="https://soundcloud.com/lyfing/call-me-maybe-clip" target="_blank">点此试听</a>我剪辑的《Call Me Maybe》(进去后**点击频谱带任意位置**开始播放，点此可<a href="http://dl.vmall.com/c0yde7tkwq" target="_blank">下载剪辑文件</a>)  
 
 原文件参数：` MP3 ; 320kbps ; 44100Hz ; 3:14 `    

@@ -3,7 +3,7 @@ layout: post
 title: "Labwindows.Tutorial.Chapter 3.Part2"
 date: 2013-10-20
 comments: true
-categories: [Tech, C, Labwindows Tutorial]
+tags: [Tech, C, Labwindows Tutorial]
 ---
 
 #####上接[第一节][the-1st-part]的内容，我们继续本章内容的下半部分。  
@@ -31,7 +31,7 @@ LabWindows/CVI提供了一系列可创建各种可视化界面的函数和API，
 
 在**Programming with Panels**的帮助文档页面，我们看它的第二段话 
 
-  > NewPanel* creates a new panel during program execution. NewPanel returns a handle that you use in subsequent User Interface Library functions to reference the panel. Use the first parameter of NewPanel to specify whether the panel is created as a top-level window or as a child of another (parent) window. You also specify the name, position, and size of the panel through parameters to NewPanel. Creating a new panel using NewPanel does not automatically display the panel. 
+  > NewPanel creates a new panel during program execution. NewPanel returns a handle that you use in subsequent User Interface Library functions to reference the panel. Use the first parameter of NewPanel to specify whether the panel is created as a top-level window or as a child of another (parent) window. You also specify the name, position, and size of the panel through parameters to NewPanel. Creating a new panel using NewPanel does not automatically display the panel. 
 
  这次请自行读完上面的关于 `NewPanel()` 函数的使用介绍，下面我们将直接使用它。如何使用？请在**索引**标签栏下的搜索框中输入 `NewPanel` 打开这个函数的帮助文档。  
  简单介绍一下，`NewPanel()` 函数可以创建一个主面板(*top-lever panel*)，或一个子面板(*child panel*)，这取决于你给它传入的参数。在这里我们要创建一个*主面板*，它的各项参数如下：  
@@ -70,7 +70,7 @@ LabWindows/CVI提供了一系列可创建各种可视化界面的函数和API，
         return pHandle;
     }
 
-<div id="how-to-debug"></div>**OK，到了这一步，先让我们试运行一下上面的程序吧**。运行程序(*Debug ***.exe*)的方法有三种：  
+<div id="how-to-debug"></div>**OK，到了这一步，先让我们试运行一下上面的程序吧**。运行程序(Debug xxx.exe)的方法有三种：  
 
  1) 菜单栏 **Run** &gt;&gt; **Debug src.exe**
  2) 按快捷键组合 **Shift** + **F5**
@@ -108,7 +108,7 @@ LabWindows/CVI提供了一系列可创建各种可视化界面的函数和API，
 #### 5.2 在主面板右侧创建一个Graph控件，用以显示Sine波形
 在创建Graph控件前，请先想一下这两个问题：  
 
- a. Graph控件是依附于哪个实体之上的，它的载体是什么？
+ a. Graph控件是依附于哪个实体之上的，它的载体是什么？  
  b. Graph控件的创建工作应该被放在哪个部分？**main()**函数中、**createGUI_Mine()**函数中，或者其他地方？
 
 是不是这样的:
@@ -335,7 +335,7 @@ LabWindows/CVI提供了一系列可创建各种可视化界面的函数和API，
 *****
 程序源码[托管在Github][github]上，请自行前往查看。
 
-[the-1st-part]:http://lanfengming.com/Labwindows-tutorial-chapter3-part1.html/
+[the-1st-part]:http://lanfengming.com/blog/Labwindows-tutorial-chapter3-part1.html/
 [ctrls-list]:http://zone.ni.com/reference/en-XX/help/370051V-01/cvi/uiref/cvioperating_controls/
 [user-interface-events]:http://zone.ni.com/reference/en-XX/help/370051V-01/cvi/uiref/cvievents_overview/
 [github]:https://github.com/HelloLyfing/LabWindows-CVI-Tutorial-For-Newbie-By.Lyfing

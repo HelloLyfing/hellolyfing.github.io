@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2014-01-07T10:59:09+08:00</updated>
+<updated>2014-01-07T17:18:50+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Lyfing.Loo</name>
@@ -15,8 +15,8 @@
 
 <entry>
   <title type="html"><![CDATA[Labwindows.Tutorial.Chapter 3.Part2]]></title>
-  <link>http://localhost:4000/Labwindows-tutorial-chapter3-part2</link>
-  <id>http://localhost:4000/Labwindows-tutorial-chapter3-part2</id>
+  <link>http://localhost:4000/blog/Labwindows-tutorial-chapter3-part2.html</link>
+  <id>http://localhost:4000/blog/Labwindows-tutorial-chapter3-part2</id>
   <published>2013-10-20T00:00:00+08:00</published>
   <updated>2013-10-20T00:00:00+08:00</updated>
   <author>
@@ -24,7 +24,7 @@
     <uri>http://localhost:4000</uri>
     <email>hellolyfing@gmail.com</email>
   </author>
-  <content type="html">&lt;h5 id=&quot;the-1st-part&quot;&gt;上接&lt;a href=&quot;http://lanfengming.com/Labwindows-tutorial-chapter3-part1.html/&quot;&gt;第一节&lt;/a&gt;的内容，我们继续本章内容的下半部分。&lt;/h5&gt;
+  <content type="html">&lt;h5 id=&quot;the-1st-part&quot;&gt;上接&lt;a href=&quot;http://lanfengming.com/blog/Labwindows-tutorial-chapter3-part1.html/&quot;&gt;第一节&lt;/a&gt;的内容，我们继续本章内容的下半部分。&lt;/h5&gt;
 
 &lt;h3 id=&quot;createguimine-&quot;&gt;5. 编写 &lt;code&gt;createGUI_Mine()&lt;/code&gt; 函数的具体实现&lt;/h3&gt;
 
@@ -57,7 +57,7 @@
 &lt;p&gt;在&lt;strong&gt;Programming with Panels&lt;/strong&gt;的帮助文档页面，我们看它的第二段话 &lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;NewPanel* creates a new panel during program execution. NewPanel returns a handle that you use in subsequent User Interface Library functions to reference the panel. Use the first parameter of NewPanel to specify whether the panel is created as a top-level window or as a child of another (parent) window. You also specify the name, position, and size of the panel through parameters to NewPanel. Creating a new panel using NewPanel does not automatically display the panel. &lt;/p&gt;
+  &lt;p&gt;NewPanel creates a new panel during program execution. NewPanel returns a handle that you use in subsequent User Interface Library functions to reference the panel. Use the first parameter of NewPanel to specify whether the panel is created as a top-level window or as a child of another (parent) window. You also specify the name, position, and size of the panel through parameters to NewPanel. Creating a new panel using NewPanel does not automatically display the panel. &lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;这次请自行读完上面的关于 &lt;code&gt;NewPanel()&lt;/code&gt; 函数的使用介绍，下面我们将直接使用它。如何使用？请在&lt;strong&gt;索引&lt;/strong&gt;标签栏下的搜索框中输入 &lt;code&gt;NewPanel&lt;/code&gt; 打开这个函数的帮助文档。&lt;br /&gt;
@@ -102,7 +102,7 @@ int createGUI_Mine(){
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;div id=&quot;how-to-debug&quot;&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;OK，到了这一步，先让我们试运行一下上面的程序吧&lt;/strong&gt;。运行程序(&lt;em&gt;Debug **&lt;/em&gt;.exe*)的方法有三种：  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;OK，到了这一步，先让我们试运行一下上面的程序吧&lt;/strong&gt;。运行程序(Debug xxx.exe)的方法有三种：  &lt;/p&gt;
 
 &lt;p&gt;1) 菜单栏 &lt;strong&gt;Run&lt;/strong&gt; &amp;gt;&amp;gt; &lt;strong&gt;Debug src.exe&lt;/strong&gt;
  2) 按快捷键组合 &lt;strong&gt;Shift&lt;/strong&gt; + &lt;strong&gt;F5&lt;/strong&gt;
@@ -143,7 +143,7 @@ int createGUI_Mine(){
 &lt;h4 id=&quot;graphsine&quot;&gt;5.2 在主面板右侧创建一个Graph控件，用以显示Sine波形&lt;/h4&gt;
 &lt;p&gt;在创建Graph控件前，请先想一下这两个问题：  &lt;/p&gt;
 
-&lt;p&gt;a. Graph控件是依附于哪个实体之上的，它的载体是什么？
+&lt;p&gt;a. Graph控件是依附于哪个实体之上的，它的载体是什么？&lt;br /&gt;
  b. Graph控件的创建工作应该被放在哪个部分？&lt;strong&gt;main()&lt;/strong&gt;函数中、&lt;strong&gt;createGUI_Mine()&lt;/strong&gt;函数中，或者其他地方？&lt;/p&gt;
 
 &lt;p&gt;是不是这样的:&lt;/p&gt;
@@ -394,14 +394,14 @@ InstallCtrlCallback(pHandle, quitBtn, ButtonsResponse, 0);
 &lt;p&gt;程序源码&lt;a href=&quot;https://github.com/HelloLyfing/LabWindows-CVI-Tutorial-For-Newbie-By.Lyfing&quot;&gt;托管在Github&lt;/a&gt;上，请自行前往查看。&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/Labwindows-tutorial-chapter3-part2&quot;&gt;Labwindows.Tutorial.Chapter 3.Part2&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on October 20, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Labwindows-tutorial-chapter3-part2.html&quot;&gt;Labwindows.Tutorial.Chapter 3.Part2&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on October 20, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Labwindows.Tutorial.Chapter 3.Part1]]></title>
-  <link>http://localhost:4000/Labwindows-tutorial-chapter3-part1</link>
-  <id>http://localhost:4000/Labwindows-tutorial-chapter3-part1</id>
+  <link>http://localhost:4000/blog/Labwindows-tutorial-chapter3-part1.html</link>
+  <id>http://localhost:4000/blog/Labwindows-tutorial-chapter3-part1</id>
   <published>2013-10-10T00:00:00+08:00</published>
   <updated>2013-10-10T00:00:00+08:00</updated>
   <author>
@@ -463,104 +463,77 @@ InstallCtrlCallback(pHandle, quitBtn, ButtonsResponse, 0);
 
 &lt;h4 id=&quot;cmain&quot;&gt;3. 在.c代码文件中添加main()函数&lt;/h4&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;我们知道LabWindows/CVI使用的c语言作为编程语言，而c语言中的 &lt;code&gt;main()&lt;/code&gt; 函数则是整个程序的入口，所以我们首先为源代码文件添加 &lt;code&gt;main()&lt;/code&gt; 函数&lt;em&gt;(下面的 &lt;code&gt;main()&lt;/code&gt; 函数代码由系统根据用户界面文件(&lt;/em&gt;**&lt;/td&gt;
-      &lt;td&gt;.uir&lt;em&gt;*)自动生成，算是LabWindows/CVI程序的 &lt;code&gt;main()&lt;/code&gt; 函数的原始框架，最好把它复制到源代码文件中，不推荐手敲。下面会详细解释这个main()函数的默认运行机制)&lt;/em&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;我们知道LabWindows/CVI使用的c语言作为编程语言，而c语言中的&lt;code&gt;main()&lt;/code&gt;函数则是整个程序的入口，所以我们首先为源代码文件添加&lt;code&gt;main()&lt;/code&gt;函数&lt;em&gt;(下面的&lt;code&gt;main()&lt;/code&gt;函数代码由系统根据用户界面文件(&lt;strong&gt;.uir&lt;/strong&gt;)自动生成，算是LabWindows/CVI程序的&lt;code&gt;main()&lt;/code&gt;函数的原始框架，最好把它复制到源代码文件中，不推荐手敲。下面会详细解释这个main()函数的默认运行机制)&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;```c 
-#include &lt;cvirte.h&gt;     
-#include &lt;userint.h&gt;
-#include &quot;src.h&quot;&lt;/userint.h&gt;&lt;/cvirte.h&gt;&lt;/p&gt;
-
-&lt;p&gt;static int panelHandle;&lt;/p&gt;
-
-&lt;p&gt;int main (int argc, char &lt;em&gt;argv[]){
-    if (InitCVIRTE (0, argv, 0) == 0)
-        return -1;  /&lt;/em&gt; out of memory */
-    if ((panelHandle = LoadPanel (0, “src.uir”, PANEL)) &amp;lt; 0)
-        return -1;
-    DisplayPanel (panelHandle);
-    RunUserInterface ();
-    DiscardPanel (panelHandle);
-    return 0;
-} 
-```&lt;/p&gt;
-
-&lt;p&gt;关于上面的&lt;code&gt;main()&lt;/code&gt;函数：&lt;/p&gt;
-
-&lt;p&gt;```c Read with the Comment https://code.csdn.net/snippets/66860
-#include &lt;cvirte.h&gt;     
-#include &lt;userint.h&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;cvirte.h&amp;gt;     
+#include &amp;lt;userint.h&amp;gt;
 #include &quot;src.h&quot;
-# 上面的include语句是引入系统所需的一些内置函数，  
-# 稍懂C语言的应该不会对此陌生&lt;/userint.h&gt;&lt;/cvirte.h&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;panelhandle&quot;&gt;panelHandle是整个程序的灵魂支柱，&lt;/h1&gt;
-&lt;p&gt;# 它持有着系统/程序主面板(如果程序有图形化界面的话)
-# 在系统内存中的&lt;strong&gt;句柄&lt;/strong&gt;，意即编程人员需要通过这个句柄
-# 来与主面板进行交互
-static int panelHandle;&lt;/p&gt;
+static int panelHandle;
 
-&lt;h1 id=&quot;main&quot;&gt;传说中的main()函数&lt;/h1&gt;
-&lt;p&gt;int main (int argc, char &lt;em&gt;argv[]){
-    # 系统初始化
+int main (int argc, char *argv[]){
     if (InitCVIRTE (0, argv, 0) == 0)
-        return -1;  /&lt;/em&gt; out of memory */
-    # LoadPanel是LabWindows/CVI的自带函数(以后简称”Lab自带函数”)
-    # 它的作用是什么呢？请把光标放到LoadPanel这个函数名的任意位置，然后按F1，
-    # 接着会弹出 NI LabWindows/CVI Help 面板(如下图所示)，
-    # 面板左面是索引选项，面板右面便是我们的LoadPanel()函数的详细使用说明
-    # 看着一大堆英文是不是觉得有些头大？但我强烈推荐你硬着头皮看下去，因为
-    # 这个函数很重要，而且关于它的使用帮助包含了很多LabWindows/CVI程序的构建机理
-    # 也许刚开始你会觉得看的云里雾里，但只要每次接触新函数时花功夫看上一会，
-    # 一星期后你就会感觉编写程序似有”游刃有余”之感了，而到此时，你已经几乎可以
-    # 不借助外界帮助(用搜索引擎、官方BBS论坛查找信息)独立完成大部分的编程工作了
-    if ((panelHandle = LoadPanel (0, “src.uir”, PANEL)) &amp;lt; 0)
+        return -1;  /* out of memory */
+    if ((panelHandle = LoadPanel (0, &quot;src.uir&quot;, PANEL)) &amp;lt; 0)
         return -1;
     DisplayPanel (panelHandle);
     RunUserInterface ();
     DiscardPanel (panelHandle);
     return 0;
 }
-```&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;关于上面的&lt;code&gt;main()&lt;/code&gt;函数：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;cvirte.h&amp;gt;     
+#include &amp;lt;userint.h&amp;gt;
+#include &quot;src.h&quot;
+# 上面的include语句是引入系统所需的一些内置函数，  
+# 稍懂C语言的应该不会对此陌生
+
+# panelHandle是整个程序的灵魂支柱，
+# 它持有着系统/程序主面板(如果程序有图形化界面的话)
+# 在系统内存中的**句柄**，意即编程人员需要通过这个句柄
+# 来与主面板进行交互
+static int panelHandle;
+
+# 传说中的main()函数
+int main (int argc, char *argv[]){
+    # 系统初始化
+    if (InitCVIRTE (0, argv, 0) == 0)
+        return -1;  /* out of memory */
+    # LoadPanel是LabWindows/CVI的自带函数(以后简称&quot;Lab自带函数&quot;)
+    # 它的作用是什么呢？请把光标放到LoadPanel这个函数名的任意位置，然后按F1，
+    # 接着会弹出 NI LabWindows/CVI Help 面板(如下图所示)，
+    # 面板左面是索引选项，面板右面便是我们的LoadPanel()函数的详细使用说明
+    # 看着一大堆英文是不是觉得有些头大？但我强烈推荐你硬着头皮看下去，因为
+    # 这个函数很重要，而且关于它的使用帮助包含了很多LabWindows/CVI程序的构建机理
+    # 也许刚开始你会觉得看的云里雾里，但只要每次接触新函数时花功夫看上一会，
+    # 一星期后你就会感觉编写程序似有&quot;游刃有余&quot;之感了，而到此时，你已经几乎可以
+    # 不借助外界帮助(用搜索引擎、官方BBS论坛查找信息)独立完成大部分的编程工作了
+    if ((panelHandle = LoadPanel (0, &quot;src.uir&quot;, PANEL)) &amp;lt; 0)
+        return -1;
+    DisplayPanel (panelHandle);
+    RunUserInterface ();
+    DiscardPanel (panelHandle);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;话虽如此，还是简单介绍一下main()函数的运行流程吧：&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;首先使用&lt;code&gt;InitCVIRTE (0, argv, 0)&lt;/code&gt;函数进行系统初始化；&lt;/li&gt;
   &lt;li&gt;接着开始&lt;strong&gt;选择&lt;/strong&gt;并&lt;strong&gt;载入&lt;/strong&gt;图形界面(主面板)文件，准备显示图形。这一步的一种通用做法是：&lt;code&gt;panelHandle = LoadPanel (0, &quot;src.uir&quot;, PANEL))&lt;/code&gt; ，即用 &lt;code&gt;LoadPanel()&lt;/code&gt; Lab自带函数载入你之前已经创建好的图形界面描述文件(&lt;strong&gt;.uir&lt;/strong&gt;文件或&lt;strong&gt;.tui&lt;/strong&gt;文件，看看本系列教程中上两章所创建的工程，其中都带有&lt;strong&gt;.uir&lt;/strong&gt;图形界面描述文件)，并在载入后将该面板资源在系统内存中的&lt;strong&gt;句柄&lt;/strong&gt;(handle)交给(赋值给)我们之前创建的全局变量 &lt;code&gt;panelHandle&lt;/code&gt; 。但是本章教程中并没创建图形界面描述文件，因为我们是要用纯代码实现创建图形控件并使其发挥一定功用。&lt;/li&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;&lt;code&gt;DisplayPanel (panelHandle)&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;上一步，我们载入图形界面描述文件，并获得了其在系统内存中的句柄(即 &lt;code&gt;panelHandle&lt;/code&gt; )，这一步便是将这个图形界面显示出来。使用 &lt;code&gt;DisplayPanel()&lt;/code&gt; 函数可以完成此项工作&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;DisplayPanel (panelHandle)&lt;/code&gt; 上一步，我们载入图形界面描述文件，并获得了其在系统内存中的句柄(即 &lt;code&gt;panelHandle&lt;/code&gt; )，这一步便是将这个图形界面显示出来。使用 &lt;code&gt;DisplayPanel()&lt;/code&gt; 函数可以完成此项工作&lt;/li&gt;
   &lt;li&gt;&lt;code&gt;RunUserInterface()&lt;/code&gt; 将开始运行图形界面，并将捕获到的用户事件(events)分发给回调函数。我们来看看 &lt;code&gt;RunUserInterface&lt;/code&gt; 的使用说明。在 &lt;code&gt;RunUserInterface&lt;/code&gt; 上按F1(或在打开的&lt;strong&gt;NI LabWindows/CVI Help&lt;/strong&gt;面板的左侧，点击&lt;strong&gt;索引(N)&lt;/strong&gt;标签，然后在搜索框中输入 &lt;code&gt;RunUserInterface&lt;/code&gt; 后回车。在&lt;strong&gt;用途&lt;/strong&gt;(Purpose)部分，我们看到这样一段话：&lt;em&gt;RunUserInterface does not return until you call QuitUserInterface from within a callback function. RunUserInterface returns the value that you pass to QuitUserInterface.&lt;/em&gt; 也就是说 &lt;code&gt;RunUserInterface()&lt;/code&gt; 一旦执行，它不会立即返回(return)，所以跟在它后面的代码也就不会立即执行。那么这个函数何时才会返回呢？&lt;strong&gt;直到你主动在某个&lt;code&gt;回调函数&lt;/code&gt;中调用 &lt;code&gt;QuitUserInterface()&lt;/code&gt; 函数&lt;/strong&gt;， &lt;code&gt;RunUserInterface()&lt;/code&gt; 才会返回，而且它的返回值是你传入 &lt;code&gt;QuitUserInterface()&lt;/code&gt; 的参数。PS：&lt;code&gt;QuitUserInterface()&lt;/code&gt; 一般出现在&lt;strong&gt;系统退出按钮&lt;/strong&gt;或&lt;strong&gt;主面板右上角的”x”关闭按钮&lt;/strong&gt;的回调函数中。&lt;/li&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;&lt;code&gt;DiscardPanel (panelHandle)&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;载入到系统内存中的图形界面资源，必须在系统退出前被清理掉，以防止程序给PC内存留下太多垃圾。&lt;code&gt;DiscardPanel (panelHandle)&lt;/code&gt; 便是做此项工作的，按F1查看它的使用说明，它的用途(Purpose)部分写到：&lt;em&gt;Removes a panel and any of its child panels from memory and clears them from the screen if visible.You must call DiscardPanel from the thread in which you create the panel.&lt;/em&gt; 即：&lt;em&gt;将一个面板(panel)及其所有的子面板(child panel,面板可以有父子关系)从内存中移除；如果它们正显示在屏幕上，则清除这些图像。而且你必须在创建面板的线程中(多线程范畴)调用&lt;code&gt;DiscardPanel()&lt;/code&gt;&lt;/em&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;DiscardPanel (panelHandle)&lt;/code&gt; 载入到系统内存中的图形界面资源，必须在系统退出前被清理掉，以防止程序给PC内存留下太多垃圾。&lt;code&gt;DiscardPanel (panelHandle)&lt;/code&gt; 便是做此项工作的，按F1查看它的使用说明，它的用途(Purpose)部分写到：&lt;em&gt;Removes a panel and any of its child panels from memory and clears them from the screen if visible.You must call DiscardPanel from the thread in which you create the panel.&lt;/em&gt; 即：&lt;em&gt;将一个面板(panel)及其所有的子面板(child panel,面板可以有父子关系)从内存中移除；如果它们正显示在屏幕上，则清除这些图像。而且你必须在创建面板的线程中(多线程范畴)调用&lt;code&gt;DiscardPanel()&lt;/code&gt;&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;&lt;code&gt;return 0&lt;/code&gt; 退出 &lt;code&gt;main()&lt;/code&gt; 函数，程序运行结束。 &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;LabWindows/CVI程序的main()函数的运行机制基本如此。当然只要不颠倒上述几个部分的顺序的话，你可以在 &lt;code&gt;main()&lt;/code&gt; 函数的任意位置添加任意有逻辑的代码。下一节我们将从修改上述 &lt;code&gt;main()&lt;/code&gt; 函数着手，编写本章内容需要的 &lt;code&gt;main()&lt;/code&gt; 函数。&lt;/p&gt;
 
-&lt;h4 id=&quot;main-1&quot;&gt;4. 开始编写main()函数&lt;/h4&gt;
+&lt;h4 id=&quot;main&quot;&gt;4. 开始编写main()函数&lt;/h4&gt;
 
 &lt;p&gt;上一节我们只是从其他地方复制了一份LabWindows/CVI程序的 &lt;code&gt;main()&lt;/code&gt; 函数框架，但它并不能满足我们的需求，我们需要在此基础上修改它。&lt;/p&gt;
 
@@ -591,17 +564,17 @@ return 0;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h4 id=&quot;createguimine-&quot;&gt;5. 编写 &lt;code&gt;createGUI_Mine()&lt;/code&gt; 函数的具体实现&lt;/h4&gt;
-&lt;p&gt;第5部分内容将在&lt;a href=&quot;http://lanfengming.com/Labwindows-tutorial-chapter3-part2.html/&quot;&gt;下一篇中继续&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;第5部分内容将在&lt;a href=&quot;http://lanfengming.com/blog/Labwindows-tutorial-chapter3-part2.html/&quot;&gt;下一篇中继续&lt;/a&gt;&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/Labwindows-tutorial-chapter3-part1&quot;&gt;Labwindows.Tutorial.Chapter 3.Part1&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on October 10, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Labwindows-tutorial-chapter3-part1.html&quot;&gt;Labwindows.Tutorial.Chapter 3.Part1&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on October 10, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[在线切割剪辑MP3手机铃声利器！]]></title>
-  <link>http://localhost:4000/make-your-own-phone-ringstones</link>
-  <id>http://localhost:4000/make-your-own-phone-ringstones</id>
+  <link>http://localhost:4000/blog/make-your-own-phone-ringstones.html</link>
+  <id>http://localhost:4000/blog/make-your-own-phone-ringstones</id>
   <published>2013-07-18T05:00:00+08:00</published>
   <updated>2013-07-18T05:00:00+08:00</updated>
   <author>
@@ -611,15 +584,16 @@ return 0;
   </author>
   <content type="html">&lt;p&gt;这年头，能刹那间打动你的音乐真的不多了。
 好不容易遇到一首触动自己的音乐，怎么能放过拿它做手机铃声或晨起闹钟或各种短铃声的机会呢？
-&lt;strong&gt;**
+——-
 你平常会用哪些稀奇古怪，难用、效果又差的软件剪辑音乐呢？
 去百度、Google里搜一下，好嘛，一堆，还不知道好不好用，效果怎么样，还得下载，还得学着怎么用，还得忍受下到傻逼软件或流浪软件的愤怒…好嘛…&lt;br /&gt;
-欢迎跟我来到21世纪~~~
-**&lt;/strong&gt;
-吐槽结束，干货分享开始！&lt;br /&gt;
-如题所著，这款音乐剪辑工具无需下载，是直接在线使用的。它的&lt;strong&gt;特点如下&lt;/strong&gt;： &lt;/p&gt;
+欢迎跟我来到21世纪~~~&lt;/p&gt;
 
-&lt;!-- more --&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;吐槽结束，干货分享开始！&lt;br /&gt;
+&lt;!--more--&gt;
+如题所著，这款音乐剪辑工具无需下载，是直接在线使用的。它的&lt;strong&gt;特点如下&lt;/strong&gt;： &lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;仅支持&lt;strong&gt;MP3格式&lt;/strong&gt;的音乐(其他格式未做测试)  &lt;/li&gt;
@@ -630,9 +604,11 @@ return 0;
 &lt;/ul&gt;
 
 &lt;p&gt;高手请直接前往在线工具网址&lt;a href=&quot;http://cut-mp3.com&quot; target=&quot;_blank&quot;&gt;cut-mp3.com&lt;/a&gt;体验试用。&lt;br /&gt;
-不知道怎么用、或者想知道详尽用法的人跟着往下看。
-&lt;em&gt;**&lt;/em&gt;
-1) 打开网址：&lt;a href=&quot;http://cut-mp3.com&quot; target=&quot;_blank&quot;&gt;cut-mp3.com&lt;/a&gt;  &lt;/p&gt;
+不知道怎么用、或者想知道详尽用法的人跟着往下看。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;1) 打开网址：&lt;a href=&quot;http://cut-mp3.com&quot; target=&quot;_blank&quot;&gt;cut-mp3.com&lt;/a&gt;  &lt;/p&gt;
 
 &lt;p&gt;2) 稍等片刻，工具载入完成后出现如下画面，点&lt;strong&gt;Open file&lt;/strong&gt;上传本地音乐
 &lt;img src=&quot;http://ww3.sinaimg.cn/large/6480dca9jw1e6piqioanmj20ee07dgmd.jpg&quot; alt=&quot;&quot; /&gt;  &lt;/p&gt;
@@ -671,21 +647,23 @@ return 0;
 &lt;img src=&quot;http://ww2.sinaimg.cn/large/6480dca9jw1e6pixv5y3wj20sg08gmys.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;8) 等待片刻，点击 &lt;strong&gt;Downlaod&lt;/strong&gt; 按钮即可下载剪切后的音乐！&lt;br /&gt;
-&lt;img src=&quot;http://ww2.sinaimg.cn/large/6480dca9jw1e6piwnaxe4j20lz0dujtj.jpg&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
-&lt;strong&gt;**
-&lt;a href=&quot;https://soundcloud.com/lyfing/call-me-maybe-clip&quot; target=&quot;_blank&quot;&gt;点此试听&lt;/a&gt;我剪辑的《Call Me Maybe》(进去后&lt;/strong&gt;点击频谱带任意位置**开始播放，点此可&lt;a href=&quot;http://dl.vmall.com/c0yde7tkwq&quot; target=&quot;_blank&quot;&gt;下载剪辑文件&lt;/a&gt;)  &lt;/p&gt;
+&lt;img src=&quot;http://ww2.sinaimg.cn/large/6480dca9jw1e6piwnaxe4j20lz0dujtj.jpg&quot; alt=&quot;&quot; /&gt;  &lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://soundcloud.com/lyfing/call-me-maybe-clip&quot; target=&quot;_blank&quot;&gt;点此试听&lt;/a&gt;我剪辑的《Call Me Maybe》(进去后&lt;strong&gt;点击频谱带任意位置&lt;/strong&gt;开始播放，点此可&lt;a href=&quot;http://dl.vmall.com/c0yde7tkwq&quot; target=&quot;_blank&quot;&gt;下载剪辑文件&lt;/a&gt;)  &lt;/p&gt;
 
 &lt;p&gt;原文件参数：&lt;code&gt; MP3 ; 320kbps ; 44100Hz ; 3:14 &lt;/code&gt;  &lt;br /&gt;
 剪切后参数：&lt;code&gt; MP3 ; 320kbps ; 44100Hz ; 0:33 ; 有渐入、渐出效果 &lt;/code&gt;&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/make-your-own-phone-ringstones&quot;&gt;在线切割剪辑MP3手机铃声利器！&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on July 18, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/make-your-own-phone-ringstones.html&quot;&gt;在线切割剪辑MP3手机铃声利器！&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on July 18, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Labwindows.Tutorial.Chapter 2]]></title>
-  <link>http://localhost:4000/Labwindows-tutorial-chapter2</link>
-  <id>http://localhost:4000/Labwindows-tutorial-chapter2</id>
+  <link>http://localhost:4000/blog/Labwindows-tutorial-chapter2.html</link>
+  <id>http://localhost:4000/blog/Labwindows-tutorial-chapter2</id>
   <updated>2013-07-18 5:00T00:00:00-00:00</updated>
   <published>2013-07-10T00:00:00+08:00</published>
   
@@ -704,7 +682,7 @@ return 0;
 &lt;p&gt;效果如下图所示：&lt;br /&gt;
 &lt;img src=&quot;http://ww3.sinaimg.cn/large/6480dca9tw1e66pudgy7aj20ej0l6abp.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;!-- more --&gt;
+&lt;!--more--&gt;
 
 &lt;hr /&gt;
 
@@ -773,11 +751,122 @@ return 0;
 
 &lt;p&gt;5) 好吧，我们的源代码文件终于出现了。现贴出所有代码并注释:  &lt;/p&gt;
 
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;cvirte.h&amp;gt;;
+#include &amp;lt;userint.h&amp;gt;;
+#include &quot;2-Using-Graph-Demo.h&quot;;
+
+/* panelHandle是主面板的Handle
+就相当于一个&quot;对象索引&quot;;
+我们知道，主面板、按钮、图表控件等等界面元素，在系统内存中都是以
+一个内存块的形式存在的（在C++、Java里就是&quot;对象&quot;的概念）
+当我们需要使用这些对象时，就是通过这个&amp;amp;quot;索引&amp;amp;quot;来指向这些对象的 */
+static int panelHandle;
+
+/* main函数入口，也是系统总入口 */
+int main (int argc, char *argv[]) {
+    if (InitCVIRTE (0, argv, 0) == 0)
+        return -1;    /* out of memory */
+    // LoadPanel()函数是LabWindows/CVI提供的系统函数
+    // 如果想查看某个函数的介绍及参数等详情，可以把光标放到该函数上，然后按&quot;F1&quot;，
+    // 这将会打开帮助文档中该函数的详细介绍
+    if ((panelHandle = LoadPanel(0, &quot;2-Using-Graph-Demo.uir&quot;, PANEL)) &amp;lt;= 0)
+        return -1;
+    // LoadPanel()之后，需要DisplayPanel()函数来真正把载入的面板数据显示出来
+    DisplayPanel (panelHandle);
+    RunUserInterface ();
+    DiscardPanel (panelHandle);
+    return 0;
+}
+
+/* Sine按钮的回调函数
+event事件包含了所有用户产生的事件，
+如键盘事件，鼠标事件(左键单双击、右键单双击等等)，获得焦点、失去焦点事件等等 */
+int CVICALLBACK showSineWave (int panel, int control, int event,
+        void *callbackData, int eventData1, int eventData2) {
+    switch (event) {
+        case EVENT_COMMIT:
+
+            break;
+    }
+    return 0;
+}  
+/* Cosine按钮的回调函数 */
+int CVICALLBACK showCosineWave (int panel, int control, int event,
+        void *callbackData, int eventData1, int eventData2) {
+    switch (event) {
+        case EVENT_COMMIT:
+
+            break;
+    }
+    return 0;
+}  
+/* Quit按钮的回调函数 */
+int CVICALLBACK quitSystem (int panel, int control, int event,
+        void *callbackData, int eventData1, int eventData2) {
+    switch (event) {
+        case EVENT_COMMIT:
+            //退出用户界面(退出按钮)
+            QuitUserInterface (0);
+            break;
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;6) 编写&lt;strong&gt;Sine&lt;/strong&gt;按钮的回调函数&lt;br /&gt;
 函数实现为：点击&lt;strong&gt;Sine&lt;/strong&gt;按钮后，清空Graph控件上的所有图表内容，然后使用系统提供的&lt;em&gt;SinePattern()&lt;/em&gt;函数生成一组Sine曲线的Y坐标值，最后通过描出Y坐标值来在Graph图表上汇出一个&lt;strong&gt;Sine&lt;/strong&gt;曲线&lt;br /&gt;
 下面贴上该回调函数具体代码并注释：  &lt;/p&gt;
 
+&lt;pre&gt;&lt;code&gt;int CVICALLBACK showSineWave (int panel, int control, int event,
+        void *callbackData, int eventData1, int eventData2) {
+    switch(event){
+        //case是各种用户事件，到此查看所有事件列表
+        // http://t.cn/zQ7jw42
+        case EVENT_COMMIT:
+            //删除Graph上的某个或所有图像(Plot),可把光标放置到函数名上，按F1查看帮助
+            DeleteGraphPlot(panelHandle, PANEL_GRAPH, -1, VAL_IMMEDIATE_DRAW);
+            //waveData[]数组用来保存SinePattern函数生成的100个Y坐标值
+            double waveData[100], amp, phase, cycles;
+            int n;
+            n = 100;
+            amp = 90.0;
+            phase = 0.0;
+            cycles = 1.5;
+            //该步将生成100个Sine函数的Y坐标点，并将这些值保存到waveData数组里
+            SinePattern(n, amp, phase, cycles, waveData);
+            //该步把Y坐标值绘制到Graph图表控件中去
+            PlotY(panelHandle, PANEL_GRAPH, waveData, n, VAL_DOUBLE, VAL_THIN_LINE, 
+                  VAL_EMPTY_SQUARE, VAL_SOLID, VAL_CONNECTED_POINTS , VAL_YELLOW);
+            break;
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;7) 编写&lt;strong&gt;Cosine&lt;/strong&gt;按钮的回调函数并注释  &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;int CVICALLBACK showCosineWave(int panel, int control, int event,
+        void *callbackData, int eventData1, int eventData2) {
+    switch (event){
+        case EVENT_COMMIT:
+            DeleteGraphPlot(panelHandle, PANEL_GRAPH, -1, VAL_IMMEDIATE_DRAW);
+            
+            double waveData[100], amp, phase, cycles;
+            int n;
+            n = 100;
+            amp = 90.0;
+            //和Sine函数不同，此处相位应为90(度)
+            phase = 90.0;
+            cycles = 1.5;
+            SinePattern(n, amp, phase, cycles, waveData);
+            
+            PlotY(panelHandle, PANEL_GRAPH, waveData, n, VAL_DOUBLE, VAL_THIN_LINE, 
+                  VAL_EMPTY_SQUARE, VAL_SOLID, VAL_CONNECTED_POINTS , VAL_YELLOW);
+            break;
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;hr /&gt;
 
@@ -799,14 +888,14 @@ return 0;
 &lt;p&gt;程序源码&lt;a href=&quot;https://github.com/HelloLyfing/LabWindows-CVI-Tutorial-For-Newbie-By.Lyfing&quot;&gt;托管在Github&lt;/a&gt;上，请自行前往查看。&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/Labwindows-tutorial-chapter2&quot;&gt;Labwindows.Tutorial.Chapter 2&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on July 10, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Labwindows-tutorial-chapter2.html&quot;&gt;Labwindows.Tutorial.Chapter 2&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on July 10, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Labwindows.Tutorial.Chapter 1]]></title>
-  <link>http://localhost:4000/Labwindows-tutorial-chapter1</link>
-  <id>http://localhost:4000/Labwindows-tutorial-chapter1</id>
+  <link>http://localhost:4000/blog/Labwindows-tutorial-chapter1.html</link>
+  <id>http://localhost:4000/blog/Labwindows-tutorial-chapter1</id>
   <updated>2013-06-28T00:00:00-00:00</updated>
   <published>2013-06-28T00:00:00+08:00</published>
   
@@ -824,73 +913,68 @@ return 0;
   &lt;li&gt;对LabWindows/CVI完全不了解 &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;当时很想看一看中文的博客有没有相关的基础教程，这样一来自己也好尽快上手系统开发工作，谷歌百度后发现这些内容寥寥无几，无奈自己只好从看官方的英文帮助文档开始，一路摸索着完成了毕设项目的开发。但在查阅官方帮助文档的过程中我才发现，&lt;strong&gt;对学习、使用LabWindows/CVI真正有帮助的&lt;/strong&gt;其实就是&lt;strong&gt;阅读帮助文档&lt;/strong&gt;。虽然它是英文写成，却实在丰富全面，很多函数的使用方法说明下方都会附有样例工程，让你可以进一步了解如何使用这些函数，所以英文基础好的童鞋还是多看看官方帮助文档吧。&lt;br /&gt;
-*****&lt;br /&gt;
-好了，闲话少说，我们今天就开始LabWindows/CVI的第一个工程：  &lt;/p&gt;
+&lt;p&gt;当时很想看一看中文的博客有没有相关的基础教程，这样一来自己也好尽快上手系统开发工作，谷歌百度后发现这些内容寥寥无几，无奈自己只好从看官方的英文帮助文档开始，一路摸索着完成了毕设项目的开发。但在查阅官方帮助文档的过程中我才发现，&lt;strong&gt;对学习、使用LabWindows/CVI真正有帮助的&lt;/strong&gt;其实就是&lt;strong&gt;阅读帮助文档&lt;/strong&gt;。虽然它是英文写成，却实在丰富全面，很多函数的使用方法说明下方都会附有样例工程，让你可以进一步了解如何使用这些函数，所以英文基础好的童鞋还是多看看官方帮助文档吧。  &lt;/p&gt;
 
-&lt;!-- more --&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;好了，闲话少说，我们今天就开始LabWindows/CVI的第一个工程：  &lt;/p&gt;
+
+&lt;!--more--&gt;
 
 &lt;p&gt;&lt;strong&gt;Hello World.&lt;/strong&gt;  &lt;/p&gt;
 
 &lt;p&gt;具体内容：&lt;br /&gt;
 创建一个主面板（在LabWindows/CVI内部，Panel和Windows系统的窗口概念相当），在主面板上放置一个按钮，点击按钮，弹出消息”Hello world”.效果如下所示：&lt;br /&gt;
-&lt;img src=&quot;http://img.blog.csdn.net/20130620094523406&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
-*****&lt;br /&gt;
-###具体步骤&lt;/p&gt;
+&lt;img src=&quot;http://img.blog.csdn.net/20130620094523406&quot; alt=&quot;&quot; /&gt;  &lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;在LabWindows/CVI的开始界面，选择 Project » New project，创建一个新工程&lt;br /&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;具体步骤&lt;/h3&gt;
+
+&lt;p&gt;1, 在LabWindows/CVI的开始界面，选择 Project » New project，创建一个新工程&lt;br /&gt;
 &lt;img src=&quot;http://img.blog.csdn.net/20130620094251656&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;通过File » New » User Interface(*.uir)… 新建用户界面源文件文件&lt;br /&gt;
+
+&lt;p&gt;2, 通过File » New » User Interface(*.uir)… 新建用户界面源文件文件&lt;br /&gt;
 &lt;img src=&quot;http://img.blog.csdn.net/20130620094312921&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;系统会自动创建一个”Untitled Panel”,在该Panel(面板)的任意位置双击，打开&lt;strong&gt;面板属性设置&lt;/strong&gt;窗口  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;如图所示操作，把&lt;strong&gt;Panel Title&lt;/strong&gt;改成&lt;strong&gt;Hello World&lt;/strong&gt;. 然后_回车_或_点击确定_回到主Panel&lt;br /&gt;
+
+&lt;p&gt;3, 系统会自动创建一个”Untitled Panel”,在该Panel(面板)的任意位置双击，打开&lt;strong&gt;面板属性设置&lt;/strong&gt;窗口  &lt;/p&gt;
+
+&lt;p&gt;4, 如图所示操作，把&lt;strong&gt;Panel Title&lt;/strong&gt;改成&lt;strong&gt;Hello World&lt;/strong&gt;. 然后_回车_或_点击确定_回到主Panel&lt;br /&gt;
 &lt;img src=&quot;http://img.blog.csdn.net/20130620094326671&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;在主Panel任意位置右击，在弹出的&lt;strong&gt;控件列表&lt;/strong&gt;里选择 Command Button » Square Command Button.&lt;br /&gt;
+
+&lt;p&gt;5, 在主Panel任意位置右击，在弹出的&lt;strong&gt;控件列表&lt;/strong&gt;里选择 Command Button » Square Command Button.&lt;br /&gt;
 &lt;img src=&quot;http://img.blog.csdn.net/20130620094338281&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;主Panel上会出现一个&lt;strong&gt;OK&lt;/strong&gt;按钮，双击该按钮打开&lt;strong&gt;按钮属性设置&lt;/strong&gt;窗口。在&lt;strong&gt;Callback function：&lt;/strong&gt;一栏填写”OK_Btn_Callback”(即Ok按钮的回调函数)。然后_回车_或_点击确定_回到主Panel&lt;br /&gt;
+
+&lt;p&gt;6, 主Panel上会出现一个&lt;strong&gt;OK&lt;/strong&gt;按钮，双击该按钮打开&lt;strong&gt;按钮属性设置&lt;/strong&gt;窗口。在&lt;strong&gt;Callback function：&lt;/strong&gt;一栏填写”OK_Btn_Callback”(即Ok按钮的回调函数)。然后_回车_或_点击确定_回到主Panel&lt;br /&gt;
 &lt;img src=&quot;http://img.blog.csdn.net/20130620093039000&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;用同样的方法再创建一个按钮(按钮可以通过Windows的”复制-粘贴”快捷键快速创建)，双击该按钮打开&lt;strong&gt;按钮属性设置&lt;/strong&gt;窗口，按顺序依次设置”Label”及”Callback function”的值。然后_回车_或_点击确定_回到主Panel&lt;br /&gt;
+
+&lt;p&gt;7, 用同样的方法再创建一个按钮(按钮可以通过Windows的”复制-粘贴”快捷键快速创建)，双击该按钮打开&lt;strong&gt;按钮属性设置&lt;/strong&gt;窗口，按顺序依次设置”Label”及”Callback function”的值。然后_回车_或_点击确定_回到主Panel&lt;br /&gt;
 &lt;img src=&quot;http://img.blog.csdn.net/20130620094426234&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;在系统菜单栏，依次选择Code » Generate » All Code…来创建&lt;strong&gt;控件对应的执行代码文件(.c)&lt;/strong&gt;。之后，在弹出的窗口依次点击”Yes”“Ok”&lt;br /&gt;
+
+&lt;p&gt;8, 在系统菜单栏，依次选择Code » Generate » All Code…来创建&lt;strong&gt;控件对应的执行代码文件(.c)&lt;/strong&gt; &lt;br /&gt;
+之后，在弹出的窗口依次点击&lt;strong&gt;Yes&lt;/strong&gt; &lt;strong&gt;Ok&lt;/strong&gt;&lt;br /&gt;
 &lt;img src=&quot;http://img.blog.csdn.net/20130620094436953&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
 &lt;img src=&quot;http://img.blog.csdn.net/20130620094409890&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
 &lt;img src=&quot;http://img.blog.csdn.net/20130620094418312&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;按图示内容设置配置目标C文件的内容&lt;br /&gt;
-&lt;img src=&quot;http://img.blog.csdn.net/20130620094452156&quot; alt=&quot;&quot; /&gt; &lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;在弹出的&lt;strong&gt;New Project Option&lt;/strong&gt;菜单点击&lt;strong&gt;OK&lt;/strong&gt;.&lt;br /&gt;
-&lt;img src=&quot;http://img.blog.csdn.net/20130620094459453&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;之后会弹出&lt;strong&gt;HelloWorld.c&lt;/strong&gt;文件的编辑界面。&lt;strong&gt;将光标定位到&lt;/strong&gt;OK_Btn_Callback()函数,在&lt;strong&gt;switch(event)&lt;/strong&gt;语句的&lt;strong&gt;case EVENT_COMMIT&lt;/strong&gt;和&lt;strong&gt;break;&lt;/strong&gt;之间添加代码，内容如下：  &lt;/li&gt;
-&lt;/ol&gt;
 
-&lt;p&gt;&lt;code&gt;c
-switch (event) {  
-    case EVENT_COMMIT:  
-        char title[30] = &quot;I&#39;m the title!&quot;;  
-        char msg[100] = &quot;Hello World !&quot;;  
-        MessagePopup(title, msg);  
-        break;  
-}  
-&lt;/code&gt;
-&lt;img src=&quot;http://img.blog.csdn.net/20130620094512031&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;9, 按图示内容设置配置目标C文件的内容&lt;br /&gt;
+&lt;img src=&quot;http://img.blog.csdn.net/20130620094452156&quot; alt=&quot;&quot; /&gt; &lt;/p&gt;
+
+&lt;p&gt;10, 在弹出的&lt;strong&gt;New Project Option&lt;/strong&gt;菜单点击&lt;strong&gt;OK&lt;/strong&gt;.&lt;br /&gt;
+&lt;img src=&quot;http://img.blog.csdn.net/20130620094459453&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;11, 之后会弹出&lt;strong&gt;HelloWorld.c&lt;/strong&gt;文件的编辑界面。将光标定位到&lt;code&gt;OK_Btn_Callback()&lt;/code&gt;函数,在&lt;code&gt;switch(event)&lt;/code&gt;语句的&lt;code&gt;case EVENT_COMMIT&lt;/code&gt;和&lt;code&gt;break;&lt;/code&gt;之间添加代码，内容如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;switch (event) {
+	case EVENT_COMMIT:  
+		char title[30] = &quot;I&#39;m the title!&quot;;  
+		char msg[100] = &quot;Hello World !&quot;;  
+		MessagePopup(title, msg);  
+		break;  
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20130620094512031&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -906,7 +990,7 @@ switch (event) {
 &lt;p&gt;程序源码&lt;a href=&quot;https://github.com/HelloLyfing/LabWindows-CVI-Tutorial-For-Newbie-By.Lyfing&quot;&gt;托管在Github&lt;/a&gt;上，请自行前往查看。&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/Labwindows-tutorial-chapter1&quot;&gt;Labwindows.Tutorial.Chapter 1&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on June 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Labwindows-tutorial-chapter1.html&quot;&gt;Labwindows.Tutorial.Chapter 1&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on June 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 </feed>
