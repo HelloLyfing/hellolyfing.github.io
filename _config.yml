@@ -2,8 +2,8 @@ title:            Lyfing.Loo's Blog
 description:      Yet another guy dreams for landing on the moon someday
 disqus_shortname: lyfing521
 #Your site's domain goes here. Leave localhost server or blank when working locally.
-#url: http://localhost:4000
-url: http://lanfengming.com 
+url: http://localhost:4000
+#url: http://lanfengming.com 
 
 # Owner/author information
 owner:

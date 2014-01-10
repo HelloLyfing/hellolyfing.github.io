@@ -124,6 +124,22 @@
   
 <article class="hentry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
   <header>
+    <div class="entry-meta"><span class="entry-date date published updated"><time datetime="2014-01-09T00:00:00+08:00" itemprop="datePublished"><a href="http://localhost:4000/blog/study-on-python-unicode-encoding-stuff.html">January 09, 2014</a></time></span><span class="author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name" class="fn"><a href="http://localhost:4000/about" title="About Lyfing.Loo" itemprop="url">Lyfing.Loo</a></span></span>&nbsp; &bull; &nbsp;<span class="entry-comments"><a href="http://localhost:4000/blog/study-on-python-unicode-encoding-stuff.html#disqus_thread">Comment</a></span></div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title" itemprop="name"><a href="http://localhost:4000/blog/study-on-python-unicode-encoding-stuff.html" rel="bookmark" title="关于Python的编码、乱码以及Unicode的一些研究" itemprop="url">关于Python的编码、乱码以及Unicode的一些研究</a></h1>
+    
+  </header>
+  <div class="entry-content" itemprop="description">
+    <p>最近接触Python比较多，尤其是在命令行(Terminal)下进行的局部代码测试有很多。而个人编写的代码通常是以<code>UTF-8</code>格式存储的，这在Linux下的Terminal上还好一些（它的编码默认的就是中文<code>UTF-8</code>），要想打印包含中文字符的变量值，基本不会出现乱码情况。但如果是在Windowss下的cmd上进行测试，则相对就要痛苦一些，因为Windows中文环境下cmd的默认编码是<code>GBK</code>。</p>
+
+<p>所以本人为了在测试时能正常打印出中文字符（经常Linux、Windows两边跑），对Python字符编码的情况还是颇下了些功夫的。下面就是我做的一些小研究，希望能对和我当初一样迷茫的读者起到些帮助作用。</p>
+
+
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
     <div class="entry-meta"><span class="entry-date date published updated"><time datetime="2013-10-20T00:00:00+08:00" itemprop="datePublished"><a href="http://localhost:4000/blog/Labwindows-tutorial-chapter3-part2.html">October 20, 2013</a></time></span><span class="author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name" class="fn"><a href="http://localhost:4000/about" title="About Lyfing.Loo" itemprop="url">Lyfing.Loo</a></span></span>&nbsp; &bull; &nbsp;<span class="entry-comments"><a href="http://localhost:4000/blog/Labwindows-tutorial-chapter3-part2.html#disqus_thread">Comment</a></span></div><!-- /.entry-meta -->
     
       <h1 class="entry-title" itemprop="name"><a href="http://localhost:4000/blog/Labwindows-tutorial-chapter3-part2.html" rel="bookmark" title="Labwindows.Tutorial.Chapter 3.Part2" itemprop="url">Labwindows.Tutorial.Chapter 3.Part2</a></h1>
@@ -215,33 +231,6 @@
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
 
-<article class="hentry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    <div class="entry-meta"><span class="entry-date date published updated"><time datetime="2013-06-28T00:00:00+08:00" itemprop="datePublished"><a href="http://localhost:4000/blog/Labwindows-tutorial-chapter1.html">June 28, 2013</a></time></span><span class="author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name" class="fn"><a href="http://localhost:4000/about" title="About Lyfing.Loo" itemprop="url">Lyfing.Loo</a></span></span>&nbsp; &bull; &nbsp;<span class="entry-comments"><a href="http://localhost:4000/blog/Labwindows-tutorial-chapter1.html#disqus_thread">Comment</a></span></div><!-- /.entry-meta -->
-    
-      <h1 class="entry-title" itemprop="name"><a href="http://localhost:4000/blog/Labwindows-tutorial-chapter1.html" rel="bookmark" title="Labwindows.Tutorial.Chapter 1" itemprop="url">Labwindows.Tutorial.Chapter 1</a></h1>
-    
-  </header>
-  <div class="entry-content" itemprop="description">
-    <p><em>前言：LabWindows/CVI是一款功能强大的集成了图形化界面编辑器以及对各种硬件通信协议支持的集成开发环境，它使用ANSI标准的C语言作为主要的编程语言。</em> </p>
-
-<p>编写该系列教程的原因：自己大学的毕设题目选的就是<a href="https://github.com/HelloLyfing/Signal_Monitor_System_Based_On_LabWindows-CVI">基于LabWindows/CVI的信号监测系统开发</a>，自己当时的状态是： </p>
-
-<ul>
-  <li>对C语言基本不了解，不会用  </li>
-  <li>对LabWindows/CVI完全不了解 </li>
-</ul>
-
-<p>当时很想看一看中文的博客有没有相关的基础教程，这样一来自己也好尽快上手系统开发工作，谷歌百度后发现这些内容寥寥无几，无奈自己只好从看官方的英文帮助文档开始，一路摸索着完成了毕设项目的开发。但在查阅官方帮助文档的过程中我才发现，<strong>对学习、使用LabWindows/CVI真正有帮助的</strong>其实就是<strong>阅读帮助文档</strong>。虽然它是英文写成，却实在丰富全面，很多函数的使用方法说明下方都会附有样例工程，让你可以进一步了解如何使用这些函数，所以英文基础好的童鞋还是多看看官方帮助文档吧。  </p>
-
-<hr />
-
-<p>好了，闲话少说，我们今天就开始LabWindows/CVI的第一个工程：  </p>
-
-
-  </div><!-- /.entry-content -->
-</article><!-- /.hentry -->
-
 
 <div class="pagination">
   
@@ -254,9 +243,15 @@
       
     </li>
     
+      <li>
+        
+          <a href="http://localhost:4000/page2">2</a>
+        
+      </li>
+    
   </ul>
   
-    Next
+    <a href="http://localhost:4000/page2" class="btn">Next</a>
   
 
 </div>
@@ -265,7 +260,8 @@
 
 <div class="footer-wrapper">
   <footer role="contentinfo">
-    <span>&copy; 2014 Lyfing.Loo. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">HPSTR Theme</a>.</span>
+    <span>&copy; 2014 Lyfing.Loo. Powered by <a href="http://jekyllrb.com">Jekyll</a> hosted on Github Pages using the <a href="https://github.com/mmistakes/hpstr-jekyll-theme">HPSTR Theme</a>.</span>
+
   </footer>
 </div><!-- /.footer-wrapper -->
 
