@@ -12,11 +12,12 @@ tags: [Tech, C, Labwindows Tutorial]
  - 点下**按钮2**，Graph控件显示Cosine波形。
 
 效果如下图所示：  
+
+<!--more-->
+
 ![][1]
 
  [1]: http://ww3.sinaimg.cn/large/6480dca9tw1e66pudgy7aj20ej0l6abp.jpg
-
-<!--more-->
 
 ------
 
