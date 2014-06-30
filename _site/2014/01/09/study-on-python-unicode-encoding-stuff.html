@@ -16,14 +16,14 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于Python的编码、乱码以及Unicode的一些研究">
 <meta property="og:description" content="关于Python编码、解码、乱码以及Unicode的一些研究">
-<meta property="og:url" content="http://localhost:4000/blog/study-on-python-unicode-encoding-stuff.html">
+<meta property="og:url" content="http://localhost:4000/2014/01/09/study-on-python-unicode-encoding-stuff.html">
 <meta property="og:site_name" content="Lyfing.Loo's Blog">
 
 
 
 
 
-<link rel="canonical" href="http://localhost:4000/blog/study-on-python-unicode-encoding-stuff.html">
+<link rel="canonical" href="http://localhost:4000/2014/01/09/study-on-python-unicode-encoding-stuff.html">
 <link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Lyfing.Loo's Blog Feed">
 
 
@@ -34,8 +34,6 @@
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="http://localhost:4000/assets/css/main.min.css">
-<!-- Webfonts -->
-<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
 
 <meta http-equiv="cleartype" content="on">
 
@@ -77,7 +75,7 @@
 				<li>
 					<img src="http://localhost:4000/images/avatar.jpg" alt="Lyfing.Loo photo" class="author-photo">
 					<h4>Lyfing.Loo</h4>
-					<p>Hangzhou China</p>
+					<p>Hangzhou, China</p>
 				</li>
 				<li><a href="http://localhost:4000/about/">Learn More</a></li>
 				<li>
@@ -113,7 +111,7 @@
     <header class="header-title">
       <div class="header-title-wrap">
         
-          <h1 class="entry-title" itemprop="name"><a href="http://localhost:4000/blog/study-on-python-unicode-encoding-stuff.html" rel="bookmark" title="关于Python的编码、乱码以及Unicode的一些研究" itemprop="url">关于Python的编码、乱码以及Unicode的一些研究</a></h1>
+          <h1 class="entry-title" itemprop="name"><a href="http://localhost:4000/2014/01/09/study-on-python-unicode-encoding-stuff.html" rel="bookmark" title="关于Python的编码、乱码以及Unicode的一些研究" itemprop="url">关于Python的编码、乱码以及Unicode的一些研究</a></h1>
         
         <h2>January 09, 2014</h2>
       </div><!-- /.header-title-wrap -->
@@ -141,7 +139,7 @@
 <ul>
   <li><em>如果源代码没有声明编码格式，则Python在语法校验期间(compilation)使用默认的ASCII编码</em></li>
   <li><em>如果源代码没有声明编码格式，但却在源码中使用了非ASCII字符(Non-ASCII character)，则程序在编译期间抛出<code>SyntaxError</code>异常，编译不被通过</em></li>
-  <li>*如果源代码声明了Python不支持的编码格式，则程序将在编译期间抛出异常</li>
+  <li><em>如果源代码声明了Python不支持的编码格式，则程序将在编译期间抛出异常</em></li>
   <li>
     <p><em>源代码文件编码的声明</em></p>
 
@@ -292,7 +290,7 @@ u'\u6211\u662f\u5927\u574f\u86cb'
   </li>
 </ul>
 
-<h4 id="strtypeunicodetype">3.3 如何将<code>str</code>type转换成<code>Unicode</code>type</h4>
+<h4 id="str-typeunicode-type">3.3 如何将<code>str</code> type转换成<code>Unicode</code> type</h4>
 
 <p>这是本节最开始提出的那个问题：如何将<code>str</code>类型的字符串<code>str1</code>和<code>str2</code>转换成<code>Unicode</code>类型？
 这也是下节要谈论的编码与解码的问题。</p>
@@ -326,7 +324,7 @@ u'\u6211\u662f\u5927\u574f\u86cb'
 
       <footer class="entry-meta">
         <span class="entry-tags"><a href="http://localhost:4000/tags/index.html#Tech" title="Pages tagged Tech" rel="tag" class="tag">Tech</a><a href="http://localhost:4000/tags/index.html#Python" title="Pages tagged Python" rel="tag" class="tag">Python</a><a href="http://localhost:4000/tags/index.html#Unicode" title="Pages tagged Unicode" rel="tag" class="tag">Unicode</a><a href="http://localhost:4000/tags/index.html#Language Study" title="Pages tagged Language Study" rel="tag" class="tag">Language Study</a></span>
-        <span><a href="http://localhost:4000/blog/study-on-python-unicode-encoding-stuff.html" rel="bookmark" title="关于Python的编码、乱码以及Unicode的一些研究" itemprop="url">关于Python的编码、乱码以及Unicode的一些研究</a> was published on <span class="entry-date date published updated"><time datetime="2014-01-09T00:00:00+08:00" itemprop="datePublished">January 09, 2014</time></span></span>
+        <span><a href="http://localhost:4000/2014/01/09/study-on-python-unicode-encoding-stuff.html" rel="bookmark" title="关于Python的编码、乱码以及Unicode的一些研究" itemprop="url">关于Python的编码、乱码以及Unicode的一些研究</a> was published on <span class="entry-date date published updated"><time datetime="2014-01-09T00:00:00+08:00" itemprop="datePublished">January 09, 2014</time></span></span>
         
         <span class="author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name" class="fn"><a href="http://localhost:4000/about" title="About Lyfing.Loo" itemprop="url">Lyfing.Loo</a></span></span>
         
@@ -337,23 +335,23 @@ u'\u6211\u662f\u5927\u574f\u86cb'
     <div class="read-more">
       
         <div class="read-more-header">
-          <a href="http://localhost:4000/blog/Labwindows-tutorial-chapter3-part2.html" class="read-more-btn">Read More</a>
+          <a href="http://localhost:4000/2013/10/20/Labwindows-tutorial-chapter3-part2.html" class="read-more-btn">Read More</a>
         </div><!-- /.read-more-header -->
         <div class="read-more-content">
-          <h3><a href="http://localhost:4000/blog/Labwindows-tutorial-chapter3-part2.html" title="Labwindows.Tutorial.Chapter 3.Part2">Labwindows.Tutorial.Chapter 3.Part2</a></h3>
-          <p>上接第一节的内容，我们继续本章内容的下半部分。5. 编写 createGUI_Mine() 函数的具体实现createGUI_Mine()要完成的工作有：  创建一个主面板(即主窗口)  在主面板右侧创建一个Graph控件，用以显示Sine波形      在主面板上创建两个...&hellip; <a href="http://localhost:4000/blog/Labwindows-tutorial-chapter3-part2.html">Continue reading</a></p>
+          <h3><a href="http://localhost:4000/2014/06/28/upload-browser-cached-image-by-using-xhr.html" title="通过XHR上传浏览器缓存的图片资源">通过XHR上传浏览器缓存的图片资源</a></h3>
+          <p>通过发起XHR请求的方式获取浏览器缓存的图片资源 <a href="http://localhost:4000/2014/06/28/upload-browser-cached-image-by-using-xhr.html">Continue reading</a></p>
         </div><!-- /.read-more-content -->
       
       <div class="read-more-list">
         
           <div class="list-item">
-            <h4><a href="http://localhost:4000/blog/Labwindows-tutorial-chapter3-part1.html" title="Labwindows.Tutorial.Chapter 3.Part1">Labwindows.Tutorial.Chapter 3.Part1</a></h4>
-            <span>Published on October 10, 2013</span>
+            <h4><a href="http://localhost:4000/2014/01/12/Python-a-web-spider-for-fetching-qiubai-articles.html" title="Python爬虫 实现从糗百上多线程抓取内容">Python爬虫 实现从糗百上多线程抓取内容</a></h4>
+            <span>Published on January 12, 2014</span>
           </div><!-- /.list-item -->
         
           <div class="list-item">
-            <h4><a href="http://localhost:4000/blog/make-your-own-phone-ringstones.html" title="在线切割剪辑MP3手机铃声利器！">在线切割剪辑MP3手机铃声利器！</a></h4>
-            <span>Published on July 18, 2013</span>
+            <h4><a href="http://localhost:4000/2013/10/20/Labwindows-tutorial-chapter3-part2.html" title="Labwindows.Tutorial.Chapter 3.Part2">Labwindows.Tutorial.Chapter 3.Part2</a></h4>
+            <span>Published on October 20, 2013</span>
           </div><!-- /.list-item -->
         
       </div><!-- /.read-more-list -->
@@ -369,8 +367,7 @@ u'\u6211\u662f\u5927\u574f\u86cb'
   </footer>
 </div><!-- /.footer-wrapper -->
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"></script>
 <script src="http://localhost:4000/assets/js/scripts.min.js"></script>
 
 <script type="text/javascript">
@@ -393,7 +390,8 @@ u'\u6211\u662f\u5927\u574f\u86cb'
     }());
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>	        
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	        
 
 </body>
 </html>

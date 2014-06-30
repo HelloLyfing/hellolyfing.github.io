@@ -10,7 +10,7 @@ url: http://hellolyfing.github.io
 owner:
   name:           Lyfing.Loo
   avatar:         avatar.jpg
-  bio:            "Hangzhou China"
+  bio:            "Hangzhou, China"
   email:          hellolyfing@gmail.com
   # Social networking links used in footer. Update and remove as you like.
   #twitter:        
@@ -49,10 +49,10 @@ pygments:    true
 markdown:    kramdown
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /blog/:title.html
+permalink:   date
 
 # Amount of post to show on home page
-paginate: 5
+paginate: 8
 
 kramdown:
   auto_ids: true

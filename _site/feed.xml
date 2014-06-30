@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2014-01-10T12:31:37+08:00</updated>
+<updated>2014-06-30T10:32:15+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Lyfing.Loo</name>
@@ -14,9 +14,555 @@
 
 
 <entry>
+  <title type="html"><![CDATA[通过XHR上传浏览器缓存的图片资源]]></title>
+  <link>http://localhost:4000/2014/06/28/upload-browser-cached-image-by-using-xhr.html</link>
+  <id>http://localhost:4000/2014/06/28/upload-browser-cached-image-by-using-xhr</id>
+  <published>2014-06-28T00:00:00+08:00</published>
+  <updated>2014-06-28T00:00:00+08:00</updated>
+  <author>
+    <name>Lyfing.Loo</name>
+    <uri>http://localhost:4000</uri>
+    <email>hellolyfing@gmail.com</email>
+  </author>
+  <content type="html">&lt;p&gt;最近在为公司开发一个&lt;a href=&quot;https://chrome.google.com/webstore/detail/obnbgneldjmmpgkbnnbiiinijmiclpaa&quot;&gt;海淘的Chrome扩展&lt;/a&gt;，扩展的需求之一是：获取当前页面中的某张图片，并将其上传至公司的服务器保存。&lt;/p&gt;
+
+&lt;p&gt;当时的第一思路是：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;获取图片的URL，然后把URL提交给服务器，让服务器进行下载操作&lt;/li&gt;
+  &lt;li&gt;如果服务器访问图片资源时被拒绝，就需要让用户手动下载该图片，然后手动上传至我们的服务器&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;不过在后来的实践中发现，其实可以直接通过发起&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest&quot;&gt;XHR&lt;/a&gt;请求的方式读取图片的缓存，然后将该缓存数据(图片资源)上传至服务器。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;em&gt;在这里首先要说明一点是的：这种将缓存数据当作文件上传的思路，通常是需要&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS&quot;&gt;跨站请求资源&lt;/a&gt;(Cross-site HTTP requests)的，所以除非是在允许跨站请求的运行环境中（如Chrome扩展内）运行这些JS，否则这种思路几乎不可用&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;思路&lt;/h3&gt;
+&lt;p&gt;这种直接通过发起&lt;code&gt;XHR&lt;/code&gt;请求来获取图片资源的思路，最先来自这里&lt;a href=&quot;http://stackoverflow.com/a/10002486/1241980&quot;&gt;upload-a-file-in-a-google-chrome-extension&lt;/a&gt;。基本思路是：浏览器对页面渲染时下载的文件(&lt;code&gt;image&lt;/code&gt;、&lt;code&gt;css&lt;/code&gt;、&lt;code&gt;js&lt;/code&gt;)都有缓存，此时可以手动发起一个对页面中某个文件的&lt;code&gt;XHR&lt;/code&gt;请求，浏览器会直接从本地缓存中取到数据(上述文件的&lt;a href=&quot;http://stackoverflow.com/a/4480318/1241980&quot;&gt;&lt;code&gt;Cache-Control&lt;/code&gt;&lt;/a&gt; header一般都标识为可缓存)作为响应，我们则可以把这些数据当作”文件”来上传至服务器。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;怎么做&lt;/h3&gt;
+&lt;p&gt;1) 通过XHR请求一个图片资源&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var imgURL = &#39;http://lyfing.qiniudn.com/external_links/pocker_cards_family.png&#39;;
+var xhr = new XMLHttpRequest(); 
+xhr.open(&quot;GET&quot;, imgURL, true);
+xhr.responseType = &quot;blob&quot;;
+xhr.onload = function(){
+    var blob = xhr.response;
+    var msg = &#39; Request URL = \n &#39; + imgURL;
+    msg += &#39;\n\n Get Response !&#39;;
+    msg += &#39;\n responseType = &#39; + blob.type;
+    msg += &#39;\n responseSize = &#39; + Math.round(blob.size / 1024) + &#39;KB&#39;;
+    alert(msg);
+};
+xhr.send();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+function getIMGRes(){
+    var imgURL = &#39;http://lyfing.qiniudn.com/external_links/pocker_cards_family.png&#39;;
+    var xhr = new XMLHttpRequest(); 
+    xhr.open(&quot;GET&quot;, imgURL, true);
+    xhr.responseType = &quot;blob&quot;;
+    xhr.onload = function(){
+        var blob = xhr.response;
+        var msg = &#39; Request URL = \n &#39; + imgURL;
+        msg += &#39;\n\n Get Response !&#39;;
+        msg += &#39;\n responseType = &#39; + blob.type;
+        msg += &#39;\n responseSize = &#39; + Math.round(blob.size / 1024) + &#39;KB&#39;;
+        alert(msg);
+    };
+    xhr.send();
+};
+&lt;/script&gt;
+
+&lt;p&gt;&lt;input type=&quot;button&quot; onclick=&quot;getIMGRes();&quot; value=&quot;点击测试&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2) 将返回的&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Blob&quot;&gt;Blob&lt;/a&gt;对象上传至服务器&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// 直接使用上一步获得的blob对象
+var blob = xhr1.response;
+// 我们可以直接使用FormData构建Form表单
+var formData = new FormData();
+// 获取文件类型(例如: blob.type = &#39;image/png&#39;)
+var fileType = blob.type.split(&#39;/&#39;)[1]; 
+// 
+formData.append(&#39;file&#39;, blob, &#39;test001.&#39; + fileType);
+
+var xhr2 = new XMLHttpRequest();
+
+xhr2.upload.onprogress = function(event){
+    ...
+    $msg2.html(&#39;正在上传 ( &#39; + percent + &#39;% )&#39;);
+}
+
+xhr2.onload = function(){
+    if ( !confirm(&#39;上传完成！即将跳转至上传结果页...&#39;) ) return;
+    // 返回结果是一段纯文本，我们用正则取出本次上传的信息链接
+    var url = xhr2.response.match(/http:\/\/[^\s]+/)[0];
+    window.open(url);
+}
+
+xhr2.open(&#39;POST&#39;, &#39;http://posttestserver.com/post.php?dir=example&#39;, true);
+xhr2.send(formData);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+function upload(){
+    var imgURL = &#39;http://lyfing.qiniudn.com/external_links/pocker_cards_family.png&#39;;
+    var xhr1 = new XMLHttpRequest();
+    xhr1.open(&quot;GET&quot;, imgURL, true);
+    xhr1.responseType = &quot;blob&quot;;
+    xhr1.onload = function(){
+        var blob = xhr1.response;
+        var formData = new FormData();
+        var fileType = blob.type.split(&#39;/&#39;)[1];
+        formData.append(&#39;file&#39;, blob, &#39;test001.&#39; + fileType);
+
+        var xhr = new XMLHttpRequest();
+        
+        xhr.upload.onprogress = function(event){
+            var $msg2 = $(&#39;#part2Msg&#39;);
+            var percent = Math.floor(event.position / event.totalSize * 100);
+            $msg2.html(&#39;正在上传 ( &#39; + percent + &#39;% )&#39;);
+        }
+
+        xhr.onload = function(){
+            if ( !confirm(&#39;上传完成！即将跳转至上传结果页...&#39;) ) return;
+            var url = xhr.response.match(/http:\/\/[^\s]+/)[0];
+            window.open(url);
+        }
+        
+        xhr.open(&#39;POST&#39;, &#39;http://posttestserver.com/post.php?dir=example&#39;, true);
+        xhr.send(formData);        
+    };
+    xhr1.send(); 
+}
+&lt;/script&gt;
+
+&lt;p&gt;&lt;input type=&quot;button&quot; onclick=&quot;upload();&quot; value=&quot;点击测试&quot; /&gt; &lt;span id=&quot;part2Msg&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;用到的一些&lt;code&gt;对象&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;上面我们用到了&lt;code&gt;FormData&lt;/code&gt;对象(&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/FormData&quot;&gt;详情&lt;/a&gt;)，它是一个模拟了HTML中的Form表单的实体，你可以直接使用它来构建&lt;code&gt;key/value pair&lt;/code&gt;，其中的&lt;code&gt;value&lt;/code&gt;可以是&lt;code&gt;文件&lt;/code&gt;、&lt;code&gt;Blob&lt;/code&gt;或者纯&lt;code&gt;String&lt;/code&gt;。下面做一个简单的使用示例（Chrome、Firefox可随便使用，IE10+才可使用)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// 创建Form表单对象formData，可在构造函数中传入一个HTML表单对象htmlForm
+// 它的键值对会被添加到formData中
+var formData = new FormData();
+// 添加一个键值对
+formData.append(&#39;userID&#39;, &#39;112233&#39;);
+// 添加一个文件对象
+var file = document.getElementByID(&#39;fileField&#39;);
+formData.append(&#39;file1&#39;, file);
+// 添加一个Blob对象，它将被视为文件上传
+formData.append(&#39;file2&#39;, blob);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;关于&lt;code&gt;Blob&lt;/code&gt;对象，它是一个类似于&lt;code&gt;文件&lt;/code&gt;的结构体，事实上&lt;code&gt;文件&lt;/code&gt;接口正是在它的基础上做的扩展。&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Blob&quot;&gt;更多关于Blob&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;备注&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest&quot;&gt;跨站请求HTTP资源&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Blob&quot;&gt;&lt;code&gt;Blob&lt;/code&gt;&lt;/a&gt;对象&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/FormData&quot;&gt;&lt;code&gt;FormData&lt;/code&gt;&lt;/a&gt;对象&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;示例中用到的文件上传服务：http://posttestserver.com/post.php?dir=example&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;示例中用到的图片：&lt;img src=&quot;http://lyfing.qiniudn.com/external_links/pocker_cards_family.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2014/06/28/upload-browser-cached-image-by-using-xhr.html&quot;&gt;通过XHR上传浏览器缓存的图片资源&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on June 28, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Python爬虫 实现从糗百上多线程抓取内容]]></title>
+  <link>http://localhost:4000/2014/01/12/Python-a-web-spider-for-fetching-qiubai-articles.html</link>
+  <id>http://localhost:4000/2014/01/12/Python-a-web-spider-for-fetching-qiubai-articles</id>
+  <published>2014-01-12T00:00:00+08:00</published>
+  <updated>2014-01-12T00:00:00+08:00</updated>
+  <author>
+    <name>Lyfing.Loo</name>
+    <uri>http://localhost:4000</uri>
+    <email>hellolyfing@gmail.com</email>
+  </author>
+  <content type="html">&lt;p&gt;最近参加一家公司的远程笔试，其中的一道题目是：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;写一个简单的爬虫，把糗事百科今天被顶超过5000的帖子爬出来，注意考虑性能和图片显示。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;当时一看很感兴趣，因为看到这道题目后思路很清晰，而且我大学时周围好友都爱看糗百，所以做点有关他们喜欢的产品的信息抓取还是挺有趣的。&lt;/p&gt;
+
+&lt;p&gt;好的，闲话就到这里，下面进入正题。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;1. 思路&lt;/h2&gt;
+
+&lt;h3 id=&quot;or-&quot;&gt;1.1 单线程 or 多线程&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;单线程&lt;/strong&gt;按序逐一抓取。这种思路下的实现方式是：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;获取糗百所有可供抓取的页面URL，然后把他们放到一个列表里&lt;/li&gt;
+  &lt;li&gt;从列表中取走一条页面URL，将该URL指向页面中的所有糗百文章解析出来&lt;/li&gt;
+  &lt;li&gt;如果文章有附图，则下载至指定目录&lt;/li&gt;
+  &lt;li&gt;将第2步获得的若干糗百文章追加至一个xml文件中&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;点评：单线程无法充分利用机器的CPU资源和带宽，性能低下，不予考虑&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;多线程&lt;/strong&gt;乱序抓取。这种思路下的实现方式是：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;创建两个&lt;a href=&quot;http://docs.python.org/2/library/queue.html&quot;&gt;同步队列&lt;/a&gt;&lt;code&gt;page_q&lt;/code&gt;和&lt;code&gt;pic_q&lt;/code&gt;，&lt;code&gt;page_q&lt;/code&gt;存放页面URL，&lt;code&gt;pic_q&lt;/code&gt;存放图片URL&lt;/li&gt;
+  &lt;li&gt;获取糗百所有可供抓取页面的URL，将这些URL添加到&lt;code&gt;page_q&lt;/code&gt;队列&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;开辟多条&lt;strong&gt;抓取解析页面文章的线程&lt;/strong&gt;，每条线程的具体工作是：&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;从&lt;code&gt;page_q&lt;/code&gt;队列取走一条URL，解析其指向的页面中的糗百文章&lt;/li&gt;
+      &lt;li&gt;将这些文章内容追加到xml文件中(同步访问)&lt;/li&gt;
+      &lt;li&gt;如果文章有附图，则将该附图的链接URL放入&lt;code&gt;pic_q&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;开辟多条&lt;strong&gt;下载图片的线程&lt;/strong&gt;，每条线程的具体工作是：&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;从&lt;code&gt;pic_q&lt;/code&gt;队列取走一条图片URL，将其命名为&lt;code&gt;idxxxxx.jpg&lt;/code&gt;并下载到指定目录 &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;点评：可以充分利用CPU资源及带宽，选择该条思路进行&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;1.2 如何提取页面内容&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;思路1：通过正则表达式匹配，然后提取有用信息&lt;/li&gt;
+  &lt;li&gt;思路2：通过第三方HTML内容提取工具提取有用信息&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;点评：思路2具有更高的扩展性、容错性，选择思路2&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;2. 实现&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;2.1 多线程实体&lt;/h3&gt;
+
+&lt;p&gt;本文设计了两个多线程类，他们都继承自&lt;code&gt;threading.Thread&lt;/code&gt;，这两个类是：  &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;class QiubaiReader(threading.Thread)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;class PicDownloader(threading.Thread)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;类&lt;code&gt;QiubaiReader&lt;/code&gt;要做的工作和本文第1部分 &lt;strong&gt;1.1&lt;/strong&gt; » &lt;strong&gt;多线程&lt;/strong&gt; » &lt;strong&gt;抓取解析页面文章的线程&lt;/strong&gt;内容一致，以下是它的执行逻辑：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&quot;&quot;&quot; 类 QiubaiReader 说明
+糗事百科内容的消费者，也是糗事百科文章图片的生产者
+消费者：从 pageQueue 里读取一个页面URL，解析该页面所有糗百文章，并将这些文章存储到xml文件中；
+生产者：在解析页面时，如果某篇文章附带图片，则把该图片的URL放入 picQueue ,等待图片类的消费者来处理.
+&quot;&quot;&quot;
+runFlag = 1                                                    #停止线程的开关
+
+def __init__(self, pageQueue, picQueue, pathDict):
+    ...
+
+def fetchContent(self, pageUrl):
+    &quot;&quot;&quot;
+    每一条糗百，我们需要取出其中的三条信息：
+    1. 该条糗百的ID
+    2. 该条糗百的正文
+    3. 该条糗百的图片链接(可能为空，非空则等待下载)
+    爬取糗百的步骤是：
+    1. 获得该条糗百的整个大&amp;lt;div /&amp;gt;块，我们声明 div_dad 变量代表这个大&amp;lt;div /&amp;gt;块
+    2. 通过查找当前投票数的&amp;lt;div /&amp;gt;相关值来判断是否继续，如果投票数大于5000，则继续
+    3. 在大&amp;lt;div /&amp;gt;块的首行，截取该条糗百的文章ID号（每条糗百都是一篇文章，通过文章ID可以获取文章和图片的链接）
+    4. 在大div块中，找出带有糗百正文的&amp;lt;div /&amp;gt;块
+    5. 将上面提到的三条信息写入xml文件
+    &quot;&quot;&quot;
+    ...
+
+def writeContent(self, list):
+    &quot;&quot;&quot;
+    将list中包含的糗百文章格式化并一次性插入到xml文件中
+    list中包含有某个页面的所有糗百文章（一般是20条）
+    list结构为：
+    [
+        {   &#39;id&#39;:       qiuID1,
+            &#39;content&#39;:  qiuBaiText,
+            &#39;picURL&#39;:   picURL },
+        ...
+    ]
+    &quot;&quot;&quot;
+    ...
+
+def run(self):
+    while not self.pageQueue.empty() and self.__class__.runFlag &amp;gt; 0:
+        #糗百页面消费者
+        pageUrl = self.pageQueue.get()
+        qiuBaiList, picDictList = self.fetchContent(pageUrl)
+        if len(qiuBaiList) &amp;gt;= 1:
+            self.writeContent(qiuBaiList)
+        #糗百图片生产者
+        if len(picDictList) &amp;gt;= 1:
+            for item in picDictList: self.picQueue.put(item)
+
+    #如果两个队列都为空，则线程退出，并通知图片下载线程也退出
+    if self.pageQueue.empty() and self.picQueue.empty():
+        ...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;类&lt;code&gt;PicDownloader&lt;/code&gt;要做的工作和本文第1部分 &lt;strong&gt;1.1&lt;/strong&gt; » &lt;strong&gt;多线程&lt;/strong&gt; » &lt;strong&gt;下载图片的线程&lt;/strong&gt;内容一致，以下是它的执行逻辑：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# 类 PicDownloader 说明
+runFlag = 1                                                            #线程停止开关
+
+def __init__(self, queue, pathDict):
+    ...
+def downloadPic(self, picDict):
+    ...
+def run(self):
+    while self.__class__.runFlag &amp;gt; 0:
+        while not self.queue.empty():
+            picDict = self.queue.get()
+            self.downloadPic(picDict)
+        time.sleep(1)                                                  #如果图片URL队列为空，则等待一秒
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;2.2 线程安全队列&lt;/h3&gt;
+
+&lt;p&gt;本文涉及到的两个队列&lt;code&gt;page_q&lt;/code&gt;和&lt;code&gt;pic_q&lt;/code&gt;，一个用来存取页面URL，另一个用来存取图片URL，两队列都面临着多线程同步存取的问题，而这则是所有的”生产者-消费者问题”必须解决的问题。&lt;/p&gt;
+
+&lt;p&gt;幸运的是，我们用的是Python！  &lt;/p&gt;
+
+&lt;p&gt;Python已经为我们提供了一个线程安全队列：&lt;a href=&quot;http://docs.python.org/2/library/queue.html&quot;&gt;Queue&lt;/a&gt;，它为多个”生产者-消费者”提供了安全同步队列。引用官方的一句话便是：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The &lt;code&gt;Queue&lt;/code&gt; module implements multi-producer, multi-consumer queues. It is especially useful in threaded programming when information must be exchanged safely between multiple threads.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;而且&lt;code&gt;Queue&lt;/code&gt;的创建、使用也极为轻便  &lt;br /&gt;
+创建&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import Queue
+queue = Queue.Queue()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;item_1 = queue.get()     # queue.get() =&amp;gt; 从队列中移除一个item并返回该item
+queue.put(item_2)        # queue.put() =&amp;gt; 往队列中添加一个item
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;对&lt;code&gt;Queue&lt;/code&gt;更高要求的操作与使用，请查看&lt;a href=&quot;http://docs.python.org/2/library/queue.html&quot;&gt;官方文档&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;html&quot;&gt;2.3 HTML内容提取&lt;/h3&gt;
+
+&lt;p&gt;该部分内容，其实是对类&lt;code&gt;QiubaiReader&lt;/code&gt;中的&lt;code&gt;fetchContent(self, pageUrl)&lt;/code&gt;方法的解读。从HTML中获取内容时，我们需要借助第三方开源工具&lt;a href=&quot;http://www.crummy.com/software/BeautifulSoup/&quot;&gt;BeautifulSoup&lt;/a&gt;(看最下方应用程序信息)&lt;/p&gt;
+
+&lt;p&gt;为了便于升级改动，我们为类&lt;code&gt;QiubaiReader&lt;/code&gt;声明一个类成员变量&lt;code&gt;argsDict&lt;/code&gt;，用来统一糗事百科HTML页面源码中的一些关键性的标记及属性&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;argsDict = {
+        &#39;pageEncoding&#39;  : &#39;utf-8&#39;,                                 #糗百html的编码格式
+        &#39;dadClassAttr&#39;  : &#39;block untagged mb15 bs2&#39;,               #某条糗百整个大&amp;lt;div /&amp;gt;块的class属性
+        &#39;contClassAttr&#39; : &#39;content&#39;,                               #某条糗百的正文所在&amp;lt;div /&amp;gt;块的class属性
+        &#39;picClassAttr&#39;  : &#39;thumb&#39;,                                 #包含图片的&amp;lt;div /&amp;gt;块的class属性
+        &#39;voteClassAttr&#39; : &#39;bar&#39;,                                   #包含投票数的&amp;lt;div /&amp;gt;块的class属性
+        #包含糗百ID的那一行的id号前的前缀，例如：&#39;qiushi_tag_55611097&#39;
+        &#39;idLinePreStr&#39;  : &#39;qiushi_tag_&#39;,                           
+        #某条糗百只有点赞数超过该值，才进行收录。题目要求该值为5000，本人感觉偏高，故将其改成了2000
+        &#39;validCountNum&#39; : 2000,                                    
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;糗百每一个页面会包含20条糗百文章，读者可以&lt;a href=&quot;https://code.csdn.net/snippets/156535/master/qiubai_content/raw&quot;&gt;点此查看&lt;/a&gt;其中某条糗百文章的HTML源码及其标记结构。&lt;/p&gt;
+
+&lt;p&gt;我们会发现糗百文章的HTML标记结构如下（我们姑且把如下&lt;code&gt;&amp;lt;div /&amp;gt;&lt;/code&gt;块称作&lt;code&gt;文章的&amp;lt;div /&amp;gt;&lt;/code&gt;块吧）：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&quot;block untagged mb15 bs2&quot; id=&#39;qiushi_tag_idxxxxxx&#39;&amp;gt;
+    &amp;lt;div class=&quot;content&quot; title=&quot;2014-01-14 16:33:29&quot;&amp;gt;
+        糗百正文
+    &amp;lt;/div&amp;gt;
+    &amp;lt;!--除非文章配有图片，否则下面这个div不会出现--&amp;gt;
+    &amp;lt;div class=&quot;thumb&quot;&amp;gt;
+        &amp;lt;a href=&quot;/article/url...&quot; target=&quot;_blank&quot; onclick=&quot;some js&quot;&amp;gt;
+            &amp;lt;img src=&quot;http://the/pic/URL&quot; alt=&quot;图片描述&quot; /&amp;gt;
+        &amp;lt;/a&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+...
+一个页面中会有20个上述结构出现，也就是20条糗百文章
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以下的任务是，解析给定页面中的所有糗百文章，获取它们的点赞数、ID、正文以及图片链接（如果有的话）。这些解析工作需要借助&lt;code&gt;BeautifulSoup&lt;/code&gt;工具来完成。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;step 1:&lt;/strong&gt;我们首先引入&lt;code&gt;BeautifulSoup&lt;/code&gt;，并实例化一个可操作的HTML结构体：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import urllib2
+from bs4 import BeautifulSoup
+#获取给定页面pageURL的HTML源码
+pageCont = urllib2.urlopen(pageURL).read().decode(self.argsDict[&#39;pageEncoding&#39;])
+#将HTML源码传递给BeautifulSoup，实例化一个它的对象
+soup = BeautifulSoup(pageCont)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;step 2:&lt;/strong&gt; 获得给定页面的所有20个上述的&lt;code&gt;文章&amp;lt;div /&amp;gt;&lt;/code&gt;块&lt;/p&gt;
+
+&lt;p&gt;HTML是标记性语言，即使其中的&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;标记(tag)出现了很多次，而且分布杂乱，但我们可以根据一个&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;标记的多个属性来唯一确定某类/某个标记。
+例如&lt;code&gt;文章&amp;lt;div /&amp;gt;&lt;/code&gt;块的属性是：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&quot;block untagged mb15 bs2&quot; id=&#39;qiushi_tag_idxxxxxx&#39; &amp;gt;&amp;lt;/div&amp;gt;
+即：
+class = &quot;block untagged mb15 bs2&quot;
+id = &quot;qiushi_tag_idxxxxxx&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;文章&amp;lt;div /&amp;gt;&lt;/code&gt;块的&lt;code&gt;id&lt;/code&gt;属性不确定，但它的&lt;code&gt;class&lt;/code&gt;属性是确定且唯一的，我们就使用它的&lt;code&gt;class&lt;/code&gt;属性来找到这20个&lt;code&gt;文章&amp;lt;div /&amp;gt;&lt;/code&gt;块，并把它们保存到一个&lt;code&gt;list&lt;/code&gt;中&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;articles_div_list = soup.find_all(&#39;div&#39;, attrs={&#39;class&#39;: &#39;block untagged mb15 bs2&#39;})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;step 3:&lt;/strong&gt;接下来，我们遍历&lt;code&gt;articles_div_list&lt;/code&gt;，并从中解析出我们需要的糗百信息&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;for div_article in articles_div_list:
+    ...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;step 3.1 获得点赞数（&lt;a href=&quot;https://code.csdn.net/snippets/156687/master/div_mark_vote/raw&quot;&gt;点此查看&lt;/a&gt;点赞内容所在&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;标记）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;div_vote = div_article.find(&#39;div&#39;, attrs={&#39;class&#39;: &#39;bar&#39;})  #用给定的属性键值对（class=&#39;bar&#39;)查找某个标记（tag）
+upCount = div_vote.a.get_text()                      #通过 标记.字标记.get_text() 方法获得字标记的text
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;step 3.2 获得ID（&lt;a href=&quot;https://code.csdn.net/snippets/156695/master/div_mark_id/raw&quot;&gt;点此查看&lt;/a&gt;ID内容所在&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;标记）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;idLine = div_article.attrs[&#39;id&#39;]  #想要获得某个标记（tag）的属性，可以直接查字典一样，此处key为某个属性的name
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;step 3.3 获得正文（&lt;a href=&quot;https://code.csdn.net/snippets/156709/master/div_mark_cont/raw&quot;&gt;点此查看&lt;/a&gt;正文内容所在&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;标记）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;div_cont = div_article.find(&#39;div&#39;, attrs={&#39;class&#39;: &#39;content&#39;})
+qiubai_cont = div_cont.get_text()                #通过标记的 get_text() 方法获得该标记的text
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;step 3.4 获得配图的URL（如果有的话。&lt;a href=&quot;https://code.csdn.net/snippets/156693/master/div_mark_pic_url/raw&quot;&gt;点此查看&lt;/a&gt;配图URL内容所在&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;标记）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;div_pic = div_article.find(&#39;div&#39;, attrs={&#39;class&#39;: &#39;thumb&#39;})
+if div_pic:
+    #想要获得某个标记（tag）的子标记的子标记...的属性，可以直接通过 .(英文句点) 索引至该标记，然后像查字典一样查找即可
+    picURL = div_pic.a.img[&#39;src&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;2.4 存储内容&lt;/h3&gt;
+
+&lt;p&gt;因为糗百内容要存储到xml文档中，我们在这里还要使用Python自带的操作XML的包：&lt;code&gt;xml.etree.ElementTree&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;step 1：&lt;/strong&gt;我们首先创建一个用于存储糗百的xml文档：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;fo = open(&#39;qiubai.xml&#39;, &#39;w&#39;)
+fo.write(&#39;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;\n&amp;lt;ROOT&amp;gt;&amp;lt;/ROOT&amp;gt;&#39;)
+fo.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;此时的xml文件看起来应该是这个样子：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;
+&amp;lt;ROOT&amp;gt;
+&amp;lt;/ROOT&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;step 2：&lt;/strong&gt;给&lt;code&gt;qiubai.xml&lt;/code&gt;添加一条糗百内容&lt;/p&gt;
+
+&lt;p&gt;step 2.1：获得&lt;code&gt;qiubai.xml&lt;/code&gt;文档的根节点&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import xml.etree.ElementTree as ET
+tree = ET.parse(&#39;qiubai.xml&#39;)       #也可以给 parse() 传递文档路径
+root = tree.getroot()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;step 2.2：为根节点&lt;code&gt;root&lt;/code&gt;添加一个子节点&lt;code&gt;QiuBai&lt;/code&gt;，并设置该子节点的各个属性&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;qiubai = ET.SubElement(root, &#39;QiuBai&#39;)
+qiubai.set(&#39;id&#39;, &#39;idxxxxxx&#39;)
+qiubai.set(&#39;picURL&#39;, &#39;http://here/is/pic/url.jpg&#39;)
+qiubai.text = &#39;此处为糗百正文...&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;step 2.3：将添加了新内容的&lt;code&gt;root&lt;/code&gt;保存到文档&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tree = ET.ElementTree(root)
+tree.write(&#39;qiubai.xml&#39;, encoding=&#39;utf-8&#39;, xml_declaration=True)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;此时的xml文档看起来应该是这样子：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;
+&amp;lt;ROOT&amp;gt;
+    &amp;lt;QiuBai id=&#39;idxxxxxx&#39; picURL=&#39;http://here/is/pic/url.jpg&#39;&amp;gt;
+        此处为糗百正文...
+    &amp;lt;/QiuBai&amp;gt;
+&amp;lt;/ROOT&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注意事项：如果你使用的是UTF-8格式保存xml文档，那你需要注意：xml文档规范并不支持所有的UTF-8支持的字符，也就是说有些UTF-8支持的字符在xml文档中是不受支持的，如果你坚持写入，则在再次读取xml文档是会出错。&lt;/p&gt;
+
+&lt;p&gt;关于过滤xml不支持字符的内容，请参看源码 &lt;code&gt;QiubaiReader.py&lt;/code&gt; » &lt;code&gt;def replaceHellWord(text)&lt;/code&gt;方法&lt;/p&gt;
+
+&lt;h2 id=&quot;section-6&quot;&gt;3. 源代码&lt;/h2&gt;
+
+&lt;p&gt;到&lt;a href=&quot;https://github.com/HelloLyfing/Tiny_Projects/tree/master/WebSpider&quot;&gt;这里&lt;/a&gt;查看源码，或者直接&lt;a href=&quot;https://github.com/HelloLyfing/Tiny_Projects/raw/master/WebSpider/web_spider.tar&quot;&gt;点我&lt;/a&gt;下载源码。&lt;/p&gt;
+
+&lt;p&gt;应用程序信息：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;本程序在Window7平台下开发完成并测试通过；在CentOS 6.3下测试通过&lt;/li&gt;
+  &lt;li&gt;Python &lt;code&gt;2.7.5 [MSC v.1500 64 bit (AMD64)]&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;xml.etree.ElementTree &lt;code&gt;1.3.0&lt;/code&gt; &lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;键入 &lt;code&gt;import xml.etree.ElementTree&lt;/code&gt;； &lt;code&gt;ElementTree.VERSION&lt;/code&gt; 查看&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Beautiful Soup &lt;code&gt;4.3.2&lt;/code&gt;                           &lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;键入 &lt;code&gt;import bs4&lt;/code&gt;；&lt;code&gt;bs4.__version__&lt;/code&gt; &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.crummy.com/software/BeautifulSoup/bs4/download/4.3/&quot;&gt;bs4下载链接&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2014/01/12/Python-a-web-spider-for-fetching-qiubai-articles.html&quot;&gt;Python爬虫 实现从糗百上多线程抓取内容&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on January 12, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[关于Python的编码、乱码以及Unicode的一些研究]]></title>
-  <link>http://localhost:4000/blog/study-on-python-unicode-encoding-stuff.html</link>
-  <id>http://localhost:4000/blog/study-on-python-unicode-encoding-stuff</id>
+  <link>http://localhost:4000/2014/01/09/study-on-python-unicode-encoding-stuff.html</link>
+  <id>http://localhost:4000/2014/01/09/study-on-python-unicode-encoding-stuff</id>
   <published>2014-01-09T00:00:00+08:00</published>
   <updated>2014-01-09T00:00:00+08:00</updated>
   <author>
@@ -46,7 +592,7 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;em&gt;如果源代码没有声明编码格式，则Python在语法校验期间(compilation)使用默认的ASCII编码&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;&lt;em&gt;如果源代码没有声明编码格式，但却在源码中使用了非ASCII字符(Non-ASCII character)，则程序在编译期间抛出&lt;code&gt;SyntaxError&lt;/code&gt;异常，编译不被通过&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;*如果源代码声明了Python不支持的编码格式，则程序将在编译期间抛出异常&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;如果源代码声明了Python不支持的编码格式，则程序将在编译期间抛出异常&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;em&gt;源代码文件编码的声明&lt;/em&gt;&lt;/p&gt;
 
@@ -197,7 +743,7 @@ u&#39;\u6211\u662f\u5927\u574f\u86cb&#39;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;strtypeunicodetype&quot;&gt;3.3 如何将&lt;code&gt;str&lt;/code&gt;type转换成&lt;code&gt;Unicode&lt;/code&gt;type&lt;/h4&gt;
+&lt;h4 id=&quot;str-typeunicode-type&quot;&gt;3.3 如何将&lt;code&gt;str&lt;/code&gt; type转换成&lt;code&gt;Unicode&lt;/code&gt; type&lt;/h4&gt;
 
 &lt;p&gt;这是本节最开始提出的那个问题：如何将&lt;code&gt;str&lt;/code&gt;类型的字符串&lt;code&gt;str1&lt;/code&gt;和&lt;code&gt;str2&lt;/code&gt;转换成&lt;code&gt;Unicode&lt;/code&gt;类型？
 这也是下节要谈论的编码与解码的问题。&lt;/p&gt;
@@ -229,14 +775,14 @@ u&#39;\u6211\u662f\u5927\u574f\u86cb&#39;
 &lt;/ul&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/study-on-python-unicode-encoding-stuff.html&quot;&gt;关于Python的编码、乱码以及Unicode的一些研究&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on January 09, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2014/01/09/study-on-python-unicode-encoding-stuff.html&quot;&gt;关于Python的编码、乱码以及Unicode的一些研究&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on January 09, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Labwindows.Tutorial.Chapter 3.Part2]]></title>
-  <link>http://localhost:4000/blog/Labwindows-tutorial-chapter3-part2.html</link>
-  <id>http://localhost:4000/blog/Labwindows-tutorial-chapter3-part2</id>
+  <link>http://localhost:4000/2013/10/20/Labwindows-tutorial-chapter3-part2.html</link>
+  <id>http://localhost:4000/2013/10/20/Labwindows-tutorial-chapter3-part2</id>
   <published>2013-10-20T00:00:00+08:00</published>
   <updated>2013-10-20T00:00:00+08:00</updated>
   <author>
@@ -614,14 +1160,14 @@ InstallCtrlCallback(pHandle, quitBtn, ButtonsResponse, 0);
 &lt;p&gt;程序源码&lt;a href=&quot;https://github.com/HelloLyfing/LabWindows-CVI-Tutorial-For-Newbie-By.Lyfing&quot;&gt;托管在Github&lt;/a&gt;上，请自行前往查看。&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Labwindows-tutorial-chapter3-part2.html&quot;&gt;Labwindows.Tutorial.Chapter 3.Part2&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on October 20, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2013/10/20/Labwindows-tutorial-chapter3-part2.html&quot;&gt;Labwindows.Tutorial.Chapter 3.Part2&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on October 20, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Labwindows.Tutorial.Chapter 3.Part1]]></title>
-  <link>http://localhost:4000/blog/Labwindows-tutorial-chapter3-part1.html</link>
-  <id>http://localhost:4000/blog/Labwindows-tutorial-chapter3-part1</id>
+  <link>http://localhost:4000/2013/10/10/Labwindows-tutorial-chapter3-part1.html</link>
+  <id>http://localhost:4000/2013/10/10/Labwindows-tutorial-chapter3-part1</id>
   <published>2013-10-10T00:00:00+08:00</published>
   <updated>2013-10-10T00:00:00+08:00</updated>
   <author>
@@ -787,14 +1333,14 @@ return 0;
 &lt;p&gt;第5部分内容将在&lt;a href=&quot;http://lanfengming.com/blog/Labwindows-tutorial-chapter3-part2.html/&quot;&gt;下一篇中继续&lt;/a&gt;&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Labwindows-tutorial-chapter3-part1.html&quot;&gt;Labwindows.Tutorial.Chapter 3.Part1&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on October 10, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2013/10/10/Labwindows-tutorial-chapter3-part1.html&quot;&gt;Labwindows.Tutorial.Chapter 3.Part1&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on October 10, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[在线切割剪辑MP3手机铃声利器！]]></title>
-  <link>http://localhost:4000/blog/make-your-own-phone-ringstones.html</link>
-  <id>http://localhost:4000/blog/make-your-own-phone-ringstones</id>
+  <link>http://localhost:4000/2013/07/18/make-your-own-phone-ringstones.html</link>
+  <id>http://localhost:4000/2013/07/18/make-your-own-phone-ringstones</id>
   <published>2013-07-18T05:00:00+08:00</published>
   <updated>2013-07-18T05:00:00+08:00</updated>
   <author>
@@ -876,14 +1422,14 @@ return 0;
 &lt;p&gt;原文件参数：&lt;code&gt; MP3 ; 320kbps ; 44100Hz ; 3:14 &lt;/code&gt;  &lt;br /&gt;
 剪切后参数：&lt;code&gt; MP3 ; 320kbps ; 44100Hz ; 0:33 ; 有渐入、渐出效果 &lt;/code&gt;&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/make-your-own-phone-ringstones.html&quot;&gt;在线切割剪辑MP3手机铃声利器！&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on July 18, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2013/07/18/make-your-own-phone-ringstones.html&quot;&gt;在线切割剪辑MP3手机铃声利器！&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on July 18, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Labwindows.Tutorial.Chapter 2]]></title>
-  <link>http://localhost:4000/blog/Labwindows-tutorial-chapter2.html</link>
-  <id>http://localhost:4000/blog/Labwindows-tutorial-chapter2</id>
+  <link>http://localhost:4000/2013/07/10/Labwindows-tutorial-chapter2.html</link>
+  <id>http://localhost:4000/2013/07/10/Labwindows-tutorial-chapter2</id>
   <updated>2013-07-18 5:00T00:00:00-00:00</updated>
   <published>2013-07-10T00:00:00+08:00</published>
   
@@ -899,10 +1445,11 @@ return 0;
   &lt;li&gt;点下&lt;strong&gt;按钮2&lt;/strong&gt;，Graph控件显示Cosine波形。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;效果如下图所示：&lt;br /&gt;
-&lt;img src=&quot;http://ww3.sinaimg.cn/large/6480dca9tw1e66pudgy7aj20ej0l6abp.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;效果如下图所示：  &lt;/p&gt;
 
 &lt;!--more--&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/6480dca9tw1e66pudgy7aj20ej0l6abp.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -1108,14 +1655,14 @@ int CVICALLBACK quitSystem (int panel, int control, int event,
 &lt;p&gt;程序源码&lt;a href=&quot;https://github.com/HelloLyfing/LabWindows-CVI-Tutorial-For-Newbie-By.Lyfing&quot;&gt;托管在Github&lt;/a&gt;上，请自行前往查看。&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Labwindows-tutorial-chapter2.html&quot;&gt;Labwindows.Tutorial.Chapter 2&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on July 10, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2013/07/10/Labwindows-tutorial-chapter2.html&quot;&gt;Labwindows.Tutorial.Chapter 2&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on July 10, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Labwindows.Tutorial.Chapter 1]]></title>
-  <link>http://localhost:4000/blog/Labwindows-tutorial-chapter1.html</link>
-  <id>http://localhost:4000/blog/Labwindows-tutorial-chapter1</id>
+  <link>http://localhost:4000/2013/06/28/Labwindows-tutorial-chapter1.html</link>
+  <id>http://localhost:4000/2013/06/28/Labwindows-tutorial-chapter1</id>
   <updated>2013-06-28T00:00:00-00:00</updated>
   <published>2013-06-28T00:00:00+08:00</published>
   
@@ -1210,7 +1757,7 @@ int CVICALLBACK quitSystem (int panel, int control, int event,
 &lt;p&gt;程序源码&lt;a href=&quot;https://github.com/HelloLyfing/LabWindows-CVI-Tutorial-For-Newbie-By.Lyfing&quot;&gt;托管在Github&lt;/a&gt;上，请自行前往查看。&lt;/p&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/Labwindows-tutorial-chapter1.html&quot;&gt;Labwindows.Tutorial.Chapter 1&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on June 28, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2013/06/28/Labwindows-tutorial-chapter1.html&quot;&gt;Labwindows.Tutorial.Chapter 1&lt;/a&gt; was originally published by Lyfing.Loo at &lt;a href=&quot;http://localhost:4000&quot;&gt;Lyfing.Loo's Blog&lt;/a&gt; on June 28, 2013.&lt;/p&gt;</content>
 </entry>
 
 </feed>

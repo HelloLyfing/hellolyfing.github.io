@@ -6,27 +6,35 @@
     
     
     <url>
-        <loc>http://localhost:4000/blog/study-on-python-unicode-encoding-stuff.html</loc>
+        <loc>http://localhost:4000/2014/06/28/upload-browser-cached-image-by-using-xhr.html</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/blog/Labwindows-tutorial-chapter3-part2.html</loc>
+        <loc>http://localhost:4000/2014/01/12/Python-a-web-spider-for-fetching-qiubai-articles.html</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/blog/Labwindows-tutorial-chapter3-part1.html</loc>
+        <loc>http://localhost:4000/2014/01/09/study-on-python-unicode-encoding-stuff.html</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/blog/make-your-own-phone-ringstones.html</loc>
+        <loc>http://localhost:4000/2013/10/20/Labwindows-tutorial-chapter3-part2.html</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/blog/Labwindows-tutorial-chapter2.html</loc>
+        <loc>http://localhost:4000/2013/10/10/Labwindows-tutorial-chapter3-part1.html</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/blog/Labwindows-tutorial-chapter1.html</loc>
+        <loc>http://localhost:4000/2013/07/18/make-your-own-phone-ringstones.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/2013/07/10/Labwindows-tutorial-chapter2.html</loc>
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/2013/06/28/Labwindows-tutorial-chapter1.html</loc>
     </url>
     
 </urlset>
