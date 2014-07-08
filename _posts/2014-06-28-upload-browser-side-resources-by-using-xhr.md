@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "通过XHR上传浏览器缓存的图片资源"
+title: "通过XHR上传浏览器端的文件资源"
 comments: true
 tags: [Tech, Javascript, Chrome-Extension]
-description: "通过发起XHR请求的方式获取浏览器缓存的图片资源"
+description: "通过发起XHR请求的方式获取浏览器端的文件资源"
 ---
 
 最近在为公司开发一个[海淘的Chrome扩展][haitaobao-link]，扩展的需求之一是：获取当前页面中的某张图片，并将其上传至公司的服务器保存。
@@ -13,14 +13,14 @@ description: "通过发起XHR请求的方式获取浏览器缓存的图片资源
  - 获取图片的URL，然后把URL提交给服务器，让服务器进行下载操作
  - 如果服务器访问图片资源时被拒绝，就需要让用户手动下载该图片，然后手动上传至我们的服务器
 
-不过在后来的实践中发现，其实可以直接通过发起[XHR][xhr-link]请求的方式读取图片的缓存，然后将该缓存数据(图片资源)上传至服务器。
+不过在后来的实践中发现，其实可以直接通过**发起[XHR][xhr-link]请求并指定其返回类型**的方式来获取浏览器返回的raw数据(`Blob`)，然后将这些raw数据当作文件上传至服务器。
 
 <!--more-->
 
-*在这里首先要说明一点是的：这种将缓存数据当作文件上传的思路，通常是需要[跨站请求资源][cross-site-access](Cross-site HTTP requests)的，所以除非是在允许跨站请求的运行环境中（如Chrome扩展内）运行这些JS，否则这种思路几乎不可用*
+*在这里首先要说明一点是的：这种将XHR的响应内容当作文件上传的思路，通常是需要[跨站请求资源][cross-site-access](Cross-site HTTP requests)的，所以除非是在允许跨站请求的运行环境中（如Chrome扩展内）运行这些JS，否则这种思路几乎不可用*
 
 ###思路
-这种直接通过发起`XHR`请求来获取图片资源的思路，最先来自这里[upload-a-file-in-a-google-chrome-extension][sf-link]。基本思路是：浏览器对页面渲染时下载的文件(`image`、`css`、`js`)都有缓存，此时可以手动发起一个对页面中某个文件的`XHR`请求，浏览器会直接从本地缓存中取到数据(上述文件的[`Cache-Control`][cache-control] header一般都标识为可缓存)作为响应，我们则可以把这些数据当作"文件"来上传至服务器。
+这种上传客户端资源的解决方案最先来自这里[upload-a-file-in-a-google-chrome-extension][sf-link]。基本思路是：当使用`XHR`向某个URL发起请求时（如请求某个`image`、`css`、`js`文件资源）我们可以设定它的返回类型（`responseType`）；当我们把返回类型设置为`blob`时，我们便可以直接把返回的raw数据当作"文件"来上传到服务器，以此来实现客户端访问资源的上传。
 
 ----------
 
@@ -69,14 +69,14 @@ function getIMGRes(){
     var formData = new FormData();
     // 获取文件类型(例如: blob.type = 'image/png')
     var fileType = blob.type.split('/')[1]; 
-    // 
+    // 将返回的blob对象直接当作文件上传，并设置上传文件名为 test001.fileType
     formData.append('file', blob, 'test001.' + fileType);
     
     var xhr2 = new XMLHttpRequest();
     
     xhr2.upload.onprogress = function(event){
         ...
-        $msg2.html('正在上传 ( ' + percent + '% )');
+        $msg.html('正在上传 ( ' + percent + '% )');
     }
     
     xhr2.onload = function(){
