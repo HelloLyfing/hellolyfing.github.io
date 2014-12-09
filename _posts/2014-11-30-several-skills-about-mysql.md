@@ -8,7 +8,7 @@ description: "MySQL技能二三事"
 
 # 其一: int(10)意欲何为
 
-MySQL的Column-Type中的`int`一类，不像其他Type如`char`、`varchar`是根据最大size来预置存储空间的，`int`这一类的Column-Type所指定的size是作为显示宽度来存储的(涉及到size不足前端补零zerofill），它们所占用的实际空间大小是[固定][int-type-doc]的。所以想通过`int(10)`来节省存储空间的想法是无效的。
+MySQL的Column-Type中的**int**一类，不像其他Type如**char**、**varchar**是根据最大size来预置存储空间的，**int**这一类的Column-Type所指定的size是作为显示宽度来存储的(涉及到size不足前端补零的场景-zerofill），它们所占用的实际空间大小是[固定][int-type-doc]的。所以想通过`int(10)`来节省存储空间的想法是无效的。
 
 # 其二: index的prefix length
 
@@ -19,7 +19,6 @@ MySQL的Column-Type中的`int`一类，不像其他Type如`char`、`varchar`是�
 <!--more-->
 
 当时的建表语句是这样的（其实项目用的是SQLAlchemy的ORM-Model，这里只是复现一下当时的情况）
-
 
 ```
 CREATE TABLE `urls` (
@@ -60,22 +59,28 @@ insert into urls (urlcmpr) values
 不出所料，报错了
 
 ```
-ERROR 1062 (23000): Duplicate entry '0h^/Mucinex-Sinus-Max-Pressure-Caplets-Count/dp/B009XQHSUC/ref-i' for key 'idx_urlcmpr'
+ERROR 1062 (23000): 
+Duplicate entry '0h^/Mucinex-Sinus-Max-Pressure-Caplets-Count/dp/B009XQHSUC/ref-i'
+for key 'idx_urlcmpr'
 ```
 
 这个原本也没什么，但由于下方已删除的那部分描述的缘由，我开始关注错误报告所反映的一个信息：`urlcmpr`栏是255字符的，但据此建立的`unique-key`却只有64字符的长度，这是怎么回事？
 
-~~这里建唯一索引的目的是为了在重复误插入的时候被拒绝并报错，结果在程序准备正常插入的时候，MySQL也开始拒绝并报错了。但是事后当我试图重现这个问题时却发现，本段所描述的问题是不存在的！~~
+其实后来才发现这个只是显示了*唯一Key*的前64个字符而已，其实*唯一Key*并不是只有64个字符。
 
-于是就开始查资料了，查着查着找到了[官方文档][index-prefixes-doc]里的这样一段话（略有删减）：
+<s>这里建唯一索引的目的是为了在重复误插入的时候被拒绝并报错，结果在程序准备正常插入的时候，MySQL也开始拒绝并报错了。但是事后当我试图重现这个问题时却发现，本段所描述的问题是不存在的！</s>
+
+总之由于上面的一些误解（经过一步步查资料又自己推翻）就开始查资料了，查着查着找到了[官方文档][index-prefixes-doc]里的这样一段话（略有删减）：
 
  > Indexes can be created that use only the leading part of column values, using col_name(length) syntax to specify an **index prefix** length. Prefix lengths are given in characters... That is, index entries consist of the first length characters of each column value for CHAR, VARCHAR, and TEXT columns, and the first length bytes of each column value for BINARY, VARBINARY, and BLOB columns... using column prefixes for indexes can make the index file much smaller, which could save a lot of disk space and might also speed up INSERT operations.
 
-基本就是在说：chars类的column，在建立索引的时候会有`index prefix length`一说，也就是只取本栏开头的若干个字符做索引（而不是本栏全部内容），这样做的好处是可以节省存储空间。
+基本就是在说：chars类的column，在建立索引的时候会有**index prefix length**一说，也就是只取本栏开头的若干个字符做索引（而不是本栏全部内容），这样做的好处是可以节省存储空间。
 
-虽然官方文档中没有说到为什么当一栏内容过大而且你没有设定它的index-prefix-length时，它的这个值会被设为64，但目前来看事实似乎就是这样的。
+<s>虽然官方文档中没有说到为什么当一栏内容过大而且你没有设定它的index-prefix-length时，它的这个值会被设为64，但目前来看事实似乎就是这样的。</s>
 
-如果是存储较长字符串(比如255 chars)的唯一索引，它的`prefix-length`该怎么定制？用上面的例子做示例：`UNIQUE KEY 'idx_urlcmpr' ('urlcmpr'(100))`，即在想要建立索引的栏名后面的括号中指定prefix-length。
+如果是存储较长字符串(比如255 chars)的唯一索引，它的`prefix-length`该怎么定制（从节省存储空间的角度看）？用上面的例子做示例：  
+`UNIQUE KEY 'idx_urlcmpr' ('urlcmpr'(100))`  
+即在想要建立索引的栏名后面的括号中指定prefix-length。
 
 我们再来试试看
 
@@ -85,16 +90,25 @@ CREATE TABLE `urls2` (
   `urlcmpr` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_urlcmpr` (`urlcmpr`(100))
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ```
 
 插入一段字符个数为100的string:   
-`0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZab OK`
+
+```
+0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZab
+
+Insert OK
+```
 
 在上一段string尾部加一个字符`c`(101个字符长度)再试试：  
-`0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabc ERROR 1062 (23000): Duplicate entry`
 
-无法插入了。上面的两步说明我们设定的唯一索引的`prefix-length`成功了，不过它也反映出一个问题：如果你要存储的内容在前半部分重复度很高，那么你的唯一索引可能会因为`prefix-length`过小而导致无法插入(如果两个string在开头的`prefix-length`以内是相同的)。因为确实已经遇到无法插入的问题了(500万+的URL），考虑了一下后我把Unique的限制给去掉了，改用普通Key: `KEY 'idx_urlcmpr' ('urlcmpr'(100))`，是否重复则交由程序来判断。
+```
+0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabc 
+ERROR 1062 (23000): Duplicate entry
+```
+
+无法插入了。上面的两步说明我们设定的唯一索引的`prefix-length`成功了，不过它也反映出一个问题：如果你要存储的内容在前半部分重复度很高，那么你的唯一索引可能会因为`prefix-length`过小而导致无法插入(如果两个string在开头的`prefix-length`以内是相同的)。因为确实已经遇到无法插入的问题了(500万+的URL），考虑了一下后我把*UniqueKey*的限制给去掉了，改用普通Key: `KEY 'idx_urlcmpr' ('urlcmpr'(100))`，是否重复则交由程序来判断，一来可以节省存储空间（Key也是要被存储记录的，不宜太长），二来防止将来有高度相似的URL无法插入。
 
 # 其三：MySQL搜索校验时的Case -Sensitive问题
 
@@ -169,7 +183,7 @@ mysql> SELECT * FROM uni_code WHERE code COLLATE utf8_bin = 'foobar';
 
 在上面给出的[官方文档][charset-general-doc]已经很好的解释了`Collate`的作用，我在这里再赘述一二：
 
-数据库中有字符集**charset**和规则集**collate**一说，字符集自不必多说。规则集是**在给定字符集上进行字符对比的规则**，比如大小写敏感否 (CI or CS)、`äöü`与`aou`对等否等规则。
+数据库中有字符集**charset**和规则集**collate**一说，字符集自不必多说。规则集是**在给定字符集上进行字符对比的规则**，比如大小写敏感否 (CI or CS)、`äöü`与`aou`对等否等规则，每个字符集都有默认规则集。
 
 上面的`... WHERE code COLLATE utf8_bin = ...`就是指定了字符对比的规则集。这个规则集是大小写敏感的，它会覆盖默认的规则集。是的，MySQL中的每一个单元(Column、Table、Database)都可以有自己的字符集和规则集，我们通常只是指定字符集，MySQL则帮我们指定了该字符集对应的默认[规则集][show-charset-doc]。
 
