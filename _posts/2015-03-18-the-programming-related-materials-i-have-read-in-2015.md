@@ -45,4 +45,4 @@ share: true
 
 时间：06.12  
 资料：《Inside NGINX: How We Designed for Performance & Scale》| by OWEN GARRETT | http://nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/    
-评论：很多架构解读型的文章，最生动和令人难忘的，大概都属随文展示出来的架构图了。这篇文章里列出了好几张非常不错的架构、流程图。它在拿自己的non-blocking设计和其他相对blocking的设计作对比时，举了个非常形象的例子：Web服务器和Web客户端的通信就像下棋一样，只不过Web服务器通常是一对多负责和很多客户端下棋。服务器可以为每个客户端分配一个棋手（blocking，每个线程/进程负责一个客户端），也可以只用一个棋手来同时跟若干个客户端轮询着下棋（non-blocking，现实中有真人1 vs 360同时进行的棋局哦http://t.cn/R2joHP0）。
+评论：很多架构解读型的文章，最生动和令人难忘的，大概都属随文展示出来的架构图了。这篇文章里列出了好几张非常不错的架构、流程图。它在拿自己的non-blocking设计和其他相对blocking的设计作对比时，举了个非常形象的例子：Web服务器和Web客户端的通信就像下棋一样，只不过Web服务器通常是一对多负责和很多客户端下棋。服务器可以为每个客户端分配一个棋手（blocking，每个线程/进程负责一个客户端），也可以只用一个棋手来同时跟若干个客户端轮询着下棋（non-blocking，现实中有真人1 vs 360同时进行的棋局哦http://t.cn/R2joHP0 ）。
