@@ -46,3 +46,7 @@ share: true
 时间：06.12  
 资料：《Inside NGINX: How We Designed for Performance & Scale》| by OWEN GARRETT | http://nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/    
 评论：很多架构解读型的文章，最生动和令人难忘的，大概都属随文展示出来的架构图了。这篇文章里列出了好几张非常不错的架构、流程图。它在拿自己的non-blocking设计和其他相对blocking的设计作对比时，举了个非常形象的例子：Web服务器和Web客户端的通信就像下棋一样，只不过Web服务器通常是一对多负责和很多客户端下棋。服务器可以为每个客户端分配一个棋手（blocking，每个线程/进程负责一个客户端），也可以只用一个棋手来同时跟若干个客户端轮询着下棋（non-blocking，现实中有真人1 vs 360同时进行的棋局哦http://t.cn/R2joHP0 ）。
+
+时间：06.25    
+资料：《Thread Pools in NGINX Boost Performance 9x!》 | by VALENTIN BARTENEV | http://nginx.com/blog/thread-pools-boost-performance-9x/    
+评论：整篇文章其实只是一个结果报告，Event-Driven-Handling，但是handle某些event时操作确实又是blocking的，怎么办？引入线程池。线程池一直都是用的各类语言自带的(java, python)，具体实现并不是很清楚，计划有时间了看一些线程池的实现的资料。
