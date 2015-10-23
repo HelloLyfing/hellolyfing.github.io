@@ -50,3 +50,7 @@ share: true
 时间：06.25    
 资料：《Thread Pools in NGINX Boost Performance 9x!》 | by VALENTIN BARTENEV | http://nginx.com/blog/thread-pools-boost-performance-9x/    
 评论：整篇文章其实只是一个结果报告，Event-Driven-Handling，但是handle某些event时操作确实又是blocking的，怎么办？引入线程池。线程池一直都是用的各类语言自带的(java, python)，具体实现并不是很清楚，计划有时间了看一些线程池的实现的资料。
+
+时间：10.23  
+资料：《Visual Representation of SQL Joins》 | by C.L. Moffatt | http://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins  
+评论：关系型数据库Join表的方式有哪些，每种join的使用结果如何？在对Mysql有了一定的业务层的使用经验后，再看这篇文章，觉得人家写的真是简洁而全面。
