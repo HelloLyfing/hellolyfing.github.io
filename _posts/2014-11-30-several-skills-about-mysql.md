@@ -263,6 +263,39 @@ CREATE TABLE `uni_code` (
 
 再说说线上改表的问题。上面那张表也就3行数据，改动一栏尚且花了1.44s的时间，这要在500万+的数据表上做改动得花去多长时间，假如还要考虑线上表的访问、新增、更新请求就更需谨慎了。这里推荐一个[在线改表工具][alter-t-online]，好用的很。当时是暂停服务进行的改动整张表的collate属性的操作，有两栏是varchar的(size分别是10、255)，500万+的数据十几分钟就搞定。
 
+# 其三: Update语句并不一定真的会"Update"
+
+
+有一张如下的表：
+```
+mysql> describe big_msg;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| key   | varchar(20) | YES  | MUL | NULL    |       |
+| val   | text        | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+```
+
+插入一行：
+```
+mysql> INSERT INTO big_msg (`key`, `val`) VALUES ("test-key", "test-val");
+Query OK, 1 row affected (0.00 sec)
+```
+
+查看：
+```
+mysql> UPDATE big_msg SET `val`="test-val" WHERE `key`="test-key";
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+```
+
+注意这里的`0 rows affected (0.00 sec)`，也就是说这里并没有更新本行。这个在普通场景下并无大碍，不过当你使用的类似`PHP PDO`面向对象的数据库类库，而且你的`Statement`又依赖于`row affected`这个返回值时（例如PHP-PDO的`PDOStatement::rowCount ( void )`），这里就需要尤其注意一下了，**如果你的更新值和原有值相同，则本次更新会被忽略, 返回值`affected rows`将为0**。看官方文档中的说明：
+
+> If you set a column to the value it currently has, MySQL notices this and does not update it.
+
+
 [int-type-doc]: http://dev.mysql.com/doc/refman/5.1/en/integer-types.html
 [index-prefixes-doc]: http://dev.mysql.com/doc/refman/5.1/en/create-index.html
 [my-62hex-link]: https://github.com/HelloLyfing/tiny-works/blob/master/HexConverter/HexCvter.py
