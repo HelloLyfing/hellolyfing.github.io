@@ -45,14 +45,14 @@ bing_verify:
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Asia/Shanghai
 future:      true
-pygments:    true
 markdown:    kramdown
+highlighter: rouge
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink:   date
 
 # Amount of post to show on home page
-paginate: 8
+paginate: 10
 
 kramdown:
   input: GFM

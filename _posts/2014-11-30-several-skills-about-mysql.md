@@ -267,6 +267,7 @@ CREATE TABLE `uni_code` (
 
 
 有一张如下的表：
+
 ```
 mysql> describe big_msg;
 +-------+-------------+------+-----+---------+-------+
@@ -279,12 +280,14 @@ mysql> describe big_msg;
 ```
 
 插入一行：
+
 ```
 mysql> INSERT INTO big_msg (`key`, `val`) VALUES ("test-key", "test-val");
 Query OK, 1 row affected (0.00 sec)
 ```
 
 查看：
+
 ```
 mysql> UPDATE big_msg SET `val`="test-val" WHERE `key`="test-key";
 Query OK, 0 rows affected (0.00 sec)
