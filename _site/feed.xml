@@ -1,0 +1,1803 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-03-24T15:56:16+08:00</updated><id>http://localhost:4000/</id><title type="html">Lyfing.Loo的个人博客</title><subtitle></subtitle><entry><title type="html">写在离职季，记录我的第一份编程工作</title><link href="http://localhost:4000/2015/06/28/what-i-have-learned-from-this-job-now.html" rel="alternate" type="text/html" title="写在离职季，记录我的第一份编程工作" /><published>2015-06-28T00:00:00+08:00</published><updated>2015-06-28T00:00:00+08:00</updated><id>http://localhost:4000/2015/06/28/what-i-have-learned-from-this-job-now</id><content type="html" xml:base="http://localhost:4000/2015/06/28/what-i-have-learned-from-this-job-now.html">&lt;h2 id=&quot;一只编程菜鸟只为找一份编程的工作&quot;&gt;一只编程菜鸟，只为找一份编程的工作&lt;/h2&gt;
+&lt;p&gt;13年7月份毕业，听从家里人的安排，去了本省的一家国企工作，直接被派去到东北的项目基地实习。因为会和技术老外讲英语，还和第三方外包人员一起合作调试好了他们承接的电气化自动排水项目的程序，基地领导青睐有加，想把我留在那里。我考虑了一下拒绝了。等工作到12月份的时候，基本已经确定，这份工作不是我想要的。遂瞒着家里人和领导请了一个月的病假，从东北坐了33个小时的火车来到江南，杭州。当时已是冬季，但下火车后仍然觉得“春风拂面”，比起东北让人冻得骨头疼的冷，杭州的天气温和到简直像是春天。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;投靠到朋友那里，开始了投简历、找工作的经历。因为大三才开始自学编程，基础不牢，项目经验少得可怜。找了快一个月的时间，却只有零星的几次线上交流、笔试的机会，offer始终无果。眼看着一个月的假就要耗完，马上就要春节了，工作依然没有着落，心里开始灰心。直到在准备离开杭州的前两天，才终于有了一次面试的机会，这就是目前的这份工作的起点。这是一家小公司，做海外代购的，同时也在做商品聚合平台。聊了一个多小时，人家觉得还不错，遂口头答应了offer。于是终于在离开杭州的那天，收到了这家公司的正式offer。这个offer就像一根救命稻草一般，没有经历过之前的绝望，就根本体会不到这个offer带来的激动和心安：如果找不到工作，就只能回原来的单位上班了，而当初是做了死也要死外边的打算的。&lt;/p&gt;
+
+&lt;p&gt;因为这是收到的唯一一个offer，所以在回去后的第三天就接受了这份工作。所幸可以安安心心地过一个年，年后去上班。&lt;/p&gt;
+
+&lt;h2 id=&quot;初入职场菜鸟快快长大&quot;&gt;初入职场，菜鸟快快长大&lt;/h2&gt;
+&lt;p&gt;年后2月份来上班。最开始的工作只是很基础的用PHP索取数据渲染至HTML并输出的过程，还要经常使用Javascript完成前端动态交互。PHP和Javascript之前都没怎么接触过，所以需要一步步学习。&lt;/p&gt;
+
+&lt;p&gt;其实只要使用过函数式编程的语言（如C）便不难发现，PHP语言其实很好入门和进阶。但是Javascript则完全是不一样的逻辑，因为是EventDriven模式的，有着层层的回调和scope，而且代码执行流程也不是从上到下式的。所以在刚开始接触、使用JS的时候一定会遇到奇怪无比的坑。不过当你最终从坑里爬出来的时候，整个世界便又是另一番景象了。在这个过程中花时间学习和阅读Javascript相关的内容和资料的时间比正牌的后端PHP语言还要多，其实刚开始会有疑问，PHP毕竟是热门的后端语言，而JS只是很小众的前端交互助手而已，值得这样投入时间吗？在后来的工作中，以及nodejs火热起来之后我发现这些投入还是非常值得的，因为JS真的是我接触的第一个可以利用客户端的计算资源的语言，因为你用JS写好一个应用之后，剩余的运算执行是在客户端完成的，它使用的完全是客户端的计算资源！&lt;/p&gt;
+
+&lt;p&gt;现在回想一下，在编程工作起步的时候，最对的，也最受益无穷的选择便是坚持使用、查看英文资料。这真的是一个一本万利的事情。当时访问最多的编程问答网站就是Stackoverflow了。也许对一个有一定积累的人来说SO并没有多少更高的价值，但对于像我这样的菜鸟来说，SO简直就是高纯度的知识海洋。很多东西是对比着才能体会到其间的巨大差别的，当我总是查看英文的技术内容时，再回过头来偶尔看一下中文的问答或博客，简直如啖甘蔗：虽然看着内容很多，其实真正“香甜的甘蔗汁”只有那么一丁点，其余大部分全是废渣。&lt;/p&gt;
+
+&lt;p&gt;因为工作压力并不是很大，所以还利用晚上的时间参加了一门&lt;a href=&quot;http://blog.lyfing.co/2014/07/06/using-js-to-build-a-spaceship-floating-in-the-outer-space.html&quot;&gt;Python公开课&lt;/a&gt;的学习，一来可以练习英语（全英语视、听、作业），二来可以在学习编写小游戏的同时练习Python语言。就这样在持续学习了几个月后，自己在Python方面的实践经验也开始多起来。事实证明，很多看似无用、却由兴趣驱使着去做的事情，往往在后来可以大有所用，此事待后面详述。&lt;/p&gt;
+
+&lt;p&gt;日子就这样平淡着过去，转眼已是立夏。这时候公司开始想要做一款浏览器插件(Extension)，主要用来快速采集用户HTML中的产品信息，具体内容为跟用户所见的HTML交互并在用户人工识别页面信息后，友好地提取其中的产品信息，最后以表单的形式提交至我方服务器。这个&lt;a href=&quot;https://chrome.google.com/webstore/detail/%E6%B5%B7%E6%B7%98%E5%AE%9D-v2%E9%9D%9E%E7%9D%BF%E8%8E%AB%E6%80%9D/obnbgneldjmmpgkbnnbiiinijmiclpaa?hl=zh-CN&quot;&gt;扩展&lt;/a&gt;在立项的时候是由另外一个同事负责开发的，但当时我意识到：1) 这是一个极好的了解浏览器API和练习用Javascript做App的机会；2) 那个同事的技术在我看来不足以做出我认为足够酷炫、友好的交互。我便先跟那位同事交流了我想独担这个任务的想法，取得他的同意后我向Boss主动请缨，Boss也欣然答应了。于是我接下了这个任务，开始了为期一个月的JSApp的编写工作。&lt;/p&gt;
+
+&lt;p&gt;JSApp的实现过程中最大的收获之一是接触到设计合理、博大精深的Chrome API。一直以来都以为Chrome只是快、好用而已，从未想到它竟然有如此多分层合理、设计合理的对外接口，简直就像是一个小型的操作系统。俗话说得好，经常使用设计良好的API，人生逼格也会静默升级呢(kidding)。也开始因为开发需要而接触到很多安全方面的issues，例如iFrame和它的父窗口之间只能发消息，但不能访问父窗口内的资源(window scope variables，like window.document)，例如&lt;a href=&quot;/2014/06/28/upload-browser-side-resources-by-using-xhr.html&quot;&gt;跨域访问&lt;/a&gt;限制（虽然ChromeExtension运行空间直接允许跨域访问），例如&lt;a href=&quot;https://developer.chrome.com/apps/contentSecurityPolicy&quot;&gt;content security policy&lt;/a&gt;等。有时候会被这些看似太过苛刻的限制弄得f&lt;strong&gt;&lt;em&gt;这f&lt;/em&gt;&lt;/strong&gt;那的，这时候便会去试着了解一下他们这么做的原因或者好处。一来有助于缓解心中的”仇恨”(kidding)，二来也可以多学些东西。&lt;/p&gt;
+
+&lt;p&gt;JSApp实现过程中另一大收获便是Javascript的应用水平大大提高，开始逐渐喜欢上这门语言（有时候甚至会选择用它来练习算法）。在慢慢熟悉了JS的scope和回调之后，开始将一个个业务逻辑封装到独立的scope中，然后使用&lt;code class=&quot;highlighter-rouge&quot;&gt;Publish/Subscribe&lt;/code&gt; Event&amp;amp;Msg-Driven的方式来连通各个scope，并驱动程序执行。这样做的好处有：1) 每个scope变得像是面向对象的类，封装了细节和实现; 2)因为使用消息驱动，所以代码解耦实现起来相对轻松。当然也是有坏处的，消息多了容易串，所以专门建立了一个manifest文件来快速查找、管理、记录这些消息/事件。&lt;/p&gt;
+
+&lt;p&gt;JSApp在完成发布后，Boss大加赞赏。对于一个刚开始只是做后端PHP开发的人员来说，出色地完成前端JSApp的实现也算是超出Boss的预期了。&lt;/p&gt;
+
+&lt;p&gt;Chrome扩展完成后，除了定期的维护升级外，基本就是日常的PHP端的HTML实现的工作分担一些，这样下来算是又闲下来了。我这人一旦闲下来就又开始不安分了。因为我们网站每天也有一万左右的访问量，所以有机会收集用户的请求信息。&lt;/p&gt;
+
+&lt;p&gt;网站后台当时有一个用户实时在线页面，可以查看哪些用户是最近登录的（实时在线只是个噱头，是根据session时间模拟的，毕竟HTTP无状态），也可以看到来自世界各地的用户请求。当时我突然想，要是能把我们客户在世界各地的分步情况实时地在一张平面的世界地图上展示出来，那该有多酷呀。说干就干，我利用业余时间开始做技术积累：用websocket实现服务器与客户端的实时通信，用python搭建websocket服务器，客户端直接使用JS(客户端需要支持websocket功能)；地图使用谷歌的，客户的访问IP转地理位置使用新浪的IPService接口，最后虽然做出来的样子不是很美观、也只能搭着梯子访问，但也算是达成目标了。&lt;/p&gt;
+
+&lt;p&gt;接下来就是公司技术博客的搭建了。因为公司运行的项目也有四年之久了，但却从没有一个比较系统的地方来介绍、讨论公司各个项目的架构、细节，以及服务器运维方面的东西，所以我就利用业余时间在我们公司的内网服务器上搭建了这个博客平台(&lt;a href=&quot;http://ww1.sinaimg.cn/large/6480dca9gw1etmhyd79i8j20k40l6jvv.jpg&quot;&gt;截图&lt;/a&gt;，并邀请同事在上面分享日常的开发维护心得。&lt;/p&gt;
+
+&lt;h2 id=&quot;人事遽变承担半边天&quot;&gt;人事遽变，承担半边天&lt;/h2&gt;
+
+&lt;p&gt;就在我过着按部就班毫无压力的日子的时候，公司却突然发生了三个月内的第二次人事遽变。第一次人事遽变，因为还有有过多年开发经验的同事扛着，也平稳度过了，然而第二次人事变动的主角就是这位同事。他要一走，说真的公司剩下的人里再没有一个能扛起这么多事情了：开发服务器的运维，生产环境十几台服务器的运维，网络爬虫系统的运维，网络搜索系统的运维，Python后端数据接口服务器的运维。当时一下子感觉天都要塌下来了！事实上后来和老板聊天时他说道，当时他已经开始考虑要使用外包了，他也根本没想到不起眼的我可以力顶压力，在把这些东西都一一搞定了。当然这是后话。&lt;/p&gt;
+
+&lt;p&gt;这位同事在半个月后就要离职，他当时也考虑过谁来接手项目的问题。当时公司其他搞开发的同事有用Python搞数据接口的，有用PHP搞前端页面实现和交互的。虽然他们有的有两年开发经验，但都是专注于自己的领域，在其他方向并没怎么拓展。而我恰恰在刚来的时候搞PHP页面实现和交互，在之后上Python公开课做过小项目(业余锻炼派上用场了)，再加上我为公司内网Linux服务器升级PHP及其扩展、搭建TODO App以及博客平台的经验，这位同事便推荐由我这个入职5个月的新人来接手这个项目，老板也是无可奈何地答应了（毕竟我们剩下的人中再无全能型技术人才了）。&lt;/p&gt;
+
+&lt;p&gt;而真正的压力、挑战和技术成长也是从这里开始。&lt;/p&gt;
+
+&lt;p&gt;首先是接手Python端数据接口项目。项目概述：组织内部自由业务，并为PHP提供Restful JSONFormat API。这个项目最大的挑战倒不是技术层面的，而是在内部业务方面既要知晓细节又要把控全局，那就没什么好说的，花大量时间阅读项目源码，理清脉络，在脑海中不断描述和完善整体结构。这个挑战持续了大概有两个月（和其他挑战并行），等到终于把大部分代码读过，又对项目使用的HTTP框架Flask有了进一步了解之后，就再无压力了。&lt;/p&gt;
+
+&lt;p&gt;接着是网络爬虫这块。项目概述：用Python脚本+Phantomjs解析HTML中的产品信息，用Redis做缓存，用HTTP在业务服务器和下载伺服器之间交换抓取任务和抓取到的产品信息。这里边最痛苦的莫过于一个个独立的任务队列了。队列任务流程：业务触发新的抓取请求，请求被投入抓取请求队列(业务服务器)；上步队列消费者索取下载请求，将其提交给下载伺服器接口；下载伺服器接收下载请求，将其放入待抓取队列；上步队列消费者索取请求，解析请求对应HTML中的产品信息，将解析所得产品信息投入信息回传队列；上步队列消费者索取产品信息，将其回传(提交)至业务服务器接口（流程完）。这里边的挑战有很多，1是队列很多，容易挂掉，所以用&lt;code class=&quot;highlighter-rouge&quot;&gt;supervisor&lt;/code&gt;来保证队列生产消费者持续运行；2是由于队列过多带来的接口、流程复杂度的提高，因为项目一直也没有写测试代码，所以一个改动导致的bug很容易影响全盘的稳定运行。也是慢慢体会到没有测试代码所带来的代码改动时心里的没底以及随着改动带来的高额的人工debug的成本。不过好在各个环节都出几遍问题，自己再给调试好之后，整个项目的流程就彻底了然于胸了。在这个过程中稍微改动了一下用Redis做的队列的实现逻辑，为我们开发者提供了一些HTML内容索取接口和缓存服务，后期就只剩维护了。&lt;/p&gt;
+
+&lt;h2 id=&quot;力顶压力独揽全局&quot;&gt;力顶压力，独揽全局&lt;/h2&gt;
+&lt;p&gt;接下来就是跟ElasticSearch（ES）相关的最后一个让人大头的项目，ES是一个可以高效率全文检索的搜索引擎。我在接手这个项目的时候使用的是v0.92版，对ES的接口用的PHP的第三方客户端。这个搜索引擎布置在生产环境，由两个物理节点组成了Cluster。但因为数据量大（800万+条信息）所以占用系统内存很多（为它分配了一半的物理内存）；而且每条信息排序的时候需要即时计算score，所以一有搜索请求过来，CPU的压力就会上来一点；再加上这个版本本身的bug导致它运行不够稳定，通常隔几天就会崩溃。当时我最怕的就是它崩溃了，本身手头上的开发任务就多，其他项目又都需要接手维护或管理，所以基本无心再顾忌这个搜索引擎了，只求使用上任负责人交给的死办法重启维护就行了。然而经过几个回合的崩溃、重启之后，我终于受不了了，开始慢慢安排，计划用当时最新的v1.4.1&lt;strong&gt;无缝替换&lt;/strong&gt;掉线上运行的不稳定版本。接下来就是：用工作之余的时间不厌其烦地阅读有点不清晰的官方文档，在测试环境中下载、配置、安装和运行新版本，换用Python语言来使用ES更底层且灵活的API，为PHP写新的应用接口（Python提供），重建每条document在ES中的的检索/存储逻辑，把score的运算由即时分散到平时…所有这些准备工作花去了我一个月左右的业余时间，终于，最后成功地按照我的预期，在线上无缝地替换掉了旧版的ES。&lt;/p&gt;
+
+&lt;p&gt;从此时起，我便成为了公司里第一个也是唯一一个对当时所有项目都了然于胸的人！那种刚开始在大森林里只是负责种树苗，最后却得以爬上高山去俯瞰整个森林的感觉，真的太妙了，所谓“一览众山小”说的就是这种感觉。&lt;/p&gt;
+
+&lt;p&gt;也是从这时候起，Boss对我更加器重了（后来他还把他两室一厅的房子给我住，我住一间，另一件房间则允许我租出去，租金归我），自己做起其中的每个项目来，包括做出各种决策，也都更有方向感和把握了。&lt;/p&gt;
+
+&lt;h2 id=&quot;人事萧条无心再战&quot;&gt;人事萧条，无心再战&lt;/h2&gt;
+&lt;p&gt;然而从今年年初开始，随着公司开发人员的人才流失，到最后，基本就只剩我一个光杆司令了。Boss当时有些着急，直接允诺了不少的公司期权给我。然而我继续呆在这里，在可预见的未来，已经没有任何技术成长空间了。其实我最初来大城市的目的就是像牛人学习，结果到最后总是自己在推着自己向高处走，我觉得这样很不好，怕自己越来越狭隘。所以于最近（2015.06.28）向老板提交了辞职信，老板看我去意已决，再加上之前交流的时候有透露过这方面的想法，他也就没有再留我。当然公司这么多项目还是需要有人来接手的，所以我会再待一个月等人来接手。&lt;/p&gt;
+
+&lt;h2 id=&quot;心怀感恩重新上路&quot;&gt;心怀感恩，重新上路&lt;/h2&gt;
+&lt;p&gt;其实如果没有这份工作提供给我一个进入编程领域的入口，我是不可能有今天的。我记得刚开始就是这种态度，老板在我刚开始进公司的时候就握着我的手说，谢谢你，加入我们！我当时的回答，也是现在的回答，是：也谢谢你，给我提供这样一个平台和机会。&lt;/p&gt;</content><author><name></name></author><category term="Tech" /><category term="总结" /><summary type="html">一只编程菜鸟，只为找一份编程的工作 13年7月份毕业，听从家里人的安排，去了本省的一家国企工作，直接被派去到东北的项目基地实习。因为会和技术老外讲英语，还和第三方外包人员一起合作调试好了他们承接的电气化自动排水项目的程序，基地领导青睐有加，想把我留在那里。我考虑了一下拒绝了。等工作到12月份的时候，基本已经确定，这份工作不是我想要的。遂瞒着家里人和领导请了一个月的病假，从东北坐了33个小时的火车来到江南，杭州。当时已是冬季，但下火车后仍然觉得“春风拂面”，比起东北让人冻得骨头疼的冷，杭州的天气温和到简直像是春天。</summary></entry><entry><title type="html">我在2015年读过的编程相关的资料</title><link href="http://localhost:4000/2015/03/18/the-programming-related-materials-i-have-read-in-2015.html" rel="alternate" type="text/html" title="我在2015年读过的编程相关的资料" /><published>2015-03-18T00:00:00+08:00</published><updated>2015-03-18T00:00:00+08:00</updated><id>http://localhost:4000/2015/03/18/the-programming-related-materials-i-have-read-in-2015</id><content type="html" xml:base="http://localhost:4000/2015/03/18/the-programming-related-materials-i-have-read-in-2015.html">&lt;p&gt;平时会读一些技术博客什么的，但都是零零星星不成体统的。所以在此新建一篇博客来专门记录这些自己读过的编程相关的资料。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;时间：02.07&lt;br /&gt;
+资料：《iptables防火墙原理详解》 | by seanlook | http://segmentfault.com/blog/seanlook/1190000002540601&lt;br /&gt;
+评论:对数据包通过一个节点时的处理流程有了全面的了解，里面的图片很不错。再配合着看完网上的《2小时玩转iptables企业版.ppt》，终于有了俯瞰整个数据包走向流程的视野。&lt;/p&gt;
+
+&lt;p&gt;时间：02.08 ~ 02.09 &lt;br /&gt;
+资料：《What Every Programmer Should Know about Memory?》 | by Ulrich Drepper | http://www.akkadia.org/drepper/cpumemory.pdf&lt;br /&gt;
+评论：论文篇幅太长，再者涉及内容偏重硬件设计，所以暂时搁置，有时间再读。&lt;/p&gt;
+
+&lt;p&gt;时间：03.03&lt;br /&gt;
+资料：《白话经典算法系列之六 快速排序 快速搞定》 | by MoreWindows | http://blog.csdn.net/morewindows/article/details/6684558&lt;br /&gt;
+评论：精简地把快速排序的一种思路用精妙的“挖坑待种”的比喻表达了出来，看完并实验后发现这种思路下的快速排序的实现是如此简单！&lt;/p&gt;
+
+&lt;p&gt;时间：03.10&lt;br /&gt;
+资料：《白话经典算法系列之七 堆与堆排序》 | by MoreWindows | http://blog.csdn.net/morewindows/article/details/6709644/&lt;br /&gt;
+评论：其实作为非科班出身的编程者，在做了很多表层的编程语言层面和公司业务层面的编程工作后，最基础的内功却几乎是空的。数据结构这一块一直是只对编程语言中的常见数据结构有接触，像更底层却很有意思的比如”堆”却几乎没接触过，所幸接触后发现至少堆结构还是很简单的。&lt;/p&gt;
+
+&lt;p&gt;时间：03.17&lt;br /&gt;
+资料：《What every web developer must know about URL encoding》 | by Stéphane Épardaud | http://blog.lunatech.com/2009/02/03/what-every-web-developer-must-know-about-url-encoding&lt;br /&gt;
+评论：这是”编程人员应该知道的xxx”系列中的一篇，主要讲URL-Encoding的种种。其实看的时候更多的是共鸣（相比于其他资料带来的透彻感），因为这样的问题在自己搞开发的时候都已经考虑、验证过了。不过作者讲得更系统、全面一些，看完后至少开阔了眼界（看似乱码实则符合RFC规范的URL，url encode/decode在不同层级的服务上的处理情况如web-server层、编程语言层）&lt;/p&gt;
+
+&lt;p&gt;时间：03.17&lt;br /&gt;
+资料：《What Every Programmer Should know about Time》 | by EmilMikulic | https://unix4lyfe.org/time/?v=1 &lt;br /&gt;
+评论：文章挺短的，还趁机看了一下其中提到的”leap seconds”和”Daylight saving”，还顺带回顾了一下两种用来计量时间的装置：石英钟和原子钟的原理。很喜欢文章中提到的一个观点：时间总是应该以Unix Timestamp的形式被保存起来，而不是”Y-m-D H:M:S”这种人类可读的方式，因为后者是表现层的事儿。&lt;/p&gt;
+
+&lt;p&gt;时间：03.27&lt;br /&gt;
+资料：《An Introduction To DOM Events》| by Wilson Page | http://www.smashingmagazine.com/2013/11/12/an-introduction-to-dom-events/&lt;br /&gt;
+评论：最大收获是终于对着w3c的&lt;a href=&quot;http://www.w3.org/TR/DOM-Level-3-Events/eventflow.svg&quot;&gt;这张图&lt;/a&gt;把一个DOM Event的生命周期看懂了（之前尝试看了一次，模棱两可）。其次是琐碎的事了：了解了&lt;code class=&quot;highlighter-rouge&quot;&gt;func.bind()&lt;/code&gt;方法&lt;/p&gt;
+
+&lt;p&gt;时间：06.12&lt;br /&gt;
+资料：《Inside NGINX: How We Designed for Performance &amp;amp; Scale》| by OWEN GARRETT | http://nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/  &lt;br /&gt;
+评论：很多架构解读型的文章，最生动和令人难忘的，大概都属随文展示出来的架构图了。这篇文章里列出了好几张非常不错的架构、流程图。它在拿自己的non-blocking设计和其他相对blocking的设计作对比时，举了个非常形象的例子：Web服务器和Web客户端的通信就像下棋一样，只不过Web服务器通常是一对多负责和很多客户端下棋。服务器可以为每个客户端分配一个棋手（blocking，每个线程/进程负责一个客户端），也可以只用一个棋手来同时跟若干个客户端轮询着下棋（non-blocking，现实中有真人1 vs 360同时进行的棋局哦http://t.cn/R2joHP0 ）。&lt;/p&gt;
+
+&lt;p&gt;时间：06.25  &lt;br /&gt;
+资料：《Thread Pools in NGINX Boost Performance 9x!》 | by VALENTIN BARTENEV | http://nginx.com/blog/thread-pools-boost-performance-9x/  &lt;br /&gt;
+评论：整篇文章其实只是一个结果报告，Event-Driven-Handling，但是handle某些event时操作确实又是blocking的，怎么办？引入线程池。线程池一直都是用的各类语言自带的(java, python)，具体实现并不是很清楚，计划有时间了看一些线程池的实现的资料。&lt;/p&gt;
+
+&lt;p&gt;时间：10.23&lt;br /&gt;
+资料：《Visual Representation of SQL Joins》 | by C.L. Moffatt | http://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins&lt;br /&gt;
+评论：关系型数据库Join表的方式有哪些，每种join的使用结果如何？在对Mysql有了一定的业务层的使用经验后，再看这篇文章，觉得人家写的真是简洁而全面。&lt;/p&gt;</content><author><name></name></author><category term="资料" /><summary type="html">平时会读一些技术博客什么的，但都是零零星星不成体统的。所以在此新建一篇博客来专门记录这些自己读过的编程相关的资料。</summary></entry><entry><title type="html">MySQL技能二三事</title><link href="http://localhost:4000/2014/11/30/several-skills-about-mysql.html" rel="alternate" type="text/html" title="MySQL技能二三事" /><published>2014-11-30T00:00:00+08:00</published><updated>2014-11-30T00:00:00+08:00</updated><id>http://localhost:4000/2014/11/30/several-skills-about-mysql</id><content type="html" xml:base="http://localhost:4000/2014/11/30/several-skills-about-mysql.html">&lt;h1 id=&quot;其一-int10意欲何为&quot;&gt;其一: int(10)意欲何为&lt;/h1&gt;
+
+&lt;p&gt;MySQL的Column-Type中的&lt;strong&gt;int&lt;/strong&gt;一类，不像其他Type如&lt;strong&gt;char&lt;/strong&gt;、&lt;strong&gt;varchar&lt;/strong&gt;是根据最大size来预置存储空间的，&lt;strong&gt;int&lt;/strong&gt;这一类的Column-Type所指定的size是作为显示宽度来存储的(涉及到size不足前端补零的场景-zerofill），它们所占用的实际空间大小是&lt;a href=&quot;http://dev.mysql.com/doc/refman/5.1/en/integer-types.html&quot;&gt;固定&lt;/a&gt;的。所以想通过&lt;code class=&quot;highlighter-rouge&quot;&gt;int(10)&lt;/code&gt;来节省存储空间的想法是无效的。&lt;/p&gt;
+
+&lt;h1 id=&quot;其二-index的prefix-length&quot;&gt;其二: index的prefix length&lt;/h1&gt;
+
+&lt;p&gt;最近的一个项目需要存储互联网上的URL，并生成唯一ID，所以数据表里边会有&lt;code class=&quot;highlighter-rouge&quot;&gt;urlcmpr&lt;/code&gt;一栏&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;urlcmpr: 适当压缩过的url，用0、1代表http[s]，62进制的code代表hostname。示例：0h^/Mucinex-Sinus-Max-Pressure-Caplets-Count/dp/B009XQHSUC/ref-id=379&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;当时的建表语句是这样的（其实项目用的是SQLAlchemy的ORM-Model，这里只是复现一下当时的情况）&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CREATE TABLE `urls` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `urlcmpr` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idx_urlcmpr` (`urlcmpr`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;查看建好的表信息&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql&amp;gt; DESC urls;
++---------+--------------+------+-----+---------+----------------+
+| Field   | Type         | Null | Key | Default | Extra          |
++---------+--------------+------+-----+---------+----------------+
+| id      | int(11)      | NO   | PRI | NULL    | auto_increment |
+| urlcmpr | varchar(255) | YES  | UNI | NULL    |                |
++---------+--------------+------+-----+---------+----------------+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;首先插入两条记录：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;insert into urls (urlcmpr) values 
+  ('0h^/Mucinex-Sinus-Max-Pressure-Caplets-Count/dp/B009XQHSUC/ref-id=0001'),
+  ('0h^/Mucinex-Sinus-Max-Pressure-Caplets-Count/dp/B009XQHSUC/ref-id=0002');
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;因为我们已经为&lt;code class=&quot;highlighter-rouge&quot;&gt;urlcmpr&lt;/code&gt;建好了唯一索引，我们来试试重复插入一下：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;insert into urls (urlcmpr) values 
+  ('0h^/Mucinex-Sinus-Max-Pressure-Caplets-Count/dp/B009XQHSUC/ref-id=0001');
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;不出所料，报错了&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ERROR 1062 (23000): 
+Duplicate entry '0h^/Mucinex-Sinus-Max-Pressure-Caplets-Count/dp/B009XQHSUC/ref-i'
+for key 'idx_urlcmpr'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这个原本也没什么，但由于下方已删除的那部分描述的缘由，我开始关注错误报告所反映的一个信息：&lt;code class=&quot;highlighter-rouge&quot;&gt;urlcmpr&lt;/code&gt;栏是255字符的，但据此建立的&lt;code class=&quot;highlighter-rouge&quot;&gt;unique-key&lt;/code&gt;却只有64字符的长度，这是怎么回事？&lt;/p&gt;
+
+&lt;p&gt;其实后来才发现这个只是显示了&lt;em&gt;唯一Key&lt;/em&gt;的前64个字符而已，其实&lt;em&gt;唯一Key&lt;/em&gt;并不是只有64个字符。&lt;/p&gt;
+
+&lt;s&gt;这里建唯一索引的目的是为了在重复误插入的时候被拒绝并报错，结果在程序准备正常插入的时候，MySQL也开始拒绝并报错了。但是事后当我试图重现这个问题时却发现，本段所描述的问题是不存在的！&lt;/s&gt;
+
+&lt;p&gt;总之由于上面的一些误解（经过一步步查资料又自己推翻）就开始查资料了，查着查着找到了&lt;a href=&quot;http://dev.mysql.com/doc/refman/5.1/en/create-index.html&quot;&gt;官方文档&lt;/a&gt;里的这样一段话（略有删减）：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Indexes can be created that use only the leading part of column values, using col_name(length) syntax to specify an &lt;strong&gt;index prefix&lt;/strong&gt; length. Prefix lengths are given in characters… That is, index entries consist of the first length characters of each column value for CHAR, VARCHAR, and TEXT columns, and the first length bytes of each column value for BINARY, VARBINARY, and BLOB columns… using column prefixes for indexes can make the index file much smaller, which could save a lot of disk space and might also speed up INSERT operations.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;基本就是在说：chars类的column，在建立索引的时候会有&lt;strong&gt;index prefix length&lt;/strong&gt;一说，也就是只取本栏开头的若干个字符做索引（而不是本栏全部内容），这样做的好处是可以节省存储空间。&lt;/p&gt;
+
+&lt;s&gt;虽然官方文档中没有说到为什么当一栏内容过大而且你没有设定它的index-prefix-length时，它的这个值会被设为64，但目前来看事实似乎就是这样的。&lt;/s&gt;
+
+&lt;p&gt;如果是存储较长字符串(比如255 chars)的唯一索引，它的&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix-length&lt;/code&gt;该怎么定制（从节省存储空间的角度看）？用上面的例子做示例：&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;UNIQUE KEY 'idx_urlcmpr' ('urlcmpr'(100))&lt;/code&gt;&lt;br /&gt;
+即在想要建立索引的栏名后面的括号中指定prefix-length。&lt;/p&gt;
+
+&lt;p&gt;我们再来试试看&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CREATE TABLE `urls2` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `urlcmpr` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idx_urlcmpr` (`urlcmpr`(100))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;插入一段字符个数为100的string:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZab
+
+Insert OK
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;在上一段string尾部加一个字符&lt;code class=&quot;highlighter-rouge&quot;&gt;c&lt;/code&gt;(101个字符长度)再试试：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabc 
+ERROR 1062 (23000): Duplicate entry
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;无法插入了。上面的两步说明我们设定的唯一索引的&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix-length&lt;/code&gt;成功了，不过它也反映出一个问题：如果你要存储的内容在前半部分重复度很高，那么你的唯一索引可能会因为&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix-length&lt;/code&gt;过小而导致无法插入(如果两个string在开头的&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix-length&lt;/code&gt;以内是相同的)。因为确实已经遇到无法插入的问题了(500万+的URL），考虑了一下后我把&lt;em&gt;UniqueKey&lt;/em&gt;的限制给去掉了，改用普通Key: &lt;code class=&quot;highlighter-rouge&quot;&gt;KEY 'idx_urlcmpr' ('urlcmpr'(100))&lt;/code&gt;，是否重复则交由程序来判断，一来可以节省存储空间（Key也是要被存储记录的，不宜太长），二来防止将来有高度相似的URL无法插入。&lt;/p&gt;
+
+&lt;h1 id=&quot;其三mysql搜索校验时的case--sensitive问题&quot;&gt;其三：MySQL搜索校验时的Case -Sensitive问题&lt;/h1&gt;
+
+&lt;p&gt;由于业务需要，在存储这么多url的时候，每存储一条，还需要为它生成一个唯一码(unique code)。网上已经有不少优秀的唯一ID生成器了，但想要并入业务中还有些麻烦，再者业务要求很简单，保证code在单亿数量级以内唯一，于是自己就顺手写了一个62进制的&lt;a href=&quot;https://github.com/HelloLyfing/tiny-works/blob/master/HexConverter/HexCvter.py&quot;&gt;编码程序&lt;/a&gt;来生成unique code。由于code生成器是62进制的，如果是10个字符长的话，可表示的组合便是62的10次方，换算成10进制的话应该是一个近乎天文的数字了，唯一性是绝对保证了；程序还带了code+1功能，方便用来自增，有兴趣或有需要的朋友可以去看一下。&lt;/p&gt;
+
+&lt;p&gt;言归正传，利用上面的code生成器产出的code是大小写敏感的，即&lt;code class=&quot;highlighter-rouge&quot;&gt;fooBar&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;Foobar&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;fOOBaR&lt;/code&gt;分别代表着不同的10进制数值。新建一张表，把它们三个存进MySQL中：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 新建表
+CREATE TABLE `uni_code` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+Query OK, 0 rows affected (0.33 sec)
+
+# 插入三条数据
+INSERT INTO uni_code (code) VALUES ('foobar'),('fooBar'),('fOOBaR');
+Query OK, 3 rows affected (0.03 sec)
+
+# 查看刚刚插入的数据
+mysql&amp;gt; SELECT * FROM uni_code;
++----+--------+
+| id | code   |
++----+--------+
+|  1 | foobar |
+|  2 | fooBar |
+|  3 | fOOBaR |
++----+--------+
+3 rows in set (0.00 sec)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;我们再试着取出其中一条数据来：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql&amp;gt; SELECT * FROM uni_code WHERE code = 'foobar';
++----+--------+
+| id | code   |
++----+--------+
+|  1 | fooBar |
+|  2 | fooBar |
+|  3 | fOOBaR |
++----+--------+
+3 rows in set (0.03 sec)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;预期中的&lt;strong&gt;坑&lt;/strong&gt;出现了。我的code是大小写敏感的，但MySQL在查询校验的时候似乎忽略了这一点，直接把三条数据全部取出来了！&lt;/p&gt;
+
+&lt;p&gt;当然你可以通过手动添加&lt;code class=&quot;highlighter-rouge&quot;&gt;Binary&lt;/code&gt;&lt;a href=&quot;http://dev.mysql.com/doc/refman/5.5/en/charset-binary-op.html&quot;&gt;操作符&lt;/a&gt;将字符转换成字节来进行查询校验，或者指定&lt;a href=&quot;http://dev.mysql.com/doc/refman/5.5/en/charset-general.html&quot;&gt;collation&lt;/a&gt;规则来进行查询校验&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql&amp;gt; SELECT * FROM uni_code WHERE BINARY code = 'foobar';
++----+--------+
+| id | code   |
++----+--------+
+|  1 | foobar |
++----+--------+
+1 row in set (0.00 sec)
+
+mysql&amp;gt; SELECT * FROM uni_code WHERE code COLLATE utf8_bin = 'foobar';
++----+--------+
+| id | code   |
++----+--------+
+|  1 | foobar |
++----+--------+
+1 row in set (0.09 sec)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;但一来我用的ORM，使用原生SQL (关键字&lt;code class=&quot;highlighter-rouge&quot;&gt;Binary&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;Collate&lt;/code&gt;) 与使用ORM目的背离；二来四处滥用这些关键字会让程序代码混乱。最好能让MySQL在数据库层就完成大小写敏感的查询校验。&lt;/p&gt;
+
+&lt;p&gt;查了查资料发现MySQL在查询校验的时候所使用的&lt;code class=&quot;highlighter-rouge&quot;&gt;Collate&lt;/code&gt;规则集是有默认值的，正是这个规则集决定了字符比对的结果。那么&lt;code class=&quot;highlighter-rouge&quot;&gt;Collate&lt;/code&gt;是什么呢？&lt;/p&gt;
+
+&lt;p&gt;在上面给出的&lt;a href=&quot;http://dev.mysql.com/doc/refman/5.5/en/charset-general.html&quot;&gt;官方文档&lt;/a&gt;已经很好的解释了&lt;code class=&quot;highlighter-rouge&quot;&gt;Collate&lt;/code&gt;的作用，我在这里再赘述一二：&lt;/p&gt;
+
+&lt;p&gt;数据库中有字符集&lt;strong&gt;charset&lt;/strong&gt;和规则集&lt;strong&gt;collate&lt;/strong&gt;一说，字符集自不必多说。规则集是&lt;strong&gt;在给定字符集上进行字符对比的规则&lt;/strong&gt;，比如大小写敏感否 (CI or CS)、&lt;code class=&quot;highlighter-rouge&quot;&gt;äöü&lt;/code&gt;与&lt;code class=&quot;highlighter-rouge&quot;&gt;aou&lt;/code&gt;对等否等规则，每个字符集都有默认规则集。&lt;/p&gt;
+
+&lt;p&gt;上面的&lt;code class=&quot;highlighter-rouge&quot;&gt;... WHERE code COLLATE utf8_bin = ...&lt;/code&gt;就是指定了字符对比的规则集。这个规则集是大小写敏感的，它会覆盖默认的规则集。是的，MySQL中的每一个单元(Column、Table、Database)都可以有自己的字符集和规则集，我们通常只是指定字符集，MySQL则帮我们指定了该字符集对应的默认&lt;a href=&quot;http://dev.mysql.com/doc/refman/5.5/en/charset-mysql.html&quot;&gt;规则集&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;这么一来就好办了，看来是MySQL为我指定了utf8编码下的默认规则集，而这个规则集在字符比对时是CI的。只要我们修改一下表(或者栏)的规则集，让它支持大小写敏感的比对就好了。&lt;/p&gt;
+
+&lt;p&gt;我们先来看看&lt;code class=&quot;highlighter-rouge&quot;&gt;utf8&lt;/code&gt;的默认规则集，及可选规则集(下面内容可能会因版本、系统而异)：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql&amp;gt; show CHARACTER SET WHERE charset LIKE &quot;utf8&quot;;
++---------+---------------+-------------------+--------+
+| Charset | Description   | Default collation | Maxlen |
++---------+---------------+-------------------+--------+
+| utf8    | UTF-8 Unicode | utf8_general_ci   |      3 |
++---------+---------------+-------------------+--------+
+1 row in set (0.00 sec)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;从上可以看出，utf8编码的默认规则集是&lt;code class=&quot;highlighter-rouge&quot;&gt;utf8_general_ci&lt;/code&gt; (规则集的命名规则通常是”字符集_规则集_大小写敏感否”的格式)，可以看到最后的&lt;code class=&quot;highlighter-rouge&quot;&gt;_ci&lt;/code&gt;表名了这个规则集是大小写不敏感的。我们找一个支持大小写敏感比对的规则集出来：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql&amp;gt; SHOW COLLATION WHERE Charset LIKE 'utf8';
++--------------------------+---------+-----+---------+----------+---------+
+| Collation                | Charset | Id  | Default | Compiled | Sortlen |
++--------------------------+---------+-----+---------+----------+---------+
+| utf8_general_ci          | utf8    |  33 | Yes     | Yes      |       1 |
+| utf8_bin                 | utf8    |  83 |         | Yes      |       1 |
+| utf8_unicode_ci          | utf8    | 192 |         | Yes      |       8 |
+| utf8_icelandic_ci        | utf8    | 193 |         | Yes      |       8 |
+| utf8_latvian_ci          | utf8    | 194 |         | Yes      |       8 |
+| utf8_romanian_ci         | utf8    | 195 |         | Yes      |       8 |
+| utf8_slovenian_ci        | utf8    | 196 |         | Yes      |       8 |
+| utf8_polish_ci           | utf8    | 197 |         | Yes      |       8 |
+| utf8_estonian_ci         | utf8    | 198 |         | Yes      |       8 |
+| utf8_spanish_ci          | utf8    | 199 |         | Yes      |       8 |
+| utf8_swedish_ci          | utf8    | 200 |         | Yes      |       8 |
+| utf8_turkish_ci          | utf8    | 201 |         | Yes      |       8 |
+| utf8_czech_ci            | utf8    | 202 |         | Yes      |       8 |
+| utf8_danish_ci           | utf8    | 203 |         | Yes      |       8 |
+| utf8_lithuanian_ci       | utf8    | 204 |         | Yes      |       8 |
+| utf8_slovak_ci           | utf8    | 205 |         | Yes      |       8 |
+| utf8_spanish2_ci         | utf8    | 206 |         | Yes      |       8 |
+| utf8_roman_ci            | utf8    | 207 |         | Yes      |       8 |
+| utf8_persian_ci          | utf8    | 208 |         | Yes      |       8 |
+| utf8_esperanto_ci        | utf8    | 209 |         | Yes      |       8 |
+| utf8_hungarian_ci        | utf8    | 210 |         | Yes      |       8 |
+| utf8_sinhala_ci          | utf8    | 211 |         | Yes      |       8 |
+| utf8_german2_ci          | utf8    | 212 |         | Yes      |       8 |
+| utf8_croatian_ci         | utf8    | 213 |         | Yes      |       8 |
+| utf8_unicode_520_ci      | utf8    | 214 |         | Yes      |       8 |
+| utf8_vietnamese_ci       | utf8    | 215 |         | Yes      |       8 |
+| utf8_general_mysql500_ci | utf8    | 223 |         | Yes      |       1 |
++--------------------------+---------+-----+---------+----------+---------+
+27 rows in set (0.00 sec)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;纳尼… 27个选择几乎全是大小写不敏感的（可见大小写敏感的用例不是很广），幸好还有个&lt;code class=&quot;highlighter-rouge&quot;&gt;utf8_bin&lt;/code&gt;，它是支持大小写敏感比对的(用字节而非字符进行比对)。&lt;/p&gt;
+
+&lt;p&gt;我们把上面的uni_code table的&lt;code class=&quot;highlighter-rouge&quot;&gt;code&lt;/code&gt;一栏的&lt;code class=&quot;highlighter-rouge&quot;&gt;collate&lt;/code&gt;换成&lt;code class=&quot;highlighter-rouge&quot;&gt;utf8_bin&lt;/code&gt;：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql&amp;gt; ALTER TABLE uni_code MODIFY code
+    -&amp;gt;   VARCHAR(10)
+    -&amp;gt;   CHARACTER SET utf8
+    -&amp;gt;   COLLATE utf8_bin;
+Query OK, 3 rows affected (1.44 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+SHOW CREATE TABLE uni_code;
+CREATE TABLE `uni_code` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(10) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;我们看到&lt;code class=&quot;highlighter-rouge&quot;&gt;code&lt;/code&gt;一栏的&lt;strong&gt;collate&lt;/strong&gt;属性已经改过来了。Table和DB的改动格式见&lt;a href=&quot;http://dev.mysql.com/doc/refman/5.5/en/charset-table.html&quot;&gt;官方文档&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;再说说线上改表的问题。上面那张表也就3行数据，改动一栏尚且花了1.44s的时间，这要在500万+的数据表上做改动得花去多长时间，假如还要考虑线上表的访问、新增、更新请求就更需谨慎了。这里推荐一个&lt;a href=&quot;http://openarkkit.googlecode.com/svn/trunk/openarkkit/doc/html/oak-online-alter-table.html&quot;&gt;在线改表工具&lt;/a&gt;，好用的很。当时是暂停服务进行的改动整张表的collate属性的操作，有两栏是varchar的(size分别是10、255)，500万+的数据十几分钟就搞定。&lt;/p&gt;
+
+&lt;h1 id=&quot;其四-update语句并不一定真的会update&quot;&gt;其四: Update语句并不一定真的会”Update”&lt;/h1&gt;
+
+&lt;p&gt;有一张如下的表：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql&amp;gt; describe big_msg;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| key   | varchar(20) | YES  | MUL | NULL    |       |
+| val   | text        | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;插入一行：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql&amp;gt; INSERT INTO big_msg (`key`, `val`) VALUES (&quot;test-key&quot;, &quot;test-val&quot;);
+Query OK, 1 row affected (0.00 sec)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;查看：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql&amp;gt; UPDATE big_msg SET `val`=&quot;test-val&quot; WHERE `key`=&quot;test-key&quot;;
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;注意这里的&lt;code class=&quot;highlighter-rouge&quot;&gt;0 rows affected (0.00 sec)&lt;/code&gt;，也就是说这里并没有更新本行。这个在普通场景下并无大碍，不过当你使用的类似&lt;code class=&quot;highlighter-rouge&quot;&gt;PHP PDO&lt;/code&gt;面向对象的数据库类库，而且你的&lt;code class=&quot;highlighter-rouge&quot;&gt;Statement&lt;/code&gt;又依赖于&lt;code class=&quot;highlighter-rouge&quot;&gt;row affected&lt;/code&gt;这个返回值时（例如PHP-PDO的&lt;code class=&quot;highlighter-rouge&quot;&gt;PDOStatement::rowCount ( void )&lt;/code&gt;），这里就需要尤其注意一下了，&lt;strong&gt;如果你的更新值和原有值相同，则本次更新会被忽略, 返回值&lt;code class=&quot;highlighter-rouge&quot;&gt;affected rows&lt;/code&gt;将为0&lt;/strong&gt;。看官方文档中的说明：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If you set a column to the value it currently has, MySQL notices this and does not update it.&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><category term="Tech" /><category term="Database" /><category term="Mysql" /><summary type="html">其一: int(10)意欲何为 MySQL的Column-Type中的int一类，不像其他Type如char、varchar是根据最大size来预置存储空间的，int这一类的Column-Type所指定的size是作为显示宽度来存储的(涉及到size不足前端补零的场景-zerofill），它们所占用的实际空间大小是固定的。所以想通过int(10)来节省存储空间的想法是无效的。 其二: index的prefix length 最近的一个项目需要存储互联网上的URL，并生成唯一ID，所以数据表里边会有urlcmpr一栏 urlcmpr: 适当压缩过的url，用0、1代表http[s]，62进制的code代表hostname。示例：0h^/Mucinex-Sinus-Max-Pressure-Caplets-Count/dp/B009XQHSUC/ref-id=379 当时的建表语句是这样的（其实项目用的是SQLAlchemy的ORM-Model，这里只是复现一下当时的情况） CREATE TABLE `urls` ( `id` int(11) NOT NULL AUTO_INCREMENT, `urlcmpr` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`), UNIQUE KEY `idx_urlcmpr` (`urlcmpr`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8; 查看建好的表信息 mysql&amp;gt; DESC urls; +---------+--------------+------+-----+---------+----------------+ | Field | Type | Null | Key | Default | Extra | +---------+--------------+------+-----+---------+----------------+ | id | int(11) | NO | PRI | NULL | auto_increment | | urlcmpr | varchar(255) | YES | UNI | NULL | | +---------+--------------+------+-----+---------+----------------+ 首先插入两条记录： insert into urls (urlcmpr) values ('0h^/Mucinex-Sinus-Max-Pressure-Caplets-Count/dp/B009XQHSUC/ref-id=0001'), ('0h^/Mucinex-Sinus-Max-Pressure-Caplets-Count/dp/B009XQHSUC/ref-id=0002'); 因为我们已经为urlcmpr建好了唯一索引，我们来试试重复插入一下： insert into urls (urlcmpr) values ('0h^/Mucinex-Sinus-Max-Pressure-Caplets-Count/dp/B009XQHSUC/ref-id=0001'); 不出所料，报错了 ERROR 1062 (23000): Duplicate entry '0h^/Mucinex-Sinus-Max-Pressure-Caplets-Count/dp/B009XQHSUC/ref-i' for key 'idx_urlcmpr' 这个原本也没什么，但由于下方已删除的那部分描述的缘由，我开始关注错误报告所反映的一个信息：urlcmpr栏是255字符的，但据此建立的unique-key却只有64字符的长度，这是怎么回事？ 其实后来才发现这个只是显示了唯一Key的前64个字符而已，其实唯一Key并不是只有64个字符。 这里建唯一索引的目的是为了在重复误插入的时候被拒绝并报错，结果在程序准备正常插入的时候，MySQL也开始拒绝并报错了。但是事后当我试图重现这个问题时却发现，本段所描述的问题是不存在的！ 总之由于上面的一些误解（经过一步步查资料又自己推翻）就开始查资料了，查着查着找到了官方文档里的这样一段话（略有删减）： Indexes can be created that use only the leading part of column values, using col_name(length) syntax to specify an index prefix length. Prefix lengths are given in characters… That is, index entries consist of the first length characters of each column value for CHAR, VARCHAR, and TEXT columns, and the first length bytes of each column value for BINARY, VARBINARY, and BLOB columns… using column prefixes for indexes can make the index file much smaller, which could save a lot of disk space and might also speed up INSERT operations. 基本就是在说：chars类的column，在建立索引的时候会有index prefix length一说，也就是只取本栏开头的若干个字符做索引（而不是本栏全部内容），这样做的好处是可以节省存储空间。 虽然官方文档中没有说到为什么当一栏内容过大而且你没有设定它的index-prefix-length时，它的这个值会被设为64，但目前来看事实似乎就是这样的。 如果是存储较长字符串(比如255 chars)的唯一索引，它的prefix-length该怎么定制（从节省存储空间的角度看）？用上面的例子做示例： UNIQUE KEY 'idx_urlcmpr' ('urlcmpr'(100)) 即在想要建立索引的栏名后面的括号中指定prefix-length。 我们再来试试看 CREATE TABLE `urls2` ( `id` int(11) NOT NULL AUTO_INCREMENT, `urlcmpr` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`), UNIQUE KEY `idx_urlcmpr` (`urlcmpr`(100)) ) ENGINE=InnoDB DEFAULT CHARSET=utf8 插入一段字符个数为100的string: 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZab Insert OK 在上一段string尾部加一个字符c(101个字符长度)再试试： 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabc ERROR 1062 (23000): Duplicate entry 无法插入了。上面的两步说明我们设定的唯一索引的prefix-length成功了，不过它也反映出一个问题：如果你要存储的内容在前半部分重复度很高，那么你的唯一索引可能会因为prefix-length过小而导致无法插入(如果两个string在开头的prefix-length以内是相同的)。因为确实已经遇到无法插入的问题了(500万+的URL），考虑了一下后我把UniqueKey的限制给去掉了，改用普通Key: KEY 'idx_urlcmpr' ('urlcmpr'(100))，是否重复则交由程序来判断，一来可以节省存储空间（Key也是要被存储记录的，不宜太长），二来防止将来有高度相似的URL无法插入。 其三：MySQL搜索校验时的Case -Sensitive问题 由于业务需要，在存储这么多url的时候，每存储一条，还需要为它生成一个唯一码(unique code)。网上已经有不少优秀的唯一ID生成器了，但想要并入业务中还有些麻烦，再者业务要求很简单，保证code在单亿数量级以内唯一，于是自己就顺手写了一个62进制的编码程序来生成unique code。由于code生成器是62进制的，如果是10个字符长的话，可表示的组合便是62的10次方，换算成10进制的话应该是一个近乎天文的数字了，唯一性是绝对保证了；程序还带了code+1功能，方便用来自增，有兴趣或有需要的朋友可以去看一下。 言归正传，利用上面的code生成器产出的code是大小写敏感的，即fooBar、Foobar和fOOBaR分别代表着不同的10进制数值。新建一张表，把它们三个存进MySQL中： # 新建表 CREATE TABLE `uni_code` ( `id` int(11) NOT NULL AUTO_INCREMENT, `code` varchar(10) NOT NULL, PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8; Query OK, 0 rows affected (0.33 sec) # 插入三条数据 INSERT INTO uni_code (code) VALUES ('foobar'),('fooBar'),('fOOBaR'); Query OK, 3 rows affected (0.03 sec) # 查看刚刚插入的数据 mysql&amp;gt; SELECT * FROM uni_code; +----+--------+ | id | code | +----+--------+ | 1 | foobar | | 2 | fooBar | | 3 | fOOBaR | +----+--------+ 3 rows in set (0.00 sec) 我们再试着取出其中一条数据来： mysql&amp;gt; SELECT * FROM uni_code WHERE code = 'foobar'; +----+--------+ | id | code | +----+--------+ | 1 | fooBar | | 2 | fooBar | | 3 | fOOBaR | +----+--------+ 3 rows in set (0.03 sec) 预期中的坑出现了。我的code是大小写敏感的，但MySQL在查询校验的时候似乎忽略了这一点，直接把三条数据全部取出来了！ 当然你可以通过手动添加Binary操作符将字符转换成字节来进行查询校验，或者指定collation规则来进行查询校验 mysql&amp;gt; SELECT * FROM uni_code WHERE BINARY code = 'foobar'; +----+--------+ | id | code | +----+--------+ | 1 | foobar | +----+--------+ 1 row in set (0.00 sec) mysql&amp;gt; SELECT * FROM uni_code WHERE code COLLATE utf8_bin = 'foobar'; +----+--------+ | id | code | +----+--------+ | 1 | foobar | +----+--------+ 1 row in set (0.09 sec) 但一来我用的ORM，使用原生SQL (关键字Binary、Collate) 与使用ORM目的背离；二来四处滥用这些关键字会让程序代码混乱。最好能让MySQL在数据库层就完成大小写敏感的查询校验。 查了查资料发现MySQL在查询校验的时候所使用的Collate规则集是有默认值的，正是这个规则集决定了字符比对的结果。那么Collate是什么呢？ 在上面给出的官方文档已经很好的解释了Collate的作用，我在这里再赘述一二： 数据库中有字符集charset和规则集collate一说，字符集自不必多说。规则集是在给定字符集上进行字符对比的规则，比如大小写敏感否 (CI or CS)、äöü与aou对等否等规则，每个字符集都有默认规则集。 上面的... WHERE code COLLATE utf8_bin = ...就是指定了字符对比的规则集。这个规则集是大小写敏感的，它会覆盖默认的规则集。是的，MySQL中的每一个单元(Column、Table、Database)都可以有自己的字符集和规则集，我们通常只是指定字符集，MySQL则帮我们指定了该字符集对应的默认规则集。 这么一来就好办了，看来是MySQL为我指定了utf8编码下的默认规则集，而这个规则集在字符比对时是CI的。只要我们修改一下表(或者栏)的规则集，让它支持大小写敏感的比对就好了。 我们先来看看utf8的默认规则集，及可选规则集(下面内容可能会因版本、系统而异)： mysql&amp;gt; show CHARACTER SET WHERE charset LIKE &quot;utf8&quot;; +---------+---------------+-------------------+--------+ | Charset | Description | Default collation | Maxlen | +---------+---------------+-------------------+--------+ | utf8 | UTF-8 Unicode | utf8_general_ci | 3 | +---------+---------------+-------------------+--------+ 1 row in set (0.00 sec) 从上可以看出，utf8编码的默认规则集是utf8_general_ci (规则集的命名规则通常是”字符集_规则集_大小写敏感否”的格式)，可以看到最后的_ci表名了这个规则集是大小写不敏感的。我们找一个支持大小写敏感比对的规则集出来： mysql&amp;gt; SHOW COLLATION WHERE Charset LIKE 'utf8'; +--------------------------+---------+-----+---------+----------+---------+ | Collation | Charset | Id | Default | Compiled | Sortlen | +--------------------------+---------+-----+---------+----------+---------+ | utf8_general_ci | utf8 | 33 | Yes | Yes | 1 | | utf8_bin | utf8 | 83 | | Yes | 1 | | utf8_unicode_ci | utf8 | 192 | | Yes | 8 | | utf8_icelandic_ci | utf8 | 193 | | Yes | 8 | | utf8_latvian_ci | utf8 | 194 | | Yes | 8 | | utf8_romanian_ci | utf8 | 195 | | Yes | 8 | | utf8_slovenian_ci | utf8 | 196 | | Yes | 8 | | utf8_polish_ci | utf8 | 197 | | Yes | 8 | | utf8_estonian_ci | utf8 | 198 | | Yes | 8 | | utf8_spanish_ci | utf8 | 199 | | Yes | 8 | | utf8_swedish_ci | utf8 | 200 | | Yes | 8 | | utf8_turkish_ci | utf8 | 201 | | Yes | 8 | | utf8_czech_ci | utf8 | 202 | | Yes | 8 | | utf8_danish_ci | utf8 | 203 | | Yes | 8 | | utf8_lithuanian_ci | utf8 | 204 | | Yes | 8 | | utf8_slovak_ci | utf8 | 205 | | Yes | 8 | | utf8_spanish2_ci | utf8 | 206 | | Yes | 8 | | utf8_roman_ci | utf8 | 207 | | Yes | 8 | | utf8_persian_ci | utf8 | 208 | | Yes | 8 | | utf8_esperanto_ci | utf8 | 209 | | Yes | 8 | | utf8_hungarian_ci | utf8 | 210 | | Yes | 8 | | utf8_sinhala_ci | utf8 | 211 | | Yes | 8 | | utf8_german2_ci | utf8 | 212 | | Yes | 8 | | utf8_croatian_ci | utf8 | 213 | | Yes | 8 | | utf8_unicode_520_ci | utf8 | 214 | | Yes | 8 | | utf8_vietnamese_ci | utf8 | 215 | | Yes | 8 | | utf8_general_mysql500_ci | utf8 | 223 | | Yes | 1 | +--------------------------+---------+-----+---------+----------+---------+ 27 rows in set (0.00 sec) 纳尼… 27个选择几乎全是大小写不敏感的（可见大小写敏感的用例不是很广），幸好还有个utf8_bin，它是支持大小写敏感比对的(用字节而非字符进行比对)。 我们把上面的uni_code table的code一栏的collate换成utf8_bin： mysql&amp;gt; ALTER TABLE uni_code MODIFY code -&amp;gt; VARCHAR(10) -&amp;gt; CHARACTER SET utf8 -&amp;gt; COLLATE utf8_bin; Query OK, 3 rows affected (1.44 sec) Records: 3 Duplicates: 0 Warnings: 0 SHOW CREATE TABLE uni_code; CREATE TABLE `uni_code` ( `id` int(11) NOT NULL AUTO_INCREMENT, `code` varchar(10) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL, PRIMARY KEY (`id`) ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 我们看到code一栏的collate属性已经改过来了。Table和DB的改动格式见官方文档。 再说说线上改表的问题。上面那张表也就3行数据，改动一栏尚且花了1.44s的时间，这要在500万+的数据表上做改动得花去多长时间，假如还要考虑线上表的访问、新增、更新请求就更需谨慎了。这里推荐一个在线改表工具，好用的很。当时是暂停服务进行的改动整张表的collate属性的操作，有两栏是varchar的(size分别是10、255)，500万+的数据十几分钟就搞定。 其四: Update语句并不一定真的会”Update” 有一张如下的表： mysql&amp;gt; describe big_msg; +-------+-------------+------+-----+---------+-------+ | Field | Type | Null | Key | Default | Extra | +-------+-------------+------+-----+---------+-------+ | key | varchar(20) | YES | MUL | NULL | | | val | text | YES | | NULL | | +-------+-------------+------+-----+---------+-------+ 2 rows in set (0.01 sec) 插入一行： mysql&amp;gt; INSERT INTO big_msg (`key`, `val`) VALUES (&quot;test-key&quot;, &quot;test-val&quot;); Query OK, 1 row affected (0.00 sec) 查看： mysql&amp;gt; UPDATE big_msg SET `val`=&quot;test-val&quot; WHERE `key`=&quot;test-key&quot;; Query OK, 0 rows affected (0.00 sec) Rows matched: 1 Changed: 0 Warnings: 0 注意这里的0 rows affected (0.00 sec)，也就是说这里并没有更新本行。这个在普通场景下并无大碍，不过当你使用的类似PHP PDO面向对象的数据库类库，而且你的Statement又依赖于row affected这个返回值时（例如PHP-PDO的PDOStatement::rowCount ( void )），这里就需要尤其注意一下了，如果你的更新值和原有值相同，则本次更新会被忽略, 返回值affected rows将为0。看官方文档中的说明： If you set a column to the value it currently has, MySQL notices this and does not update it.</summary></entry><entry><title type="html">MOOC课程小结：如何编写一个几乎无摩擦的太空飞船</title><link href="http://localhost:4000/2014/07/06/using-js-to-build-a-spaceship-floating-in-the-outer-space.html" rel="alternate" type="text/html" title="MOOC课程小结：如何编写一个几乎无摩擦的太空飞船" /><published>2014-07-06T00:00:00+08:00</published><updated>2014-07-06T00:00:00+08:00</updated><id>http://localhost:4000/2014/07/06/using-js-to-build-a-spaceship-floating-in-the-outer-space</id><content type="html" xml:base="http://localhost:4000/2014/07/06/using-js-to-build-a-spaceship-floating-in-the-outer-space.html">&lt;p&gt;四五月份的时候曾抱着试一试的心态参加了一门MOOC课程&lt;a href=&quot;https://class.coursera.org/interactivepython-004&quot;&gt;An Introduction to Interactive Programming in Python&lt;/a&gt;，课程内容主要是通过编写小游戏来完成Python编程入门。&lt;/p&gt;
+
+&lt;p&gt;至于为什么要参加MOOC课程，又为什么选择了这一门呢？主要是MOOC这个话题太火了，弄得好像不参加就要当奥特曼了，所以希望通过参加一门简单的课程来了解MOOC；再者自己工作有闲暇时间，正好可以用业余时间学一学Python，也顺便学着编一些小游戏玩玩。&lt;/p&gt;
+
+&lt;p&gt;上完课拿到&lt;a href=&quot;http://lyfing.qiniudn.com/docs/imgs/mooc/InteractivePython_Accomplishment_Statement.png&quot;&gt;证书&lt;/a&gt;后本想抽时间做个总结，却总是困于拖延症中无法自拔。自己这几天利用闲暇时间学了学HTML5的canvas，总算把当初在这门课程上学到的一丁点关于游戏开发的知识点 ——-穿行在摩擦系数极低的外太空中的太空飞船在飞行时的编程控制应该是怎样的—— 用javascript给实现了一下，就权当是总结吧。&lt;/p&gt;
+
+&lt;p&gt;想要玩一玩这个简易飞船的戳这里：&lt;a href=&quot;http://lyfing.sinaapp.com/blog/demo/index/mooc-spaceship&quot;&gt;简易飞船demo&lt;/a&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;###如何实现
+关于这个飞船的飞行，当初最吸引我的一点是它在加速飞行时，加速方向和运动方向并不总是一致的，也就是说这个飞船在运行时是有”漂移”特效的，然后我就很好奇这种”漂移”特效是如何用编程来实现的。下面我就说一说这方面的事情。&lt;/p&gt;
+
+&lt;p&gt;####将飞船拟物化
+也就是说从&lt;code class=&quot;highlighter-rouge&quot;&gt;面向对象&lt;/code&gt;编程的角度来思考这个问题。&lt;/p&gt;
+
+&lt;p&gt;#####飞船的属性
+拟物化的第一步是飞船在屏幕上得有一个起始点，在2d平面里可以直接用x（横坐标轴）和y（纵坐标轴）来标志起始位置即可。于是飞船有了第一个属性：当前坐标&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(x, y)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;飞船从起始点(x1, y1)移动到(x2, y2)只能有一个原因，在某段时间内，它的速度不再为0(velocity)，然后用大家都熟悉的公式 &lt;code class=&quot;highlighter-rouge&quot;&gt;s2 = vel * time + s1&lt;/code&gt; 便可以获得(x1,y1)到(x2, y2)的距离，所以我们需要赋予飞船第二个属性：速度&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vel速度(x、y代表速度分解到两坐标轴上的大小)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;飞船具有速度从而开始运动，是因为它获得了某个方向的加速度(acceleration)。我们可以用公式 &lt;code class=&quot;highlighter-rouge&quot;&gt;vel_2 = acc * time + vel_1&lt;/code&gt;  来获得飞船的速度，但前提是我们需要赋予飞船第三个属性：加速度&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;acc加速度(x, y)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;#####飞船的方法
+想想看如果你坐在一架飘浮于外太空的飞船上时，你最需要飞船有什么功能？&lt;/p&gt;
+
+&lt;p&gt;答案当然是可以挂档啦，要不然你就只能一辈子静止在那里看流星雨了。所以飞船应该要有一个挂档的方法(功能)&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;startAcc() // 开始加速
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note: 正如科学家牛顿说过的，挂档的动作并不是改变飞船的速度(vel)，而是在改变它的加速度(acc).&lt;/p&gt;
+
+&lt;p&gt;如果你不想让飞船直接撞上附近某个星球，你就应该给它个挂空档的机会（即停止加速），要不然它真的会一直加速下去最终失控的（想想都可怕）&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;stopAcc() // 停止加速
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;####万事具备，只欠挂档了&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;真的吗？&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;于是，当你按下加速键(↑)后，飞船开始加速，这个过程是发生在某个时间段内的，我们暂且就把这段时间定义为&lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;吧（此处速度、时间等不再继承物理世界的单位，方便演示和计算）&lt;/p&gt;
+
+&lt;p&gt;在时间&lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;内，君挂上档，飞船的加速度(&lt;code class=&quot;highlighter-rouge&quot;&gt;acc&lt;/code&gt;)变化为：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;acc = (10, 10) // 任意数值，以飞船实际飞行效果调优为准
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;考虑到飞船初始时是静止的，所以飞船的速度变化为：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;newVel = acc * 1 + (0, 0) // newVel = (10, 10);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;假设飞船初始位置为(0, 0)，那么飞船的位置变化为：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;newPos = newVel * 1 + (0, 0) // newPos = (10, 10);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;此时如果君还没有挂空挡，那么在下一个时间&lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;内，飞船的加速度(&lt;code class=&quot;highlighter-rouge&quot;&gt;acc&lt;/code&gt;)、速度(&lt;code class=&quot;highlighter-rouge&quot;&gt;vel&lt;/code&gt;)以及新位置(&lt;code class=&quot;highlighter-rouge&quot;&gt;pos&lt;/code&gt;)将变为：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;acc = (10, 10) // 加速度此处设为常量（需要优化可以自己调优变动）
+newVel = acc * 1 + oldVel // newVel = (20, 20);
+newPos = newVel * 1 + oldPos // newPos = (20, 20);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;此时需要设定一个定时器，每隔一小段时间(&lt;code class=&quot;highlighter-rouge&quot;&gt;interval&lt;/code&gt;)把飞船的旧图像抹掉，再根据飞船的新位置将图像重绘一次，这样一来飞船看上去就好像动起来了。&lt;/p&gt;
+
+&lt;p&gt;可是，说好的漂移特效呢？&lt;/p&gt;
+
+&lt;p&gt;####飞船并不完整
+要想有漂移，当然要有变向了。我们需要给飞船添加一个改变方向的方法，但前提是飞船要具有方向的概念（属性）。在飞船所处的2d世界，我们用&lt;strong&gt;弧度&lt;/strong&gt;来表示它所朝的方向。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 飞船新属性
+ang = 0 // 0或者2π即表示水平向右的方向
+// 飞船新方法
+changeRotation() // 该方法的实质是改变飞船的 ang
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;添加新的属性和方法后，我们再来演示一遍在时间&lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;内飞船各属性的变化（假设本时间段内飞船角度&lt;code class=&quot;highlighter-rouge&quot;&gt;ang&lt;/code&gt;为 π/3，且处于加速状态，考虑到无摩擦时飞船在若干次加速后将因为速度过快而变得无法控制，我们在飞船更新速度时，为它添加一个速度磨损）&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 角度
+ang = π / 3
+// 加速度
+acc = ( 10 * cos(ang), 10 * sin(ang) )
+// 速度
+vel = acc * 1 + oldVel
+// 摩擦导致的2%的速度磨损
+newVel = vel * 0.98 (小数大小以飞行体验调优为准)
+// 新位置
+newPos = newVel * 1 + oldPos
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;设置键盘&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;←和→按下时调用&lt;code class=&quot;highlighter-rouge&quot;&gt;changeRotation()&lt;/code&gt;方法来改变飞行角度&lt;/li&gt;
+  &lt;li&gt;按下↑时调用&lt;code class=&quot;highlighter-rouge&quot;&gt;startAcc()&lt;/code&gt;方法启动加速&lt;/li&gt;
+  &lt;li&gt;释放↑时调用&lt;code class=&quot;highlighter-rouge&quot;&gt;stopAcc()&lt;/code&gt;停止加速。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这次再试一试，飞船是不是开始漂移了？&lt;/p&gt;
+
+&lt;p&gt;Good luck :)&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;备注&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;MOOC公开课&lt;strong&gt;Python交互式编程介绍&lt;/strong&gt;（飞船demo中所用图片素材也来自该课程）：https://class.coursera.org/interactivepython-004&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="Tech" /><category term="Javascript" /><category term="MOOC" /><summary type="html">四五月份的时候曾抱着试一试的心态参加了一门MOOC课程An Introduction to Interactive Programming in Python，课程内容主要是通过编写小游戏来完成Python编程入门。 至于为什么要参加MOOC课程，又为什么选择了这一门呢？主要是MOOC这个话题太火了，弄得好像不参加就要当奥特曼了，所以希望通过参加一门简单的课程来了解MOOC；再者自己工作有闲暇时间，正好可以用业余时间学一学Python，也顺便学着编一些小游戏玩玩。 上完课拿到证书后本想抽时间做个总结，却总是困于拖延症中无法自拔。自己这几天利用闲暇时间学了学HTML5的canvas，总算把当初在这门课程上学到的一丁点关于游戏开发的知识点 ——-穿行在摩擦系数极低的外太空中的太空飞船在飞行时的编程控制应该是怎样的—— 用javascript给实现了一下，就权当是总结吧。 想要玩一玩这个简易飞船的戳这里：简易飞船demo ###如何实现 关于这个飞船的飞行，当初最吸引我的一点是它在加速飞行时，加速方向和运动方向并不总是一致的，也就是说这个飞船在运行时是有”漂移”特效的，然后我就很好奇这种”漂移”特效是如何用编程来实现的。下面我就说一说这方面的事情。 ####将飞船拟物化 也就是说从面向对象编程的角度来思考这个问题。 #####飞船的属性 拟物化的第一步是飞船在屏幕上得有一个起始点，在2d平面里可以直接用x（横坐标轴）和y（纵坐标轴）来标志起始位置即可。于是飞船有了第一个属性：当前坐标 (x, y) 飞船从起始点(x1, y1)移动到(x2, y2)只能有一个原因，在某段时间内，它的速度不再为0(velocity)，然后用大家都熟悉的公式 s2 = vel * time + s1 便可以获得(x1,y1)到(x2, y2)的距离，所以我们需要赋予飞船第二个属性：速度 vel速度(x、y代表速度分解到两坐标轴上的大小) 飞船具有速度从而开始运动，是因为它获得了某个方向的加速度(acceleration)。我们可以用公式 vel_2 = acc * time + vel_1 来获得飞船的速度，但前提是我们需要赋予飞船第三个属性：加速度 acc加速度(x, y) #####飞船的方法 想想看如果你坐在一架飘浮于外太空的飞船上时，你最需要飞船有什么功能？ 答案当然是可以挂档啦，要不然你就只能一辈子静止在那里看流星雨了。所以飞船应该要有一个挂档的方法(功能) startAcc() // 开始加速 Note: 正如科学家牛顿说过的，挂档的动作并不是改变飞船的速度(vel)，而是在改变它的加速度(acc). 如果你不想让飞船直接撞上附近某个星球，你就应该给它个挂空档的机会（即停止加速），要不然它真的会一直加速下去最终失控的（想想都可怕） stopAcc() // 停止加速 ####万事具备，只欠挂档了 真的吗？ 于是，当你按下加速键(↑)后，飞船开始加速，这个过程是发生在某个时间段内的，我们暂且就把这段时间定义为1吧（此处速度、时间等不再继承物理世界的单位，方便演示和计算） 在时间1内，君挂上档，飞船的加速度(acc)变化为： acc = (10, 10) // 任意数值，以飞船实际飞行效果调优为准 考虑到飞船初始时是静止的，所以飞船的速度变化为： newVel = acc * 1 + (0, 0) // newVel = (10, 10); 假设飞船初始位置为(0, 0)，那么飞船的位置变化为： newPos = newVel * 1 + (0, 0) // newPos = (10, 10); 此时如果君还没有挂空挡，那么在下一个时间1内，飞船的加速度(acc)、速度(vel)以及新位置(pos)将变为： acc = (10, 10) // 加速度此处设为常量（需要优化可以自己调优变动） newVel = acc * 1 + oldVel // newVel = (20, 20); newPos = newVel * 1 + oldPos // newPos = (20, 20); 此时需要设定一个定时器，每隔一小段时间(interval)把飞船的旧图像抹掉，再根据飞船的新位置将图像重绘一次，这样一来飞船看上去就好像动起来了。 可是，说好的漂移特效呢？ ####飞船并不完整 要想有漂移，当然要有变向了。我们需要给飞船添加一个改变方向的方法，但前提是飞船要具有方向的概念（属性）。在飞船所处的2d世界，我们用弧度来表示它所朝的方向。 // 飞船新属性 ang = 0 // 0或者2π即表示水平向右的方向 // 飞船新方法 changeRotation() // 该方法的实质是改变飞船的 ang 添加新的属性和方法后，我们再来演示一遍在时间1内飞船各属性的变化（假设本时间段内飞船角度ang为 π/3，且处于加速状态，考虑到无摩擦时飞船在若干次加速后将因为速度过快而变得无法控制，我们在飞船更新速度时，为它添加一个速度磨损） // 角度 ang = π / 3 // 加速度 acc = ( 10 * cos(ang), 10 * sin(ang) ) // 速度 vel = acc * 1 + oldVel // 摩擦导致的2%的速度磨损 newVel = vel * 0.98 (小数大小以飞行体验调优为准) // 新位置 newPos = newVel * 1 + oldPos 设置键盘 ←和→按下时调用changeRotation()方法来改变飞行角度 按下↑时调用startAcc()方法启动加速 释放↑时调用stopAcc()停止加速。 这次再试一试，飞船是不是开始漂移了？ Good luck :) 备注： MOOC公开课Python交互式编程介绍（飞船demo中所用图片素材也来自该课程）：https://class.coursera.org/interactivepython-004</summary></entry><entry><title type="html">通过XHR上传浏览器端的文件资源</title><link href="http://localhost:4000/2014/06/28/upload-browser-side-resources-by-using-xhr.html" rel="alternate" type="text/html" title="通过XHR上传浏览器端的文件资源" /><published>2014-06-28T00:00:00+08:00</published><updated>2014-06-28T00:00:00+08:00</updated><id>http://localhost:4000/2014/06/28/upload-browser-side-resources-by-using-xhr</id><content type="html" xml:base="http://localhost:4000/2014/06/28/upload-browser-side-resources-by-using-xhr.html">&lt;p&gt;最近在为公司开发一个&lt;a href=&quot;https://chrome.google.com/webstore/detail/obnbgneldjmmpgkbnnbiiinijmiclpaa&quot;&gt;海淘的Chrome扩展&lt;/a&gt;，扩展的需求之一是：获取当前页面中的某张图片，并将其上传至公司的服务器保存。&lt;/p&gt;
+
+&lt;p&gt;当时的第一思路是：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;获取图片的URL，然后把URL提交给服务器，让服务器进行下载操作&lt;/li&gt;
+  &lt;li&gt;如果服务器访问图片资源时被拒绝，就需要让用户手动下载该图片，然后手动上传至我们的服务器&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;不过在后来的实践中发现，其实可以直接通过&lt;strong&gt;发起&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest&quot;&gt;XHR&lt;/a&gt;请求并指定其返回类型&lt;/strong&gt;的方式来获取浏览器返回的raw数据(&lt;code class=&quot;highlighter-rouge&quot;&gt;Blob&lt;/code&gt;)，然后将这些raw数据当作文件上传至服务器。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;em&gt;在这里首先要说明一点是的：这种将XHR的响应内容当作文件上传的思路，通常是需要&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS&quot;&gt;跨站请求资源&lt;/a&gt;(Cross-site HTTP requests)的，所以除非是在允许跨站请求的运行环境中（如Chrome扩展内）运行这些JS，否则这种思路几乎不可用&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;###思路
+这种上传客户端资源的解决方案最先来自这里&lt;a href=&quot;http://stackoverflow.com/a/10002486/1241980&quot;&gt;upload-a-file-in-a-google-chrome-extension&lt;/a&gt;。基本思路是：当使用&lt;code class=&quot;highlighter-rouge&quot;&gt;XHR&lt;/code&gt;向某个URL发起请求时（如请求某个&lt;code class=&quot;highlighter-rouge&quot;&gt;image&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;css&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;js&lt;/code&gt;文件资源）我们可以设定它的返回类型（&lt;code class=&quot;highlighter-rouge&quot;&gt;responseType&lt;/code&gt;）；当我们把返回类型设置为&lt;code class=&quot;highlighter-rouge&quot;&gt;blob&lt;/code&gt;时，我们便可以直接把返回的raw数据当作”文件”来上传到服务器，以此来实现客户端访问资源的上传。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;###怎么做
+1) 通过XHR请求一个图片资源&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var imgURL = 'http://lyfing.qiniudn.com/external_links/pocker_cards_family.png';
+var xhr = new XMLHttpRequest(); 
+xhr.open(&quot;GET&quot;, imgURL, true);
+xhr.responseType = &quot;blob&quot;;
+xhr.onload = function(){
+    var blob = xhr.response;
+    var msg = ' Request URL = \n ' + imgURL;
+    msg += '\n\n Get Response !';
+    msg += '\n responseType = ' + blob.type;
+    msg += '\n responseSize = ' + Math.round(blob.size / 1024) + 'KB';
+    alert(msg);
+};
+xhr.send();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+function getIMGRes(){
+    var imgURL = 'http://lyfing.qiniudn.com/external_links/pocker_cards_family.png';
+    var xhr = new XMLHttpRequest(); 
+    xhr.open(&quot;GET&quot;, imgURL, true);
+    xhr.responseType = &quot;blob&quot;;
+    xhr.onload = function(){
+        var blob = xhr.response;
+        var msg = ' Request URL = \n ' + imgURL;
+        msg += '\n\n Get Response !';
+        msg += '\n responseType = ' + blob.type;
+        msg += '\n responseSize = ' + Math.round(blob.size / 1024) + 'KB';
+        alert(msg);
+    };
+    xhr.send();
+};
+&lt;/script&gt;
+
+&lt;p&gt;&lt;input type=&quot;button&quot; onclick=&quot;getIMGRes();&quot; value=&quot;点击测试&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2) 将返回的&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Blob&quot;&gt;Blob&lt;/a&gt;对象上传至服务器&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 直接使用上一步获得的blob对象
+var blob = xhr1.response;
+// 我们可以直接使用FormData构建Form表单
+var formData = new FormData();
+// 获取文件类型(例如: blob.type = 'image/png')
+var fileType = blob.type.split('/')[1]; 
+// 将返回的blob对象直接当作文件上传，并设置上传文件名为 test001.fileType
+formData.append('file', blob, 'test001.' + fileType);
+
+var xhr2 = new XMLHttpRequest();
+
+xhr2.upload.onprogress = function(event){
+    ...
+    $msg.html('正在上传 ( ' + percent + '% )');
+}
+
+xhr2.onload = function(){
+    if ( !confirm('上传完成！即将跳转至上传结果页...') ) return;
+    // 返回结果是一段纯文本，我们用正则取出本次上传的信息链接
+    var url = xhr2.response.match(/http:\/\/[^\s]+/)[0];
+    window.open(url);
+}
+
+xhr2.open('POST', 'http://posttestserver.com/post.php?dir=example', true);
+xhr2.send(formData);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+function upload(){
+    var imgURL = 'http://lyfing.qiniudn.com/external_links/pocker_cards_family.png';
+    var xhr1 = new XMLHttpRequest();
+    xhr1.open(&quot;GET&quot;, imgURL, true);
+    xhr1.responseType = &quot;blob&quot;;
+    xhr1.onload = function(){
+        var blob = xhr1.response;
+        var formData = new FormData();
+        var fileType = blob.type.split('/')[1];
+        formData.append('file', blob, 'test001.' + fileType);
+
+        var xhr = new XMLHttpRequest();
+        
+        xhr.upload.onprogress = function(event){
+            var $msg2 = $('#part2Msg');
+            var percent = Math.floor(event.position / event.totalSize * 100);
+            $msg2.html('正在上传 ( ' + percent + '% )');
+        }
+
+        xhr.onload = function(){
+            if ( !confirm('上传完成！即将跳转至上传结果页...') ) return;
+            var url = xhr.response.match(/http:\/\/[^\s]+/)[0];
+            window.open(url);
+        }
+        
+        xhr.open('POST', 'http://posttestserver.com/post.php?dir=example', true);
+        xhr.send(formData);        
+    };
+    xhr1.send(); 
+}
+&lt;/script&gt;
+
+&lt;p&gt;&lt;input type=&quot;button&quot; onclick=&quot;upload();&quot; value=&quot;点击测试&quot; /&gt; &lt;span id=&quot;part2Msg&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;用到的一些对象&quot;&gt;用到的一些&lt;code class=&quot;highlighter-rouge&quot;&gt;对象&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;上面我们用到了&lt;code class=&quot;highlighter-rouge&quot;&gt;FormData&lt;/code&gt;对象(&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/FormData&quot;&gt;详情&lt;/a&gt;)，它是一个模拟了HTML中的Form表单的实体，你可以直接使用它来构建&lt;code class=&quot;highlighter-rouge&quot;&gt;key/value pair&lt;/code&gt;，其中的&lt;code class=&quot;highlighter-rouge&quot;&gt;value&lt;/code&gt;可以是&lt;code class=&quot;highlighter-rouge&quot;&gt;文件&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;Blob&lt;/code&gt;或者纯&lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt;。下面做一个简单的使用示例（Chrome、Firefox可随便使用，IE10+才可使用)&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 创建Form表单对象formData，可在构造函数中传入一个HTML表单对象htmlForm
+// 它的键值对会被添加到formData中
+var formData = new FormData();
+// 添加一个键值对
+formData.append('userID', '112233');
+// 添加一个文件对象
+var file = document.getElementByID('fileField');
+formData.append('file1', file);
+// 添加一个Blob对象，它将被视为文件上传
+formData.append('file2', blob);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;关于&lt;code class=&quot;highlighter-rouge&quot;&gt;Blob&lt;/code&gt;对象，它是一个类似于&lt;code class=&quot;highlighter-rouge&quot;&gt;文件&lt;/code&gt;的结构体，事实上&lt;code class=&quot;highlighter-rouge&quot;&gt;文件&lt;/code&gt;接口正是在它的基础上做的扩展。&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Blob&quot;&gt;更多关于Blob&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;备注&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest&quot;&gt;跨站请求HTTP资源&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Blob&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Blob&lt;/code&gt;&lt;/a&gt;对象&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/FormData&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;FormData&lt;/code&gt;&lt;/a&gt;对象&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;示例中用到的文件上传服务：http://posttestserver.com/post.php?dir=example&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;示例中用到的图片：&lt;img src=&quot;http://lyfing.qiniudn.com/external_links/pocker_cards_family.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="Tech" /><category term="Javascript" /><category term="Chrome-Extension" /><summary type="html">最近在为公司开发一个海淘的Chrome扩展，扩展的需求之一是：获取当前页面中的某张图片，并将其上传至公司的服务器保存。 当时的第一思路是： 获取图片的URL，然后把URL提交给服务器，让服务器进行下载操作 如果服务器访问图片资源时被拒绝，就需要让用户手动下载该图片，然后手动上传至我们的服务器 不过在后来的实践中发现，其实可以直接通过发起XHR请求并指定其返回类型的方式来获取浏览器返回的raw数据(Blob)，然后将这些raw数据当作文件上传至服务器。 在这里首先要说明一点是的：这种将XHR的响应内容当作文件上传的思路，通常是需要跨站请求资源(Cross-site HTTP requests)的，所以除非是在允许跨站请求的运行环境中（如Chrome扩展内）运行这些JS，否则这种思路几乎不可用 ###思路 这种上传客户端资源的解决方案最先来自这里upload-a-file-in-a-google-chrome-extension。基本思路是：当使用XHR向某个URL发起请求时（如请求某个image、css、js文件资源）我们可以设定它的返回类型（responseType）；当我们把返回类型设置为blob时，我们便可以直接把返回的raw数据当作”文件”来上传到服务器，以此来实现客户端访问资源的上传。 ###怎么做 1) 通过XHR请求一个图片资源 var imgURL = 'http://lyfing.qiniudn.com/external_links/pocker_cards_family.png'; var xhr = new XMLHttpRequest(); xhr.open(&quot;GET&quot;, imgURL, true); xhr.responseType = &quot;blob&quot;; xhr.onload = function(){ var blob = xhr.response; var msg = ' Request URL = \n ' + imgURL; msg += '\n\n Get Response !'; msg += '\n responseType = ' + blob.type; msg += '\n responseSize = ' + Math.round(blob.size / 1024) + 'KB'; alert(msg); }; xhr.send(); 2) 将返回的Blob对象上传至服务器 // 直接使用上一步获得的blob对象 var blob = xhr1.response; // 我们可以直接使用FormData构建Form表单 var formData = new FormData(); // 获取文件类型(例如: blob.type = 'image/png') var fileType = blob.type.split('/')[1]; // 将返回的blob对象直接当作文件上传，并设置上传文件名为 test001.fileType formData.append('file', blob, 'test001.' + fileType); var xhr2 = new XMLHttpRequest(); xhr2.upload.onprogress = function(event){ ... $msg.html('正在上传 ( ' + percent + '% )'); } xhr2.onload = function(){ if ( !confirm('上传完成！即将跳转至上传结果页...') ) return; // 返回结果是一段纯文本，我们用正则取出本次上传的信息链接 var url = xhr2.response.match(/http:\/\/[^\s]+/)[0]; window.open(url); } xhr2.open('POST', 'http://posttestserver.com/post.php?dir=example', true); xhr2.send(formData);   用到的一些对象 上面我们用到了FormData对象(详情)，它是一个模拟了HTML中的Form表单的实体，你可以直接使用它来构建key/value pair，其中的value可以是文件、Blob或者纯String。下面做一个简单的使用示例（Chrome、Firefox可随便使用，IE10+才可使用) // 创建Form表单对象formData，可在构造函数中传入一个HTML表单对象htmlForm // 它的键值对会被添加到formData中 var formData = new FormData(); // 添加一个键值对 formData.append('userID', '112233'); // 添加一个文件对象 var file = document.getElementByID('fileField'); formData.append('file1', file); // 添加一个Blob对象，它将被视为文件上传 formData.append('file2', blob); 关于Blob对象，它是一个类似于文件的结构体，事实上文件接口正是在它的基础上做的扩展。更多关于Blob 备注： 跨站请求HTTP资源 Blob对象 FormData对象 示例中用到的文件上传服务：http://posttestserver.com/post.php?dir=example 示例中用到的图片：</summary></entry><entry><title type="html">Python爬虫 实现从糗百上多线程抓取内容</title><link href="http://localhost:4000/2014/01/12/Python-a-web-spider-for-fetching-qiubai-articles.html" rel="alternate" type="text/html" title="Python爬虫 实现从糗百上多线程抓取内容" /><published>2014-01-12T00:00:00+08:00</published><updated>2014-01-12T00:00:00+08:00</updated><id>http://localhost:4000/2014/01/12/Python-a-web-spider-for-fetching-qiubai-articles</id><content type="html" xml:base="http://localhost:4000/2014/01/12/Python-a-web-spider-for-fetching-qiubai-articles.html">&lt;p&gt;最近参加一家公司的远程笔试，其中的一道题目是：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;写一个简单的爬虫，把糗事百科今天被顶超过5000的帖子爬出来，注意考虑性能和图片显示。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;当时一看很感兴趣，因为看到这道题目后思路很清晰，而且我大学时周围好友都爱看糗百，所以做点有关他们喜欢的产品的信息抓取还是挺有趣的。&lt;/p&gt;
+
+&lt;p&gt;好的，闲话就到这里，下面进入正题。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;1-思路&quot;&gt;1. 思路&lt;/h2&gt;
+
+&lt;h3 id=&quot;11-单线程-or-多线程&quot;&gt;1.1 单线程 or 多线程&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;单线程&lt;/strong&gt;按序逐一抓取。这种思路下的实现方式是：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;获取糗百所有可供抓取的页面URL，然后把他们放到一个列表里&lt;/li&gt;
+  &lt;li&gt;从列表中取走一条页面URL，将该URL指向页面中的所有糗百文章解析出来&lt;/li&gt;
+  &lt;li&gt;如果文章有附图，则下载至指定目录&lt;/li&gt;
+  &lt;li&gt;将第2步获得的若干糗百文章追加至一个xml文件中&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;点评：单线程无法充分利用机器的CPU资源和带宽，性能低下，不予考虑&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;多线程&lt;/strong&gt;乱序抓取。这种思路下的实现方式是：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;创建两个&lt;a href=&quot;http://docs.python.org/2/library/queue.html&quot;&gt;同步队列&lt;/a&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;page_q&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;pic_q&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;page_q&lt;/code&gt;存放页面URL，&lt;code class=&quot;highlighter-rouge&quot;&gt;pic_q&lt;/code&gt;存放图片URL&lt;/li&gt;
+  &lt;li&gt;获取糗百所有可供抓取页面的URL，将这些URL添加到&lt;code class=&quot;highlighter-rouge&quot;&gt;page_q&lt;/code&gt;队列&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;开辟多条&lt;strong&gt;抓取解析页面文章的线程&lt;/strong&gt;，每条线程的具体工作是：&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;从&lt;code class=&quot;highlighter-rouge&quot;&gt;page_q&lt;/code&gt;队列取走一条URL，解析其指向的页面中的糗百文章&lt;/li&gt;
+      &lt;li&gt;将这些文章内容追加到xml文件中(同步访问)&lt;/li&gt;
+      &lt;li&gt;如果文章有附图，则将该附图的链接URL放入&lt;code class=&quot;highlighter-rouge&quot;&gt;pic_q&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;开辟多条&lt;strong&gt;下载图片的线程&lt;/strong&gt;，每条线程的具体工作是：&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;从&lt;code class=&quot;highlighter-rouge&quot;&gt;pic_q&lt;/code&gt;队列取走一条图片URL，将其命名为&lt;code class=&quot;highlighter-rouge&quot;&gt;idxxxxx.jpg&lt;/code&gt;并下载到指定目录&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;点评：可以充分利用CPU资源及带宽，选择该条思路进行&lt;/p&gt;
+
+&lt;h3 id=&quot;12-如何提取页面内容&quot;&gt;1.2 如何提取页面内容&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;思路1：通过正则表达式匹配，然后提取有用信息&lt;/li&gt;
+  &lt;li&gt;思路2：通过第三方HTML内容提取工具提取有用信息&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;点评：思路2具有更高的扩展性、容错性，选择思路2&lt;/p&gt;
+
+&lt;h2 id=&quot;2-实现&quot;&gt;2. 实现&lt;/h2&gt;
+
+&lt;h3 id=&quot;21-多线程实体&quot;&gt;2.1 多线程实体&lt;/h3&gt;
+
+&lt;p&gt;本文设计了两个多线程类，他们都继承自&lt;code class=&quot;highlighter-rouge&quot;&gt;threading.Thread&lt;/code&gt;，这两个类是：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;class QiubaiReader(threading.Thread)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;class PicDownloader(threading.Thread)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;类&lt;code class=&quot;highlighter-rouge&quot;&gt;QiubaiReader&lt;/code&gt;要做的工作和本文第1部分 &lt;strong&gt;1.1&lt;/strong&gt; » &lt;strong&gt;多线程&lt;/strong&gt; » &lt;strong&gt;抓取解析页面文章的线程&lt;/strong&gt;内容一致，以下是它的执行逻辑：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;&quot;&quot; 类 QiubaiReader 说明
+糗事百科内容的消费者，也是糗事百科文章图片的生产者
+消费者：从 pageQueue 里读取一个页面URL，解析该页面所有糗百文章，并将这些文章存储到xml文件中；
+生产者：在解析页面时，如果某篇文章附带图片，则把该图片的URL放入 picQueue ,等待图片类的消费者来处理.
+&quot;&quot;&quot;
+runFlag = 1                                                    #停止线程的开关
+
+def __init__(self, pageQueue, picQueue, pathDict):
+    ...
+
+def fetchContent(self, pageUrl):
+    &quot;&quot;&quot;
+    每一条糗百，我们需要取出其中的三条信息：
+    1. 该条糗百的ID
+    2. 该条糗百的正文
+    3. 该条糗百的图片链接(可能为空，非空则等待下载)
+    爬取糗百的步骤是：
+    1. 获得该条糗百的整个大&amp;lt;div /&amp;gt;块，我们声明 div_dad 变量代表这个大&amp;lt;div /&amp;gt;块
+    2. 通过查找当前投票数的&amp;lt;div /&amp;gt;相关值来判断是否继续，如果投票数大于5000，则继续
+    3. 在大&amp;lt;div /&amp;gt;块的首行，截取该条糗百的文章ID号（每条糗百都是一篇文章，通过文章ID可以获取文章和图片的链接）
+    4. 在大div块中，找出带有糗百正文的&amp;lt;div /&amp;gt;块
+    5. 将上面提到的三条信息写入xml文件
+    &quot;&quot;&quot;
+    ...
+
+def writeContent(self, list):
+    &quot;&quot;&quot;
+    将list中包含的糗百文章格式化并一次性插入到xml文件中
+    list中包含有某个页面的所有糗百文章（一般是20条）
+    list结构为：
+    [
+        {   'id':       qiuID1,
+            'content':  qiuBaiText,
+            'picURL':   picURL },
+        ...
+    ]
+    &quot;&quot;&quot;
+    ...
+
+def run(self):
+    while not self.pageQueue.empty() and self.__class__.runFlag &amp;gt; 0:
+        #糗百页面消费者
+        pageUrl = self.pageQueue.get()
+        qiuBaiList, picDictList = self.fetchContent(pageUrl)
+        if len(qiuBaiList) &amp;gt;= 1:
+            self.writeContent(qiuBaiList)
+        #糗百图片生产者
+        if len(picDictList) &amp;gt;= 1:
+            for item in picDictList: self.picQueue.put(item)
+
+    #如果两个队列都为空，则线程退出，并通知图片下载线程也退出
+    if self.pageQueue.empty() and self.picQueue.empty():
+        ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;类&lt;code class=&quot;highlighter-rouge&quot;&gt;PicDownloader&lt;/code&gt;要做的工作和本文第1部分 &lt;strong&gt;1.1&lt;/strong&gt; » &lt;strong&gt;多线程&lt;/strong&gt; » &lt;strong&gt;下载图片的线程&lt;/strong&gt;内容一致，以下是它的执行逻辑：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 类 PicDownloader 说明
+runFlag = 1                                                            #线程停止开关
+
+def __init__(self, queue, pathDict):
+    ...
+def downloadPic(self, picDict):
+    ...
+def run(self):
+    while self.__class__.runFlag &amp;gt; 0:
+        while not self.queue.empty():
+            picDict = self.queue.get()
+            self.downloadPic(picDict)
+        time.sleep(1)                                                  #如果图片URL队列为空，则等待一秒
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;22-线程安全队列&quot;&gt;2.2 线程安全队列&lt;/h3&gt;
+
+&lt;p&gt;本文涉及到的两个队列&lt;code class=&quot;highlighter-rouge&quot;&gt;page_q&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;pic_q&lt;/code&gt;，一个用来存取页面URL，另一个用来存取图片URL，两队列都面临着多线程同步存取的问题，而这则是所有的”生产者-消费者问题”必须解决的问题。&lt;/p&gt;
+
+&lt;p&gt;幸运的是，我们用的是Python！&lt;/p&gt;
+
+&lt;p&gt;Python已经为我们提供了一个线程安全队列：&lt;a href=&quot;http://docs.python.org/2/library/queue.html&quot;&gt;Queue&lt;/a&gt;，它为多个”生产者-消费者”提供了安全同步队列。引用官方的一句话便是：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;Queue&lt;/code&gt; module implements multi-producer, multi-consumer queues. It is especially useful in threaded programming when information must be exchanged safely between multiple threads.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;而且&lt;code class=&quot;highlighter-rouge&quot;&gt;Queue&lt;/code&gt;的创建、使用也极为轻便  &lt;br /&gt;
+创建&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import Queue
+queue = Queue.Queue()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;使用&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;item_1 = queue.get()     # queue.get() =&amp;gt; 从队列中移除一个item并返回该item
+queue.put(item_2)        # queue.put() =&amp;gt; 往队列中添加一个item
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;对&lt;code class=&quot;highlighter-rouge&quot;&gt;Queue&lt;/code&gt;更高要求的操作与使用，请查看&lt;a href=&quot;http://docs.python.org/2/library/queue.html&quot;&gt;官方文档&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;23-html内容提取&quot;&gt;2.3 HTML内容提取&lt;/h3&gt;
+
+&lt;p&gt;该部分内容，其实是对类&lt;code class=&quot;highlighter-rouge&quot;&gt;QiubaiReader&lt;/code&gt;中的&lt;code class=&quot;highlighter-rouge&quot;&gt;fetchContent(self, pageUrl)&lt;/code&gt;方法的解读。从HTML中获取内容时，我们需要借助第三方开源工具&lt;a href=&quot;http://www.crummy.com/software/BeautifulSoup/&quot;&gt;BeautifulSoup&lt;/a&gt;(看最下方应用程序信息)&lt;/p&gt;
+
+&lt;p&gt;为了便于升级改动，我们为类&lt;code class=&quot;highlighter-rouge&quot;&gt;QiubaiReader&lt;/code&gt;声明一个类成员变量&lt;code class=&quot;highlighter-rouge&quot;&gt;argsDict&lt;/code&gt;，用来统一糗事百科HTML页面源码中的一些关键性的标记及属性&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;argsDict = {
+        'pageEncoding'  : 'utf-8',                                 #糗百html的编码格式
+        'dadClassAttr'  : 'block untagged mb15 bs2',               #某条糗百整个大&amp;lt;div /&amp;gt;块的class属性
+        'contClassAttr' : 'content',                               #某条糗百的正文所在&amp;lt;div /&amp;gt;块的class属性
+        'picClassAttr'  : 'thumb',                                 #包含图片的&amp;lt;div /&amp;gt;块的class属性
+        'voteClassAttr' : 'bar',                                   #包含投票数的&amp;lt;div /&amp;gt;块的class属性
+        #包含糗百ID的那一行的id号前的前缀，例如：'qiushi_tag_55611097'
+        'idLinePreStr'  : 'qiushi_tag_',                           
+        #某条糗百只有点赞数超过该值，才进行收录。题目要求该值为5000，本人感觉偏高，故将其改成了2000
+        'validCountNum' : 2000,                                    
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;糗百每一个页面会包含20条糗百文章，读者可以&lt;a href=&quot;https://code.csdn.net/snippets/156535/master/qiubai_content/raw&quot;&gt;点此查看&lt;/a&gt;其中某条糗百文章的HTML源码及其标记结构。&lt;/p&gt;
+
+&lt;p&gt;我们会发现糗百文章的HTML标记结构如下（我们姑且把如下&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div /&amp;gt;&lt;/code&gt;块称作&lt;code class=&quot;highlighter-rouge&quot;&gt;文章的&amp;lt;div /&amp;gt;&lt;/code&gt;块吧）：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div class=&quot;block untagged mb15 bs2&quot; id='qiushi_tag_idxxxxxx'&amp;gt;
+    &amp;lt;div class=&quot;content&quot; title=&quot;2014-01-14 16:33:29&quot;&amp;gt;
+        糗百正文
+    &amp;lt;/div&amp;gt;
+    &amp;lt;!--除非文章配有图片，否则下面这个div不会出现--&amp;gt;
+    &amp;lt;div class=&quot;thumb&quot;&amp;gt;
+        &amp;lt;a href=&quot;/article/url...&quot; target=&quot;_blank&quot; onclick=&quot;some js&quot;&amp;gt;
+            &amp;lt;img src=&quot;http://the/pic/URL&quot; alt=&quot;图片描述&quot; /&amp;gt;
+        &amp;lt;/a&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+...
+一个页面中会有20个上述结构出现，也就是20条糗百文章
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;以下的任务是，解析给定页面中的所有糗百文章，获取它们的点赞数、ID、正文以及图片链接（如果有的话）。这些解析工作需要借助&lt;code class=&quot;highlighter-rouge&quot;&gt;BeautifulSoup&lt;/code&gt;工具来完成。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;step 1:&lt;/strong&gt;我们首先引入&lt;code class=&quot;highlighter-rouge&quot;&gt;BeautifulSoup&lt;/code&gt;，并实例化一个可操作的HTML结构体：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import urllib2
+from bs4 import BeautifulSoup
+#获取给定页面pageURL的HTML源码
+pageCont = urllib2.urlopen(pageURL).read().decode(self.argsDict['pageEncoding'])
+#将HTML源码传递给BeautifulSoup，实例化一个它的对象
+soup = BeautifulSoup(pageCont)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;step 2:&lt;/strong&gt; 获得给定页面的所有20个上述的&lt;code class=&quot;highlighter-rouge&quot;&gt;文章&amp;lt;div /&amp;gt;&lt;/code&gt;块&lt;/p&gt;
+
+&lt;p&gt;HTML是标记性语言，即使其中的&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt;标记(tag)出现了很多次，而且分布杂乱，但我们可以根据一个&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt;标记的多个属性来唯一确定某类/某个标记。
+例如&lt;code class=&quot;highlighter-rouge&quot;&gt;文章&amp;lt;div /&amp;gt;&lt;/code&gt;块的属性是：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div class=&quot;block untagged mb15 bs2&quot; id='qiushi_tag_idxxxxxx' &amp;gt;&amp;lt;/div&amp;gt;
+即：
+class = &quot;block untagged mb15 bs2&quot;
+id = &quot;qiushi_tag_idxxxxxx&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;文章&amp;lt;div /&amp;gt;&lt;/code&gt;块的&lt;code class=&quot;highlighter-rouge&quot;&gt;id&lt;/code&gt;属性不确定，但它的&lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt;属性是确定且唯一的，我们就使用它的&lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt;属性来找到这20个&lt;code class=&quot;highlighter-rouge&quot;&gt;文章&amp;lt;div /&amp;gt;&lt;/code&gt;块，并把它们保存到一个&lt;code class=&quot;highlighter-rouge&quot;&gt;list&lt;/code&gt;中&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;articles_div_list = soup.find_all('div', attrs={'class': 'block untagged mb15 bs2'})
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;step 3:&lt;/strong&gt;接下来，我们遍历&lt;code class=&quot;highlighter-rouge&quot;&gt;articles_div_list&lt;/code&gt;，并从中解析出我们需要的糗百信息&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for div_article in articles_div_list:
+    ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;step 3.1 获得点赞数（&lt;a href=&quot;https://code.csdn.net/snippets/156687/master/div_mark_vote/raw&quot;&gt;点此查看&lt;/a&gt;点赞内容所在&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt;标记）&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;div_vote = div_article.find('div', attrs={'class': 'bar'})  #用给定的属性键值对（class='bar')查找某个标记（tag）
+upCount = div_vote.a.get_text()                      #通过 标记.字标记.get_text() 方法获得字标记的text
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;step 3.2 获得ID（&lt;a href=&quot;https://code.csdn.net/snippets/156695/master/div_mark_id/raw&quot;&gt;点此查看&lt;/a&gt;ID内容所在&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt;标记）&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;idLine = div_article.attrs['id']  #想要获得某个标记（tag）的属性，可以直接查字典一样，此处key为某个属性的name
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;step 3.3 获得正文（&lt;a href=&quot;https://code.csdn.net/snippets/156709/master/div_mark_cont/raw&quot;&gt;点此查看&lt;/a&gt;正文内容所在&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt;标记）&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;div_cont = div_article.find('div', attrs={'class': 'content'})
+qiubai_cont = div_cont.get_text()                #通过标记的 get_text() 方法获得该标记的text
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;step 3.4 获得配图的URL（如果有的话。&lt;a href=&quot;https://code.csdn.net/snippets/156693/master/div_mark_pic_url/raw&quot;&gt;点此查看&lt;/a&gt;配图URL内容所在&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt;标记）&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;div_pic = div_article.find('div', attrs={'class': 'thumb'})
+if div_pic:
+    #想要获得某个标记（tag）的子标记的子标记...的属性，可以直接通过 .(英文句点) 索引至该标记，然后像查字典一样查找即可
+    picURL = div_pic.a.img['src']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;24-存储内容&quot;&gt;2.4 存储内容&lt;/h3&gt;
+
+&lt;p&gt;因为糗百内容要存储到xml文档中，我们在这里还要使用Python自带的操作XML的包：&lt;code class=&quot;highlighter-rouge&quot;&gt;xml.etree.ElementTree&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;step 1：&lt;/strong&gt;我们首先创建一个用于存储糗百的xml文档：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fo = open('qiubai.xml', 'w')
+fo.write('&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;\n&amp;lt;ROOT&amp;gt;&amp;lt;/ROOT&amp;gt;')
+fo.close()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;此时的xml文件看起来应该是这个样子：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;ROOT&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ROOT&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;step 2：&lt;/strong&gt;给&lt;code class=&quot;highlighter-rouge&quot;&gt;qiubai.xml&lt;/code&gt;添加一条糗百内容&lt;/p&gt;
+
+&lt;p&gt;step 2.1：获得&lt;code class=&quot;highlighter-rouge&quot;&gt;qiubai.xml&lt;/code&gt;文档的根节点&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import xml.etree.ElementTree as ET
+tree = ET.parse('qiubai.xml')       #也可以给 parse() 传递文档路径
+root = tree.getroot()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;step 2.2：为根节点&lt;code class=&quot;highlighter-rouge&quot;&gt;root&lt;/code&gt;添加一个子节点&lt;code class=&quot;highlighter-rouge&quot;&gt;QiuBai&lt;/code&gt;，并设置该子节点的各个属性&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;qiubai = ET.SubElement(root, 'QiuBai')
+qiubai.set('id', 'idxxxxxx')
+qiubai.set('picURL', 'http://here/is/pic/url.jpg')
+qiubai.text = '此处为糗百正文...'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;step 2.3：将添加了新内容的&lt;code class=&quot;highlighter-rouge&quot;&gt;root&lt;/code&gt;保存到文档&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tree = ET.ElementTree(root)
+tree.write('qiubai.xml', encoding='utf-8', xml_declaration=True)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;此时的xml文档看起来应该是这样子：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;ROOT&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;QiuBai&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'idxxxxxx'&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;picURL=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'http://here/is/pic/url.jpg'&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        此处为糗百正文...
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/QiuBai&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ROOT&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;注意事项：如果你使用的是UTF-8格式保存xml文档，那你需要注意：xml文档规范并不支持所有的UTF-8支持的字符，也就是说有些UTF-8支持的字符在xml文档中是不受支持的，如果你坚持写入，则在再次读取xml文档是会出错。&lt;/p&gt;
+
+&lt;p&gt;关于过滤xml不支持字符的内容，请参看源码 &lt;code class=&quot;highlighter-rouge&quot;&gt;QiubaiReader.py&lt;/code&gt; » &lt;code class=&quot;highlighter-rouge&quot;&gt;def replaceHellWord(text)&lt;/code&gt;方法&lt;/p&gt;
+
+&lt;h2 id=&quot;3-源代码&quot;&gt;3. 源代码&lt;/h2&gt;
+
+&lt;p&gt;到&lt;a href=&quot;https://github.com/HelloLyfing/Tiny_Projects/tree/master/WebSpider&quot;&gt;这里&lt;/a&gt;查看源码，或者直接&lt;a href=&quot;https://github.com/HelloLyfing/Tiny_Projects/raw/master/WebSpider/web_spider.tar&quot;&gt;点我&lt;/a&gt;下载源码。&lt;/p&gt;
+
+&lt;p&gt;应用程序信息：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;本程序在Window7平台下开发完成并测试通过；在CentOS 6.3下测试通过&lt;/li&gt;
+  &lt;li&gt;Python &lt;code class=&quot;highlighter-rouge&quot;&gt;2.7.5 [MSC v.1500 64 bit (AMD64)]&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;xml.etree.ElementTree &lt;code class=&quot;highlighter-rouge&quot;&gt;1.3.0&lt;/code&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;键入 &lt;code class=&quot;highlighter-rouge&quot;&gt;import xml.etree.ElementTree&lt;/code&gt;； &lt;code class=&quot;highlighter-rouge&quot;&gt;ElementTree.VERSION&lt;/code&gt; 查看&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Beautiful Soup &lt;code class=&quot;highlighter-rouge&quot;&gt;4.3.2&lt;/code&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;键入 &lt;code class=&quot;highlighter-rouge&quot;&gt;import bs4&lt;/code&gt;；&lt;code class=&quot;highlighter-rouge&quot;&gt;bs4.__version__&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.crummy.com/software/BeautifulSoup/bs4/download/4.3/&quot;&gt;bs4下载链接&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="Tech" /><category term="Python" /><category term="多线程" /><category term="爬虫" /><category term="糗事百科" /><category term="BeautifulSoup" /><summary type="html">最近参加一家公司的远程笔试，其中的一道题目是： 写一个简单的爬虫，把糗事百科今天被顶超过5000的帖子爬出来，注意考虑性能和图片显示。 当时一看很感兴趣，因为看到这道题目后思路很清晰，而且我大学时周围好友都爱看糗百，所以做点有关他们喜欢的产品的信息抓取还是挺有趣的。 好的，闲话就到这里，下面进入正题。 1. 思路 1.1 单线程 or 多线程 单线程按序逐一抓取。这种思路下的实现方式是： 获取糗百所有可供抓取的页面URL，然后把他们放到一个列表里 从列表中取走一条页面URL，将该URL指向页面中的所有糗百文章解析出来 如果文章有附图，则下载至指定目录 将第2步获得的若干糗百文章追加至一个xml文件中 点评：单线程无法充分利用机器的CPU资源和带宽，性能低下，不予考虑 多线程乱序抓取。这种思路下的实现方式是： 创建两个同步队列page_q和pic_q，page_q存放页面URL，pic_q存放图片URL 获取糗百所有可供抓取页面的URL，将这些URL添加到page_q队列 开辟多条抓取解析页面文章的线程，每条线程的具体工作是： 从page_q队列取走一条URL，解析其指向的页面中的糗百文章 将这些文章内容追加到xml文件中(同步访问) 如果文章有附图，则将该附图的链接URL放入pic_q 开辟多条下载图片的线程，每条线程的具体工作是： 从pic_q队列取走一条图片URL，将其命名为idxxxxx.jpg并下载到指定目录 点评：可以充分利用CPU资源及带宽，选择该条思路进行 1.2 如何提取页面内容 思路1：通过正则表达式匹配，然后提取有用信息 思路2：通过第三方HTML内容提取工具提取有用信息 点评：思路2具有更高的扩展性、容错性，选择思路2 2. 实现 2.1 多线程实体 本文设计了两个多线程类，他们都继承自threading.Thread，这两个类是： class QiubaiReader(threading.Thread) class PicDownloader(threading.Thread) 类QiubaiReader要做的工作和本文第1部分 1.1 » 多线程 » 抓取解析页面文章的线程内容一致，以下是它的执行逻辑： &quot;&quot;&quot; 类 QiubaiReader 说明 糗事百科内容的消费者，也是糗事百科文章图片的生产者 消费者：从 pageQueue 里读取一个页面URL，解析该页面所有糗百文章，并将这些文章存储到xml文件中； 生产者：在解析页面时，如果某篇文章附带图片，则把该图片的URL放入 picQueue ,等待图片类的消费者来处理. &quot;&quot;&quot; runFlag = 1 #停止线程的开关 def __init__(self, pageQueue, picQueue, pathDict): ... def fetchContent(self, pageUrl): &quot;&quot;&quot; 每一条糗百，我们需要取出其中的三条信息： 1. 该条糗百的ID 2. 该条糗百的正文 3. 该条糗百的图片链接(可能为空，非空则等待下载) 爬取糗百的步骤是： 1. 获得该条糗百的整个大&amp;lt;div /&amp;gt;块，我们声明 div_dad 变量代表这个大&amp;lt;div /&amp;gt;块 2. 通过查找当前投票数的&amp;lt;div /&amp;gt;相关值来判断是否继续，如果投票数大于5000，则继续 3. 在大&amp;lt;div /&amp;gt;块的首行，截取该条糗百的文章ID号（每条糗百都是一篇文章，通过文章ID可以获取文章和图片的链接） 4. 在大div块中，找出带有糗百正文的&amp;lt;div /&amp;gt;块 5. 将上面提到的三条信息写入xml文件 &quot;&quot;&quot; ... def writeContent(self, list): &quot;&quot;&quot; 将list中包含的糗百文章格式化并一次性插入到xml文件中 list中包含有某个页面的所有糗百文章（一般是20条） list结构为： [ { 'id': qiuID1, 'content': qiuBaiText, 'picURL': picURL }, ... ] &quot;&quot;&quot; ... def run(self): while not self.pageQueue.empty() and self.__class__.runFlag &amp;gt; 0: #糗百页面消费者 pageUrl = self.pageQueue.get() qiuBaiList, picDictList = self.fetchContent(pageUrl) if len(qiuBaiList) &amp;gt;= 1: self.writeContent(qiuBaiList) #糗百图片生产者 if len(picDictList) &amp;gt;= 1: for item in picDictList: self.picQueue.put(item) #如果两个队列都为空，则线程退出，并通知图片下载线程也退出 if self.pageQueue.empty() and self.picQueue.empty(): ... 类PicDownloader要做的工作和本文第1部分 1.1 » 多线程 » 下载图片的线程内容一致，以下是它的执行逻辑： # 类 PicDownloader 说明 runFlag = 1 #线程停止开关 def __init__(self, queue, pathDict): ... def downloadPic(self, picDict): ... def run(self): while self.__class__.runFlag &amp;gt; 0: while not self.queue.empty(): picDict = self.queue.get() self.downloadPic(picDict) time.sleep(1) #如果图片URL队列为空，则等待一秒 2.2 线程安全队列 本文涉及到的两个队列page_q和pic_q，一个用来存取页面URL，另一个用来存取图片URL，两队列都面临着多线程同步存取的问题，而这则是所有的”生产者-消费者问题”必须解决的问题。 幸运的是，我们用的是Python！ Python已经为我们提供了一个线程安全队列：Queue，它为多个”生产者-消费者”提供了安全同步队列。引用官方的一句话便是： The Queue module implements multi-producer, multi-consumer queues. It is especially useful in threaded programming when information must be exchanged safely between multiple threads. 而且Queue的创建、使用也极为轻便 创建 import Queue queue = Queue.Queue() 使用 item_1 = queue.get() # queue.get() =&amp;gt; 从队列中移除一个item并返回该item queue.put(item_2) # queue.put() =&amp;gt; 往队列中添加一个item 对Queue更高要求的操作与使用，请查看官方文档。 2.3 HTML内容提取 该部分内容，其实是对类QiubaiReader中的fetchContent(self, pageUrl)方法的解读。从HTML中获取内容时，我们需要借助第三方开源工具BeautifulSoup(看最下方应用程序信息) 为了便于升级改动，我们为类QiubaiReader声明一个类成员变量argsDict，用来统一糗事百科HTML页面源码中的一些关键性的标记及属性 argsDict = { 'pageEncoding' : 'utf-8', #糗百html的编码格式 'dadClassAttr' : 'block untagged mb15 bs2', #某条糗百整个大&amp;lt;div /&amp;gt;块的class属性 'contClassAttr' : 'content', #某条糗百的正文所在&amp;lt;div /&amp;gt;块的class属性 'picClassAttr' : 'thumb', #包含图片的&amp;lt;div /&amp;gt;块的class属性 'voteClassAttr' : 'bar', #包含投票数的&amp;lt;div /&amp;gt;块的class属性 #包含糗百ID的那一行的id号前的前缀，例如：'qiushi_tag_55611097' 'idLinePreStr' : 'qiushi_tag_', #某条糗百只有点赞数超过该值，才进行收录。题目要求该值为5000，本人感觉偏高，故将其改成了2000 'validCountNum' : 2000, } 糗百每一个页面会包含20条糗百文章，读者可以点此查看其中某条糗百文章的HTML源码及其标记结构。 我们会发现糗百文章的HTML标记结构如下（我们姑且把如下&amp;lt;div /&amp;gt;块称作文章的&amp;lt;div /&amp;gt;块吧）： &amp;lt;div class=&quot;block untagged mb15 bs2&quot; id='qiushi_tag_idxxxxxx'&amp;gt; &amp;lt;div class=&quot;content&quot; title=&quot;2014-01-14 16:33:29&quot;&amp;gt; 糗百正文 &amp;lt;/div&amp;gt; &amp;lt;!--除非文章配有图片，否则下面这个div不会出现--&amp;gt; &amp;lt;div class=&quot;thumb&quot;&amp;gt; &amp;lt;a href=&quot;/article/url...&quot; target=&quot;_blank&quot; onclick=&quot;some js&quot;&amp;gt; &amp;lt;img src=&quot;http://the/pic/URL&quot; alt=&quot;图片描述&quot; /&amp;gt; &amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; ... 一个页面中会有20个上述结构出现，也就是20条糗百文章 ... 以下的任务是，解析给定页面中的所有糗百文章，获取它们的点赞数、ID、正文以及图片链接（如果有的话）。这些解析工作需要借助BeautifulSoup工具来完成。 step 1:我们首先引入BeautifulSoup，并实例化一个可操作的HTML结构体： import urllib2 from bs4 import BeautifulSoup #获取给定页面pageURL的HTML源码 pageCont = urllib2.urlopen(pageURL).read().decode(self.argsDict['pageEncoding']) #将HTML源码传递给BeautifulSoup，实例化一个它的对象 soup = BeautifulSoup(pageCont) step 2: 获得给定页面的所有20个上述的文章&amp;lt;div /&amp;gt;块 HTML是标记性语言，即使其中的&amp;lt;div&amp;gt;标记(tag)出现了很多次，而且分布杂乱，但我们可以根据一个&amp;lt;div&amp;gt;标记的多个属性来唯一确定某类/某个标记。 例如文章&amp;lt;div /&amp;gt;块的属性是： &amp;lt;div class=&quot;block untagged mb15 bs2&quot; id='qiushi_tag_idxxxxxx' &amp;gt;&amp;lt;/div&amp;gt; 即： class = &quot;block untagged mb15 bs2&quot; id = &quot;qiushi_tag_idxxxxxx&quot; 文章&amp;lt;div /&amp;gt;块的id属性不确定，但它的class属性是确定且唯一的，我们就使用它的class属性来找到这20个文章&amp;lt;div /&amp;gt;块，并把它们保存到一个list中 articles_div_list = soup.find_all('div', attrs={'class': 'block untagged mb15 bs2'}) step 3:接下来，我们遍历articles_div_list，并从中解析出我们需要的糗百信息 for div_article in articles_div_list: ... step 3.1 获得点赞数（点此查看点赞内容所在&amp;lt;div&amp;gt;标记） div_vote = div_article.find('div', attrs={'class': 'bar'}) #用给定的属性键值对（class='bar')查找某个标记（tag） upCount = div_vote.a.get_text() #通过 标记.字标记.get_text() 方法获得字标记的text step 3.2 获得ID（点此查看ID内容所在&amp;lt;div&amp;gt;标记） idLine = div_article.attrs['id'] #想要获得某个标记（tag）的属性，可以直接查字典一样，此处key为某个属性的name step 3.3 获得正文（点此查看正文内容所在&amp;lt;div&amp;gt;标记） div_cont = div_article.find('div', attrs={'class': 'content'}) qiubai_cont = div_cont.get_text() #通过标记的 get_text() 方法获得该标记的text step 3.4 获得配图的URL（如果有的话。点此查看配图URL内容所在&amp;lt;div&amp;gt;标记） div_pic = div_article.find('div', attrs={'class': 'thumb'}) if div_pic: #想要获得某个标记（tag）的子标记的子标记...的属性，可以直接通过 .(英文句点) 索引至该标记，然后像查字典一样查找即可 picURL = div_pic.a.img['src'] 2.4 存储内容 因为糗百内容要存储到xml文档中，我们在这里还要使用Python自带的操作XML的包：xml.etree.ElementTree step 1：我们首先创建一个用于存储糗百的xml文档： fo = open('qiubai.xml', 'w') fo.write('&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;\n&amp;lt;ROOT&amp;gt;&amp;lt;/ROOT&amp;gt;') fo.close() 此时的xml文件看起来应该是这个样子： &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt; &amp;lt;ROOT&amp;gt; &amp;lt;/ROOT&amp;gt; step 2：给qiubai.xml添加一条糗百内容 step 2.1：获得qiubai.xml文档的根节点 import xml.etree.ElementTree as ET tree = ET.parse('qiubai.xml') #也可以给 parse() 传递文档路径 root = tree.getroot() step 2.2：为根节点root添加一个子节点QiuBai，并设置该子节点的各个属性 qiubai = ET.SubElement(root, 'QiuBai') qiubai.set('id', 'idxxxxxx') qiubai.set('picURL', 'http://here/is/pic/url.jpg') qiubai.text = '此处为糗百正文...' step 2.3：将添加了新内容的root保存到文档 tree = ET.ElementTree(root) tree.write('qiubai.xml', encoding='utf-8', xml_declaration=True) 此时的xml文档看起来应该是这样子： &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt; &amp;lt;ROOT&amp;gt; &amp;lt;QiuBai id='idxxxxxx' picURL='http://here/is/pic/url.jpg'&amp;gt; 此处为糗百正文... &amp;lt;/QiuBai&amp;gt; &amp;lt;/ROOT&amp;gt; 注意事项：如果你使用的是UTF-8格式保存xml文档，那你需要注意：xml文档规范并不支持所有的UTF-8支持的字符，也就是说有些UTF-8支持的字符在xml文档中是不受支持的，如果你坚持写入，则在再次读取xml文档是会出错。 关于过滤xml不支持字符的内容，请参看源码 QiubaiReader.py » def replaceHellWord(text)方法 3. 源代码 到这里查看源码，或者直接点我下载源码。 应用程序信息： 本程序在Window7平台下开发完成并测试通过；在CentOS 6.3下测试通过 Python 2.7.5 [MSC v.1500 64 bit (AMD64)] xml.etree.ElementTree 1.3.0 键入 import xml.etree.ElementTree； ElementTree.VERSION 查看 Beautiful Soup 4.3.2 键入 import bs4；bs4.__version__ bs4下载链接</summary></entry><entry><title type="html">关于Python的编码、乱码以及Unicode的一些研究</title><link href="http://localhost:4000/2014/01/09/study-on-python-unicode-encoding-stuff.html" rel="alternate" type="text/html" title="关于Python的编码、乱码以及Unicode的一些研究" /><published>2014-01-09T00:00:00+08:00</published><updated>2014-01-09T00:00:00+08:00</updated><id>http://localhost:4000/2014/01/09/study-on-python-unicode-encoding-stuff</id><content type="html" xml:base="http://localhost:4000/2014/01/09/study-on-python-unicode-encoding-stuff.html">&lt;p&gt;最近接触Python比较多，尤其是在命令行(Terminal)下进行的局部代码测试有很多。而个人编写的代码通常是以&lt;code class=&quot;highlighter-rouge&quot;&gt;UTF-8&lt;/code&gt;格式存储的，这在Linux下的Terminal上还好一些（它的编码默认的就是中文&lt;code class=&quot;highlighter-rouge&quot;&gt;UTF-8&lt;/code&gt;），要想打印包含中文字符的变量值，基本不会出现乱码情况。但如果是在Windowss下的cmd上进行测试，则相对就要痛苦一些，因为Windows中文环境下cmd的默认编码是&lt;code class=&quot;highlighter-rouge&quot;&gt;GBK&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;所以本人为了在测试时能正常打印出中文字符（经常Linux、Windows两边跑），对Python字符编码的情况还是颇下了些功夫的。下面就是我做的一些小研究，希望能对和我当初一样迷茫的读者起到些帮助作用。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;1-ascii-python默认的编码&quot;&gt;1. ASCII, Python默认的编码&lt;/h3&gt;
+
+&lt;p&gt;在Python中，当源代码被读取进行语法校验时，会将源代码中的字符从声明的编码转换成&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型，等到语法校验通过后，再将这些字符转换回初始的编码。&lt;/p&gt;
+
+&lt;p&gt;在Python环境下，源文件中如果没有声明编码，则将其编码设置为默认的&lt;code class=&quot;highlighter-rouge&quot;&gt;ASCII&lt;/code&gt;，这可以通过下面这段代码检验：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import sys
+&amp;gt;&amp;gt;&amp;gt; sys.getdefaultencoding()
+'ascii'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;所以在编写源代码文件&lt;code class=&quot;highlighter-rouge&quot;&gt;xxx.py&lt;/code&gt;时需要注意：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;如果源代码没有声明编码格式，则Python在语法校验期间(compilation)使用默认的ASCII编码&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;如果源代码没有声明编码格式，但却在源码中使用了非ASCII字符(Non-ASCII character)，则程序在编译期间抛出&lt;code class=&quot;highlighter-rouge&quot;&gt;SyntaxError&lt;/code&gt;异常，编译不被通过&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;如果源代码声明了Python不支持的编码格式，则程序将在编译期间抛出异常&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;源代码文件编码的声明&lt;/em&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;查看如何在源代码中声明编码格式&lt;a href=&quot;http://www.python.org/peps/pep-0263.html&quot;&gt;PEP-0263&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;查看Python支持的&lt;a href=&quot;http://docs.python.org/2/library/codecs.html#standard-encodings&quot;&gt;编码格式&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-命令行与python乱码篇&quot;&gt;2. 命令行与Python——乱码篇&lt;/h3&gt;
+&lt;p&gt;在命令行下的Python Shell中进行小范围测试，或者在命令行中运行Python代码时，总会遇到各种各样的乱码问题。为了搞清楚乱码的原因，我们首先来看这样一个例子。&lt;/p&gt;
+
+&lt;p&gt;例子：文件到底长什么样？&lt;/p&gt;
+
+&lt;p&gt;首先, 在某目录(假设D:\Tem)下创建两个文本文件&lt;code class=&quot;highlighter-rouge&quot;&gt;1.ini&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;2.ini&lt;/code&gt;，两个文件中都只写入下面这行内容。不同的是，&lt;code class=&quot;highlighter-rouge&quot;&gt;1.ini&lt;/code&gt;以UTF-8格式保存，&lt;code class=&quot;highlighter-rouge&quot;&gt;2.ini&lt;/code&gt;以GBK格式保存&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;我是Lyfing.Loo，来自中国 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;接着, 在命令行下，&lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt;至该目录，键入&lt;code class=&quot;highlighter-rouge&quot;&gt;Python&lt;/code&gt; 进入Python Shell, 读取两个文本文件中的内容，并打印出来&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; str1 = open('1.ini','r').read()     
+&amp;gt;&amp;gt;&amp;gt; str2 = open('2.ini','r').read()    
+&amp;gt;&amp;gt;&amp;gt; str1    
+'\xef\xbb\xbf\xe6\x88\x91\xe6\x98\xafLyfing.Loo\n'    
+#以16进制形式查看1.ini(UTF-8)    
+efbb bfe6 8891 e698 af4c 7966 696e 672e 4c6f 6f0d 0a    
+&amp;gt;&amp;gt;&amp;gt; str2   
+'\xce\xd2\xca\xc7Lyfing.Loo\n'     
+#以16进制形式查看2.ini(GBK)    
+ced2 cac7 4c79 6669 6e67 2e4c 6f6f 0d0a    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;其中&lt;code class=&quot;highlighter-rouge&quot;&gt;0d0a&lt;/code&gt;是换行符，0d——回车符号——”\r”，0a——换行符号——”\n”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;对比一下&lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt;内容和16进制下查看到的相应文本中的内容，我们不难发现，Python在读取文件时，除了辨认出ASCII编码范围内的字符之外，例如L(4c)、g(67)和o(6f)等，其他非ASCII的字符一律仍按16进制(由&lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;二进制位组成)的原始编码储存，例如 我(efbbbf, utf-8)和我(ced2, gbk)。等到需要将变量值（字符串）打印到控制台，或者写入文件时，这一串原始编码便会原封不动地被提交给相应程序。&lt;/p&gt;
+
+&lt;p&gt;仍是上面的例子，当我们想要打印&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;的值时，我们看看会发生什么：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; print str1
+锘挎垜鏄疞yfing.Loo
+&amp;gt;&amp;gt;&amp;gt; print str2
+我是Lyfing.Loo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;我们看到，&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;出现了乱码，而&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;则正常打印出了中文字符。这是为什么呢？还是上面那句话：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;等到需要将变量值（字符串）打印到控制台，或者写入文件时，这一串原始编码便会原封不动地被提交给相应程序&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;当需要打印&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;的值时，Python并不做任何编码转换的处理，它只是原封不动地将原始编码提交给了控制台，由相应的控制台（Windows下的cmd/Linux下的Terminal/SSH远程连接工具等）来进行打印处理。&lt;/p&gt;
+
+&lt;p&gt;所以如果在Linux下的Terminal上打印&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;的话，应该就是&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;正常打印，&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;出现乱码了，因为Terminal的编码一般是UTF-8的。&lt;/p&gt;
+
+&lt;p&gt;那如果想要实现&lt;strong&gt;多平台下表现一致&lt;/strong&gt;的特性的话，比如说保证&lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt;的doc在多平台下打印出的效果一致或者写入效果一致（不会乱码）的话，我们该怎么做？下面引出了本篇内容的重点。&lt;/p&gt;
+
+&lt;h3 id=&quot;3-unicodepython的好伙伴儿&quot;&gt;3. Unicode，Python的好伙伴儿&lt;/h3&gt;
+&lt;p&gt;一门热门起来的编程语言，首先要满足的需求之一就是，对不同国家和地区所用字符的友好支持。Python很好的做到了这一点，至少，在它正式引入Unicode编码以后是这样。&lt;/p&gt;
+
+&lt;p&gt;我们都知道Python是一门世界通用的编程语言，如果它的源代码文件中出现的都是ASCII支持的字符，那Python会以ASCII编码的格式处理程序。不过，一旦源代码中出现了ASCII不支持的字符，它该怎么办？我用一张图来回答你吧&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://lyfing.qiniudn.com/blog/2014-01-09/unicode-in-python.png&quot; alt=&quot;&quot; /&gt;
+(图片来源：http://nltk.googlecode.com/svn/trunk/doc/book/ch03.html)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;也就是说，所有超出ASCII范围的字符的处理工作，无论在输入之前，或者输出之后是什么编码格式的，它们在Python的执行内存中，都被统一转换(decode)为Unicode格式来进行程序处理。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;还是上节末尾那个例子，如何保证&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;在各个平台下都能正常打印呢，这里的办法是：将&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;转换成&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型。&lt;/p&gt;
+
+&lt;h4 id=&quot;31-什么是unicode类型那str1和str2又是什么类型的呢&quot;&gt;3.1 什么是&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型？那&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;又是什么类型的呢？&lt;/h4&gt;
+
+&lt;p&gt;我们先看看&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;的类型&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; print type(str1), type(str2)
+&amp;lt;type 'str'&amp;gt; &amp;lt;type 'str'&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;从上面可以看出，&lt;code class=&quot;highlighter-rouge&quot;&gt;str1、2&lt;/code&gt;是&lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt;类型的，也就是通常意义下的字符串类型。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型则是Python内建的一种用来“一统江湖”的字符类型(type)。&lt;/p&gt;
+
+&lt;p&gt;既然已经有了用来容纳字符的类型——&lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt;——为何还要添加一种&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;字符类型呢？要回答这个问题，我们先来想想如下几个现实中可能会遇到的情况：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;在某个class的&lt;code class=&quot;highlighter-rouge&quot;&gt;doc&lt;/code&gt;中，需要同时用到多个国家的字符和符号来描述class的功用。试想如果此时再用单一的、相对狭隘的编码配合&lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt;来表述，可能出现不可预期的错误。这是因为字符所处的字符集和编码不一致，同一串16进制码(code points)在不同的字符集中可能表示不同的字符，更何况，同一个源代码文件中只可以定义一种编码格式&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;xml文件的解析(parse)问题，xml文件中可能包含不同国家和区域的字符和符号，此时如果使用仅适用于某个区域的字符编码，可能出现无法识别某些字符而导致甚至抛异常或程序错误等等糟糕情况。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;于是，一统江湖、或者说差点就一统江湖的&lt;a href=&quot;http://zh.wikipedia.org/wiki/Unicode&quot;&gt;Unicode编码&lt;/a&gt;出现了。再接着，Python为了更加友好地支持各种国家/区域的字符，内建了新的字符容器&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;。于是上面两个问题以及近似的一类问题都可以迎刃而解了。&lt;/p&gt;
+
+&lt;h4 id=&quot;32-unicode在python中的使用&quot;&gt;3.2 Unicode在Python中的使用&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;型的字符容器，在Python的具体应用中有着诸多优势。下面列举几个。&lt;/p&gt;
+
+&lt;p&gt;例子：在源代码中定义&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型。&lt;br /&gt;
+具体步骤，创建&lt;code class=&quot;highlighter-rouge&quot;&gt;test.py&lt;/code&gt;文件，在其中添加这样的内容&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# coding:utf-8
+def hello():
+    str1 = u'我是大坏蛋'
+    str2 = '你是小淫魔' 
+    return (str1, str2)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;接着在命令行&lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt;至&lt;code class=&quot;highlighter-rouge&quot;&gt;test.py&lt;/code&gt;所在目录，键入&lt;code class=&quot;highlighter-rouge&quot;&gt;python&lt;/code&gt;进入Python Shell，在Shell中输入以下内容：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import test
+&amp;gt;&amp;gt;&amp;gt; str1, str2 = test.hello()
+&amp;gt;&amp;gt;&amp;gt; str1
+u'\u6211\u662f\u5927\u574f\u86cb'
+&amp;gt;&amp;gt;&amp;gt; str2
+'\xe6\x88\x91\xe6\x98\xaf\xe5\xb0\x8f\xe6\xb7\xab\xe9\xad\x94'
+&amp;gt;&amp;gt;&amp;gt; print str1
+我是大坏蛋
+&amp;gt;&amp;gt;&amp;gt; print str2
+鎴戞槸灏忔帆榄
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;我们看到在&lt;code class=&quot;highlighter-rouge&quot;&gt;hello()&lt;/code&gt;定义时，&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;是&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型的，而&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;则是普通的’str’字符型。也许在这里还没看出&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型的优势。但是当需要打印变量内容时，二者的优劣便体现出来了：&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型的&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;无需进行特别编码便能正常打印出中文字符，但&lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt;类型的&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;却出现了乱码情况。&lt;/p&gt;
+
+&lt;p&gt;此处可以介绍&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型的很多优点了：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;声明简单 只需要在原字符前添加该类型标记&lt;code class=&quot;highlighter-rouge&quot;&gt;u&lt;/code&gt;即可，例如&lt;code class=&quot;highlighter-rouge&quot;&gt;s1 = u'小伙伴儿'&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;代码编译期间，自动从声明的原始编码转码至Unicode，并创建相应的&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在需要打印(如&lt;code class=&quot;highlighter-rouge&quot;&gt;print&lt;/code&gt;）或者输入输出（如&lt;code class=&quot;highlighter-rouge&quot;&gt;read&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;write&lt;/code&gt;）时，&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型用着尤其顺手。因为你只需要像操作ASCII一样打印和输入输出就行了，而无需关心编码、乱码问题。这是因为Python会帮&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型的字符做编码转码工作，而这也正是&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型的字符不会出现乱码的原因。Python工作内容如下：&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;当需要输入中文字符时，Python会首先调取字符输入程序（命令行或者read函数）的编码格式，然后将输入的字符以该编码格式进行相应转换，即把原字符转码成&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型的字符。&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;例如在Windows中的命令行下使用的Python Shell，其编码格式是&lt;code class=&quot;highlighter-rouge&quot;&gt;GBK&lt;/code&gt;，当你在shell中键入&lt;code class=&quot;highlighter-rouge&quot;&gt;string1 = u'我是李寻欢'&lt;/code&gt;时，会发生如下事件：&lt;/li&gt;
+          &lt;li&gt;1, Python获取当前命令行编码（&lt;code class=&quot;highlighter-rouge&quot;&gt;sys.stdin.encoding&lt;/code&gt;），为cp936(即GBK)&lt;/li&gt;
+          &lt;li&gt;2, 将输入的汉字&lt;code class=&quot;highlighter-rouge&quot;&gt;我是李寻欢&lt;/code&gt;按GBK编码转码成Unicode的形式，并据此创建&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型的字符串，赋值给&lt;code class=&quot;highlighter-rouge&quot;&gt;string1&lt;/code&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;当需要打印输出时，Python会首先调取字符输出程序（命令行或者输出函数）的编码格式，然后将该字符串编码成字符输出程序所用的编码（这样字符输出程序就不会因为认不出编码而出现乱码），接着字符输出程序将编码后的字符输出到目的地。该处理过程是字符输入程序（上一条）的逆过程，此处不再详细介绍这一过程&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;33-如何将str-type转换成unicode-type&quot;&gt;3.3 如何将&lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt; type转换成&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt; type&lt;/h4&gt;
+
+&lt;p&gt;这是本节最开始提出的那个问题：如何将&lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt;类型的字符串&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;转换成&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型？
+这也是下节要谈论的编码与解码的问题。&lt;/p&gt;
+
+&lt;h3 id=&quot;4-编码encode与解码decode&quot;&gt;4. 编码（encode）与解码（decode）&lt;/h3&gt;
+
+&lt;p&gt;如何将&lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt;类型的字符串&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;转换成&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型？以及上一节最末提到关于的字符编码在GBK和Unicode之间的转换，涉及到的都是编码与解码的问题。统一来说就是&lt;/p&gt;
+
+&lt;p&gt;从&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型到GBK或UTF-8等编码的转换，叫做&lt;strong&gt;编码(encode)&lt;/strong&gt;；而这一过程的逆过程，则叫做&lt;strong&gt;解码(decode)&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;一开始我老是搞不清楚到底从哪到哪是编码，从哪到哪是解码，后来用多了自然也就清楚了。相信初次接触这个概念的人也会有和我一样的困惑，下面用一张图来说明一下编码和解码的方向：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://lyfing.qiniudn.com/blog/2014-01-09/encode-decode.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;关于解码和编码的实现方法，网上已有很多，这里不再重述。下面引用一篇博客中的内容来做个总结：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;字符串在Python内部的表示是Unicode编码。因此在做编码转换时，通常需要以Unicode作为中间编码，即先将其他编码的字符串解码(decode)成Unicode，再从Unicode编码(encode)成另一种编码。&lt;br /&gt;
+ &lt;code class=&quot;highlighter-rouge&quot;&gt;decode&lt;/code&gt;的作用是将其他编码的字符串转换成Unicode编码，如&lt;code class=&quot;highlighter-rouge&quot;&gt;str1.decode('gb2312')&lt;/code&gt;，表示将gb2312编码的字符串&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;转换成Unicode编码；&lt;br /&gt;
+ &lt;code class=&quot;highlighter-rouge&quot;&gt;encode&lt;/code&gt;的作用是将Unicode编码转换成其他编码的字符串，如&lt;code class=&quot;highlighter-rouge&quot;&gt;str2.encode('gb2312')&lt;/code&gt;，表示将Unicode编码的字符串&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;转换成gb2312编码   因此，转码的时候一定要先搞明白，字符串str是什么编码，然后decode成Unicode，然后再encode成其他编码。（&lt;a href=&quot;http://blog.csdn.net/lxdcyh/article/details/4018054&quot;&gt;原文链接&lt;/a&gt;）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;遇到乱码问题，按上述思路分析一遍，再将乱码所在字符串按它的原始编码&lt;code class=&quot;highlighter-rouge&quot;&gt;decode&lt;/code&gt;成Unicode类型的，再使用Unicode类型的编码进行输入、输出即可解决乱码问题。&lt;/p&gt;
+
+&lt;p&gt;ref:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.python.org/2/howto/unicode.html&quot;&gt;http://docs.python.org/2/howto/unicode.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="Tech" /><category term="Python" /><category term="Unicode" /><category term="Language Study" /><summary type="html">最近接触Python比较多，尤其是在命令行(Terminal)下进行的局部代码测试有很多。而个人编写的代码通常是以UTF-8格式存储的，这在Linux下的Terminal上还好一些（它的编码默认的就是中文UTF-8），要想打印包含中文字符的变量值，基本不会出现乱码情况。但如果是在Windowss下的cmd上进行测试，则相对就要痛苦一些，因为Windows中文环境下cmd的默认编码是GBK。 所以本人为了在测试时能正常打印出中文字符（经常Linux、Windows两边跑），对Python字符编码的情况还是颇下了些功夫的。下面就是我做的一些小研究，希望能对和我当初一样迷茫的读者起到些帮助作用。 1. ASCII, Python默认的编码 在Python中，当源代码被读取进行语法校验时，会将源代码中的字符从声明的编码转换成Unicode类型，等到语法校验通过后，再将这些字符转换回初始的编码。 在Python环境下，源文件中如果没有声明编码，则将其编码设置为默认的ASCII，这可以通过下面这段代码检验： &amp;gt;&amp;gt;&amp;gt; import sys &amp;gt;&amp;gt;&amp;gt; sys.getdefaultencoding() 'ascii' 所以在编写源代码文件xxx.py时需要注意： 如果源代码没有声明编码格式，则Python在语法校验期间(compilation)使用默认的ASCII编码 如果源代码没有声明编码格式，但却在源码中使用了非ASCII字符(Non-ASCII character)，则程序在编译期间抛出SyntaxError异常，编译不被通过 如果源代码声明了Python不支持的编码格式，则程序将在编译期间抛出异常 源代码文件编码的声明 查看如何在源代码中声明编码格式PEP-0263 查看Python支持的编码格式 2. 命令行与Python——乱码篇 在命令行下的Python Shell中进行小范围测试，或者在命令行中运行Python代码时，总会遇到各种各样的乱码问题。为了搞清楚乱码的原因，我们首先来看这样一个例子。 例子：文件到底长什么样？ 首先, 在某目录(假设D:\Tem)下创建两个文本文件1.ini、2.ini，两个文件中都只写入下面这行内容。不同的是，1.ini以UTF-8格式保存，2.ini以GBK格式保存 我是Lyfing.Loo，来自中国 接着, 在命令行下，cd至该目录，键入Python 进入Python Shell, 读取两个文本文件中的内容，并打印出来 &amp;gt;&amp;gt;&amp;gt; str1 = open('1.ini','r').read() &amp;gt;&amp;gt;&amp;gt; str2 = open('2.ini','r').read() &amp;gt;&amp;gt;&amp;gt; str1 '\xef\xbb\xbf\xe6\x88\x91\xe6\x98\xafLyfing.Loo\n' #以16进制形式查看1.ini(UTF-8) efbb bfe6 8891 e698 af4c 7966 696e 672e 4c6f 6f0d 0a &amp;gt;&amp;gt;&amp;gt; str2 '\xce\xd2\xca\xc7Lyfing.Loo\n' #以16进制形式查看2.ini(GBK) ced2 cac7 4c79 6669 6e67 2e4c 6f6f 0d0a 其中0d0a是换行符，0d——回车符号——”\r”，0a——换行符号——”\n” 对比一下str内容和16进制下查看到的相应文本中的内容，我们不难发现，Python在读取文件时，除了辨认出ASCII编码范围内的字符之外，例如L(4c)、g(67)和o(6f)等，其他非ASCII的字符一律仍按16进制(由0 1二进制位组成)的原始编码储存，例如 我(efbbbf, utf-8)和我(ced2, gbk)。等到需要将变量值（字符串）打印到控制台，或者写入文件时，这一串原始编码便会原封不动地被提交给相应程序。 仍是上面的例子，当我们想要打印str1和str2的值时，我们看看会发生什么： &amp;gt;&amp;gt;&amp;gt; print str1 锘挎垜鏄疞yfing.Loo &amp;gt;&amp;gt;&amp;gt; print str2 我是Lyfing.Loo 我们看到，str1出现了乱码，而str2则正常打印出了中文字符。这是为什么呢？还是上面那句话： 等到需要将变量值（字符串）打印到控制台，或者写入文件时，这一串原始编码便会原封不动地被提交给相应程序 当需要打印str1和str2的值时，Python并不做任何编码转换的处理，它只是原封不动地将原始编码提交给了控制台，由相应的控制台（Windows下的cmd/Linux下的Terminal/SSH远程连接工具等）来进行打印处理。 所以如果在Linux下的Terminal上打印str1和str2的话，应该就是str1正常打印，str2出现乱码了，因为Terminal的编码一般是UTF-8的。 那如果想要实现多平台下表现一致的特性的话，比如说保证class的doc在多平台下打印出的效果一致或者写入效果一致（不会乱码）的话，我们该怎么做？下面引出了本篇内容的重点。 3. Unicode，Python的好伙伴儿 一门热门起来的编程语言，首先要满足的需求之一就是，对不同国家和地区所用字符的友好支持。Python很好的做到了这一点，至少，在它正式引入Unicode编码以后是这样。 我们都知道Python是一门世界通用的编程语言，如果它的源代码文件中出现的都是ASCII支持的字符，那Python会以ASCII编码的格式处理程序。不过，一旦源代码中出现了ASCII不支持的字符，它该怎么办？我用一张图来回答你吧 (图片来源：http://nltk.googlecode.com/svn/trunk/doc/book/ch03.html) 也就是说，所有超出ASCII范围的字符的处理工作，无论在输入之前，或者输出之后是什么编码格式的，它们在Python的执行内存中，都被统一转换(decode)为Unicode格式来进行程序处理。 还是上节末尾那个例子，如何保证str1和str2在各个平台下都能正常打印呢，这里的办法是：将str1和str2转换成Unicode类型。 3.1 什么是Unicode类型？那str1和str2又是什么类型的呢？ 我们先看看str1str2的类型 &amp;gt;&amp;gt;&amp;gt; print type(str1), type(str2) &amp;lt;type 'str'&amp;gt; &amp;lt;type 'str'&amp;gt; 从上面可以看出，str1、2是str类型的，也就是通常意义下的字符串类型。 Unicode类型则是Python内建的一种用来“一统江湖”的字符类型(type)。 既然已经有了用来容纳字符的类型——str——为何还要添加一种Unicode字符类型呢？要回答这个问题，我们先来想想如下几个现实中可能会遇到的情况： 在某个class的doc中，需要同时用到多个国家的字符和符号来描述class的功用。试想如果此时再用单一的、相对狭隘的编码配合str来表述，可能出现不可预期的错误。这是因为字符所处的字符集和编码不一致，同一串16进制码(code points)在不同的字符集中可能表示不同的字符，更何况，同一个源代码文件中只可以定义一种编码格式 xml文件的解析(parse)问题，xml文件中可能包含不同国家和区域的字符和符号，此时如果使用仅适用于某个区域的字符编码，可能出现无法识别某些字符而导致甚至抛异常或程序错误等等糟糕情况。 于是，一统江湖、或者说差点就一统江湖的Unicode编码出现了。再接着，Python为了更加友好地支持各种国家/区域的字符，内建了新的字符容器Unicode。于是上面两个问题以及近似的一类问题都可以迎刃而解了。 3.2 Unicode在Python中的使用 Unicode型的字符容器，在Python的具体应用中有着诸多优势。下面列举几个。 例子：在源代码中定义Unicode类型。 具体步骤，创建test.py文件，在其中添加这样的内容 # coding:utf-8 def hello(): str1 = u'我是大坏蛋' str2 = '你是小淫魔' return (str1, str2) 接着在命令行cd至test.py所在目录，键入python进入Python Shell，在Shell中输入以下内容： &amp;gt;&amp;gt;&amp;gt; import test &amp;gt;&amp;gt;&amp;gt; str1, str2 = test.hello() &amp;gt;&amp;gt;&amp;gt; str1 u'\u6211\u662f\u5927\u574f\u86cb' &amp;gt;&amp;gt;&amp;gt; str2 '\xe6\x88\x91\xe6\x98\xaf\xe5\xb0\x8f\xe6\xb7\xab\xe9\xad\x94' &amp;gt;&amp;gt;&amp;gt; print str1 我是大坏蛋 &amp;gt;&amp;gt;&amp;gt; print str2 鎴戞槸灏忔帆榄 我们看到在hello()定义时，str1是Unicode类型的，而str2则是普通的’str’字符型。也许在这里还没看出Unicode类型的优势。但是当需要打印变量内容时，二者的优劣便体现出来了：Unicode类型的str1无需进行特别编码便能正常打印出中文字符，但str类型的str2却出现了乱码情况。 此处可以介绍Unicode类型的很多优点了： 声明简单 只需要在原字符前添加该类型标记u即可，例如s1 = u'小伙伴儿' 代码编译期间，自动从声明的原始编码转码至Unicode，并创建相应的Unicode类型 在需要打印(如print）或者输入输出（如read或write）时，Unicode类型用着尤其顺手。因为你只需要像操作ASCII一样打印和输入输出就行了，而无需关心编码、乱码问题。这是因为Python会帮Unicode类型的字符做编码转码工作，而这也正是Unicode类型的字符不会出现乱码的原因。Python工作内容如下： 当需要输入中文字符时，Python会首先调取字符输入程序（命令行或者read函数）的编码格式，然后将输入的字符以该编码格式进行相应转换，即把原字符转码成Unicode类型的字符。 例如在Windows中的命令行下使用的Python Shell，其编码格式是GBK，当你在shell中键入string1 = u'我是李寻欢'时，会发生如下事件： 1, Python获取当前命令行编码（sys.stdin.encoding），为cp936(即GBK) 2, 将输入的汉字我是李寻欢按GBK编码转码成Unicode的形式，并据此创建Unicode类型的字符串，赋值给string1 当需要打印输出时，Python会首先调取字符输出程序（命令行或者输出函数）的编码格式，然后将该字符串编码成字符输出程序所用的编码（这样字符输出程序就不会因为认不出编码而出现乱码），接着字符输出程序将编码后的字符输出到目的地。该处理过程是字符输入程序（上一条）的逆过程，此处不再详细介绍这一过程 3.3 如何将str type转换成Unicode type 这是本节最开始提出的那个问题：如何将str类型的字符串str1和str2转换成Unicode类型？ 这也是下节要谈论的编码与解码的问题。 4. 编码（encode）与解码（decode） 如何将str类型的字符串str1和str2转换成Unicode类型？以及上一节最末提到关于的字符编码在GBK和Unicode之间的转换，涉及到的都是编码与解码的问题。统一来说就是 从Unicode类型到GBK或UTF-8等编码的转换，叫做编码(encode)；而这一过程的逆过程，则叫做解码(decode)。 一开始我老是搞不清楚到底从哪到哪是编码，从哪到哪是解码，后来用多了自然也就清楚了。相信初次接触这个概念的人也会有和我一样的困惑，下面用一张图来说明一下编码和解码的方向： 关于解码和编码的实现方法，网上已有很多，这里不再重述。下面引用一篇博客中的内容来做个总结： 字符串在Python内部的表示是Unicode编码。因此在做编码转换时，通常需要以Unicode作为中间编码，即先将其他编码的字符串解码(decode)成Unicode，再从Unicode编码(encode)成另一种编码。 decode的作用是将其他编码的字符串转换成Unicode编码，如str1.decode('gb2312')，表示将gb2312编码的字符串str1转换成Unicode编码； encode的作用是将Unicode编码转换成其他编码的字符串，如str2.encode('gb2312')，表示将Unicode编码的字符串str2转换成gb2312编码 因此，转码的时候一定要先搞明白，字符串str是什么编码，然后decode成Unicode，然后再encode成其他编码。（原文链接） 遇到乱码问题，按上述思路分析一遍，再将乱码所在字符串按它的原始编码decode成Unicode类型的，再使用Unicode类型的编码进行输入、输出即可解决乱码问题。 ref: http://docs.python.org/2/howto/unicode.html</summary></entry><entry><title type="html">Labwindows.Tutorial.Chapter 3.Part2</title><link href="http://localhost:4000/2013/10/20/Labwindows-tutorial-chapter3-part2.html" rel="alternate" type="text/html" title="Labwindows.Tutorial.Chapter 3.Part2" /><published>2013-10-20T00:00:00+08:00</published><updated>2013-10-20T00:00:00+08:00</updated><id>http://localhost:4000/2013/10/20/Labwindows-tutorial-chapter3-part2</id><content type="html" xml:base="http://localhost:4000/2013/10/20/Labwindows-tutorial-chapter3-part2.html">&lt;p&gt;#####上接&lt;a href=&quot;http://lanfengming.com/blog/Labwindows-tutorial-chapter3-part1.html/&quot;&gt;第一节&lt;/a&gt;的内容，我们继续本章内容的下半部分。&lt;/p&gt;
+
+&lt;h3 id=&quot;5-编写-creategui_mine-函数的具体实现&quot;&gt;5. 编写 &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt; 函数的具体实现&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt;要完成的工作有：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;创建一个主面板(即主窗口)&lt;/li&gt;
+  &lt;li&gt;在主面板右侧创建一个Graph控件，用以显示Sine波形&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在主面板上创建两个按钮，并分别为他们编写回调函数以实现：&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;“Show”按钮：点击后Graph控件上显示出Sine波形，点击后按钮名称变为”Clear”；再次点击该按钮，Graph控件上的Sine波形被清空，按钮名称变回”Show”&lt;/li&gt;
+      &lt;li&gt;“Quit”按钮：点击后退出程序&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--more--&gt;
+
+&lt;h4 id=&quot;51-创建主面板&quot;&gt;5.1 创建主面板&lt;/h4&gt;
+&lt;p&gt;LabWindows/CVI提供了一系列可创建各种可视化界面的函数和API，创建面板(Panel)的函数当然也包含其中，但它具体是什么，又应该怎么用呢？我们试着从帮助文档中找寻答案。&lt;br /&gt;
+打开帮助文档(在LabWindows/CVI的任意界面&lt;strong&gt;按F1快捷键&lt;/strong&gt;，或者从菜单栏 &lt;strong&gt;Help&lt;/strong&gt; &amp;gt;&amp;gt; &lt;strong&gt;Contents F1&lt;/strong&gt;打开)，在&lt;strong&gt;索引&lt;/strong&gt;标签栏下的搜索框中输入&lt;em&gt;Panel&lt;/em&gt;，在列出的一堆搜索结果中寻找 &lt;code class=&quot;highlighter-rouge&quot;&gt;panels (User Interface Editor)&lt;/code&gt; 项，再接着找它的子项 &lt;code class=&quot;highlighter-rouge&quot;&gt;programming with&lt;/code&gt;，双击打开它(&lt;strong&gt;如下图所示&lt;/strong&gt;)：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/large/6480dca9jw1e9w7ha8bigj20ke0gk458.jpg&quot; alt=&quot;F1-Content-Programming-with-Panels.png&quot; /&gt;&lt;/p&gt;
+
+&lt;div id=&quot;how-to-find-useage&quot;&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;PS：想要查找&lt;strong&gt;某个控件object的使用说明&lt;/strong&gt;，可以试着在帮助文档 &amp;gt;&amp;gt; &lt;strong&gt;索引&lt;/strong&gt;标签下的搜索框输入它的名称，在搜索结果中找到它的使用介绍项 &lt;code class=&quot;highlighter-rouge&quot;&gt;object_name (User Interface)&lt;/code&gt;及其子项，以查找相关帮助资料；想要查找&lt;strong&gt;某个具体函数的使用说明&lt;/strong&gt;，方法同上，一般搜索结果第一项便是&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;在&lt;strong&gt;Programming with Panels&lt;/strong&gt;的帮助文档页面，我们看它的第二段话&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;NewPanel creates a new panel during program execution. NewPanel returns a handle that you use in subsequent User Interface Library functions to reference the panel. Use the first parameter of NewPanel to specify whether the panel is created as a top-level window or as a child of another (parent) window. You also specify the name, position, and size of the panel through parameters to NewPanel. Creating a new panel using NewPanel does not automatically display the panel.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这次请自行读完上面的关于 &lt;code class=&quot;highlighter-rouge&quot;&gt;NewPanel()&lt;/code&gt; 函数的使用介绍，下面我们将直接使用它。如何使用？请在&lt;strong&gt;索引&lt;/strong&gt;标签栏下的搜索框中输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;NewPanel&lt;/code&gt; 打开这个函数的帮助文档。&lt;br /&gt;
+ 简单介绍一下，&lt;code class=&quot;highlighter-rouge&quot;&gt;NewPanel()&lt;/code&gt; 函数可以创建一个主面板(&lt;em&gt;top-lever panel&lt;/em&gt;)，或一个子面板(&lt;em&gt;child panel&lt;/em&gt;)，这取决于你给它传入的参数。在这里我们要创建一个&lt;em&gt;主面板&lt;/em&gt;，它的各项参数如下：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;面板名称(panelTitle[])：用代码创建的图形界面&lt;/li&gt;
+  &lt;li&gt;面板的位置及大小(单位:像素)：距屏幕顶部&lt;strong&gt;60&lt;/strong&gt;，距屏幕左边&lt;strong&gt;300&lt;/strong&gt;，高度&lt;strong&gt;300&lt;/strong&gt;,宽度&lt;strong&gt;600&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;现在，我们可以创建一个主面板了：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 为了使创建的主面板居中显示，距屏幕顶部和左边的距离都被换成了系统内部的整型变量VAL_AUTO_CENTER
+NewPanel(0, &quot;用代码创建的图形界面&quot;, VAL_AUTO_CENTER, VAL_AUTO_CENTER, 300, 600)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;好了，现在我们整个的代码看起来应该是这个样子：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#include 
+#include      
+#include 
+
+static int panelHandle;
+
+int createGUI_Mine(void);
+
+int main (int argc, char *argv[]){
+    if (InitCVIRTE (0, argv, 0) == 0)
+        return -1;  /* out of memory */
+    if ((panelHandle = createGUI_Mine()) &amp;amp;lt; 0)
+        return -1;
+    DisplayPanel (panelHandle);
+    RunUserInterface();
+    DiscardPanel (panelHandle);
+    return 0;
+}
+
+int createGUI_Mine(){
+    int pHandle = NewPanel(0, &quot;用代码创建的图形界面&quot;, VAL_AUTO_CENTER, VAL_AUTO_CENTER, 600, 800);
+    return pHandle;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div id=&quot;how-to-debug&quot;&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;OK，到了这一步，先让我们试运行一下上面的程序吧&lt;/strong&gt;。运行程序(Debug xxx.exe)的方法有三种：&lt;/p&gt;
+
+&lt;p&gt;1) 菜单栏 &lt;strong&gt;Run&lt;/strong&gt; &amp;gt;&amp;gt; &lt;strong&gt;Debug src.exe&lt;/strong&gt;
+ 2) 按快捷键组合 &lt;strong&gt;Shift&lt;/strong&gt; + &lt;strong&gt;F5&lt;/strong&gt;
+ 3) 鼠标点击如下按钮&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/6480dca9jw1e9w7i9m65sj20hb037mxp.jpg&quot; alt=&quot;Button-Debug-Project.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这时会弹出一个错误框，如下图所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/6480dca9jw1e9w7irfl81j20fh0eemz2.jpg&quot; alt=&quot;Error-Content-Missing.prototype.(Require.function....png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这是因为在LabWindows/CVI中，所有自定义的函数都是需要预定义，也就是得在 &lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt; 函数之前声明原型(prototype)的。&lt;br /&gt;
+这好办，只需要把这两个&lt;strong&gt;自定义函数的&lt;em&gt;原型声明&lt;/em&gt;添加到 &lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt; 函数之前&lt;/strong&gt;就可以了。&lt;strong&gt;但问题是，如何声明原型？&lt;/strong&gt;这里最简单的方法是，随便到帮助文档中找一个工程样例(sample)，看看里面的自定义函数的原型声明的句式便可。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;PS：工程样例（sample）是LabWindows/CVI提供的用来演示如何使用某个控件或函数的可直接编译、运行的程序。&lt;strong&gt;工程样例（sample）是快速入门LabWindows/CVI的编程格式及方法的大好捷径，一有机会就打开查看，有百利而无一害。&lt;/strong&gt;如何打开一个工程样例？以 &lt;code class=&quot;highlighter-rouge&quot;&gt;NewPanel()&lt;/code&gt; 函数为例，当你在帮助文档中查找到 &lt;code class=&quot;highlighter-rouge&quot;&gt;NewPanel()&lt;/code&gt; 函数的文档介绍页后，跳到这个页面的最底部，一般会附上若干工程样例，只需用鼠标单击”Open example”前的图标（如下图所示）便可打开这个叫做”userint\buildui.cws”的工程样例。&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/6480dca9jw1e9w7j7i5p8j20jk0au0uh.jpg&quot; alt=&quot;NI_Help_How-To-Use-Project-Example.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在打开的”buildui.cws”工程样例中，我们点击&lt;strong&gt;buildui.c&lt;/strong&gt;文件，找到&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/*------------------------------------------------*/
+/* Internal function prototypes                   */
+/*------------------------------------------------*/ 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;区域，根据这个区域下方的自定义函数的原型声明的方法，我们可以看出，对自定义函数的原型声明其实很简单，只需要把这个函数在左大括号——&lt;strong&gt;{&lt;/strong&gt;——之前的内容复制到这里，并在结尾添加行结束标志分号——&lt;strong&gt;；&lt;/strong&gt;——即可。不过需要注意的一点是，无参数的函数，在原型声明时需要它在接收参数的括号&lt;strong&gt;()&lt;/strong&gt;中加入 &lt;code class=&quot;highlighter-rouge&quot;&gt;void&lt;/code&gt; 关键字。具体到本例中，对自定义函数的原型声明句子如下所示：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int createGUI_Mine(void);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;好了，把如上内容添加到main()函数的前面，然后再次试运行这个程序，这时会弹出我们刚刚用代码创建的那个图形界面，它目前还只是一个只有标题栏的空白面板(Panel)。效果图如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/6480dca9jw1e9w7jq97gjj20h409e3yo.jpg&quot; alt=&quot;Demo-用代码创建的图形界面.png&quot; /&gt;&lt;/p&gt;
+
+&lt;div id=&quot;how-to-exit-debug-forcely&quot;&gt;&lt;/div&gt;
+&lt;p&gt;由于还没设置退出选项，所以这个程序无法正常退出。我们可以到启动它的LabWindows/CVI中关闭它：跳转到LabWindows/CVI界面，点击菜单栏 &lt;strong&gt;Running&lt;/strong&gt; &amp;gt;&amp;gt; &lt;strong&gt;Terminate Execution&lt;/strong&gt;即可（或点击工具栏的&lt;strong&gt;stop&lt;/strong&gt;按钮）。&lt;/p&gt;
+
+&lt;h4 id=&quot;52-在主面板右侧创建一个graph控件用以显示sine波形&quot;&gt;5.2 在主面板右侧创建一个Graph控件，用以显示Sine波形&lt;/h4&gt;
+&lt;p&gt;在创建Graph控件前，请先想一下这两个问题：&lt;/p&gt;
+
+&lt;p&gt;a. Graph控件是依附于哪个实体之上的，它的载体是什么？&lt;br /&gt;
+ b. Graph控件的创建工作应该被放在哪个部分？&lt;strong&gt;main()&lt;/strong&gt;函数中、&lt;strong&gt;createGUI_Mine()&lt;/strong&gt;函数中，或者其他地方？&lt;/p&gt;
+
+&lt;p&gt;是不是这样的:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;问题a：像其他的应用软件一样，控制类、显示类的控件都应该至少依附于一个面板(窗口)之上，也就是说这些控件得有个&lt;strong&gt;载体&lt;/strong&gt;。在本章中，Graph控件及其他两个按钮控件(有待创建)都是依附于我们上一步创建的主面板(主界面基本元素)之上的。&lt;/li&gt;
+  &lt;li&gt;问题b：光从名字我们便可以看出，&lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt; 函数就是用来完成创建图形界面元素的工作的，所以Graph控件的创建应该被安排到这里。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;PS：在这里讲&lt;strong&gt;载体&lt;/strong&gt;的概念，是为了之后创建Graph控件时更易理解传入&lt;code class=&quot;highlighter-rouge&quot;&gt;pHandle&lt;/code&gt;的原因，就是因为所有的控件都需要一个载体(如面板)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;接下来的问题，Graph控件应该如何创建呢？不知道你发现没，这个问题跟我们上一小节的关于”如何创建一个面板(panel)”的问题非常相似，所以，请你首先试着自己花时间去帮助文档中查找答案(到帮助文档中查找答案的习惯对日后的独立开发有极大帮助，请务必亲试)。&lt;/p&gt;
+
+&lt;p&gt;在帮助文档页，&lt;strong&gt;索引&lt;/strong&gt;标签栏下的搜索框中输入&lt;em&gt;Graph&lt;/em&gt;，如上一小节查找创建Panel时一样，在搜索结果中我们会找到如下部分的内容：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;graph controls (user interface)
+   attribute
+   events
+   fuctions
+   operating
+   programming with  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;我们尝试从&lt;em&gt;programming with&lt;/em&gt;这个页面查找新建graph控件的方法，结果没什么收获。但你看到了，graph control(Graph控件)有一个&lt;em&gt;functions&lt;/em&gt;页面，这里面列出了跟本控件有关的所有函数，我们点进去看看。&lt;br /&gt;
+我们要找到的是创建控件的函数，所以函数名应该会带有&lt;em&gt;New&lt;/em&gt;字样，对函数列表逐一查找，便会发现 &lt;code class=&quot;highlighter-rouge&quot;&gt;NewCtrl()&lt;/code&gt; 这个函数。对了！就是用它来创建Graph控件的。打开这个函数的帮助页(如何&lt;a href=&quot;#how-to-find-useage&quot;&gt;打开?&lt;/a&gt;)，你会发现，这个函数不光能用来创建Graph控件，它还可以创建LabWindows/CVI提供的其他所有控件(&lt;a href=&quot;http://zone.ni.com/reference/en-XX/help/370051V-01/cvi/uiref/cvioperating_controls/&quot;&gt;点此查看&lt;/a&gt;控件支持列表)。&lt;/p&gt;
+
+&lt;p&gt;关于&lt;code class=&quot;highlighter-rouge&quot;&gt;NewCtrl()&lt;/code&gt;函数的用法请自信查看帮助文档。我们这里要创建一个Graph控件，进入 &lt;code class=&quot;highlighter-rouge&quot;&gt;NewCtrl()&lt;/code&gt; 函数帮助页，把第二行的函数结构复制下来：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int NewCtrl (int panelHandle, int controlStyle, char controlLabel[], int controlTop, int controlLeft);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;把它插入到 &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt; 函数的第二行：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int createGUI_Mine(){
+    int pHandle = NewPanel(0, &quot;用代码创建的图形界面&quot;, VAL_AUTO_CENTER, VAL_AUTO_CENTER, 600, 800);
+    int NewCtrl (int panelHandle, int controlStyle, char controlLabel[], int controlTop, int controlLeft);        
+    return pHandle;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;NewCtrl()&lt;/code&gt;创建好Graph控件后，会返回这个Graph控件的资源句柄(handle)，我们创建一个int型变量&lt;code class=&quot;highlighter-rouge&quot;&gt;graphHdl&lt;/code&gt;来接收返回值；&lt;/li&gt;
+  &lt;li&gt;参数方面，int型的&lt;em&gt;panelHandle&lt;/em&gt;就用上一步生成的面板资源句柄(pHandle)赋值，即用上一步创建的面板做它的”载体”；&lt;/li&gt;
+  &lt;li&gt;int型的&lt;em&gt;controlStyle&lt;/em&gt;：欲创建的控件类型，通过查函数的使用帮助可知，要想创建Graph控件，此处应填 &lt;em&gt;CTRL_GRAPH&lt;/em&gt;；&lt;/li&gt;
+  &lt;li&gt;char型的&lt;em&gt;controlLabel[]&lt;/em&gt;：Graph的标签，相当于控件标题，此处使用”Created-Graph”；&lt;/li&gt;
+  &lt;li&gt;int型的&lt;em&gt;controlTop&lt;/em&gt;及&lt;em&gt;controlLeft&lt;/em&gt;：该控件相对于它的&lt;strong&gt;载体&lt;/strong&gt;的位置，&lt;em&gt;top&lt;/em&gt;给个&lt;em&gt;30&lt;/em&gt;，&lt;em&gt;left&lt;/em&gt;给个&lt;em&gt;250&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;PS：在编程领域，当需要确定一个矩形框的位置时，我们一般只需要指定它左上角那个点相对于它载体的位置即可，然后再分别给这个矩形框赋予长度和高度值。由于左上角位置已确定，长度、高度也已确定，这个矩形框的大小，及它相对于自身载体的位置便唯一确定了。这就好比在一面墙上画一个矩形，先确定它离墙的顶端和左端的距离（即它左上角点的位置），再已知长度、高度的话，从该点出发依次画出长和高，这个矩形在墙上的最终形状及位置便可以确定下来了。&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;于是&lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt;函数修改为：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int createGUI_Mine(){
+    int pHandle = NewPanel(0, &quot;用代码创建的图形界面&quot;, VAL_AUTO_CENTER, VAL_AUTO_CENTER, 600, 800);
+    int graphHdl = NewCtrl(pHandle, CTRL_GRAPH, &quot;Created-Graph&quot;, 30, 250);     
+    return pHandle;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;试运行一下程序(&lt;a href=&quot;#how-to-debug&quot;&gt;how?&lt;/a&gt;)，我们可以看到之前空空如也的面板上已经多出来一个graph了：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/large/6480dca9jw1e9w7k54b76j20h009ct9e.jpg&quot; alt=&quot;Demo-添加了graph控件后的图形界面.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;53-在主面板上创建两个按钮showquit并分别为他们编写回调函数以发挥各自功能&quot;&gt;5.3 在主面板上创建两个按钮：&lt;em&gt;show&lt;/em&gt;、&lt;em&gt;quit&lt;/em&gt;并分别为他们编写回调函数以发挥各自功能&lt;/h4&gt;
+
+&lt;p&gt;#####5.3.1. 创建按钮&lt;/p&gt;
+
+&lt;p&gt;请读者想一想，应该用什么函数来创建这两个按钮呢？我给你个提示：按钮属于控件范畴~&lt;/p&gt;
+
+&lt;p&gt;没错，就是使用&lt;code class=&quot;highlighter-rouge&quot;&gt;NewCtrl()&lt;/code&gt;函数来创建以上两个按钮！创建工作将被而且应该被安排到&lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt;函数中，我们把它安排到Graph控件的创建之后。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;show&lt;/strong&gt;按钮的图形参数，即填入&lt;code class=&quot;highlighter-rouge&quot;&gt;NewCtrl()&lt;/code&gt;函数的参数列表：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;panelHandle&lt;/em&gt; = &lt;em&gt;pHandle&lt;/em&gt;，即把本函数第一句创建好的面板作为按钮的”载体”；&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;controlStyle&lt;/em&gt; = &lt;em&gt;CTRL_SQUARE_COMMAND_BUTTON&lt;/em&gt;，即方形命令按钮，这个值通过查函数的使用方法可得；&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;controlLabel[]&lt;/em&gt; = &lt;em&gt;“show”&lt;/em&gt;，即按钮上显示的文字；&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;controlTop&lt;/em&gt; = &lt;em&gt;80&lt;/em&gt; ， &lt;em&gt;controlLeft&lt;/em&gt; = &lt;em&gt;50&lt;/em&gt;，即按钮相对于自己”载体”的上端和左端的位置&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;quit&lt;/strong&gt;按钮的图形参数：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;panelHandle&lt;/em&gt; = &lt;em&gt;pHandle&lt;/em&gt;，即把本函数第一句创建好的面板作为按钮的”载体”；&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;controlStyle&lt;/em&gt; = &lt;em&gt;CTRL_SQUARE_COMMAND_BUTTON&lt;/em&gt;，即方形命令按钮，这个值通过查函数的使用方法可得；&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;controlLabel[]&lt;/em&gt; = &lt;em&gt;“quit”&lt;/em&gt;，即按钮上显示的文字；&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;controlTop&lt;/em&gt; = &lt;em&gt;140&lt;/em&gt; ， &lt;em&gt;controlLeft&lt;/em&gt; = &lt;em&gt;50&lt;/em&gt;，即按钮相对于自己”载体”的上端和左端的位置&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;我们分别用整形变量 &lt;em&gt;showBtn&lt;/em&gt;及&lt;em&gt;quitBtn&lt;/em&gt;来接收创建按钮后返回的资源句柄，于是&lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt;函数更新为：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int createGUI_Mine(){
+    int pHandle = NewPanel(0, &quot;用代码创建的图形界面&quot;, VAL_AUTO_CENTER, VAL_AUTO_CENTER, 300, 600);
+    int graphHdl = NewCtrl(pHandle, CTRL_GRAPH, &quot;Created-Graph&quot;, 30, 250);
+    int showBtn = NewCtrl(pHandle, CTRL_SQUARE_COMMAND_BUTTON, &quot;Show&quot;, 80, 50);
+    int quitBtn = NewCtrl(pHandle, CTRL_SQUARE_COMMAND_BUTTON, &quot;Quit&quot;, 140, 50);
+    return pHandle;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;试运行一下程序，添加了两个按钮的界面如下图所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/6480dca9jw1e9w7kikah0j20h009ejs5.jpg&quot; alt=&quot;Demo-添加了show-quit-按钮后的图形界面.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;到目前为止，我们已经完成了所有界面元素的创建工作。&lt;/p&gt;
+
+&lt;h5 id=&quot;532-为两个按钮编写回调函数&quot;&gt;5.3.2 为两个按钮编写回调函数&lt;/h5&gt;
+
+&lt;p&gt;&lt;em&gt;PS：请读者首先到 帮助文档 &amp;gt;&amp;gt; 索引 标签栏 下的搜索框中输入&lt;code class=&quot;highlighter-rouge&quot;&gt;callback functions&lt;/code&gt;然后回车以打开关于回调函数的使用说明页面，请大致浏览一下该页面内容。我在这里简单说一下，回调函数(callback functions)是你绑定到某个特定用户界面元素(比如面板、按钮、Graph控件)上，用以响应发生在该元素上的所有用户事件的函数。例如，你可以给&lt;/em&gt;按钮A&lt;em&gt;绑定一个回调函数，并在该回调函数中编写所有可能发生的事件的应对策略，如&lt;/em&gt;按下按钮时做动作1&lt;em&gt;、&lt;/em&gt;按钮抬起时做动作2&lt;em&gt;、&lt;/em&gt;单击按钮时做动作3&lt;em&gt;、&lt;/em&gt;双击按钮时…&lt;em&gt;一旦任意一个事件在该元素上发生，LabWindows/CVI便开始调用(执行)这个回调函数，预先设定好的动作便会被触发。&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;如何编写回调函数？在上面提到的那个帮助文档页(即&lt;em&gt;Using Callback Functions to Respond to User Interface Events&lt;/em&gt;页面)，我们可以看到三个回调函数的使用样例代码，他们分别是&lt;em&gt;面板&lt;/em&gt;、&lt;em&gt;控件&lt;/em&gt;以及&lt;em&gt;菜单栏&lt;/em&gt;这三种用户界面元素的回调函数使用样例。请读者想一下，上述三种样例，哪一个可以为我们所用？&lt;/p&gt;
+
+&lt;p&gt;当然还是&lt;em&gt;控件&lt;/em&gt;的那个样例(&lt;em&gt;ControlResponse&lt;/em&gt;)。我们把下面的样例完整地拷贝到我们的&lt;em&gt;src.c&lt;/em&gt;主程序中，将其放到&lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt;函数的下面：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int CVICALLBACK ControlResponse (int handle, int control, int event, void *callbackdata, int eventdata1, int eventdata2){
+    ...
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;现在要做的对这个样例进行DIY改造。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;将函数名&lt;code class=&quot;highlighter-rouge&quot;&gt;ControlResponse&lt;/code&gt;改为更具体的&lt;code class=&quot;highlighter-rouge&quot;&gt;ButtonsResponse&lt;/code&gt;（此改动可有可无）；&lt;/li&gt;
+  &lt;li&gt;去除一些无关内容&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;精简后，两个按钮的回调函数变为：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int CVICALLBACK ButtonsResponse(int handle, int control, int event, 
+            void *callbackdata, int eventdata1, int eventdata2){
+    if (control == showBtn) { //如果事件发生在show按钮上
+        switch (event) {
+            case EVENT_RIGHT_CLICK :
+                //右击按钮时作出的响应
+                break;
+            case EVENT_COMMIT :
+                //单击按钮时作出的响应
+                break;
+        }
+    }
+    
+    if (control == quitBtn) { //如果事件发生在quit按钮上
+        switch (event) {
+            case EVENT_COMMIT :
+                //单击按钮时作出的响应
+                break;
+        }
+    }
+    return(0);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;当有&lt;a href=&quot;http://zone.ni.com/reference/en-XX/help/370051V-01/cvi/uiref/cvievents_overview/&quot;&gt;用户事件&lt;/a&gt;发生在按钮上，LabWindows/CVI便会调用上面的回调函数，并在调用时将该控件的载体(&lt;em&gt;handle&lt;/em&gt;)、控件资源句柄(即资源id-&lt;em&gt;control&lt;/em&gt;)、发生的事件id(&lt;em&gt;event&lt;/em&gt;)等信息作为参数传入该回调函数。&lt;/p&gt;
+
+&lt;p&gt;我们看到上面的回调函数用到了变量&lt;em&gt;showBtn&lt;/em&gt;和&lt;em&gt;quitBtn&lt;/em&gt;，不过这两个变量是在&lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt;函数中创建的（局部变量）。为了能全局引用这两个变量，我们需要在&lt;em&gt;函数原型声明&lt;/em&gt;部分的上方声明这两个全局变量。鉴于Graph控件也需要全局引用，所以我们在&lt;em&gt;函数原型声明&lt;/em&gt;部分的上方添加这样的声明：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;...
+/* 全局变量声明 */
+static int panelHandle;
+int graphHdl, showBtn, quitBtn; 
+
+/* 函数原型声明 */
+int createGUI_Mine(void);
+
+/* main()函数 */
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;然后在创建Graph控件以及两个Button按钮的地方(即&lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt;函数内)，去掉变量名&lt;em&gt;graphHdl&lt;/em&gt;、&lt;em&gt;showBtn&lt;/em&gt;和&lt;em&gt;quitBtn&lt;/em&gt;前面的&lt;em&gt;int&lt;/em&gt;即可。&lt;/p&gt;
+
+&lt;p&gt;我们来编写&lt;strong&gt;当事件发生在&lt;/strong&gt;&lt;em&gt;showBtn&lt;/em&gt;&lt;strong&gt;按钮上时的事件响应&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (control == showBtn) { //如果事件发生在show按钮上
+    switch (event) {
+        case EVENT_COMMIT :
+            //准备一个temp数组，用来存放按钮上要显示的&quot;show&quot;或&quot;stop&quot;字符串
+            char temp[8]=&quot;&quot; ; GetCtrlAttribute(panelHandle, showBtn, ATTR_LABEL_TEXT, temp);
+            //清空graph上的内容，准备画图
+            DeleteGraphPlot(panelHandle, graphHdl, -1, VAL_IMMEDIATE_DRAW);
+            if (strcmp(temp, &quot;Show&quot;) == 0 ){ //如果按钮显示的是&quot;Show&quot;的话
+                //准备波形数组
+                double waveData[100], amp, phase, cycles;
+                int n;
+                n = 100;
+                amp = 90.0;
+                phase = 0.0;
+                cycles = 1.5;
+                SinePattern(n, amp, phase, cycles, waveData);
+                //将波形数组填充到graph图表上
+                PlotY(panelHandle, graphHdl, waveData, n, VAL_DOUBLE, VAL_THIN_LINE, 
+                      VAL_EMPTY_SQUARE, VAL_SOLID, VAL_CONNECTED_POINTS , VAL_YELLOW);
+                SetCtrlAttribute(panelHandle, showBtn, ATTR_LABEL_TEXT, &quot;Clear&quot;);
+            }
+            else{ //如果按钮显示的是&quot;Clear&quot;的话
+                SetCtrlAttribute(panelHandle, showBtn, ATTR_LABEL_TEXT, &quot;Show&quot;);
+            }
+            break; 
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;接着编写&lt;strong&gt;当事件发生在&lt;/strong&gt;&lt;em&gt;quitBtn&lt;/em&gt;&lt;strong&gt;按钮上时的事件响应&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (control == quitBtn) { //如果事件发生在quit按钮上
+    switch (event) {
+        case EVENT_COMMIT :
+            //单击按钮时作出的响应
+            QuitUserInterface(0);
+            break;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;由于我们的回调函数&lt;code class=&quot;highlighter-rouge&quot;&gt;ButtonsResponse()&lt;/code&gt;也是自定义函数，所以需要添加&lt;strong&gt;函数原型声明&lt;/strong&gt;，读者还记得&lt;strong&gt;在哪里&lt;/strong&gt;以及&lt;strong&gt;如何添加&lt;/strong&gt;函数原型声明吗？&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;...
+/* 函数原型声明 */
+int createGUI_Mine(void);
+int CVICALLBACK ButtonsResponse(int, int, int, void, int, int);
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;533-最后一步为按钮指派安装回调函数&quot;&gt;5.3.3 最后一步，为按钮指派(安装)回调函数。&lt;/h5&gt;
+
+&lt;p&gt;也许读者会有疑问：我们不是已经写好回调函数了吗？怎么还要指派(安装)回调函数？事实是：我们虽然已经写好了回调函数，但这个函数和具体控件之间仍是没有任何联系的。指派(安装)回调函数便是为两者建立关联的过程。&lt;/p&gt;
+
+&lt;p&gt;为某个控件指派(安装)回调函数用的是&lt;code class=&quot;highlighter-rouge&quot;&gt;InstallCtrlCallback()&lt;/code&gt;这个函数，它的函数结构为：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;InstallCtrlCallback (int panelHandle, int controlID, CtrlCallbackPtr eventFunction, void *callbackData);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;在使用时，你需要传入控件所属载体的资源句柄(&lt;em&gt;panelHandle&lt;/em&gt;)、控件本身的资源句柄(&lt;em&gt;controlID&lt;/em&gt;)、控件欲绑定的回调函数(&lt;em&gt;eventFunction&lt;/em&gt;)以及在调用该回调函数时欲传给该函数的数据( &lt;em&gt;*callbackData&lt;/em&gt;)。特别注意的是，回调函数&lt;em&gt;eventFunction&lt;/em&gt;的类型是&lt;em&gt;CtrlcallbackPtr&lt;/em&gt;的，这一类型的函数，都必须遵循以下的函数声明结构：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int CVICALLBACK CallbackFunctionName (int panelHandle, int controlID, int event, void *callbackData, int eventData1, int eventData2);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这也就是为什么我们的&lt;code class=&quot;highlighter-rouge&quot;&gt;ButtonsResponse()&lt;/code&gt;函数的前面会有一个全大写的&lt;code class=&quot;highlighter-rouge&quot;&gt;CVICALLBACK&lt;/code&gt;标志了。&lt;/p&gt;
+
+&lt;p&gt;为&lt;strong&gt;show&lt;/strong&gt;、&lt;strong&gt;quit&lt;/strong&gt;按钮指派(安装)回调函数将在&lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt;函数中完成：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;InstallCtrlCallback(pHandle, showBtn, ButtonsResponse, 0);
+InstallCtrlCallback(pHandle, quitBtn, ButtonsResponse, 0);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;至此，所有工作已经完成，快快试运行一下你的程序吧！&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;程序源码&lt;a href=&quot;https://github.com/HelloLyfing/LabWindows-CVI-Tutorial-For-Newbie-By.Lyfing&quot;&gt;托管在Github&lt;/a&gt;上，请自行前往查看。&lt;/p&gt;</content><author><name></name></author><category term="Tech" /><category term="C" /><category term="Labwindows Tutorial" /><summary type="html">#####上接第一节的内容，我们继续本章内容的下半部分。 5. 编写 createGUI_Mine() 函数的具体实现 createGUI_Mine()要完成的工作有： 创建一个主面板(即主窗口) 在主面板右侧创建一个Graph控件，用以显示Sine波形 在主面板上创建两个按钮，并分别为他们编写回调函数以实现： “Show”按钮：点击后Graph控件上显示出Sine波形，点击后按钮名称变为”Clear”；再次点击该按钮，Graph控件上的Sine波形被清空，按钮名称变回”Show” “Quit”按钮：点击后退出程序 5.1 创建主面板 LabWindows/CVI提供了一系列可创建各种可视化界面的函数和API，创建面板(Panel)的函数当然也包含其中，但它具体是什么，又应该怎么用呢？我们试着从帮助文档中找寻答案。 打开帮助文档(在LabWindows/CVI的任意界面按F1快捷键，或者从菜单栏 Help &amp;gt;&amp;gt; Contents F1打开)，在索引标签栏下的搜索框中输入Panel，在列出的一堆搜索结果中寻找 panels (User Interface Editor) 项，再接着找它的子项 programming with，双击打开它(如下图所示)： PS：想要查找某个控件object的使用说明，可以试着在帮助文档 &amp;gt;&amp;gt; 索引标签下的搜索框输入它的名称，在搜索结果中找到它的使用介绍项 object_name (User Interface)及其子项，以查找相关帮助资料；想要查找某个具体函数的使用说明，方法同上，一般搜索结果第一项便是 在Programming with Panels的帮助文档页面，我们看它的第二段话 NewPanel creates a new panel during program execution. NewPanel returns a handle that you use in subsequent User Interface Library functions to reference the panel. Use the first parameter of NewPanel to specify whether the panel is created as a top-level window or as a child of another (parent) window. You also specify the name, position, and size of the panel through parameters to NewPanel. Creating a new panel using NewPanel does not automatically display the panel. 这次请自行读完上面的关于 NewPanel() 函数的使用介绍，下面我们将直接使用它。如何使用？请在索引标签栏下的搜索框中输入 NewPanel 打开这个函数的帮助文档。 简单介绍一下，NewPanel() 函数可以创建一个主面板(top-lever panel)，或一个子面板(child panel)，这取决于你给它传入的参数。在这里我们要创建一个主面板，它的各项参数如下： 面板名称(panelTitle[])：用代码创建的图形界面 面板的位置及大小(单位:像素)：距屏幕顶部60，距屏幕左边300，高度300,宽度600 现在，我们可以创建一个主面板了： # 为了使创建的主面板居中显示，距屏幕顶部和左边的距离都被换成了系统内部的整型变量VAL_AUTO_CENTER NewPanel(0, &quot;用代码创建的图形界面&quot;, VAL_AUTO_CENTER, VAL_AUTO_CENTER, 300, 600) 好了，现在我们整个的代码看起来应该是这个样子： #include #include #include static int panelHandle; int createGUI_Mine(void); int main (int argc, char *argv[]){ if (InitCVIRTE (0, argv, 0) == 0) return -1; /* out of memory */ if ((panelHandle = createGUI_Mine()) &amp;amp;lt; 0) return -1; DisplayPanel (panelHandle); RunUserInterface(); DiscardPanel (panelHandle); return 0; } int createGUI_Mine(){ int pHandle = NewPanel(0, &quot;用代码创建的图形界面&quot;, VAL_AUTO_CENTER, VAL_AUTO_CENTER, 600, 800); return pHandle; } OK，到了这一步，先让我们试运行一下上面的程序吧。运行程序(Debug xxx.exe)的方法有三种： 1) 菜单栏 Run &amp;gt;&amp;gt; Debug src.exe 2) 按快捷键组合 Shift + F5 3) 鼠标点击如下按钮 这时会弹出一个错误框，如下图所示： 这是因为在LabWindows/CVI中，所有自定义的函数都是需要预定义，也就是得在 main() 函数之前声明原型(prototype)的。 这好办，只需要把这两个自定义函数的原型声明添加到 main() 函数之前就可以了。但问题是，如何声明原型？这里最简单的方法是，随便到帮助文档中找一个工程样例(sample)，看看里面的自定义函数的原型声明的句式便可。 PS：工程样例（sample）是LabWindows/CVI提供的用来演示如何使用某个控件或函数的可直接编译、运行的程序。工程样例（sample）是快速入门LabWindows/CVI的编程格式及方法的大好捷径，一有机会就打开查看，有百利而无一害。如何打开一个工程样例？以 NewPanel() 函数为例，当你在帮助文档中查找到 NewPanel() 函数的文档介绍页后，跳到这个页面的最底部，一般会附上若干工程样例，只需用鼠标单击”Open example”前的图标（如下图所示）便可打开这个叫做”userint\buildui.cws”的工程样例。 在打开的”buildui.cws”工程样例中，我们点击buildui.c文件，找到 /*------------------------------------------------*/ /* Internal function prototypes */ /*------------------------------------------------*/ 区域，根据这个区域下方的自定义函数的原型声明的方法，我们可以看出，对自定义函数的原型声明其实很简单，只需要把这个函数在左大括号——{——之前的内容复制到这里，并在结尾添加行结束标志分号——；——即可。不过需要注意的一点是，无参数的函数，在原型声明时需要它在接收参数的括号()中加入 void 关键字。具体到本例中，对自定义函数的原型声明句子如下所示： int createGUI_Mine(void); 好了，把如上内容添加到main()函数的前面，然后再次试运行这个程序，这时会弹出我们刚刚用代码创建的那个图形界面，它目前还只是一个只有标题栏的空白面板(Panel)。效果图如下： 由于还没设置退出选项，所以这个程序无法正常退出。我们可以到启动它的LabWindows/CVI中关闭它：跳转到LabWindows/CVI界面，点击菜单栏 Running &amp;gt;&amp;gt; Terminate Execution即可（或点击工具栏的stop按钮）。 5.2 在主面板右侧创建一个Graph控件，用以显示Sine波形 在创建Graph控件前，请先想一下这两个问题： a. Graph控件是依附于哪个实体之上的，它的载体是什么？ b. Graph控件的创建工作应该被放在哪个部分？main()函数中、createGUI_Mine()函数中，或者其他地方？ 是不是这样的: 问题a：像其他的应用软件一样，控制类、显示类的控件都应该至少依附于一个面板(窗口)之上，也就是说这些控件得有个载体。在本章中，Graph控件及其他两个按钮控件(有待创建)都是依附于我们上一步创建的主面板(主界面基本元素)之上的。 问题b：光从名字我们便可以看出，createGUI_Mine() 函数就是用来完成创建图形界面元素的工作的，所以Graph控件的创建应该被安排到这里。 PS：在这里讲载体的概念，是为了之后创建Graph控件时更易理解传入pHandle的原因，就是因为所有的控件都需要一个载体(如面板) 接下来的问题，Graph控件应该如何创建呢？不知道你发现没，这个问题跟我们上一小节的关于”如何创建一个面板(panel)”的问题非常相似，所以，请你首先试着自己花时间去帮助文档中查找答案(到帮助文档中查找答案的习惯对日后的独立开发有极大帮助，请务必亲试)。 在帮助文档页，索引标签栏下的搜索框中输入Graph，如上一小节查找创建Panel时一样，在搜索结果中我们会找到如下部分的内容： graph controls (user interface) attribute events fuctions operating programming with 我们尝试从programming with这个页面查找新建graph控件的方法，结果没什么收获。但你看到了，graph control(Graph控件)有一个functions页面，这里面列出了跟本控件有关的所有函数，我们点进去看看。 我们要找到的是创建控件的函数，所以函数名应该会带有New字样，对函数列表逐一查找，便会发现 NewCtrl() 这个函数。对了！就是用它来创建Graph控件的。打开这个函数的帮助页(如何打开?)，你会发现，这个函数不光能用来创建Graph控件，它还可以创建LabWindows/CVI提供的其他所有控件(点此查看控件支持列表)。 关于NewCtrl()函数的用法请自信查看帮助文档。我们这里要创建一个Graph控件，进入 NewCtrl() 函数帮助页，把第二行的函数结构复制下来： int NewCtrl (int panelHandle, int controlStyle, char controlLabel[], int controlTop, int controlLeft); 把它插入到 createGUI_Mine() 函数的第二行： int createGUI_Mine(){ int pHandle = NewPanel(0, &quot;用代码创建的图形界面&quot;, VAL_AUTO_CENTER, VAL_AUTO_CENTER, 600, 800); int NewCtrl (int panelHandle, int controlStyle, char controlLabel[], int controlTop, int controlLeft); return pHandle; } NewCtrl()创建好Graph控件后，会返回这个Graph控件的资源句柄(handle)，我们创建一个int型变量graphHdl来接收返回值； 参数方面，int型的panelHandle就用上一步生成的面板资源句柄(pHandle)赋值，即用上一步创建的面板做它的”载体”； int型的controlStyle：欲创建的控件类型，通过查函数的使用帮助可知，要想创建Graph控件，此处应填 CTRL_GRAPH； char型的controlLabel[]：Graph的标签，相当于控件标题，此处使用”Created-Graph”； int型的controlTop及controlLeft：该控件相对于它的载体的位置，top给个30，left给个250 PS：在编程领域，当需要确定一个矩形框的位置时，我们一般只需要指定它左上角那个点相对于它载体的位置即可，然后再分别给这个矩形框赋予长度和高度值。由于左上角位置已确定，长度、高度也已确定，这个矩形框的大小，及它相对于自身载体的位置便唯一确定了。这就好比在一面墙上画一个矩形，先确定它离墙的顶端和左端的距离（即它左上角点的位置），再已知长度、高度的话，从该点出发依次画出长和高，这个矩形在墙上的最终形状及位置便可以确定下来了。 于是createGUI_Mine()函数修改为： int createGUI_Mine(){ int pHandle = NewPanel(0, &quot;用代码创建的图形界面&quot;, VAL_AUTO_CENTER, VAL_AUTO_CENTER, 600, 800); int graphHdl = NewCtrl(pHandle, CTRL_GRAPH, &quot;Created-Graph&quot;, 30, 250); return pHandle; } 试运行一下程序(how?)，我们可以看到之前空空如也的面板上已经多出来一个graph了： 5.3 在主面板上创建两个按钮：show、quit并分别为他们编写回调函数以发挥各自功能 #####5.3.1. 创建按钮 请读者想一想，应该用什么函数来创建这两个按钮呢？我给你个提示：按钮属于控件范畴~ 没错，就是使用NewCtrl()函数来创建以上两个按钮！创建工作将被而且应该被安排到createGUI_Mine()函数中，我们把它安排到Graph控件的创建之后。 show按钮的图形参数，即填入NewCtrl()函数的参数列表： panelHandle = pHandle，即把本函数第一句创建好的面板作为按钮的”载体”； controlStyle = CTRL_SQUARE_COMMAND_BUTTON，即方形命令按钮，这个值通过查函数的使用方法可得； controlLabel[] = “show”，即按钮上显示的文字； controlTop = 80 ， controlLeft = 50，即按钮相对于自己”载体”的上端和左端的位置 quit按钮的图形参数： panelHandle = pHandle，即把本函数第一句创建好的面板作为按钮的”载体”； controlStyle = CTRL_SQUARE_COMMAND_BUTTON，即方形命令按钮，这个值通过查函数的使用方法可得； controlLabel[] = “quit”，即按钮上显示的文字； controlTop = 140 ， controlLeft = 50，即按钮相对于自己”载体”的上端和左端的位置 我们分别用整形变量 showBtn及quitBtn来接收创建按钮后返回的资源句柄，于是createGUI_Mine()函数更新为： int createGUI_Mine(){ int pHandle = NewPanel(0, &quot;用代码创建的图形界面&quot;, VAL_AUTO_CENTER, VAL_AUTO_CENTER, 300, 600); int graphHdl = NewCtrl(pHandle, CTRL_GRAPH, &quot;Created-Graph&quot;, 30, 250); int showBtn = NewCtrl(pHandle, CTRL_SQUARE_COMMAND_BUTTON, &quot;Show&quot;, 80, 50); int quitBtn = NewCtrl(pHandle, CTRL_SQUARE_COMMAND_BUTTON, &quot;Quit&quot;, 140, 50); return pHandle; } 试运行一下程序，添加了两个按钮的界面如下图所示： 到目前为止，我们已经完成了所有界面元素的创建工作。 5.3.2 为两个按钮编写回调函数 PS：请读者首先到 帮助文档 &amp;gt;&amp;gt; 索引 标签栏 下的搜索框中输入callback functions然后回车以打开关于回调函数的使用说明页面，请大致浏览一下该页面内容。我在这里简单说一下，回调函数(callback functions)是你绑定到某个特定用户界面元素(比如面板、按钮、Graph控件)上，用以响应发生在该元素上的所有用户事件的函数。例如，你可以给按钮A绑定一个回调函数，并在该回调函数中编写所有可能发生的事件的应对策略，如按下按钮时做动作1、按钮抬起时做动作2、单击按钮时做动作3、双击按钮时…一旦任意一个事件在该元素上发生，LabWindows/CVI便开始调用(执行)这个回调函数，预先设定好的动作便会被触发。 如何编写回调函数？在上面提到的那个帮助文档页(即Using Callback Functions to Respond to User Interface Events页面)，我们可以看到三个回调函数的使用样例代码，他们分别是面板、控件以及菜单栏这三种用户界面元素的回调函数使用样例。请读者想一下，上述三种样例，哪一个可以为我们所用？ 当然还是控件的那个样例(ControlResponse)。我们把下面的样例完整地拷贝到我们的src.c主程序中，将其放到createGUI_Mine()函数的下面： int CVICALLBACK ControlResponse (int handle, int control, int event, void *callbackdata, int eventdata1, int eventdata2){ ... } 现在要做的对这个样例进行DIY改造。 将函数名ControlResponse改为更具体的ButtonsResponse（此改动可有可无）； 去除一些无关内容 精简后，两个按钮的回调函数变为： int CVICALLBACK ButtonsResponse(int handle, int control, int event, void *callbackdata, int eventdata1, int eventdata2){ if (control == showBtn) { //如果事件发生在show按钮上 switch (event) { case EVENT_RIGHT_CLICK : //右击按钮时作出的响应 break; case EVENT_COMMIT : //单击按钮时作出的响应 break; } } if (control == quitBtn) { //如果事件发生在quit按钮上 switch (event) { case EVENT_COMMIT : //单击按钮时作出的响应 break; } } return(0); } 当有用户事件发生在按钮上，LabWindows/CVI便会调用上面的回调函数，并在调用时将该控件的载体(handle)、控件资源句柄(即资源id-control)、发生的事件id(event)等信息作为参数传入该回调函数。 我们看到上面的回调函数用到了变量showBtn和quitBtn，不过这两个变量是在createGUI_Mine()函数中创建的（局部变量）。为了能全局引用这两个变量，我们需要在函数原型声明部分的上方声明这两个全局变量。鉴于Graph控件也需要全局引用，所以我们在函数原型声明部分的上方添加这样的声明： ... /* 全局变量声明 */ static int panelHandle; int graphHdl, showBtn, quitBtn; /* 函数原型声明 */ int createGUI_Mine(void); /* main()函数 */ ... 然后在创建Graph控件以及两个Button按钮的地方(即createGUI_Mine()函数内)，去掉变量名graphHdl、showBtn和quitBtn前面的int即可。 我们来编写当事件发生在showBtn按钮上时的事件响应： if (control == showBtn) { //如果事件发生在show按钮上 switch (event) { case EVENT_COMMIT : //准备一个temp数组，用来存放按钮上要显示的&quot;show&quot;或&quot;stop&quot;字符串 char temp[8]=&quot;&quot; ; GetCtrlAttribute(panelHandle, showBtn, ATTR_LABEL_TEXT, temp); //清空graph上的内容，准备画图 DeleteGraphPlot(panelHandle, graphHdl, -1, VAL_IMMEDIATE_DRAW); if (strcmp(temp, &quot;Show&quot;) == 0 ){ //如果按钮显示的是&quot;Show&quot;的话 //准备波形数组 double waveData[100], amp, phase, cycles; int n; n = 100; amp = 90.0; phase = 0.0; cycles = 1.5; SinePattern(n, amp, phase, cycles, waveData); //将波形数组填充到graph图表上 PlotY(panelHandle, graphHdl, waveData, n, VAL_DOUBLE, VAL_THIN_LINE, VAL_EMPTY_SQUARE, VAL_SOLID, VAL_CONNECTED_POINTS , VAL_YELLOW); SetCtrlAttribute(panelHandle, showBtn, ATTR_LABEL_TEXT, &quot;Clear&quot;); } else{ //如果按钮显示的是&quot;Clear&quot;的话 SetCtrlAttribute(panelHandle, showBtn, ATTR_LABEL_TEXT, &quot;Show&quot;); } break; } } 接着编写当事件发生在quitBtn按钮上时的事件响应： if (control == quitBtn) { //如果事件发生在quit按钮上 switch (event) { case EVENT_COMMIT : //单击按钮时作出的响应 QuitUserInterface(0); break; } } 由于我们的回调函数ButtonsResponse()也是自定义函数，所以需要添加函数原型声明，读者还记得在哪里以及如何添加函数原型声明吗？ ... /* 函数原型声明 */ int createGUI_Mine(void); int CVICALLBACK ButtonsResponse(int, int, int, void, int, int); ... 5.3.3 最后一步，为按钮指派(安装)回调函数。 也许读者会有疑问：我们不是已经写好回调函数了吗？怎么还要指派(安装)回调函数？事实是：我们虽然已经写好了回调函数，但这个函数和具体控件之间仍是没有任何联系的。指派(安装)回调函数便是为两者建立关联的过程。 为某个控件指派(安装)回调函数用的是InstallCtrlCallback()这个函数，它的函数结构为： InstallCtrlCallback (int panelHandle, int controlID, CtrlCallbackPtr eventFunction, void *callbackData); 在使用时，你需要传入控件所属载体的资源句柄(panelHandle)、控件本身的资源句柄(controlID)、控件欲绑定的回调函数(eventFunction)以及在调用该回调函数时欲传给该函数的数据( *callbackData)。特别注意的是，回调函数eventFunction的类型是CtrlcallbackPtr的，这一类型的函数，都必须遵循以下的函数声明结构： int CVICALLBACK CallbackFunctionName (int panelHandle, int controlID, int event, void *callbackData, int eventData1, int eventData2); 这也就是为什么我们的ButtonsResponse()函数的前面会有一个全大写的CVICALLBACK标志了。 为show、quit按钮指派(安装)回调函数将在createGUI_Mine()函数中完成： InstallCtrlCallback(pHandle, showBtn, ButtonsResponse, 0); InstallCtrlCallback(pHandle, quitBtn, ButtonsResponse, 0); 至此，所有工作已经完成，快快试运行一下你的程序吧！ 程序源码托管在Github上，请自行前往查看。</summary></entry><entry><title type="html">Labwindows.Tutorial.Chapter 3.Part1</title><link href="http://localhost:4000/2013/10/10/Labwindows-tutorial-chapter3-part1.html" rel="alternate" type="text/html" title="Labwindows.Tutorial.Chapter 3.Part1" /><published>2013-10-10T00:00:00+08:00</published><updated>2013-10-10T00:00:00+08:00</updated><id>http://localhost:4000/2013/10/10/Labwindows-tutorial-chapter3-part1</id><content type="html" xml:base="http://localhost:4000/2013/10/10/Labwindows-tutorial-chapter3-part1.html">&lt;p&gt;&lt;a href=&quot;http://lanfengming.com/Labwindows-tutorial-chapter2.html/&quot;&gt;上一篇&lt;/a&gt;中我们讲了如何&lt;strong&gt;使用界面编辑器&lt;/strong&gt;创建一个Graph控件，并通过绑定代码在它上面显示Sine波和Cosine波。&lt;/p&gt;
+
+&lt;p&gt;本篇虽然仍要创建Graph，不过所有的图形创建工作都将由&lt;strong&gt;代码&lt;/strong&gt;完成。也就是说，从头到尾，你无需再借助界面编辑器来完成创建控件、设置属性、绑定回调函数等工作，上述内容都将在一个&lt;strong&gt;.c&lt;/strong&gt;文件中由代码来实现。&lt;/p&gt;
+
+&lt;p&gt;而且说实在的，授人以鱼不如授人以渔。这个系列教程不可能从零开始详尽介绍各个控件、内建函数的使用方法，一来确实内容太多，无力一一详述；二来这些东西本就在&lt;strong&gt;官方文档&lt;/strong&gt;中有足够详尽的使用说明，自己再来赘述反倒没有意义。&lt;strong&gt;此系列教程更多的意义在于&lt;/strong&gt;：在引导新手慢慢上手、熟悉Labwindows开发环境的同时，教会新手自己查阅帮助文档解决问题，最终达到新手可以自己查找帮助文档解决问题的目的。我想教会人用字典比每个字手把手教更有意义，对吧？因此从本篇开始会侧重介绍帮助文档的使用。&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;本篇任务：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;用代码在主面板上创建一个Graph控件；&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;显示波形按钮&lt;/strong&gt;、&lt;strong&gt;清除波形按钮&lt;/strong&gt;；&lt;/li&gt;
+  &lt;li&gt;开始尝试从帮助文档中寻找解决问题的答案或方案&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;效果图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/6480dca9jw1e9t2bslcygj20gv096my7.jpg&quot; alt=&quot;最终效果图.png&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;1-new-project新建工程&quot;&gt;1. New Project(新建工程)&lt;/h4&gt;
+
+&lt;p&gt;如何新建工程？&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;打开LabWindows/CVI程序后，如果弹出如下页面(启动页)。则通过选择&lt;strong&gt;New&lt;/strong&gt;版块的&lt;strong&gt;Project&lt;/strong&gt;选项即可新建工程&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/6480dca9jw1e9t2cxnz38j20l60f5acy.jpg&quot; alt=&quot;Startup-page.png&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;如果打开程序后直接看到的是程序主界面，则直接通过菜单栏 &lt;strong&gt;File&lt;/strong&gt; » &lt;strong&gt;New&lt;/strong&gt; » &lt;strong&gt;Project(*.prj)&lt;/strong&gt; 即可新建工程&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在之后弹出的&lt;strong&gt;New Project Options&lt;/strong&gt;对话框中，保留系统默认选项，直接点击&lt;strong&gt;OK&lt;/strong&gt;即可&lt;/p&gt;
+
+&lt;h4 id=&quot;2-new-source-file新建c代码源文件&quot;&gt;2. New Source File(新建.c代码源文件)&lt;/h4&gt;
+
+&lt;p&gt;通过菜单栏依次选择 &lt;strong&gt;File&lt;/strong&gt; » &lt;strong&gt;New&lt;/strong&gt; » &lt;strong&gt;Source(*.c)&lt;/strong&gt; 即可新建代码源文件&lt;/p&gt;
+
+&lt;p&gt;此时需要保存一下我们新建的工程，通过菜单栏依次选择&lt;strong&gt;File&lt;/strong&gt; » &lt;strong&gt;Add Untitled1.c to project&lt;/strong&gt;(添加代码源文件到工程中)，此时会弹出如下对话框(LabWindows/CVI Message)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/large/6480dca9jw1e9t2e135jpj20bz04iq3d.jpg&quot; alt=&quot;You-must-name-.c-file-name-before-using-it.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;对话框内容为：代码源文件只有在命名后才可以被添加到Project中，所以你需要首先给代码源文件命名并选择其存储位置，我们把它保存在任意位置的&lt;strong&gt;project3&lt;/strong&gt;文件夹下，并将其命名为 &lt;em&gt;src3.c&lt;/em&gt;。&lt;/p&gt;
+
+&lt;p&gt;此时新建工程及其系列文件(源代码文件、用户界面文件、配置文件等)都将被自动命名为 &lt;em&gt;src.后缀&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;3-在c代码文件中添加main函数&quot;&gt;3. 在.c代码文件中添加main()函数&lt;/h4&gt;
+
+&lt;p&gt;我们知道LabWindows/CVI使用的c语言作为编程语言，而c语言中的&lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt;函数则是整个程序的入口，所以我们首先为源代码文件添加&lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt;函数&lt;em&gt;(下面的&lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt;函数代码由系统根据用户界面文件(&lt;strong&gt;.uir&lt;/strong&gt;)自动生成，算是LabWindows/CVI程序的&lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt;函数的原始框架，最好把它复制到源代码文件中，不推荐手敲。下面会详细解释这个main()函数的默认运行机制)&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#include &amp;lt;cvirte.h&amp;gt;     
+#include &amp;lt;userint.h&amp;gt;
+#include &quot;src.h&quot;
+
+static int panelHandle;
+
+int main (int argc, char *argv[]){
+    if (InitCVIRTE (0, argv, 0) == 0)
+        return -1;  /* out of memory */
+    if ((panelHandle = LoadPanel (0, &quot;src.uir&quot;, PANEL)) &amp;lt; 0)
+        return -1;
+    DisplayPanel (panelHandle);
+    RunUserInterface ();
+    DiscardPanel (panelHandle);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;关于上面的&lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt;函数：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#include &amp;lt;cvirte.h&amp;gt;     
+#include &amp;lt;userint.h&amp;gt;
+#include &quot;src.h&quot;
+# 上面的include语句是引入系统所需的一些内置函数，  
+# 稍懂C语言的应该不会对此陌生
+
+# panelHandle是整个程序的灵魂支柱，
+# 它持有着系统/程序主面板(如果程序有图形化界面的话)
+# 在系统内存中的**句柄**，意即编程人员需要通过这个句柄
+# 来与主面板进行交互
+static int panelHandle;
+
+# 传说中的main()函数
+int main (int argc, char *argv[]){
+    # 系统初始化
+    if (InitCVIRTE (0, argv, 0) == 0)
+        return -1;  /* out of memory */
+    # LoadPanel是LabWindows/CVI的自带函数(以后简称&quot;Lab自带函数&quot;)
+    # 它的作用是什么呢？请把光标放到LoadPanel这个函数名的任意位置，然后按F1，
+    # 接着会弹出 NI LabWindows/CVI Help 面板(如下图所示)，
+    # 面板左面是索引选项，面板右面便是我们的LoadPanel()函数的详细使用说明
+    # 看着一大堆英文是不是觉得有些头大？但我强烈推荐你硬着头皮看下去，因为
+    # 这个函数很重要，而且关于它的使用帮助包含了很多LabWindows/CVI程序的构建机理
+    # 也许刚开始你会觉得看的云里雾里，但只要每次接触新函数时花功夫看上一会，
+    # 一星期后你就会感觉编写程序似有&quot;游刃有余&quot;之感了，而到此时，你已经几乎可以
+    # 不借助外界帮助(用搜索引擎、官方BBS论坛查找信息)独立完成大部分的编程工作了
+    if ((panelHandle = LoadPanel (0, &quot;src.uir&quot;, PANEL)) &amp;lt; 0)
+        return -1;
+    DisplayPanel (panelHandle);
+    RunUserInterface ();
+    DiscardPanel (panelHandle);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;话虽如此，还是简单介绍一下main()函数的运行流程吧：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;首先使用&lt;code class=&quot;highlighter-rouge&quot;&gt;InitCVIRTE (0, argv, 0)&lt;/code&gt;函数进行系统初始化；&lt;/li&gt;
+  &lt;li&gt;接着开始&lt;strong&gt;选择&lt;/strong&gt;并&lt;strong&gt;载入&lt;/strong&gt;图形界面(主面板)文件，准备显示图形。这一步的一种通用做法是：&lt;code class=&quot;highlighter-rouge&quot;&gt;panelHandle = LoadPanel (0, &quot;src.uir&quot;, PANEL))&lt;/code&gt; ，即用 &lt;code class=&quot;highlighter-rouge&quot;&gt;LoadPanel()&lt;/code&gt; Lab自带函数载入你之前已经创建好的图形界面描述文件(&lt;strong&gt;.uir&lt;/strong&gt;文件或&lt;strong&gt;.tui&lt;/strong&gt;文件，看看本系列教程中上两章所创建的工程，其中都带有&lt;strong&gt;.uir&lt;/strong&gt;图形界面描述文件)，并在载入后将该面板资源在系统内存中的&lt;strong&gt;句柄&lt;/strong&gt;(handle)交给(赋值给)我们之前创建的全局变量 &lt;code class=&quot;highlighter-rouge&quot;&gt;panelHandle&lt;/code&gt; 。但是本章教程中并没创建图形界面描述文件，因为我们是要用纯代码实现创建图形控件并使其发挥一定功用。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DisplayPanel (panelHandle)&lt;/code&gt; 上一步，我们载入图形界面描述文件，并获得了其在系统内存中的句柄(即 &lt;code class=&quot;highlighter-rouge&quot;&gt;panelHandle&lt;/code&gt; )，这一步便是将这个图形界面显示出来。使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;DisplayPanel()&lt;/code&gt; 函数可以完成此项工作&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;RunUserInterface()&lt;/code&gt; 将开始运行图形界面，并将捕获到的用户事件(events)分发给回调函数。我们来看看 &lt;code class=&quot;highlighter-rouge&quot;&gt;RunUserInterface&lt;/code&gt; 的使用说明。在 &lt;code class=&quot;highlighter-rouge&quot;&gt;RunUserInterface&lt;/code&gt; 上按F1(或在打开的&lt;strong&gt;NI LabWindows/CVI Help&lt;/strong&gt;面板的左侧，点击&lt;strong&gt;索引(N)&lt;/strong&gt;标签，然后在搜索框中输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;RunUserInterface&lt;/code&gt; 后回车。在&lt;strong&gt;用途&lt;/strong&gt;(Purpose)部分，我们看到这样一段话：&lt;em&gt;RunUserInterface does not return until you call QuitUserInterface from within a callback function. RunUserInterface returns the value that you pass to QuitUserInterface.&lt;/em&gt; 也就是说 &lt;code class=&quot;highlighter-rouge&quot;&gt;RunUserInterface()&lt;/code&gt; 一旦执行，它不会立即返回(return)，所以跟在它后面的代码也就不会立即执行。那么这个函数何时才会返回呢？&lt;strong&gt;直到你主动在某个&lt;code class=&quot;highlighter-rouge&quot;&gt;回调函数&lt;/code&gt;中调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;QuitUserInterface()&lt;/code&gt; 函数&lt;/strong&gt;， &lt;code class=&quot;highlighter-rouge&quot;&gt;RunUserInterface()&lt;/code&gt; 才会返回，而且它的返回值是你传入 &lt;code class=&quot;highlighter-rouge&quot;&gt;QuitUserInterface()&lt;/code&gt; 的参数。PS：&lt;code class=&quot;highlighter-rouge&quot;&gt;QuitUserInterface()&lt;/code&gt; 一般出现在&lt;strong&gt;系统退出按钮&lt;/strong&gt;或&lt;strong&gt;主面板右上角的”x”关闭按钮&lt;/strong&gt;的回调函数中。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DiscardPanel (panelHandle)&lt;/code&gt; 载入到系统内存中的图形界面资源，必须在系统退出前被清理掉，以防止程序给PC内存留下太多垃圾。&lt;code class=&quot;highlighter-rouge&quot;&gt;DiscardPanel (panelHandle)&lt;/code&gt; 便是做此项工作的，按F1查看它的使用说明，它的用途(Purpose)部分写到：&lt;em&gt;Removes a panel and any of its child panels from memory and clears them from the screen if visible.You must call DiscardPanel from the thread in which you create the panel.&lt;/em&gt; 即：&lt;em&gt;将一个面板(panel)及其所有的子面板(child panel,面板可以有父子关系)从内存中移除；如果它们正显示在屏幕上，则清除这些图像。而且你必须在创建面板的线程中(多线程范畴)调用&lt;code class=&quot;highlighter-rouge&quot;&gt;DiscardPanel()&lt;/code&gt;&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;return 0&lt;/code&gt; 退出 &lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt; 函数，程序运行结束。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;LabWindows/CVI程序的main()函数的运行机制基本如此。当然只要不颠倒上述几个部分的顺序的话，你可以在 &lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt; 函数的任意位置添加任意有逻辑的代码。下一节我们将从修改上述 &lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt; 函数着手，编写本章内容需要的 &lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt; 函数。&lt;/p&gt;
+
+&lt;h4 id=&quot;4-开始编写main函数&quot;&gt;4. 开始编写main()函数&lt;/h4&gt;
+
+&lt;p&gt;上一节我们只是从其他地方复制了一份LabWindows/CVI程序的 &lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt; 函数框架，但它并不能满足我们的需求，我们需要在此基础上修改它。&lt;/p&gt;
+
+&lt;p&gt;4.1 第一步不改动原框架，使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;InitCVIRTE()&lt;/code&gt; 函数进行系统初始化&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if ( InitCVIRTE(0, argv, 0) == 0 ) 
+    return -1;  /* out of memory */
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;4.2 原框架的第二步是：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;panelHandle = LoadPanel (0, &quot;src.uir&quot;, PANEL))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;即&lt;em&gt;使用Lab自带函数 &lt;code class=&quot;highlighter-rouge&quot;&gt;LoadPanel()&lt;/code&gt; 载入用户之前创建的图形界面描述文件(&lt;strong&gt;.uir&lt;/strong&gt;/&lt;strong&gt;.tui&lt;/strong&gt;)&lt;/em&gt;，但我们要自己用代码创建图形界面的，&lt;strong&gt;所以这一步的内容改为&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;panelHandle = createGUI_Mine() # GUI = Graphic User Interface
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt; 是我们自己编写的函数，它的作用是创建一个面板，并将创建好的面板资源的句柄(handle)返回(return)。为了与Lab系统自带函数区别开来，我们在函数名之后添加了 &lt;code class=&quot;highlighter-rouge&quot;&gt;_Mine&lt;/code&gt; 标记（&lt;em&gt;其实这个标记可有可无&lt;/em&gt;）。&lt;/p&gt;
+
+&lt;p&gt;4.3 剩余部分跟源框架保持一致：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;DisplayPanel (panelHandle);
+RunUserInterface ();
+DiscardPanel (panelHandle);
+return 0;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;5-编写-creategui_mine-函数的具体实现&quot;&gt;5. 编写 &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt; 函数的具体实现&lt;/h4&gt;
+&lt;p&gt;第5部分内容将在&lt;a href=&quot;http://lanfengming.com/blog/Labwindows-tutorial-chapter3-part2.html/&quot;&gt;下一篇中继续&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="Tech" /><category term="C" /><category term="Labwindows Tutorial" /><summary type="html">上一篇中我们讲了如何使用界面编辑器创建一个Graph控件，并通过绑定代码在它上面显示Sine波和Cosine波。 本篇虽然仍要创建Graph，不过所有的图形创建工作都将由代码完成。也就是说，从头到尾，你无需再借助界面编辑器来完成创建控件、设置属性、绑定回调函数等工作，上述内容都将在一个.c文件中由代码来实现。 而且说实在的，授人以鱼不如授人以渔。这个系列教程不可能从零开始详尽介绍各个控件、内建函数的使用方法，一来确实内容太多，无力一一详述；二来这些东西本就在官方文档中有足够详尽的使用说明，自己再来赘述反倒没有意义。此系列教程更多的意义在于：在引导新手慢慢上手、熟悉Labwindows开发环境的同时，教会新手自己查阅帮助文档解决问题，最终达到新手可以自己查找帮助文档解决问题的目的。我想教会人用字典比每个字手把手教更有意义，对吧？因此从本篇开始会侧重介绍帮助文档的使用。 本篇任务： 用代码在主面板上创建一个Graph控件； 显示波形按钮、清除波形按钮； 开始尝试从帮助文档中寻找解决问题的答案或方案 效果图： 1. New Project(新建工程) 如何新建工程？ 打开LabWindows/CVI程序后，如果弹出如下页面(启动页)。则通过选择New版块的Project选项即可新建工程 如果打开程序后直接看到的是程序主界面，则直接通过菜单栏 File » New » Project(*.prj) 即可新建工程 在之后弹出的New Project Options对话框中，保留系统默认选项，直接点击OK即可 2. New Source File(新建.c代码源文件) 通过菜单栏依次选择 File » New » Source(*.c) 即可新建代码源文件 此时需要保存一下我们新建的工程，通过菜单栏依次选择File » Add Untitled1.c to project(添加代码源文件到工程中)，此时会弹出如下对话框(LabWindows/CVI Message) 对话框内容为：代码源文件只有在命名后才可以被添加到Project中，所以你需要首先给代码源文件命名并选择其存储位置，我们把它保存在任意位置的project3文件夹下，并将其命名为 src3.c。 此时新建工程及其系列文件(源代码文件、用户界面文件、配置文件等)都将被自动命名为 src.后缀 3. 在.c代码文件中添加main()函数 我们知道LabWindows/CVI使用的c语言作为编程语言，而c语言中的main()函数则是整个程序的入口，所以我们首先为源代码文件添加main()函数(下面的main()函数代码由系统根据用户界面文件(.uir)自动生成，算是LabWindows/CVI程序的main()函数的原始框架，最好把它复制到源代码文件中，不推荐手敲。下面会详细解释这个main()函数的默认运行机制) #include &amp;lt;cvirte.h&amp;gt; #include &amp;lt;userint.h&amp;gt; #include &quot;src.h&quot; static int panelHandle; int main (int argc, char *argv[]){ if (InitCVIRTE (0, argv, 0) == 0) return -1; /* out of memory */ if ((panelHandle = LoadPanel (0, &quot;src.uir&quot;, PANEL)) &amp;lt; 0) return -1; DisplayPanel (panelHandle); RunUserInterface (); DiscardPanel (panelHandle); return 0; } 关于上面的main()函数： #include &amp;lt;cvirte.h&amp;gt; #include &amp;lt;userint.h&amp;gt; #include &quot;src.h&quot; # 上面的include语句是引入系统所需的一些内置函数， # 稍懂C语言的应该不会对此陌生 # panelHandle是整个程序的灵魂支柱， # 它持有着系统/程序主面板(如果程序有图形化界面的话) # 在系统内存中的**句柄**，意即编程人员需要通过这个句柄 # 来与主面板进行交互 static int panelHandle; # 传说中的main()函数 int main (int argc, char *argv[]){ # 系统初始化 if (InitCVIRTE (0, argv, 0) == 0) return -1; /* out of memory */ # LoadPanel是LabWindows/CVI的自带函数(以后简称&quot;Lab自带函数&quot;) # 它的作用是什么呢？请把光标放到LoadPanel这个函数名的任意位置，然后按F1， # 接着会弹出 NI LabWindows/CVI Help 面板(如下图所示)， # 面板左面是索引选项，面板右面便是我们的LoadPanel()函数的详细使用说明 # 看着一大堆英文是不是觉得有些头大？但我强烈推荐你硬着头皮看下去，因为 # 这个函数很重要，而且关于它的使用帮助包含了很多LabWindows/CVI程序的构建机理 # 也许刚开始你会觉得看的云里雾里，但只要每次接触新函数时花功夫看上一会， # 一星期后你就会感觉编写程序似有&quot;游刃有余&quot;之感了，而到此时，你已经几乎可以 # 不借助外界帮助(用搜索引擎、官方BBS论坛查找信息)独立完成大部分的编程工作了 if ((panelHandle = LoadPanel (0, &quot;src.uir&quot;, PANEL)) &amp;lt; 0) return -1; DisplayPanel (panelHandle); RunUserInterface (); DiscardPanel (panelHandle); return 0; } 话虽如此，还是简单介绍一下main()函数的运行流程吧： 首先使用InitCVIRTE (0, argv, 0)函数进行系统初始化； 接着开始选择并载入图形界面(主面板)文件，准备显示图形。这一步的一种通用做法是：panelHandle = LoadPanel (0, &quot;src.uir&quot;, PANEL)) ，即用 LoadPanel() Lab自带函数载入你之前已经创建好的图形界面描述文件(.uir文件或.tui文件，看看本系列教程中上两章所创建的工程，其中都带有.uir图形界面描述文件)，并在载入后将该面板资源在系统内存中的句柄(handle)交给(赋值给)我们之前创建的全局变量 panelHandle 。但是本章教程中并没创建图形界面描述文件，因为我们是要用纯代码实现创建图形控件并使其发挥一定功用。 DisplayPanel (panelHandle) 上一步，我们载入图形界面描述文件，并获得了其在系统内存中的句柄(即 panelHandle )，这一步便是将这个图形界面显示出来。使用 DisplayPanel() 函数可以完成此项工作 RunUserInterface() 将开始运行图形界面，并将捕获到的用户事件(events)分发给回调函数。我们来看看 RunUserInterface 的使用说明。在 RunUserInterface 上按F1(或在打开的NI LabWindows/CVI Help面板的左侧，点击索引(N)标签，然后在搜索框中输入 RunUserInterface 后回车。在用途(Purpose)部分，我们看到这样一段话：RunUserInterface does not return until you call QuitUserInterface from within a callback function. RunUserInterface returns the value that you pass to QuitUserInterface. 也就是说 RunUserInterface() 一旦执行，它不会立即返回(return)，所以跟在它后面的代码也就不会立即执行。那么这个函数何时才会返回呢？直到你主动在某个回调函数中调用 QuitUserInterface() 函数， RunUserInterface() 才会返回，而且它的返回值是你传入 QuitUserInterface() 的参数。PS：QuitUserInterface() 一般出现在系统退出按钮或主面板右上角的”x”关闭按钮的回调函数中。 DiscardPanel (panelHandle) 载入到系统内存中的图形界面资源，必须在系统退出前被清理掉，以防止程序给PC内存留下太多垃圾。DiscardPanel (panelHandle) 便是做此项工作的，按F1查看它的使用说明，它的用途(Purpose)部分写到：Removes a panel and any of its child panels from memory and clears them from the screen if visible.You must call DiscardPanel from the thread in which you create the panel. 即：将一个面板(panel)及其所有的子面板(child panel,面板可以有父子关系)从内存中移除；如果它们正显示在屏幕上，则清除这些图像。而且你必须在创建面板的线程中(多线程范畴)调用DiscardPanel() return 0 退出 main() 函数，程序运行结束。 LabWindows/CVI程序的main()函数的运行机制基本如此。当然只要不颠倒上述几个部分的顺序的话，你可以在 main() 函数的任意位置添加任意有逻辑的代码。下一节我们将从修改上述 main() 函数着手，编写本章内容需要的 main() 函数。 4. 开始编写main()函数 上一节我们只是从其他地方复制了一份LabWindows/CVI程序的 main() 函数框架，但它并不能满足我们的需求，我们需要在此基础上修改它。 4.1 第一步不改动原框架，使用 InitCVIRTE() 函数进行系统初始化 if ( InitCVIRTE(0, argv, 0) == 0 ) return -1; /* out of memory */ 4.2 原框架的第二步是： panelHandle = LoadPanel (0, &quot;src.uir&quot;, PANEL)) 即使用Lab自带函数 LoadPanel() 载入用户之前创建的图形界面描述文件(.uir/.tui)，但我们要自己用代码创建图形界面的，所以这一步的内容改为： panelHandle = createGUI_Mine() # GUI = Graphic User Interface createGUI_Mine() 是我们自己编写的函数，它的作用是创建一个面板，并将创建好的面板资源的句柄(handle)返回(return)。为了与Lab系统自带函数区别开来，我们在函数名之后添加了 _Mine 标记（其实这个标记可有可无）。 4.3 剩余部分跟源框架保持一致： DisplayPanel (panelHandle); RunUserInterface (); DiscardPanel (panelHandle); return 0; 5. 编写 createGUI_Mine() 函数的具体实现 第5部分内容将在下一篇中继续</summary></entry><entry><title type="html">在线切割剪辑MP3手机铃声利器！</title><link href="http://localhost:4000/2013/07/18/make-your-own-phone-ringstones.html" rel="alternate" type="text/html" title="在线切割剪辑MP3手机铃声利器！" /><published>2013-07-18T05:00:00+08:00</published><updated>2013-07-18T05:00:00+08:00</updated><id>http://localhost:4000/2013/07/18/make-your-own-phone-ringstones</id><content type="html" xml:base="http://localhost:4000/2013/07/18/make-your-own-phone-ringstones.html">&lt;p&gt;这年头，能刹那间打动你的音乐真的不多了。
+好不容易遇到一首触动自己的音乐，怎么能放过拿它做手机铃声或晨起闹钟或各种短铃声的机会呢？
+——-
+你平常会用哪些稀奇古怪，难用、效果又差的软件剪辑音乐呢？
+去百度、Google里搜一下，好嘛，一堆，还不知道好不好用，效果怎么样，还得下载，还得学着怎么用，还得忍受下到傻逼软件或流浪软件的愤怒…好嘛…&lt;br /&gt;
+欢迎跟我来到21世纪~~~&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;吐槽结束，干货分享开始！&lt;br /&gt;
+&lt;!--more--&gt;
+如题所著，这款音乐剪辑工具无需下载，是直接在线使用的。它的&lt;strong&gt;特点如下&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;仅支持&lt;strong&gt;MP3格式&lt;/strong&gt;的音乐(其他格式未做测试)&lt;/li&gt;
+  &lt;li&gt;支持&lt;strong&gt;无损切割&lt;/strong&gt;(192kbps的处理完还是192k，320k的处理完还是320k)&lt;/li&gt;
+  &lt;li&gt;时间线微调可以精确到——&lt;strong&gt;0.2s&lt;/strong&gt;！&lt;/li&gt;
+  &lt;li&gt;支持音乐的开始&lt;strong&gt;渐入&lt;/strong&gt;，结束&lt;strong&gt;渐出&lt;/strong&gt;效果&lt;/li&gt;
+  &lt;li&gt;支持&lt;strong&gt;MP3、AMR、WAV、AAC以及iPhone铃声&lt;/strong&gt;等多种&lt;strong&gt;导出格式&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;高手请直接前往在线工具网址&lt;a href=&quot;http://cut-mp3.com&quot; target=&quot;_blank&quot;&gt;cut-mp3.com&lt;/a&gt;体验试用。&lt;br /&gt;
+不知道怎么用、或者想知道详尽用法的人跟着往下看。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;1) 打开网址：&lt;a href=&quot;http://cut-mp3.com&quot; target=&quot;_blank&quot;&gt;cut-mp3.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2) 稍等片刻，工具载入完成后出现如下画面，点&lt;strong&gt;Open file&lt;/strong&gt;上传本地音乐
+&lt;img src=&quot;http://ww3.sinaimg.cn/large/6480dca9jw1e6piqioanmj20ee07dgmd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;3)接着进入音乐剪切环节，各按钮功能及释义如下图所示：
+&lt;img src=&quot;http://ww3.sinaimg.cn/large/6480dca9jw1e6pit90dxgj21fz0fb0yd.jpg&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
+(可&lt;a href=&quot;http://ww3.sinaimg.cn/large/6480dca9jw1e6pit90dxgj21fz0fb0yd.jpg&quot; target=&quot;_blank&quot;&gt;点击大图查看&lt;/a&gt;详细内容)&lt;/p&gt;
+
+&lt;p&gt;4) 设置开始位置：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;用鼠标拖动&lt;strong&gt;开始标志线&lt;/strong&gt;到自己大致满意的位置&lt;/li&gt;
+  &lt;li&gt;通过键盘左右箭头对&lt;strong&gt;标志线位置&lt;/strong&gt;进行&lt;strong&gt;微调&lt;/strong&gt;，空格键控制&lt;strong&gt;开始/暂停&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;通过点击”&lt;strong&gt;Fade in&lt;/strong&gt;“按钮，来&lt;strong&gt;开启/关闭音乐渐入效果&lt;/strong&gt;(亮为开，暗为关)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;5) 设置结束位置：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;用鼠标拖动&lt;strong&gt;结束标志线&lt;/strong&gt;到自己大致满意的位置&lt;/li&gt;
+  &lt;li&gt;通过键盘左右箭头对&lt;strong&gt;标志线位置&lt;/strong&gt;进行&lt;strong&gt;微调&lt;/strong&gt;，空格键控制&lt;strong&gt;开始/暂停&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;通过点击”&lt;strong&gt;Fade out&lt;/strong&gt;“按钮，来&lt;strong&gt;开启/关闭音乐渐出效果&lt;/strong&gt;(亮为开，暗为关)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;6) 选择保存格式：&lt;br /&gt;
+可分别选择&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;MP3格式&lt;/li&gt;
+  &lt;li&gt;iPhone铃声格式&lt;/li&gt;
+  &lt;li&gt;从&lt;strong&gt;More&lt;/strong&gt;上拉菜单中选择 » AMR、WAV、AAC格式&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;7) 开始切割：&lt;br /&gt;
+点击工具右下方 &lt;strong&gt;Cut&lt;/strong&gt; 按钮开始切割，此时进度条会显示切割进度，如果进度很慢或者等了半天都没反应，可以点击工具标题栏的 &lt;strong&gt;2 Cut&lt;/strong&gt; 标签重新进行剪切，或者刷新页面后重试(注意刷新后不会保存你的剪切设置!) &lt;br /&gt;
+&lt;img src=&quot;http://ww2.sinaimg.cn/large/6480dca9jw1e6pixv5y3wj20sg08gmys.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;8) 等待片刻，点击 &lt;strong&gt;Downlaod&lt;/strong&gt; 按钮即可下载剪切后的音乐！&lt;br /&gt;
+&lt;img src=&quot;http://ww2.sinaimg.cn/large/6480dca9jw1e6piwnaxe4j20lz0dujtj.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://soundcloud.com/lyfing/call-me-maybe-clip&quot; target=&quot;_blank&quot;&gt;点此试听&lt;/a&gt;我剪辑的《Call Me Maybe》(进去后&lt;strong&gt;点击频谱带任意位置&lt;/strong&gt;开始播放，点此可&lt;a href=&quot;http://dl.vmall.com/c0yde7tkwq&quot; target=&quot;_blank&quot;&gt;下载剪辑文件&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;原文件参数：&lt;code class=&quot;highlighter-rouge&quot;&gt; MP3 ; 320kbps ; 44100Hz ; 3:14 &lt;/code&gt;  &lt;br /&gt;
+剪切后参数：&lt;code class=&quot;highlighter-rouge&quot;&gt; MP3 ; 320kbps ; 44100Hz ; 0:33 ; 有渐入、渐出效果 &lt;/code&gt;&lt;/p&gt;</content><author><name></name></author><category term="trick" /><category term="Tech" /><summary type="html">这年头，能刹那间打动你的音乐真的不多了。 好不容易遇到一首触动自己的音乐，怎么能放过拿它做手机铃声或晨起闹钟或各种短铃声的机会呢？ ——- 你平常会用哪些稀奇古怪，难用、效果又差的软件剪辑音乐呢？ 去百度、Google里搜一下，好嘛，一堆，还不知道好不好用，效果怎么样，还得下载，还得学着怎么用，还得忍受下到傻逼软件或流浪软件的愤怒…好嘛… 欢迎跟我来到21世纪~~~ 吐槽结束，干货分享开始！ 如题所著，这款音乐剪辑工具无需下载，是直接在线使用的。它的特点如下： 仅支持MP3格式的音乐(其他格式未做测试) 支持无损切割(192kbps的处理完还是192k，320k的处理完还是320k) 时间线微调可以精确到——0.2s！ 支持音乐的开始渐入，结束渐出效果 支持MP3、AMR、WAV、AAC以及iPhone铃声等多种导出格式 高手请直接前往在线工具网址cut-mp3.com体验试用。 不知道怎么用、或者想知道详尽用法的人跟着往下看。 1) 打开网址：cut-mp3.com 2) 稍等片刻，工具载入完成后出现如下画面，点Open file上传本地音乐 3)接着进入音乐剪切环节，各按钮功能及释义如下图所示： (可点击大图查看详细内容) 4) 设置开始位置： 用鼠标拖动开始标志线到自己大致满意的位置 通过键盘左右箭头对标志线位置进行微调，空格键控制开始/暂停 通过点击”Fade in“按钮，来开启/关闭音乐渐入效果(亮为开，暗为关) 5) 设置结束位置： 用鼠标拖动结束标志线到自己大致满意的位置 通过键盘左右箭头对标志线位置进行微调，空格键控制开始/暂停 通过点击”Fade out“按钮，来开启/关闭音乐渐出效果(亮为开，暗为关) 6) 选择保存格式： 可分别选择 MP3格式 iPhone铃声格式 从More上拉菜单中选择 » AMR、WAV、AAC格式 7) 开始切割： 点击工具右下方 Cut 按钮开始切割，此时进度条会显示切割进度，如果进度很慢或者等了半天都没反应，可以点击工具标题栏的 2 Cut 标签重新进行剪切，或者刷新页面后重试(注意刷新后不会保存你的剪切设置!) 8) 等待片刻，点击 Downlaod 按钮即可下载剪切后的音乐！ 点此试听我剪辑的《Call Me Maybe》(进去后点击频谱带任意位置开始播放，点此可下载剪辑文件) 原文件参数： MP3 ; 320kbps ; 44100Hz ; 3:14 剪切后参数： MP3 ; 320kbps ; 44100Hz ; 0:33 ; 有渐入、渐出效果</summary></entry></feed>

@@ -3,10 +3,6 @@ layout: post
 title: Python爬虫 实现从糗百上多线程抓取内容
 description: "用Python写的爬虫，可以从糗百上抓取所有文章，并下载相关附图（如果附图的话）"
 tags: [Tech, Python, 多线程, 爬虫, 糗事百科, BeautifulSoup]
-image:
-  feature: abstract-6.jpg
-  credit: src
-  creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
 comments: true
 share: true
 ---
