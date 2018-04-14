@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-04-14T15:19:37+08:00</updated><id>http://localhost:4000/</id><title type="html">蓝枫铭的技术博客</title><subtitle>不想做架构师的厨师不是好程序员</subtitle><entry><title type="html">跨域请求那些事</title><link href="http://localhost:4000/2018/03/15/%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82%E9%82%A3%E4%BA%9B%E4%BA%8B.html" rel="alternate" type="text/html" title="跨域请求那些事" /><published>2018-03-15T00:00:00+08:00</published><updated>2018-03-15T00:00:00+08:00</updated><id>http://localhost:4000/2018/03/15/%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82%E9%82%A3%E4%BA%9B%E4%BA%8B</id><content type="html" xml:base="http://localhost:4000/2018/03/15/%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82%E9%82%A3%E4%BA%9B%E4%BA%8B.html">&lt;div class=&quot;wiki-content&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-04-14T16:51:00+08:00</updated><id>http://localhost:4000/</id><title type="html">蓝枫铭的技术博客</title><subtitle>不想做架构师的厨师不是好程序员</subtitle><entry><title type="html">跨域请求那些事</title><link href="http://localhost:4000/2018/03/15/%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82%E9%82%A3%E4%BA%9B%E4%BA%8B.html" rel="alternate" type="text/html" title="跨域请求那些事" /><published>2018-03-15T00:00:00+08:00</published><updated>2018-03-15T00:00:00+08:00</updated><id>http://localhost:4000/2018/03/15/%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82%E9%82%A3%E4%BA%9B%E4%BA%8B</id><content type="html" xml:base="http://localhost:4000/2018/03/15/%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82%E9%82%A3%E4%BA%9B%E4%BA%8B.html">&lt;div class=&quot;wiki-content&quot;&gt;
     &lt;h2 id=&quot;id-跨域请求那些事-何为跨域请求Cross-originresourcesharing&quot;&gt;何为跨域请求(Cross-origin resource sharing)&lt;/h2&gt;
     &lt;p&gt;在网页浏览器中，当属于站点A的网页试图访问位于站点B上的某一资源&lt;span&gt;时&lt;/span&gt;（如图片、CSS、JS文件、指定URL的接口数据），这个请求就属于&lt;a href=&quot;https://en.wikipedia.org/wiki/Cross-origin_resource_sharing&quot; class=&quot;external-link&quot; rel=&quot;nofollow&quot;&gt;跨域请求&lt;/a&gt;了。&lt;/p&gt;
     &lt;p&gt;通常情况下，站点A上的网页可以访问位于站点B上的图片、视频、CSS、JS等资源，但当站点A的网页向位于站点B的HTTP接口发送Ajax请求时，浏览器默认会检查该请求是否合法，意即：只有当站点B主动返回允许站点A访问该HTTP接口的许可信息时，站点A本次的Ajax请求才会被实际发送。从这一点可以看出，跨域请求的安全限制，实际是由浏览器保证并执行的。&lt;/p&gt;
@@ -159,7 +159,180 @@
         &lt;p&gt;&lt;span style=&quot;font-size: 10.0pt;&quot;&gt;&lt;img class=&quot;confluence-embedded-image confluence-external-resource&quot; width=&quot;660&quot; src=&quot;http://wx3.sinaimg.cn/large/6480dca9gy1fqc72ghlhuj20ww0lctbc.jpg&quot; /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
         &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;/div&gt;</content><author><name></name></author><summary type="html">何为跨域请求(Cross-origin resource sharing) 在网页浏览器中，当属于站点A的网页试图访问位于站点B上的某一资源时（如图片、CSS、JS文件、指定URL的接口数据），这个请求就属于跨域请求了。 通常情况下，站点A上的网页可以访问位于站点B上的图片、视频、CSS、JS等资源，但当站点A的网页向位于站点B的HTTP接口发送Ajax请求时，浏览器默认会检查该请求是否合法，意即：只有当站点B主动返回允许站点A访问该HTTP接口的许可信息时，站点A本次的Ajax请求才会被实际发送。从这一点可以看出，跨域请求的安全限制，实际是由浏览器保证并执行的。 浏览器对跨域的Ajax请求的处理流程图如下（资源来自维基百科&amp;nbsp;Flowchart_showing_Simple_and_Preflight_XHR.svg&amp;nbsp;） 从上图中可以看出，一个Ajax请求无论是GET形式还是POST形式，只要包含了特定的内容数据，都会触发浏览器的安全校验，所谓的安全校验是指：浏览器在发起本次请求之前，会对同一URL优先发起一次OPTIONS请求，通过OPTION请求返回的Header信息判定本次的跨域Ajax请求是否合法，如果合法则请求被发出；否则请求被中止。 下方信息是从 hx.test.com 向 www.test.com/api/upload_img.html&amp;nbsp;发起Ajax POST请求时抓取到的、浏览器优先发起OPTIONS请求的关键信息 OPTIONS请求Header关键信息 说明 状态行 OPTIONS /api/upload_img.html HTTP/1.1&amp;nbsp; &amp;nbsp; Host www.test.com 站点B的域名 Origin&amp;nbsp; http://hx.test.com/ 站点A的网址，跨域请求需携带 Access-Control-Request-Method POST 跨域请求需携带的Header Access-Control-Request-Headers X-Requested-With 跨域请求需携带的Header OPTIONS响应Header关键信息 &amp;nbsp; 状态行 HTTP/1.1 200 OK &amp;nbsp; Access-Control-Allow-Origin http://hx.test.com/ 站点B允许站点A访问本资源若站点B设置该Header为 * ，则表示允许任意站点访问该资源 Access-Control-Allow-Headers Origin, X-Requested-With, Content-Type 站点A请求站点B时可携带的Headers Access-Control-Allow-Methods POST, OPTIONS 站点A请求站点B时可使用的Methods Access-Control-Allow-Credentials true 站点A请求站点B时，可携带站点B的Cookies若站点B未返回该Header，或将其设置为false，则站点A请求站点B不会携带站点B的Cookies） 综上可知，浏览器实现了W3C定义的安全约定，在站点跨域请求资源时，如果是Ajax请求并且请求的Header或Body中包含了触发安全校验的内容，则浏览器会优先发起（pre-flight）OPTIONS请求向目标站点询问：是否接受站点A的Ajax请求，以及可接受的请求内容（包括限定的Methods、Headers等）。最后再由浏览器检查核对后决定，允许并发起请求，或者，中止本次请求。 关于触发浏览器安全校验（pre-flight）的条件详情，请参考火狐开发者文档：https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#Preflighted_requests 如何界定请求跨域了 假如站点A的网页为：http://www.test.com ，请看下方界定请求跨域的例子 站点B列表 是否跨域 原因 http://www.test.com/dir/page2.html 未跨域 Same protocol, host and port http://www.test.com/dir2/other.html 未跨域 Same protocol, host and port http://username:password@www.test.com/dir2/other.html 未跨域 Same protocol, host and port http://www.test.com:81/dir/other.html 已跨域 Same protocol and host but different port https://www.test.com/dir/other.html 已跨域 Different protocol http://en.test.com/dir/other.html 已跨域 Different host http://test.com/dir/other.html 已跨域 Different host (exact match required) http://v2.www.test.com/dir/other.html 已跨域 Different host (exact match required) http://www.test.com:80/dir/other.html 看浏览器实现 Port explicit. Depends on implementation in browser PHP CodeIgniter框架对于跨域请求的注意点 随着业务线日益壮大，我也在日常的开发中遇到过几次跨域、跨站点请求（实则都为公司的子业务系统）失败、被阻的情况。 当遇到跨域请求失败的情况时，只需在后端代码中添加跨域允许的相关Header键值，即可通过浏览器的检查。 除此之外，PHP的CodeIgniter框架还对跨站请求伪造（CSRF）进行了防御，下面针对这种情况做一下说明。 CSRF的实现逻辑是： 1）可信用户A登录了test.com； 2）可信用户A访问危险网页或危险邮件，网页或邮件中隐藏着向test.com提交的表单内容（表单内容为普通form，由攻击发起者预先写死格式和内容）； 3）可信用户A被诱导点击了危险网页或邮件中的隐藏的form表单，导致表单内容被用户A提交至test.com，并且表单提交时携带的是可信用户A的可信Cookies CodeIgniter对此做出的防御逻辑是： 1）每一次POST请求之前，客户端应首先发起GET请求拉取可信签名(csrf_defence_sign)并将签名放入Cookie中返回给客户端 2）POST数据时，需将可信签名作为表单的一部分同时提交，并由后端校验表单中的可信签名是否有效（具体的校验逻辑为：检查请求Cookie中的可信签名与POST中的可信签名一致，且可信签名有效） 在公司做新的站点业务（testB.com)的时候，它共用了test.com的几乎所有代码，二者只是在域名上有区分，后端代码处理逻辑一模一样。由于需要从testB.com向test.com提交表单信息，此时CodeIgniter后端服务便误以为这些提交是CSRF攻击，因此直接中止了请求。</summary></entry><entry><title type="html">轻文本编辑器 vs 重型IDE</title><link href="http://localhost:4000/2017/10/10/%E8%BD%BB%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8_vs_%E9%87%8D%E5%9E%8BIDE.html" rel="alternate" type="text/html" title="轻文本编辑器 vs 重型IDE" /><published>2017-10-10T00:00:00+08:00</published><updated>2017-10-10T00:00:00+08:00</updated><id>http://localhost:4000/2017/10/10/%E8%BD%BB%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8_vs_%E9%87%8D%E5%9E%8BIDE</id><content type="html" xml:base="http://localhost:4000/2017/10/10/%E8%BD%BB%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8_vs_%E9%87%8D%E5%9E%8BIDE.html">&lt;blockquote&gt;
+&lt;/div&gt;</content><author><name></name></author><summary type="html">何为跨域请求(Cross-origin resource sharing) 在网页浏览器中，当属于站点A的网页试图访问位于站点B上的某一资源时（如图片、CSS、JS文件、指定URL的接口数据），这个请求就属于跨域请求了。 通常情况下，站点A上的网页可以访问位于站点B上的图片、视频、CSS、JS等资源，但当站点A的网页向位于站点B的HTTP接口发送Ajax请求时，浏览器默认会检查该请求是否合法，意即：只有当站点B主动返回允许站点A访问该HTTP接口的许可信息时，站点A本次的Ajax请求才会被实际发送。从这一点可以看出，跨域请求的安全限制，实际是由浏览器保证并执行的。 浏览器对跨域的Ajax请求的处理流程图如下（资源来自维基百科&amp;nbsp;Flowchart_showing_Simple_and_Preflight_XHR.svg&amp;nbsp;） 从上图中可以看出，一个Ajax请求无论是GET形式还是POST形式，只要包含了特定的内容数据，都会触发浏览器的安全校验，所谓的安全校验是指：浏览器在发起本次请求之前，会对同一URL优先发起一次OPTIONS请求，通过OPTION请求返回的Header信息判定本次的跨域Ajax请求是否合法，如果合法则请求被发出；否则请求被中止。 下方信息是从 hx.test.com 向 www.test.com/api/upload_img.html&amp;nbsp;发起Ajax POST请求时抓取到的、浏览器优先发起OPTIONS请求的关键信息 OPTIONS请求Header关键信息 说明 状态行 OPTIONS /api/upload_img.html HTTP/1.1&amp;nbsp; &amp;nbsp; Host www.test.com 站点B的域名 Origin&amp;nbsp; http://hx.test.com/ 站点A的网址，跨域请求需携带 Access-Control-Request-Method POST 跨域请求需携带的Header Access-Control-Request-Headers X-Requested-With 跨域请求需携带的Header OPTIONS响应Header关键信息 &amp;nbsp; 状态行 HTTP/1.1 200 OK &amp;nbsp; Access-Control-Allow-Origin http://hx.test.com/ 站点B允许站点A访问本资源若站点B设置该Header为 * ，则表示允许任意站点访问该资源 Access-Control-Allow-Headers Origin, X-Requested-With, Content-Type 站点A请求站点B时可携带的Headers Access-Control-Allow-Methods POST, OPTIONS 站点A请求站点B时可使用的Methods Access-Control-Allow-Credentials true 站点A请求站点B时，可携带站点B的Cookies若站点B未返回该Header，或将其设置为false，则站点A请求站点B不会携带站点B的Cookies） 综上可知，浏览器实现了W3C定义的安全约定，在站点跨域请求资源时，如果是Ajax请求并且请求的Header或Body中包含了触发安全校验的内容，则浏览器会优先发起（pre-flight）OPTIONS请求向目标站点询问：是否接受站点A的Ajax请求，以及可接受的请求内容（包括限定的Methods、Headers等）。最后再由浏览器检查核对后决定，允许并发起请求，或者，中止本次请求。 关于触发浏览器安全校验（pre-flight）的条件详情，请参考火狐开发者文档：https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#Preflighted_requests 如何界定请求跨域了 假如站点A的网页为：http://www.test.com ，请看下方界定请求跨域的例子 站点B列表 是否跨域 原因 http://www.test.com/dir/page2.html 未跨域 Same protocol, host and port http://www.test.com/dir2/other.html 未跨域 Same protocol, host and port http://username:password@www.test.com/dir2/other.html 未跨域 Same protocol, host and port http://www.test.com:81/dir/other.html 已跨域 Same protocol and host but different port https://www.test.com/dir/other.html 已跨域 Different protocol http://en.test.com/dir/other.html 已跨域 Different host http://test.com/dir/other.html 已跨域 Different host (exact match required) http://v2.www.test.com/dir/other.html 已跨域 Different host (exact match required) http://www.test.com:80/dir/other.html 看浏览器实现 Port explicit. Depends on implementation in browser PHP CodeIgniter框架对于跨域请求的注意点 随着业务线日益壮大，我也在日常的开发中遇到过几次跨域、跨站点请求（实则都为公司的子业务系统）失败、被阻的情况。 当遇到跨域请求失败的情况时，只需在后端代码中添加跨域允许的相关Header键值，即可通过浏览器的检查。 除此之外，PHP的CodeIgniter框架还对跨站请求伪造（CSRF）进行了防御，下面针对这种情况做一下说明。 CSRF的实现逻辑是： 1）可信用户A登录了test.com； 2）可信用户A访问危险网页或危险邮件，网页或邮件中隐藏着向test.com提交的表单内容（表单内容为普通form，由攻击发起者预先写死格式和内容）； 3）可信用户A被诱导点击了危险网页或邮件中的隐藏的form表单，导致表单内容被用户A提交至test.com，并且表单提交时携带的是可信用户A的可信Cookies CodeIgniter对此做出的防御逻辑是： 1）每一次POST请求之前，客户端应首先发起GET请求拉取可信签名(csrf_defence_sign)并将签名放入Cookie中返回给客户端 2）POST数据时，需将可信签名作为表单的一部分同时提交，并由后端校验表单中的可信签名是否有效（具体的校验逻辑为：检查请求Cookie中的可信签名与POST中的可信签名一致，且可信签名有效） 在公司做新的站点业务（testB.com)的时候，它共用了test.com的几乎所有代码，二者只是在域名上有区分，后端代码处理逻辑一模一样。由于需要从testB.com向test.com提交表单信息，此时CodeIgniter后端服务便误以为这些提交是CSRF攻击，因此直接中止了请求。</summary></entry><entry><title type="html">xdebug远程调试原理与实践</title><link href="http://localhost:4000/2018/01/10/xdebug%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5.html" rel="alternate" type="text/html" title="xdebug远程调试原理与实践" /><published>2018-01-10T00:00:00+08:00</published><updated>2018-01-10T00:00:00+08:00</updated><id>http://localhost:4000/2018/01/10/xdebug%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5</id><content type="html" xml:base="http://localhost:4000/2018/01/10/xdebug%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5.html">&lt;div class=&quot;wiki-content&quot;&gt;
+    &lt;h2 id=&quot;xdebug调试原理与实践-1前言&quot;&gt;1. 前言&lt;/h2&gt;
+    &lt;p&gt;&lt;span&gt;世界上有两种人：一种了解debug工具的好处，另一种则反之。&lt;/span&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;span&gt;那么debug工具到底有哪些优点呢？&lt;/span&gt;&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;p class=&quot;p1&quot;&gt;1）在日常开发中洞悉大型架构的流程及设计；&lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;p class=&quot;p1&quot;&gt;2）在日常开发中快速debug，省时省力，&lt;span&gt;更能在debug过程中掌握程序运行流程及上下文&lt;/span&gt;；&lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;p class=&quot;p1&quot;&gt;3）&lt;strong&gt;debug驱动型开发习惯的养成&lt;/strong&gt;&lt;/p&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;&lt;span&gt;在PHP语言中有个叫&lt;/span&gt;&lt;code&gt;xdebug&lt;/code&gt;&lt;span&gt;的扩展，是业界最常用的PHP debug工具之一。xdebug有很多实用的特性，但本文只着重介绍&lt;/span&gt;&lt;em&gt;远程调试&lt;/em&gt;&lt;span&gt;这一特性的使用。&lt;/span&gt;&lt;/p&gt;
+    &lt;p&gt;注意：&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;本文提到的IDE，意即：集成开发环境，例如PHPStrom、Eclipse就是很常见的IDE&lt;/li&gt;
+        &lt;li&gt;PHPStrom和IDE在本文中可能会被混用，但他们都代表PHPStrom&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;h2 id=&quot;xdebug调试原理与实践-2xdebug特性&quot;&gt;2. xdebug特性&lt;/h2&gt;
+    &lt;ul style=&quot;margin-left: 22.0px;&quot;&gt;
+        &lt;li&gt;var_dump展示优化&amp;nbsp;&lt;a href=&quot;https://link.jianshu.com/?t=https%3A%2F%2Fxdebug.org%2Fdocs%2Fdisplay&quot; rel=&quot;nofollow&quot; class=&quot;external-link&quot;&gt;&amp;gt;link&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;PHP输出notice、error等信息时，调用栈可定制化展示&amp;nbsp;&lt;a href=&quot;https://link.jianshu.com/?t=https%3A%2F%2Fxdebug.org%2Fdocs%2Fstack_trace&quot; rel=&quot;nofollow&quot; class=&quot;external-link&quot;&gt;&amp;gt;link&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;函数调用报告&amp;nbsp;&lt;a href=&quot;https://link.jianshu.com/?t=https%3A%2F%2Fxdebug.org%2Fdocs%2Fexecution_trace&quot; rel=&quot;nofollow&quot; class=&quot;external-link&quot;&gt;&amp;gt;link&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;代码覆盖率报告&amp;nbsp;&lt;a href=&quot;https://link.jianshu.com/?t=https%3A%2F%2Fxdebug.org%2Fdocs%2Fcode_coverage&quot; rel=&quot;nofollow&quot; class=&quot;external-link&quot;&gt;&amp;gt;link&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;程序分析报告（profiler）&lt;a href=&quot;https://link.jianshu.com/?t=https%3A%2F%2Fxdebug.org%2Fdocs%2Fprofiler&quot; rel=&quot;nofollow&quot; class=&quot;external-link&quot;&gt;&amp;gt;link&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;远程调试。&lt;/strong&gt;本篇内容将着重介绍这一功能。如果你想获取有关如何配置可多人同时调试一台Web服务器的DBGp代理信息的话，也推荐你读完本文，这将对你后续的代理配置有一定帮助。&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;h2 id=&quot;xdebug调试原理与实践-3远程调试&quot;&gt;3. 远程调试&lt;/h2&gt;
+    &lt;p&gt;xdebug的远程调试默认的通信协议为&lt;span&gt;&lt;strong&gt;DBGp协议&lt;/strong&gt;，它是基于XML文本传输的应用层协议，用于程序语言与IDE间的调试通信。&lt;/span&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;span&gt;DBGP协议规定：IDE向程序的调试器发送的内容为ascii命令，调试器向IDE发送的内容为XML数据&lt;/span&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;span&gt;&lt;img class=&quot;confluence-embedded-image&quot; width=&quot;600&quot; src=&quot;http://wx2.sinaimg.cn/large/6480dca9gy1fqc818gm2ij20rc09m74y.jpg&quot; /&gt;&lt;/span&gt;&lt;/p&gt;
+
+    &lt;p&gt;以下为基于DBGp协议进行debug的通信伪内容的示例。其中&quot;DBG&quot;是指程序调试器(比如xdebug)；&quot;IDE:&quot;是指IDE向DBG(xdebug)发送消息&quot;；&quot;DBG:&quot;是指DBG(xdebug)向IDE响应消息&lt;/p&gt;
+    &lt;pre&gt;&lt;code&gt;IDE:  feature_get supports_async
+DBG:  yes
+IDE:  breakpoint_set file_path,file_line_no
+DBG:  ok
+IDE:  stdin redirect
+DBG:  ok
+IDE:  stderr redirect
+DBG:  ok
+IDE:  run
+DBG:  stdin data...
+DBG:  stdin data...
+DBG:  reached breakpoint, pause running
+IDE:  get context variables
+DBG:  ok, here they are
+IDE:  evaluate this expression
+DBG:  stderr data...
+DBG:  ok, done
+IDE:  stop
+DBG:  good bye&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;p&gt;&lt;span&gt;由于DBGp协议是明文传输的，所以只需监听IDE的9000端口（IDE用于调试通信的端口）上的TCP通信，你便能一窥它的详细通信内容。如下方所示为局部通信内容截图。&lt;/span&gt;其中：172.17.0.2为Web服务器的IP，192.168.65.2是IDE所在开发机上的IP。&lt;/p&gt;
+
+    &lt;p&gt;&lt;span&gt;&lt;img class=&quot;confluence-embedded-image&quot; width=&quot;900&quot; src=&quot;http://wx2.sinaimg.cn/large/6480dca9gy1fqc9m6lht5j21i60zgk9b.jpg&quot; /&gt;&lt;/span&gt;&lt;/p&gt;
+    
+    &lt;p&gt;&lt;span style=&quot;color: rgb(0,0,0);font-size: 1.4em;font-weight: bold;&quot;&gt;3.1 xdebug调试(session)的生命周期&lt;/span&gt;&lt;/p&gt;
+    &lt;p&gt;断点调试是有生命周期的。断点调试始于：手动或自动开启调试session，终止于：手动终止程序或程序自动运行退出。下方为xdebug的session状态流转图：&lt;/p&gt;
+    &lt;p&gt;&lt;img class=&quot;confluence-embedded-image&quot; width=&quot;555&quot; src=&quot;http://wx4.sinaimg.cn/large/6480dca9gy1fqc9thzsg4j20ho0m60u3.jpg&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;span&gt;xdebug调试的开始有以下两种方式&lt;/span&gt;&lt;/p&gt;
+    &lt;h4 id=&quot;xdebug调试原理与实践-311外部触发xdebug启动调试&quot;&gt;3.1.1 外部触发xdebug启动调试&lt;/h4&gt;
+    &lt;ul style=&quot;margin-left: 22.0px;&quot;&gt;
+        &lt;li&gt;请求的GET、POST的query中包含&lt;code&gt;XDEBUG_SESSION_START=sessName&lt;/code&gt;参数即可启动xdebug调试&lt;/li&gt;
+        &lt;li&gt;Cookie中包含&lt;code&gt;XDEBUG_SESSION=sessName&lt;/code&gt;即可启动xdebug调试&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;h4 id=&quot;xdebug调试原理与实践-312xdebug始终自启动调试（推荐使用）&quot;&gt;3.1.2 xdebug始终自启动调试（推荐使用）&lt;/h4&gt;
+    &lt;ul style=&quot;margin-left: 22.0px;&quot;&gt;
+        &lt;li&gt;配置文件中设置&lt;code&gt;xdebug.remote_autostart=1&lt;/code&gt;，则PHP每次执行脚本都会启动xdebug调试（&lt;b&gt;没错，在命令行直接运行任务脚本也会启动调试&lt;/b&gt;）&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;h3 id=&quot;xdebug调试原理与实践-32xdebug主动连接IDE的两种方式&quot;&gt;3.2 xdebug主动连接IDE的两种方式&lt;/h3&gt;
+    &lt;p&gt;xdebug的DBGp协议的第一步，是自xdebug启动调试session后，根据给定配置，主动连接IDE。在网上的相关教程中，我们往往会看到各式各样的xdebug.remote_host相关的配置，&lt;br /&gt;那么这些配置到底是起了什么作用呢？&lt;/p&gt;
+    &lt;p&gt;这里就要讲到xdebug主动连接IDE的两种不同方式了，因为xdebug.remote_host相关的配置就是为了让xdebug可以连接到IDE的9000端口上。&lt;/p&gt;
+    &lt;h4 id=&quot;xdebug调试原理与实践-321方式一：根据客户端请求IP连接IDE设置xdebugremoteconnectback1&quot;&gt;3.2.1 方式一：根据客户端请求IP连接IDE(设置&lt;code&gt;xdebug.remote_connect_back=1&lt;/code&gt;)&lt;/h4&gt;
+    &lt;p&gt;xdebug连接IDE的方式一的时序图如下：&lt;br /&gt;&lt;img class=&quot;confluence-embedded-image confluence-external-resource&quot; src=&quot;https://upload-images.jianshu.io/upload_images/4111-fafc337cf5d14ecc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700&quot; data-image-src=&quot;https://upload-images.jianshu.io/upload_images/4111-fafc337cf5d14ecc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;说明：&lt;/p&gt;
+    &lt;ul style=&quot;margin-left: 22.0px;&quot;&gt;
+        &lt;li&gt;开发者发起URL请求后，xdebug通过解析&lt;code&gt;$_SERVER&lt;/code&gt;map中的&lt;code&gt;HTTP_X_FORWARDED_FOR&lt;/code&gt;和&lt;code&gt;REMOTE_ADDR&lt;/code&gt;字段获取开发者所在的IP地址&lt;/li&gt;
+        &lt;li&gt;xdebug获取到开发者IP地址后，通过IP及IDE暴露的9000接口，与IDE建立连接，并进行后续通信&lt;/li&gt;
+        &lt;li&gt;发起URL请求的机器与IDE必须属于同一IP(即同一台机器)&lt;/li&gt;
+        &lt;li&gt;本方式适合IP变化频繁，或多个开发者共享同一台Web服务器等情况的使用&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;h4 id=&quot;xdebug调试原理与实践-322方式二：根据指定IP连接IDE设置xdebugremotehostxxxx&quot;&gt;3.2.2方式二：根据指定IP连接IDE(设置&lt;code&gt;xdebug.remote_host=x.x.x.x&lt;/code&gt;)&lt;/h4&gt;
+    &lt;p&gt;xdebug连接IDE的方式二的时序图如下：&lt;br /&gt;&lt;img class=&quot;confluence-embedded-image confluence-external-resource&quot; src=&quot;https://upload-images.jianshu.io/upload_images/4111-f961516c23507d6b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700&quot; data-image-src=&quot;https://upload-images.jianshu.io/upload_images/4111-f961516c23507d6b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;说明：&lt;/p&gt;
+    &lt;ul style=&quot;margin-left: 22.0px;&quot;&gt;
+        &lt;li&gt;以上两种连接方式，方式一优先级高于方式二。如下方配置所示，第二行配置将被忽略：&lt;br /&gt;xdebug.remote_connect_back = 1 &lt;br /&gt;xdebug.remote_host = x.x.x.x&amp;nbsp;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul style=&quot;margin-left: 22.0px;&quot;&gt;
+        &lt;li&gt;如需使用方式二（固定IP），需将&lt;code&gt;xdebug.remote_connect_back&lt;/code&gt;置为0&lt;/li&gt;
+        &lt;li&gt;第二种连接方式，适合开发机IP基本不变的开发者使用&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;h3 id=&quot;xdebug调试原理与实践-33PHPStrom配置xdebug调试&quot;&gt;3.3 PHPStrom配置xdebug调试&lt;/h3&gt;
+    &lt;h4 id=&quot;xdebug调试原理与实践-331方式一（xdebugremoteconnectback1）的配置&quot;&gt;3.3.1 方式一（xdebug.remote_connect_back = 1）的配置&lt;/h4&gt;
+    &lt;p&gt;xdebug.ini中的设置：&lt;/p&gt;
+    &lt;pre class=&quot;hljs bash&quot;&gt;&lt;code class=&quot;bash&quot;&gt;zend_extension = xdebug.so &lt;br /&gt;&lt;/code&gt;xdebug.remote_enable = 1 ;开启远程调试 &lt;br /&gt;xdebug.remote_autostart = 1 ;自动启动调试 &lt;br /&gt;xdebug.remote_mode = req ;通过请求触发调试，另一种方式jit：遇到错误时触发 &lt;br /&gt;xdebug.remote_connect_back = 1 ;使用方式一连接 &lt;br /&gt;xdebug.remote_port = 9000 &lt;br /&gt;xdebug.remote_handler = dbgp ;xdebug与PHPStorm的debug协议 &lt;br /&gt;xdebug.idekey = &lt;span class=&quot;hljs-string&quot; style=&quot;color: rgb(42,161,152);&quot;&gt;&quot;PHPSTORM&quot;&lt;/span&gt;&lt;span style=&quot;font-family: Arial , Helvetica , FreeSans , sans-serif;;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/pre&gt;
+    &lt;h4 id=&quot;xdebug调试原理与实践-332方式二（xdebugremotehostxxxx）的配置&quot;&gt;3.3.2 方式二（xdebug.remote_host = x.x.x.x）的配置&lt;/h4&gt;
+    &lt;p&gt;xdebug.ini中的设置：&lt;/p&gt;
+    &lt;pre class=&quot;hljs bash&quot;&gt;&lt;code class=&quot;bash&quot;&gt;zend_extension=xdebug.so &lt;br /&gt;xdebug.remote_enable = 1 &lt;br /&gt;xdebug.remote_autostart = 1 &lt;br /&gt;xdebug.remote_mode = req &lt;br /&gt;xdebug.remote_connect_back = 0 ;关闭方式一连接 &lt;br /&gt;xdebug.remote_host = 192.168.35.103 ;使用方式二连接 &lt;br /&gt;xdebug.remote_port = 9000 &lt;br /&gt;xdebug.remote_handler = dbgp &lt;br /&gt;xdebug.idekey = &lt;span class=&quot;hljs-string&quot; style=&quot;color: rgb(42,161,152);&quot;&gt;&quot;PHPSTORM&quot;&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;
+    
+    &lt;h4&gt;3.3.3 设置未生效？问题排查&lt;/h4&gt;
+    
+    &lt;p&gt;有时我们已经按照教程设置好了一切，但打开IDE的断点调试，仍然没有任何效果。&lt;/p&gt;
+    &lt;p&gt;我们会疑惑，程序为什么没有在运行到断点后暂停下来？&lt;span&gt;除了检查各种配置是否正确，开发者还有哪些工具、信息可以拿来推断到底是哪一部分出了问题？&lt;/span&gt;&lt;/p&gt;
+    &lt;p&gt;其实知道了上述连接原理后，我们可以通过TCP工具监听9000端口上的网络通信，通过通信的内容，我们可以把问题细化到由于以下原因，导致的xdebug调试未生效，进而逐个解决问题：&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;9000端口的网络连接并未发起，则推断是xdebug端的配置有问题，有可能是：1）xdebug设置有误；2）xdebug扩展未加载；3）PHP-fpm未启动；4）Nginx未启动&lt;/li&gt;
+        &lt;li&gt;9000端口上发生了网络连接，但很快断掉了。有可能是：1）IDE的debug工具并未开启导致IDE的&lt;span&gt;9000&lt;/span&gt;端口不可用；2）IDE的端口设置不是9000；3）Web服务器并不能与IDE所在网络的指定端口通信&lt;/li&gt;
+        &lt;li&gt;9000端口上发生了密密麻麻的网络通信。。。额，这个应该是IDE没有打断点吧？&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;&lt;span&gt;在这之前，我们需要打开IDE的debug开关，在代码入口第一行打上断点，然后&lt;/span&gt;&lt;span&gt;SSH进入Web服务器所在机器（通常是虚拟机，或docker容器），通过&lt;/span&gt;&lt;code&gt;tcpdump&lt;/code&gt;&lt;span&gt;工具进行问题排查。&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;span&gt;tcpdump是TCP层通信的监听工具，由于DBGp协议是建立在TCP之上的应用层协议，所以可以通过更底层的工具监听DBGp协议的通信，上方截图中的DBGp协议局部通信内容，就是用tcpdump工具抓取的。&lt;/span&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;span&gt;由于tcpdump一次只能监听一个网卡上的网络通信，所以需要通过&lt;/span&gt;&lt;code&gt;ifconfig&lt;/code&gt;&lt;span&gt;命令获取Web服务器的IP经由的网卡&lt;/span&gt;&lt;/p&gt;
+    &lt;p&gt;通过&lt;code&gt;ifconfig&lt;/code&gt;命令可以确定Web服务器的IP经由的网卡为&lt;code&gt;eth1&lt;/code&gt;。下面开始debug环节&lt;/p&gt;
+    &lt;div class=&quot;image-package&quot; style=&quot;text-align: center;&quot;&gt;
+        &lt;div class=&quot;image-container&quot;&gt;
+            &lt;div class=&quot;image-view&quot;&gt;&lt;img class=&quot;confluence-embedded-image confluence-external-resource&quot; src=&quot;https://upload-images.jianshu.io/upload_images/4111-403848534eb9bb18.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700&quot; data-image-src=&quot;https://upload-images.jianshu.io/upload_images/4111-403848534eb9bb18.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700&quot; /&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+    &lt;h4 id=&quot;xdebug调试原理与实践-333深度自检：在PHPStrom中入口代码第一行打断点，为什么代码未在断点处暂停&quot;&gt;3.3.4 深度自检：在PHPStrom中入口代码第一行打断点，为什么代码未在断点处暂停&lt;/h4&gt;
+    &lt;p&gt;这种情况是大部分新手和新安装xdebu后的开发者会遇到的问题。遇到这种问题，该如何排查呢？&lt;/p&gt;
+    &lt;p&gt;1）确定xdebug是否向PHPStrom发起网络连接。如果没有，则需要依次检查xdebug的设置是否正确。&lt;/p&gt;
+    &lt;ul style=&quot;margin-left: 22.0px;&quot;&gt;
+        &lt;li&gt;在Web服务器命令行输入如下命令（注意网卡名称eth1应情况而异），开始监听xdebug在9000端口上的通信：&lt;code&gt;tcpdump -i eth1 -nn -A -tttt port 9000&lt;/code&gt;&lt;/li&gt;
+        &lt;li&gt;输入上述命令后，在开发机中访问URL，然后回到Web服务器命令行，查看是否有网络请求发起。如果命令行没有任何输出，则说明xdebug配置有误。请开始&lt;b&gt;步骤A自检&lt;/b&gt;：&lt;br /&gt;
+            &lt;ul style=&quot;margin-left: 22.0px;&quot;&gt;
+                &lt;li&gt;xdebug扩展是否加载？在&lt;code&gt;phpinfo()&lt;/code&gt;中查看即可确定&lt;/li&gt;
+                &lt;li&gt;xdebug设置是否按上方给出的两份设置正确填写？在&lt;code&gt;phpinfo()&lt;/code&gt;中也可以看到这些信息，请查看每项设置是否有多余字符出现？&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;2）在完成&lt;b&gt;步骤A自检&lt;/b&gt;后，重复1的操作，继续监听&lt;code&gt;tcpdump -i eth1 -nn -A -tttt port 9000&lt;/code&gt;。命令行输出结果如下图所示。其中&lt;span&gt;192.168.33.10&lt;/span&gt;的机器为Web服务器，&lt;span&gt;192.168.33.1&lt;/span&gt;的机器为IDE所在开发机，从图中信息可以看出Web服务器主动向开发机上的9000端口发起连接请求，但开发机拒绝了该连接请求（&lt;code&gt;Flags [R.]&lt;/code&gt;)&lt;/p&gt;
+    &lt;div class=&quot;image-package&quot; style=&quot;text-align: center;&quot;&gt;
+        &lt;div class=&quot;image-container&quot;&gt;
+            &lt;div class=&quot;image-view&quot;&gt;&lt;img class=&quot;confluence-embedded-image confluence-external-resource&quot; src=&quot;https://upload-images.jianshu.io/upload_images/4111-5893f92aae47e33b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700&quot; data-image-src=&quot;https://upload-images.jianshu.io/upload_images/4111-5893f92aae47e33b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700&quot; /&gt;&lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;span style=&quot;color: rgb(47,47,47);&quot;&gt;遇到这种情况，请开始&lt;/span&gt;&lt;b&gt;步骤B自检&lt;/b&gt;：&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;span style=&quot;color: rgb(47,47,47);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;code&gt;curl -v &lt;a rel=&quot;nofollow&quot;&gt;telnet://192.168.33.1:9000&lt;/a&gt;&lt;/code&gt;&lt;span style=&quot;color: rgb(47,47,47);&quot;&gt;。如果返回结果有&lt;/span&gt;&lt;em&gt;couldn't connect to host&lt;/em&gt;
+        &lt;span style=&quot;color: rgb(47,47,47);&quot;&gt;，则说明xdebug并不能使用给定IP端口与IDE通信。&lt;br /&gt;造成这的原因可能有：网络不可达（是否能ping通，如无法ping通，请换用其他可ping通的开发机IP，毕竟一个开发机可能有多个IP，最后使用方式二固定IP设置即可）；&lt;br /&gt;IDE端口设置并不是9000；&lt;br /&gt;或者IDE并未打开调试模式，如何打开请看下图&lt;/span&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;image-package&quot; style=&quot;text-align: center;&quot;&gt;
+    &lt;div class=&quot;image-container&quot;&gt;
+        &lt;div class=&quot;image-view&quot;&gt;&lt;img class=&quot;confluence-embedded-image confluence-external-resource&quot; src=&quot;https://upload-images.jianshu.io/upload_images/4111-72da0495368975aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/488&quot; data-image-src=&quot;https://upload-images.jianshu.io/upload_images/4111-72da0495368975aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/488&quot; /&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;3）步骤B自检查完成后，再次在Web服务器命令行监听9000端口的通信：&lt;code&gt;tcpdump -i eth1 -nn -A -tttt port 9000&lt;/code&gt;。这一次，大量的连接信息开始输出，恭喜你，xdebug已经设置好了&lt;/p&gt;
+&lt;div class=&quot;image-package&quot; style=&quot;text-align: center;&quot;&gt;
+    &lt;div class=&quot;image-container&quot;&gt;
+        &lt;div class=&quot;image-view&quot;&gt;&lt;img class=&quot;confluence-embedded-image confluence-external-resource&quot; src=&quot;https://upload-images.jianshu.io/upload_images/4111-f57169afc6c70fb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700&quot; data-image-src=&quot;https://upload-images.jianshu.io/upload_images/4111-f57169afc6c70fb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700&quot; /&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;4）PHPStrom中接收到xdebug的网络连接后，如何设置与WebServer上代码的一一匹配&lt;/p&gt;
+
+&lt;div class=&quot;image-package&quot; style=&quot;text-align: center;&quot;&gt;
+    &lt;div class=&quot;image-container&quot;&gt;
+        &lt;div class=&quot;image-view&quot;&gt;&lt;img class=&quot;confluence-embedded-image confluence-external-resource&quot; src=&quot;https://upload-images.jianshu.io/upload_images/4111-0c8d5d9828b0fca8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700&quot; /&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;总结：&lt;/b&gt;遇到xdebug设置相关的问题，最终要的是了解debug底层通信协议和原理，再通过TCP/IP抓包工具(比如tcpdump）进行问题排查。通过上述步骤的排查，应该可以定位无法debug原因，并最终成功使用xdebug调试代码了。祝顺利~&lt;/p&gt;
+
+&lt;/div&gt;</content><author><name></name></author><summary type="html">1. 前言 世界上有两种人：一种了解debug工具的好处，另一种则反之。 那么debug工具到底有哪些优点呢？ 1）在日常开发中洞悉大型架构的流程及设计； 2）在日常开发中快速debug，省时省力，更能在debug过程中掌握程序运行流程及上下文； 3）debug驱动型开发习惯的养成 在PHP语言中有个叫xdebug的扩展，是业界最常用的PHP debug工具之一。xdebug有很多实用的特性，但本文只着重介绍远程调试这一特性的使用。 注意： 本文提到的IDE，意即：集成开发环境，例如PHPStrom、Eclipse就是很常见的IDE PHPStrom和IDE在本文中可能会被混用，但他们都代表PHPStrom 2. xdebug特性 var_dump展示优化&amp;nbsp;&amp;gt;link PHP输出notice、error等信息时，调用栈可定制化展示&amp;nbsp;&amp;gt;link 函数调用报告&amp;nbsp;&amp;gt;link 代码覆盖率报告&amp;nbsp;&amp;gt;link 程序分析报告（profiler）&amp;gt;link 远程调试。本篇内容将着重介绍这一功能。如果你想获取有关如何配置可多人同时调试一台Web服务器的DBGp代理信息的话，也推荐你读完本文，这将对你后续的代理配置有一定帮助。 3. 远程调试 xdebug的远程调试默认的通信协议为DBGp协议，它是基于XML文本传输的应用层协议，用于程序语言与IDE间的调试通信。 DBGP协议规定：IDE向程序的调试器发送的内容为ascii命令，调试器向IDE发送的内容为XML数据</summary></entry><entry><title type="html">轻文本编辑器 vs 重型IDE</title><link href="http://localhost:4000/2017/10/10/%E8%BD%BB%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8_vs_%E9%87%8D%E5%9E%8BIDE.html" rel="alternate" type="text/html" title="轻文本编辑器 vs 重型IDE" /><published>2017-10-10T00:00:00+08:00</published><updated>2017-10-10T00:00:00+08:00</updated><id>http://localhost:4000/2017/10/10/%E8%BD%BB%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8_vs_%E9%87%8D%E5%9E%8BIDE</id><content type="html" xml:base="http://localhost:4000/2017/10/10/%E8%BD%BB%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8_vs_%E9%87%8D%E5%9E%8BIDE.html">&lt;blockquote&gt;
   &lt;p&gt;注：本文所说的重型IDE，例如开发PHP用到的PHPStorm、开发Java用到的Eclipse等IDE，有别于类似Sublime Text这样的轻型文本编辑器&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -1404,371 +1577,4 @@ u'\u6211\u662f\u5927\u574f\u86cb'
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://docs.python.org/2/howto/unicode.html&quot;&gt;http://docs.python.org/2/howto/unicode.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="Tech" /><category term="Python" /><category term="Unicode" /><category term="Language Study" /><summary type="html">最近接触Python比较多，尤其是在命令行(Terminal)下进行的局部代码测试有很多。而个人编写的代码通常是以UTF-8格式存储的，这在Linux下的Terminal上还好一些（它的编码默认的就是中文UTF-8），要想打印包含中文字符的变量值，基本不会出现乱码情况。但如果是在Windowss下的cmd上进行测试，则相对就要痛苦一些，因为Windows中文环境下cmd的默认编码是GBK。 所以本人为了在测试时能正常打印出中文字符（经常Linux、Windows两边跑），对Python字符编码的情况还是颇下了些功夫的。下面就是我做的一些小研究，希望能对和我当初一样迷茫的读者起到些帮助作用。 1. ASCII, Python默认的编码 在Python中，当源代码被读取进行语法校验时，会将源代码中的字符从声明的编码转换成Unicode类型，等到语法校验通过后，再将这些字符转换回初始的编码。 在Python环境下，源文件中如果没有声明编码，则将其编码设置为默认的ASCII，这可以通过下面这段代码检验： &amp;gt;&amp;gt;&amp;gt; import sys &amp;gt;&amp;gt;&amp;gt; sys.getdefaultencoding() 'ascii' 所以在编写源代码文件xxx.py时需要注意： 如果源代码没有声明编码格式，则Python在语法校验期间(compilation)使用默认的ASCII编码 如果源代码没有声明编码格式，但却在源码中使用了非ASCII字符(Non-ASCII character)，则程序在编译期间抛出SyntaxError异常，编译不被通过 如果源代码声明了Python不支持的编码格式，则程序将在编译期间抛出异常 源代码文件编码的声明 查看如何在源代码中声明编码格式PEP-0263 查看Python支持的编码格式 2. 命令行与Python——乱码篇 在命令行下的Python Shell中进行小范围测试，或者在命令行中运行Python代码时，总会遇到各种各样的乱码问题。为了搞清楚乱码的原因，我们首先来看这样一个例子。 例子：文件到底长什么样？ 首先, 在某目录(假设D:\Tem)下创建两个文本文件1.ini、2.ini，两个文件中都只写入下面这行内容。不同的是，1.ini以UTF-8格式保存，2.ini以GBK格式保存 我是Lyfing.Loo，来自中国 接着, 在命令行下，cd至该目录，键入Python 进入Python Shell, 读取两个文本文件中的内容，并打印出来 &amp;gt;&amp;gt;&amp;gt; str1 = open('1.ini','r').read() &amp;gt;&amp;gt;&amp;gt; str2 = open('2.ini','r').read() &amp;gt;&amp;gt;&amp;gt; str1 '\xef\xbb\xbf\xe6\x88\x91\xe6\x98\xafLyfing.Loo\n' #以16进制形式查看1.ini(UTF-8) efbb bfe6 8891 e698 af4c 7966 696e 672e 4c6f 6f0d 0a &amp;gt;&amp;gt;&amp;gt; str2 '\xce\xd2\xca\xc7Lyfing.Loo\n' #以16进制形式查看2.ini(GBK) ced2 cac7 4c79 6669 6e67 2e4c 6f6f 0d0a 其中0d0a是换行符，0d——回车符号——”\r”，0a——换行符号——”\n” 对比一下str内容和16进制下查看到的相应文本中的内容，我们不难发现，Python在读取文件时，除了辨认出ASCII编码范围内的字符之外，例如L(4c)、g(67)和o(6f)等，其他非ASCII的字符一律仍按16进制(由0 1二进制位组成)的原始编码储存，例如 我(efbbbf, utf-8)和我(ced2, gbk)。等到需要将变量值（字符串）打印到控制台，或者写入文件时，这一串原始编码便会原封不动地被提交给相应程序。 仍是上面的例子，当我们想要打印str1和str2的值时，我们看看会发生什么： &amp;gt;&amp;gt;&amp;gt; print str1 锘挎垜鏄疞yfing.Loo &amp;gt;&amp;gt;&amp;gt; print str2 我是Lyfing.Loo 我们看到，str1出现了乱码，而str2则正常打印出了中文字符。这是为什么呢？还是上面那句话： 等到需要将变量值（字符串）打印到控制台，或者写入文件时，这一串原始编码便会原封不动地被提交给相应程序 当需要打印str1和str2的值时，Python并不做任何编码转换的处理，它只是原封不动地将原始编码提交给了控制台，由相应的控制台（Windows下的cmd/Linux下的Terminal/SSH远程连接工具等）来进行打印处理。 所以如果在Linux下的Terminal上打印str1和str2的话，应该就是str1正常打印，str2出现乱码了，因为Terminal的编码一般是UTF-8的。 那如果想要实现多平台下表现一致的特性的话，比如说保证class的doc在多平台下打印出的效果一致或者写入效果一致（不会乱码）的话，我们该怎么做？下面引出了本篇内容的重点。 3. Unicode，Python的好伙伴儿 一门热门起来的编程语言，首先要满足的需求之一就是，对不同国家和地区所用字符的友好支持。Python很好的做到了这一点，至少，在它正式引入Unicode编码以后是这样。 我们都知道Python是一门世界通用的编程语言，如果它的源代码文件中出现的都是ASCII支持的字符，那Python会以ASCII编码的格式处理程序。不过，一旦源代码中出现了ASCII不支持的字符，它该怎么办？我用一张图来回答你吧 (图片来源：http://nltk.googlecode.com/svn/trunk/doc/book/ch03.html) 也就是说，所有超出ASCII范围的字符的处理工作，无论在输入之前，或者输出之后是什么编码格式的，它们在Python的执行内存中，都被统一转换(decode)为Unicode格式来进行程序处理。 还是上节末尾那个例子，如何保证str1和str2在各个平台下都能正常打印呢，这里的办法是：将str1和str2转换成Unicode类型。 3.1 什么是Unicode类型？那str1和str2又是什么类型的呢？ 我们先看看str1str2的类型 &amp;gt;&amp;gt;&amp;gt; print type(str1), type(str2) &amp;lt;type 'str'&amp;gt; &amp;lt;type 'str'&amp;gt; 从上面可以看出，str1、2是str类型的，也就是通常意义下的字符串类型。 Unicode类型则是Python内建的一种用来“一统江湖”的字符类型(type)。 既然已经有了用来容纳字符的类型——str——为何还要添加一种Unicode字符类型呢？要回答这个问题，我们先来想想如下几个现实中可能会遇到的情况： 在某个class的doc中，需要同时用到多个国家的字符和符号来描述class的功用。试想如果此时再用单一的、相对狭隘的编码配合str来表述，可能出现不可预期的错误。这是因为字符所处的字符集和编码不一致，同一串16进制码(code points)在不同的字符集中可能表示不同的字符，更何况，同一个源代码文件中只可以定义一种编码格式 xml文件的解析(parse)问题，xml文件中可能包含不同国家和区域的字符和符号，此时如果使用仅适用于某个区域的字符编码，可能出现无法识别某些字符而导致甚至抛异常或程序错误等等糟糕情况。 于是，一统江湖、或者说差点就一统江湖的Unicode编码出现了。再接着，Python为了更加友好地支持各种国家/区域的字符，内建了新的字符容器Unicode。于是上面两个问题以及近似的一类问题都可以迎刃而解了。 3.2 Unicode在Python中的使用 Unicode型的字符容器，在Python的具体应用中有着诸多优势。下面列举几个。 例子：在源代码中定义Unicode类型。 具体步骤，创建test.py文件，在其中添加这样的内容 # coding:utf-8 def hello(): str1 = u'我是大坏蛋' str2 = '你是小淫魔' return (str1, str2) 接着在命令行cd至test.py所在目录，键入python进入Python Shell，在Shell中输入以下内容： &amp;gt;&amp;gt;&amp;gt; import test &amp;gt;&amp;gt;&amp;gt; str1, str2 = test.hello() &amp;gt;&amp;gt;&amp;gt; str1 u'\u6211\u662f\u5927\u574f\u86cb' &amp;gt;&amp;gt;&amp;gt; str2 '\xe6\x88\x91\xe6\x98\xaf\xe5\xb0\x8f\xe6\xb7\xab\xe9\xad\x94' &amp;gt;&amp;gt;&amp;gt; print str1 我是大坏蛋 &amp;gt;&amp;gt;&amp;gt; print str2 鎴戞槸灏忔帆榄 我们看到在hello()定义时，str1是Unicode类型的，而str2则是普通的’str’字符型。也许在这里还没看出Unicode类型的优势。但是当需要打印变量内容时，二者的优劣便体现出来了：Unicode类型的str1无需进行特别编码便能正常打印出中文字符，但str类型的str2却出现了乱码情况。 此处可以介绍Unicode类型的很多优点了： 声明简单 只需要在原字符前添加该类型标记u即可，例如s1 = u'小伙伴儿' 代码编译期间，自动从声明的原始编码转码至Unicode，并创建相应的Unicode类型 在需要打印(如print）或者输入输出（如read或write）时，Unicode类型用着尤其顺手。因为你只需要像操作ASCII一样打印和输入输出就行了，而无需关心编码、乱码问题。这是因为Python会帮Unicode类型的字符做编码转码工作，而这也正是Unicode类型的字符不会出现乱码的原因。Python工作内容如下： 当需要输入中文字符时，Python会首先调取字符输入程序（命令行或者read函数）的编码格式，然后将输入的字符以该编码格式进行相应转换，即把原字符转码成Unicode类型的字符。 例如在Windows中的命令行下使用的Python Shell，其编码格式是GBK，当你在shell中键入string1 = u'我是李寻欢'时，会发生如下事件： 1, Python获取当前命令行编码（sys.stdin.encoding），为cp936(即GBK) 2, 将输入的汉字我是李寻欢按GBK编码转码成Unicode的形式，并据此创建Unicode类型的字符串，赋值给string1 当需要打印输出时，Python会首先调取字符输出程序（命令行或者输出函数）的编码格式，然后将该字符串编码成字符输出程序所用的编码（这样字符输出程序就不会因为认不出编码而出现乱码），接着字符输出程序将编码后的字符输出到目的地。该处理过程是字符输入程序（上一条）的逆过程，此处不再详细介绍这一过程 3.3 如何将str type转换成Unicode type 这是本节最开始提出的那个问题：如何将str类型的字符串str1和str2转换成Unicode类型？ 这也是下节要谈论的编码与解码的问题。 4. 编码（encode）与解码（decode） 如何将str类型的字符串str1和str2转换成Unicode类型？以及上一节最末提到关于的字符编码在GBK和Unicode之间的转换，涉及到的都是编码与解码的问题。统一来说就是 从Unicode类型到GBK或UTF-8等编码的转换，叫做编码(encode)；而这一过程的逆过程，则叫做解码(decode)。 一开始我老是搞不清楚到底从哪到哪是编码，从哪到哪是解码，后来用多了自然也就清楚了。相信初次接触这个概念的人也会有和我一样的困惑，下面用一张图来说明一下编码和解码的方向： 关于解码和编码的实现方法，网上已有很多，这里不再重述。下面引用一篇博客中的内容来做个总结： 字符串在Python内部的表示是Unicode编码。因此在做编码转换时，通常需要以Unicode作为中间编码，即先将其他编码的字符串解码(decode)成Unicode，再从Unicode编码(encode)成另一种编码。 decode的作用是将其他编码的字符串转换成Unicode编码，如str1.decode('gb2312')，表示将gb2312编码的字符串str1转换成Unicode编码； encode的作用是将Unicode编码转换成其他编码的字符串，如str2.encode('gb2312')，表示将Unicode编码的字符串str2转换成gb2312编码 因此，转码的时候一定要先搞明白，字符串str是什么编码，然后decode成Unicode，然后再encode成其他编码。（原文链接） 遇到乱码问题，按上述思路分析一遍，再将乱码所在字符串按它的原始编码decode成Unicode类型的，再使用Unicode类型的编码进行输入、输出即可解决乱码问题。 ref: http://docs.python.org/2/howto/unicode.html</summary></entry><entry><title type="html">Labwindows.Tutorial.Chapter 3.Part2</title><link href="http://localhost:4000/2013/10/20/Labwindows-tutorial-chapter3-part2.html" rel="alternate" type="text/html" title="Labwindows.Tutorial.Chapter 3.Part2" /><published>2013-10-20T00:00:00+08:00</published><updated>2013-10-20T00:00:00+08:00</updated><id>http://localhost:4000/2013/10/20/Labwindows-tutorial-chapter3-part2</id><content type="html" xml:base="http://localhost:4000/2013/10/20/Labwindows-tutorial-chapter3-part2.html">&lt;p&gt;#####上接&lt;a href=&quot;http://lanfengming.com/blog/Labwindows-tutorial-chapter3-part1.html/&quot;&gt;第一节&lt;/a&gt;的内容，我们继续本章内容的下半部分。&lt;/p&gt;
-
-&lt;h3 id=&quot;5-编写-creategui_mine-函数的具体实现&quot;&gt;5. 编写 &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt; 函数的具体实现&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt;要完成的工作有：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;创建一个主面板(即主窗口)&lt;/li&gt;
-  &lt;li&gt;在主面板右侧创建一个Graph控件，用以显示Sine波形&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;在主面板上创建两个按钮，并分别为他们编写回调函数以实现：&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;“Show”按钮：点击后Graph控件上显示出Sine波形，点击后按钮名称变为”Clear”；再次点击该按钮，Graph控件上的Sine波形被清空，按钮名称变回”Show”&lt;/li&gt;
-      &lt;li&gt;“Quit”按钮：点击后退出程序&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;!--more--&gt;
-
-&lt;h4 id=&quot;51-创建主面板&quot;&gt;5.1 创建主面板&lt;/h4&gt;
-&lt;p&gt;LabWindows/CVI提供了一系列可创建各种可视化界面的函数和API，创建面板(Panel)的函数当然也包含其中，但它具体是什么，又应该怎么用呢？我们试着从帮助文档中找寻答案。&lt;br /&gt;
-打开帮助文档(在LabWindows/CVI的任意界面&lt;strong&gt;按F1快捷键&lt;/strong&gt;，或者从菜单栏 &lt;strong&gt;Help&lt;/strong&gt; &amp;gt;&amp;gt; &lt;strong&gt;Contents F1&lt;/strong&gt;打开)，在&lt;strong&gt;索引&lt;/strong&gt;标签栏下的搜索框中输入&lt;em&gt;Panel&lt;/em&gt;，在列出的一堆搜索结果中寻找 &lt;code class=&quot;highlighter-rouge&quot;&gt;panels (User Interface Editor)&lt;/code&gt; 项，再接着找它的子项 &lt;code class=&quot;highlighter-rouge&quot;&gt;programming with&lt;/code&gt;，双击打开它(&lt;strong&gt;如下图所示&lt;/strong&gt;)：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/large/6480dca9jw1e9w7ha8bigj20ke0gk458.jpg&quot; alt=&quot;F1-Content-Programming-with-Panels.png&quot; /&gt;&lt;/p&gt;
-
-&lt;div id=&quot;how-to-find-useage&quot;&gt;&lt;/div&gt;
-&lt;p&gt;&lt;em&gt;PS：想要查找&lt;strong&gt;某个控件object的使用说明&lt;/strong&gt;，可以试着在帮助文档 &amp;gt;&amp;gt; &lt;strong&gt;索引&lt;/strong&gt;标签下的搜索框输入它的名称，在搜索结果中找到它的使用介绍项 &lt;code class=&quot;highlighter-rouge&quot;&gt;object_name (User Interface)&lt;/code&gt;及其子项，以查找相关帮助资料；想要查找&lt;strong&gt;某个具体函数的使用说明&lt;/strong&gt;，方法同上，一般搜索结果第一项便是&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;在&lt;strong&gt;Programming with Panels&lt;/strong&gt;的帮助文档页面，我们看它的第二段话&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;NewPanel creates a new panel during program execution. NewPanel returns a handle that you use in subsequent User Interface Library functions to reference the panel. Use the first parameter of NewPanel to specify whether the panel is created as a top-level window or as a child of another (parent) window. You also specify the name, position, and size of the panel through parameters to NewPanel. Creating a new panel using NewPanel does not automatically display the panel.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;这次请自行读完上面的关于 &lt;code class=&quot;highlighter-rouge&quot;&gt;NewPanel()&lt;/code&gt; 函数的使用介绍，下面我们将直接使用它。如何使用？请在&lt;strong&gt;索引&lt;/strong&gt;标签栏下的搜索框中输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;NewPanel&lt;/code&gt; 打开这个函数的帮助文档。&lt;br /&gt;
- 简单介绍一下，&lt;code class=&quot;highlighter-rouge&quot;&gt;NewPanel()&lt;/code&gt; 函数可以创建一个主面板(&lt;em&gt;top-lever panel&lt;/em&gt;)，或一个子面板(&lt;em&gt;child panel&lt;/em&gt;)，这取决于你给它传入的参数。在这里我们要创建一个&lt;em&gt;主面板&lt;/em&gt;，它的各项参数如下：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;面板名称(panelTitle[])：用代码创建的图形界面&lt;/li&gt;
-  &lt;li&gt;面板的位置及大小(单位:像素)：距屏幕顶部&lt;strong&gt;60&lt;/strong&gt;，距屏幕左边&lt;strong&gt;300&lt;/strong&gt;，高度&lt;strong&gt;300&lt;/strong&gt;,宽度&lt;strong&gt;600&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;现在，我们可以创建一个主面板了：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 为了使创建的主面板居中显示，距屏幕顶部和左边的距离都被换成了系统内部的整型变量VAL_AUTO_CENTER
-NewPanel(0, &quot;用代码创建的图形界面&quot;, VAL_AUTO_CENTER, VAL_AUTO_CENTER, 300, 600)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;好了，现在我们整个的代码看起来应该是这个样子：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#include 
-#include      
-#include 
-
-static int panelHandle;
-
-int createGUI_Mine(void);
-
-int main (int argc, char *argv[]){
-    if (InitCVIRTE (0, argv, 0) == 0)
-        return -1;  /* out of memory */
-    if ((panelHandle = createGUI_Mine()) &amp;amp;lt; 0)
-        return -1;
-    DisplayPanel (panelHandle);
-    RunUserInterface();
-    DiscardPanel (panelHandle);
-    return 0;
-}
-
-int createGUI_Mine(){
-    int pHandle = NewPanel(0, &quot;用代码创建的图形界面&quot;, VAL_AUTO_CENTER, VAL_AUTO_CENTER, 600, 800);
-    return pHandle;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div id=&quot;how-to-debug&quot;&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;OK，到了这一步，先让我们试运行一下上面的程序吧&lt;/strong&gt;。运行程序(Debug xxx.exe)的方法有三种：&lt;/p&gt;
-
-&lt;p&gt;1) 菜单栏 &lt;strong&gt;Run&lt;/strong&gt; &amp;gt;&amp;gt; &lt;strong&gt;Debug src.exe&lt;/strong&gt;
- 2) 按快捷键组合 &lt;strong&gt;Shift&lt;/strong&gt; + &lt;strong&gt;F5&lt;/strong&gt;
- 3) 鼠标点击如下按钮&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/6480dca9jw1e9w7i9m65sj20hb037mxp.jpg&quot; alt=&quot;Button-Debug-Project.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这时会弹出一个错误框，如下图所示：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/6480dca9jw1e9w7irfl81j20fh0eemz2.jpg&quot; alt=&quot;Error-Content-Missing.prototype.(Require.function....png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这是因为在LabWindows/CVI中，所有自定义的函数都是需要预定义，也就是得在 &lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt; 函数之前声明原型(prototype)的。&lt;br /&gt;
-这好办，只需要把这两个&lt;strong&gt;自定义函数的&lt;em&gt;原型声明&lt;/em&gt;添加到 &lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt; 函数之前&lt;/strong&gt;就可以了。&lt;strong&gt;但问题是，如何声明原型？&lt;/strong&gt;这里最简单的方法是，随便到帮助文档中找一个工程样例(sample)，看看里面的自定义函数的原型声明的句式便可。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;PS：工程样例（sample）是LabWindows/CVI提供的用来演示如何使用某个控件或函数的可直接编译、运行的程序。&lt;strong&gt;工程样例（sample）是快速入门LabWindows/CVI的编程格式及方法的大好捷径，一有机会就打开查看，有百利而无一害。&lt;/strong&gt;如何打开一个工程样例？以 &lt;code class=&quot;highlighter-rouge&quot;&gt;NewPanel()&lt;/code&gt; 函数为例，当你在帮助文档中查找到 &lt;code class=&quot;highlighter-rouge&quot;&gt;NewPanel()&lt;/code&gt; 函数的文档介绍页后，跳到这个页面的最底部，一般会附上若干工程样例，只需用鼠标单击”Open example”前的图标（如下图所示）便可打开这个叫做”userint\buildui.cws”的工程样例。&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/6480dca9jw1e9w7j7i5p8j20jk0au0uh.jpg&quot; alt=&quot;NI_Help_How-To-Use-Project-Example.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;在打开的”buildui.cws”工程样例中，我们点击&lt;strong&gt;buildui.c&lt;/strong&gt;文件，找到&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/*------------------------------------------------*/
-/* Internal function prototypes                   */
-/*------------------------------------------------*/ 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;区域，根据这个区域下方的自定义函数的原型声明的方法，我们可以看出，对自定义函数的原型声明其实很简单，只需要把这个函数在左大括号——&lt;strong&gt;{&lt;/strong&gt;——之前的内容复制到这里，并在结尾添加行结束标志分号——&lt;strong&gt;；&lt;/strong&gt;——即可。不过需要注意的一点是，无参数的函数，在原型声明时需要它在接收参数的括号&lt;strong&gt;()&lt;/strong&gt;中加入 &lt;code class=&quot;highlighter-rouge&quot;&gt;void&lt;/code&gt; 关键字。具体到本例中，对自定义函数的原型声明句子如下所示：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int createGUI_Mine(void);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;好了，把如上内容添加到main()函数的前面，然后再次试运行这个程序，这时会弹出我们刚刚用代码创建的那个图形界面，它目前还只是一个只有标题栏的空白面板(Panel)。效果图如下：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/6480dca9jw1e9w7jq97gjj20h409e3yo.jpg&quot; alt=&quot;Demo-用代码创建的图形界面.png&quot; /&gt;&lt;/p&gt;
-
-&lt;div id=&quot;how-to-exit-debug-forcely&quot;&gt;&lt;/div&gt;
-&lt;p&gt;由于还没设置退出选项，所以这个程序无法正常退出。我们可以到启动它的LabWindows/CVI中关闭它：跳转到LabWindows/CVI界面，点击菜单栏 &lt;strong&gt;Running&lt;/strong&gt; &amp;gt;&amp;gt; &lt;strong&gt;Terminate Execution&lt;/strong&gt;即可（或点击工具栏的&lt;strong&gt;stop&lt;/strong&gt;按钮）。&lt;/p&gt;
-
-&lt;h4 id=&quot;52-在主面板右侧创建一个graph控件用以显示sine波形&quot;&gt;5.2 在主面板右侧创建一个Graph控件，用以显示Sine波形&lt;/h4&gt;
-&lt;p&gt;在创建Graph控件前，请先想一下这两个问题：&lt;/p&gt;
-
-&lt;p&gt;a. Graph控件是依附于哪个实体之上的，它的载体是什么？&lt;br /&gt;
- b. Graph控件的创建工作应该被放在哪个部分？&lt;strong&gt;main()&lt;/strong&gt;函数中、&lt;strong&gt;createGUI_Mine()&lt;/strong&gt;函数中，或者其他地方？&lt;/p&gt;
-
-&lt;p&gt;是不是这样的:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;问题a：像其他的应用软件一样，控制类、显示类的控件都应该至少依附于一个面板(窗口)之上，也就是说这些控件得有个&lt;strong&gt;载体&lt;/strong&gt;。在本章中，Graph控件及其他两个按钮控件(有待创建)都是依附于我们上一步创建的主面板(主界面基本元素)之上的。&lt;/li&gt;
-  &lt;li&gt;问题b：光从名字我们便可以看出，&lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt; 函数就是用来完成创建图形界面元素的工作的，所以Graph控件的创建应该被安排到这里。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;em&gt;PS：在这里讲&lt;strong&gt;载体&lt;/strong&gt;的概念，是为了之后创建Graph控件时更易理解传入&lt;code class=&quot;highlighter-rouge&quot;&gt;pHandle&lt;/code&gt;的原因，就是因为所有的控件都需要一个载体(如面板)&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;接下来的问题，Graph控件应该如何创建呢？不知道你发现没，这个问题跟我们上一小节的关于”如何创建一个面板(panel)”的问题非常相似，所以，请你首先试着自己花时间去帮助文档中查找答案(到帮助文档中查找答案的习惯对日后的独立开发有极大帮助，请务必亲试)。&lt;/p&gt;
-
-&lt;p&gt;在帮助文档页，&lt;strong&gt;索引&lt;/strong&gt;标签栏下的搜索框中输入&lt;em&gt;Graph&lt;/em&gt;，如上一小节查找创建Panel时一样，在搜索结果中我们会找到如下部分的内容：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;graph controls (user interface)
-   attribute
-   events
-   fuctions
-   operating
-   programming with  
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;我们尝试从&lt;em&gt;programming with&lt;/em&gt;这个页面查找新建graph控件的方法，结果没什么收获。但你看到了，graph control(Graph控件)有一个&lt;em&gt;functions&lt;/em&gt;页面，这里面列出了跟本控件有关的所有函数，我们点进去看看。&lt;br /&gt;
-我们要找到的是创建控件的函数，所以函数名应该会带有&lt;em&gt;New&lt;/em&gt;字样，对函数列表逐一查找，便会发现 &lt;code class=&quot;highlighter-rouge&quot;&gt;NewCtrl()&lt;/code&gt; 这个函数。对了！就是用它来创建Graph控件的。打开这个函数的帮助页(如何&lt;a href=&quot;#how-to-find-useage&quot;&gt;打开?&lt;/a&gt;)，你会发现，这个函数不光能用来创建Graph控件，它还可以创建LabWindows/CVI提供的其他所有控件(&lt;a href=&quot;http://zone.ni.com/reference/en-XX/help/370051V-01/cvi/uiref/cvioperating_controls/&quot;&gt;点此查看&lt;/a&gt;控件支持列表)。&lt;/p&gt;
-
-&lt;p&gt;关于&lt;code class=&quot;highlighter-rouge&quot;&gt;NewCtrl()&lt;/code&gt;函数的用法请自信查看帮助文档。我们这里要创建一个Graph控件，进入 &lt;code class=&quot;highlighter-rouge&quot;&gt;NewCtrl()&lt;/code&gt; 函数帮助页，把第二行的函数结构复制下来：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int NewCtrl (int panelHandle, int controlStyle, char controlLabel[], int controlTop, int controlLeft);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;把它插入到 &lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt; 函数的第二行：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int createGUI_Mine(){
-    int pHandle = NewPanel(0, &quot;用代码创建的图形界面&quot;, VAL_AUTO_CENTER, VAL_AUTO_CENTER, 600, 800);
-    int NewCtrl (int panelHandle, int controlStyle, char controlLabel[], int controlTop, int controlLeft);        
-    return pHandle;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;NewCtrl()&lt;/code&gt;创建好Graph控件后，会返回这个Graph控件的资源句柄(handle)，我们创建一个int型变量&lt;code class=&quot;highlighter-rouge&quot;&gt;graphHdl&lt;/code&gt;来接收返回值；&lt;/li&gt;
-  &lt;li&gt;参数方面，int型的&lt;em&gt;panelHandle&lt;/em&gt;就用上一步生成的面板资源句柄(pHandle)赋值，即用上一步创建的面板做它的”载体”；&lt;/li&gt;
-  &lt;li&gt;int型的&lt;em&gt;controlStyle&lt;/em&gt;：欲创建的控件类型，通过查函数的使用帮助可知，要想创建Graph控件，此处应填 &lt;em&gt;CTRL_GRAPH&lt;/em&gt;；&lt;/li&gt;
-  &lt;li&gt;char型的&lt;em&gt;controlLabel[]&lt;/em&gt;：Graph的标签，相当于控件标题，此处使用”Created-Graph”；&lt;/li&gt;
-  &lt;li&gt;int型的&lt;em&gt;controlTop&lt;/em&gt;及&lt;em&gt;controlLeft&lt;/em&gt;：该控件相对于它的&lt;strong&gt;载体&lt;/strong&gt;的位置，&lt;em&gt;top&lt;/em&gt;给个&lt;em&gt;30&lt;/em&gt;，&lt;em&gt;left&lt;/em&gt;给个&lt;em&gt;250&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;em&gt;PS：在编程领域，当需要确定一个矩形框的位置时，我们一般只需要指定它左上角那个点相对于它载体的位置即可，然后再分别给这个矩形框赋予长度和高度值。由于左上角位置已确定，长度、高度也已确定，这个矩形框的大小，及它相对于自身载体的位置便唯一确定了。这就好比在一面墙上画一个矩形，先确定它离墙的顶端和左端的距离（即它左上角点的位置），再已知长度、高度的话，从该点出发依次画出长和高，这个矩形在墙上的最终形状及位置便可以确定下来了。&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;于是&lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt;函数修改为：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int createGUI_Mine(){
-    int pHandle = NewPanel(0, &quot;用代码创建的图形界面&quot;, VAL_AUTO_CENTER, VAL_AUTO_CENTER, 600, 800);
-    int graphHdl = NewCtrl(pHandle, CTRL_GRAPH, &quot;Created-Graph&quot;, 30, 250);     
-    return pHandle;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;试运行一下程序(&lt;a href=&quot;#how-to-debug&quot;&gt;how?&lt;/a&gt;)，我们可以看到之前空空如也的面板上已经多出来一个graph了：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/large/6480dca9jw1e9w7k54b76j20h009ct9e.jpg&quot; alt=&quot;Demo-添加了graph控件后的图形界面.png&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;53-在主面板上创建两个按钮showquit并分别为他们编写回调函数以发挥各自功能&quot;&gt;5.3 在主面板上创建两个按钮：&lt;em&gt;show&lt;/em&gt;、&lt;em&gt;quit&lt;/em&gt;并分别为他们编写回调函数以发挥各自功能&lt;/h4&gt;
-
-&lt;p&gt;#####5.3.1. 创建按钮&lt;/p&gt;
-
-&lt;p&gt;请读者想一想，应该用什么函数来创建这两个按钮呢？我给你个提示：按钮属于控件范畴~&lt;/p&gt;
-
-&lt;p&gt;没错，就是使用&lt;code class=&quot;highlighter-rouge&quot;&gt;NewCtrl()&lt;/code&gt;函数来创建以上两个按钮！创建工作将被而且应该被安排到&lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt;函数中，我们把它安排到Graph控件的创建之后。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;show&lt;/strong&gt;按钮的图形参数，即填入&lt;code class=&quot;highlighter-rouge&quot;&gt;NewCtrl()&lt;/code&gt;函数的参数列表：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;panelHandle&lt;/em&gt; = &lt;em&gt;pHandle&lt;/em&gt;，即把本函数第一句创建好的面板作为按钮的”载体”；&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;controlStyle&lt;/em&gt; = &lt;em&gt;CTRL_SQUARE_COMMAND_BUTTON&lt;/em&gt;，即方形命令按钮，这个值通过查函数的使用方法可得；&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;controlLabel[]&lt;/em&gt; = &lt;em&gt;“show”&lt;/em&gt;，即按钮上显示的文字；&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;controlTop&lt;/em&gt; = &lt;em&gt;80&lt;/em&gt; ， &lt;em&gt;controlLeft&lt;/em&gt; = &lt;em&gt;50&lt;/em&gt;，即按钮相对于自己”载体”的上端和左端的位置&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;quit&lt;/strong&gt;按钮的图形参数：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;panelHandle&lt;/em&gt; = &lt;em&gt;pHandle&lt;/em&gt;，即把本函数第一句创建好的面板作为按钮的”载体”；&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;controlStyle&lt;/em&gt; = &lt;em&gt;CTRL_SQUARE_COMMAND_BUTTON&lt;/em&gt;，即方形命令按钮，这个值通过查函数的使用方法可得；&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;controlLabel[]&lt;/em&gt; = &lt;em&gt;“quit”&lt;/em&gt;，即按钮上显示的文字；&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;controlTop&lt;/em&gt; = &lt;em&gt;140&lt;/em&gt; ， &lt;em&gt;controlLeft&lt;/em&gt; = &lt;em&gt;50&lt;/em&gt;，即按钮相对于自己”载体”的上端和左端的位置&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;我们分别用整形变量 &lt;em&gt;showBtn&lt;/em&gt;及&lt;em&gt;quitBtn&lt;/em&gt;来接收创建按钮后返回的资源句柄，于是&lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt;函数更新为：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int createGUI_Mine(){
-    int pHandle = NewPanel(0, &quot;用代码创建的图形界面&quot;, VAL_AUTO_CENTER, VAL_AUTO_CENTER, 300, 600);
-    int graphHdl = NewCtrl(pHandle, CTRL_GRAPH, &quot;Created-Graph&quot;, 30, 250);
-    int showBtn = NewCtrl(pHandle, CTRL_SQUARE_COMMAND_BUTTON, &quot;Show&quot;, 80, 50);
-    int quitBtn = NewCtrl(pHandle, CTRL_SQUARE_COMMAND_BUTTON, &quot;Quit&quot;, 140, 50);
-    return pHandle;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;试运行一下程序，添加了两个按钮的界面如下图所示：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/6480dca9jw1e9w7kikah0j20h009ejs5.jpg&quot; alt=&quot;Demo-添加了show-quit-按钮后的图形界面.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;到目前为止，我们已经完成了所有界面元素的创建工作。&lt;/p&gt;
-
-&lt;h5 id=&quot;532-为两个按钮编写回调函数&quot;&gt;5.3.2 为两个按钮编写回调函数&lt;/h5&gt;
-
-&lt;p&gt;&lt;em&gt;PS：请读者首先到 帮助文档 &amp;gt;&amp;gt; 索引 标签栏 下的搜索框中输入&lt;code class=&quot;highlighter-rouge&quot;&gt;callback functions&lt;/code&gt;然后回车以打开关于回调函数的使用说明页面，请大致浏览一下该页面内容。我在这里简单说一下，回调函数(callback functions)是你绑定到某个特定用户界面元素(比如面板、按钮、Graph控件)上，用以响应发生在该元素上的所有用户事件的函数。例如，你可以给&lt;/em&gt;按钮A&lt;em&gt;绑定一个回调函数，并在该回调函数中编写所有可能发生的事件的应对策略，如&lt;/em&gt;按下按钮时做动作1&lt;em&gt;、&lt;/em&gt;按钮抬起时做动作2&lt;em&gt;、&lt;/em&gt;单击按钮时做动作3&lt;em&gt;、&lt;/em&gt;双击按钮时…&lt;em&gt;一旦任意一个事件在该元素上发生，LabWindows/CVI便开始调用(执行)这个回调函数，预先设定好的动作便会被触发。&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;如何编写回调函数？在上面提到的那个帮助文档页(即&lt;em&gt;Using Callback Functions to Respond to User Interface Events&lt;/em&gt;页面)，我们可以看到三个回调函数的使用样例代码，他们分别是&lt;em&gt;面板&lt;/em&gt;、&lt;em&gt;控件&lt;/em&gt;以及&lt;em&gt;菜单栏&lt;/em&gt;这三种用户界面元素的回调函数使用样例。请读者想一下，上述三种样例，哪一个可以为我们所用？&lt;/p&gt;
-
-&lt;p&gt;当然还是&lt;em&gt;控件&lt;/em&gt;的那个样例(&lt;em&gt;ControlResponse&lt;/em&gt;)。我们把下面的样例完整地拷贝到我们的&lt;em&gt;src.c&lt;/em&gt;主程序中，将其放到&lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt;函数的下面：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int CVICALLBACK ControlResponse (int handle, int control, int event, void *callbackdata, int eventdata1, int eventdata2){
-    ...
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;现在要做的对这个样例进行DIY改造。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;将函数名&lt;code class=&quot;highlighter-rouge&quot;&gt;ControlResponse&lt;/code&gt;改为更具体的&lt;code class=&quot;highlighter-rouge&quot;&gt;ButtonsResponse&lt;/code&gt;（此改动可有可无）；&lt;/li&gt;
-  &lt;li&gt;去除一些无关内容&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;精简后，两个按钮的回调函数变为：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int CVICALLBACK ButtonsResponse(int handle, int control, int event, 
-            void *callbackdata, int eventdata1, int eventdata2){
-    if (control == showBtn) { //如果事件发生在show按钮上
-        switch (event) {
-            case EVENT_RIGHT_CLICK :
-                //右击按钮时作出的响应
-                break;
-            case EVENT_COMMIT :
-                //单击按钮时作出的响应
-                break;
-        }
-    }
-    
-    if (control == quitBtn) { //如果事件发生在quit按钮上
-        switch (event) {
-            case EVENT_COMMIT :
-                //单击按钮时作出的响应
-                break;
-        }
-    }
-    return(0);
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;当有&lt;a href=&quot;http://zone.ni.com/reference/en-XX/help/370051V-01/cvi/uiref/cvievents_overview/&quot;&gt;用户事件&lt;/a&gt;发生在按钮上，LabWindows/CVI便会调用上面的回调函数，并在调用时将该控件的载体(&lt;em&gt;handle&lt;/em&gt;)、控件资源句柄(即资源id-&lt;em&gt;control&lt;/em&gt;)、发生的事件id(&lt;em&gt;event&lt;/em&gt;)等信息作为参数传入该回调函数。&lt;/p&gt;
-
-&lt;p&gt;我们看到上面的回调函数用到了变量&lt;em&gt;showBtn&lt;/em&gt;和&lt;em&gt;quitBtn&lt;/em&gt;，不过这两个变量是在&lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt;函数中创建的（局部变量）。为了能全局引用这两个变量，我们需要在&lt;em&gt;函数原型声明&lt;/em&gt;部分的上方声明这两个全局变量。鉴于Graph控件也需要全局引用，所以我们在&lt;em&gt;函数原型声明&lt;/em&gt;部分的上方添加这样的声明：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;...
-/* 全局变量声明 */
-static int panelHandle;
-int graphHdl, showBtn, quitBtn; 
-
-/* 函数原型声明 */
-int createGUI_Mine(void);
-
-/* main()函数 */
-...
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;然后在创建Graph控件以及两个Button按钮的地方(即&lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt;函数内)，去掉变量名&lt;em&gt;graphHdl&lt;/em&gt;、&lt;em&gt;showBtn&lt;/em&gt;和&lt;em&gt;quitBtn&lt;/em&gt;前面的&lt;em&gt;int&lt;/em&gt;即可。&lt;/p&gt;
-
-&lt;p&gt;我们来编写&lt;strong&gt;当事件发生在&lt;/strong&gt;&lt;em&gt;showBtn&lt;/em&gt;&lt;strong&gt;按钮上时的事件响应&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (control == showBtn) { //如果事件发生在show按钮上
-    switch (event) {
-        case EVENT_COMMIT :
-            //准备一个temp数组，用来存放按钮上要显示的&quot;show&quot;或&quot;stop&quot;字符串
-            char temp[8]=&quot;&quot; ; GetCtrlAttribute(panelHandle, showBtn, ATTR_LABEL_TEXT, temp);
-            //清空graph上的内容，准备画图
-            DeleteGraphPlot(panelHandle, graphHdl, -1, VAL_IMMEDIATE_DRAW);
-            if (strcmp(temp, &quot;Show&quot;) == 0 ){ //如果按钮显示的是&quot;Show&quot;的话
-                //准备波形数组
-                double waveData[100], amp, phase, cycles;
-                int n;
-                n = 100;
-                amp = 90.0;
-                phase = 0.0;
-                cycles = 1.5;
-                SinePattern(n, amp, phase, cycles, waveData);
-                //将波形数组填充到graph图表上
-                PlotY(panelHandle, graphHdl, waveData, n, VAL_DOUBLE, VAL_THIN_LINE, 
-                      VAL_EMPTY_SQUARE, VAL_SOLID, VAL_CONNECTED_POINTS , VAL_YELLOW);
-                SetCtrlAttribute(panelHandle, showBtn, ATTR_LABEL_TEXT, &quot;Clear&quot;);
-            }
-            else{ //如果按钮显示的是&quot;Clear&quot;的话
-                SetCtrlAttribute(panelHandle, showBtn, ATTR_LABEL_TEXT, &quot;Show&quot;);
-            }
-            break; 
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;接着编写&lt;strong&gt;当事件发生在&lt;/strong&gt;&lt;em&gt;quitBtn&lt;/em&gt;&lt;strong&gt;按钮上时的事件响应&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (control == quitBtn) { //如果事件发生在quit按钮上
-    switch (event) {
-        case EVENT_COMMIT :
-            //单击按钮时作出的响应
-            QuitUserInterface(0);
-            break;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;由于我们的回调函数&lt;code class=&quot;highlighter-rouge&quot;&gt;ButtonsResponse()&lt;/code&gt;也是自定义函数，所以需要添加&lt;strong&gt;函数原型声明&lt;/strong&gt;，读者还记得&lt;strong&gt;在哪里&lt;/strong&gt;以及&lt;strong&gt;如何添加&lt;/strong&gt;函数原型声明吗？&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;...
-/* 函数原型声明 */
-int createGUI_Mine(void);
-int CVICALLBACK ButtonsResponse(int, int, int, void, int, int);
-...
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;533-最后一步为按钮指派安装回调函数&quot;&gt;5.3.3 最后一步，为按钮指派(安装)回调函数。&lt;/h5&gt;
-
-&lt;p&gt;也许读者会有疑问：我们不是已经写好回调函数了吗？怎么还要指派(安装)回调函数？事实是：我们虽然已经写好了回调函数，但这个函数和具体控件之间仍是没有任何联系的。指派(安装)回调函数便是为两者建立关联的过程。&lt;/p&gt;
-
-&lt;p&gt;为某个控件指派(安装)回调函数用的是&lt;code class=&quot;highlighter-rouge&quot;&gt;InstallCtrlCallback()&lt;/code&gt;这个函数，它的函数结构为：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;InstallCtrlCallback (int panelHandle, int controlID, CtrlCallbackPtr eventFunction, void *callbackData);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;在使用时，你需要传入控件所属载体的资源句柄(&lt;em&gt;panelHandle&lt;/em&gt;)、控件本身的资源句柄(&lt;em&gt;controlID&lt;/em&gt;)、控件欲绑定的回调函数(&lt;em&gt;eventFunction&lt;/em&gt;)以及在调用该回调函数时欲传给该函数的数据( &lt;em&gt;*callbackData&lt;/em&gt;)。特别注意的是，回调函数&lt;em&gt;eventFunction&lt;/em&gt;的类型是&lt;em&gt;CtrlcallbackPtr&lt;/em&gt;的，这一类型的函数，都必须遵循以下的函数声明结构：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int CVICALLBACK CallbackFunctionName (int panelHandle, int controlID, int event, void *callbackData, int eventData1, int eventData2);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这也就是为什么我们的&lt;code class=&quot;highlighter-rouge&quot;&gt;ButtonsResponse()&lt;/code&gt;函数的前面会有一个全大写的&lt;code class=&quot;highlighter-rouge&quot;&gt;CVICALLBACK&lt;/code&gt;标志了。&lt;/p&gt;
-
-&lt;p&gt;为&lt;strong&gt;show&lt;/strong&gt;、&lt;strong&gt;quit&lt;/strong&gt;按钮指派(安装)回调函数将在&lt;code class=&quot;highlighter-rouge&quot;&gt;createGUI_Mine()&lt;/code&gt;函数中完成：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;InstallCtrlCallback(pHandle, showBtn, ButtonsResponse, 0);
-InstallCtrlCallback(pHandle, quitBtn, ButtonsResponse, 0);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;至此，所有工作已经完成，快快试运行一下你的程序吧！&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;程序源码&lt;a href=&quot;https://github.com/HelloLyfing/LabWindows-CVI-Tutorial-For-Newbie-By.Lyfing&quot;&gt;托管在Github&lt;/a&gt;上，请自行前往查看。&lt;/p&gt;</content><author><name></name></author><category term="Tech" /><category term="C" /><category term="Labwindows Tutorial" /><summary type="html">#####上接第一节的内容，我们继续本章内容的下半部分。 5. 编写 createGUI_Mine() 函数的具体实现 createGUI_Mine()要完成的工作有： 创建一个主面板(即主窗口) 在主面板右侧创建一个Graph控件，用以显示Sine波形 在主面板上创建两个按钮，并分别为他们编写回调函数以实现： “Show”按钮：点击后Graph控件上显示出Sine波形，点击后按钮名称变为”Clear”；再次点击该按钮，Graph控件上的Sine波形被清空，按钮名称变回”Show” “Quit”按钮：点击后退出程序 5.1 创建主面板 LabWindows/CVI提供了一系列可创建各种可视化界面的函数和API，创建面板(Panel)的函数当然也包含其中，但它具体是什么，又应该怎么用呢？我们试着从帮助文档中找寻答案。 打开帮助文档(在LabWindows/CVI的任意界面按F1快捷键，或者从菜单栏 Help &amp;gt;&amp;gt; Contents F1打开)，在索引标签栏下的搜索框中输入Panel，在列出的一堆搜索结果中寻找 panels (User Interface Editor) 项，再接着找它的子项 programming with，双击打开它(如下图所示)： PS：想要查找某个控件object的使用说明，可以试着在帮助文档 &amp;gt;&amp;gt; 索引标签下的搜索框输入它的名称，在搜索结果中找到它的使用介绍项 object_name (User Interface)及其子项，以查找相关帮助资料；想要查找某个具体函数的使用说明，方法同上，一般搜索结果第一项便是 在Programming with Panels的帮助文档页面，我们看它的第二段话 NewPanel creates a new panel during program execution. NewPanel returns a handle that you use in subsequent User Interface Library functions to reference the panel. Use the first parameter of NewPanel to specify whether the panel is created as a top-level window or as a child of another (parent) window. You also specify the name, position, and size of the panel through parameters to NewPanel. Creating a new panel using NewPanel does not automatically display the panel. 这次请自行读完上面的关于 NewPanel() 函数的使用介绍，下面我们将直接使用它。如何使用？请在索引标签栏下的搜索框中输入 NewPanel 打开这个函数的帮助文档。 简单介绍一下，NewPanel() 函数可以创建一个主面板(top-lever panel)，或一个子面板(child panel)，这取决于你给它传入的参数。在这里我们要创建一个主面板，它的各项参数如下： 面板名称(panelTitle[])：用代码创建的图形界面 面板的位置及大小(单位:像素)：距屏幕顶部60，距屏幕左边300，高度300,宽度600 现在，我们可以创建一个主面板了： # 为了使创建的主面板居中显示，距屏幕顶部和左边的距离都被换成了系统内部的整型变量VAL_AUTO_CENTER NewPanel(0, &quot;用代码创建的图形界面&quot;, VAL_AUTO_CENTER, VAL_AUTO_CENTER, 300, 600) 好了，现在我们整个的代码看起来应该是这个样子： #include #include #include static int panelHandle; int createGUI_Mine(void); int main (int argc, char *argv[]){ if (InitCVIRTE (0, argv, 0) == 0) return -1; /* out of memory */ if ((panelHandle = createGUI_Mine()) &amp;amp;lt; 0) return -1; DisplayPanel (panelHandle); RunUserInterface(); DiscardPanel (panelHandle); return 0; } int createGUI_Mine(){ int pHandle = NewPanel(0, &quot;用代码创建的图形界面&quot;, VAL_AUTO_CENTER, VAL_AUTO_CENTER, 600, 800); return pHandle; } OK，到了这一步，先让我们试运行一下上面的程序吧。运行程序(Debug xxx.exe)的方法有三种： 1) 菜单栏 Run &amp;gt;&amp;gt; Debug src.exe 2) 按快捷键组合 Shift + F5 3) 鼠标点击如下按钮 这时会弹出一个错误框，如下图所示： 这是因为在LabWindows/CVI中，所有自定义的函数都是需要预定义，也就是得在 main() 函数之前声明原型(prototype)的。 这好办，只需要把这两个自定义函数的原型声明添加到 main() 函数之前就可以了。但问题是，如何声明原型？这里最简单的方法是，随便到帮助文档中找一个工程样例(sample)，看看里面的自定义函数的原型声明的句式便可。 PS：工程样例（sample）是LabWindows/CVI提供的用来演示如何使用某个控件或函数的可直接编译、运行的程序。工程样例（sample）是快速入门LabWindows/CVI的编程格式及方法的大好捷径，一有机会就打开查看，有百利而无一害。如何打开一个工程样例？以 NewPanel() 函数为例，当你在帮助文档中查找到 NewPanel() 函数的文档介绍页后，跳到这个页面的最底部，一般会附上若干工程样例，只需用鼠标单击”Open example”前的图标（如下图所示）便可打开这个叫做”userint\buildui.cws”的工程样例。 在打开的”buildui.cws”工程样例中，我们点击buildui.c文件，找到 /*------------------------------------------------*/ /* Internal function prototypes */ /*------------------------------------------------*/ 区域，根据这个区域下方的自定义函数的原型声明的方法，我们可以看出，对自定义函数的原型声明其实很简单，只需要把这个函数在左大括号——{——之前的内容复制到这里，并在结尾添加行结束标志分号——；——即可。不过需要注意的一点是，无参数的函数，在原型声明时需要它在接收参数的括号()中加入 void 关键字。具体到本例中，对自定义函数的原型声明句子如下所示： int createGUI_Mine(void); 好了，把如上内容添加到main()函数的前面，然后再次试运行这个程序，这时会弹出我们刚刚用代码创建的那个图形界面，它目前还只是一个只有标题栏的空白面板(Panel)。效果图如下： 由于还没设置退出选项，所以这个程序无法正常退出。我们可以到启动它的LabWindows/CVI中关闭它：跳转到LabWindows/CVI界面，点击菜单栏 Running &amp;gt;&amp;gt; Terminate Execution即可（或点击工具栏的stop按钮）。 5.2 在主面板右侧创建一个Graph控件，用以显示Sine波形 在创建Graph控件前，请先想一下这两个问题： a. Graph控件是依附于哪个实体之上的，它的载体是什么？ b. Graph控件的创建工作应该被放在哪个部分？main()函数中、createGUI_Mine()函数中，或者其他地方？ 是不是这样的: 问题a：像其他的应用软件一样，控制类、显示类的控件都应该至少依附于一个面板(窗口)之上，也就是说这些控件得有个载体。在本章中，Graph控件及其他两个按钮控件(有待创建)都是依附于我们上一步创建的主面板(主界面基本元素)之上的。 问题b：光从名字我们便可以看出，createGUI_Mine() 函数就是用来完成创建图形界面元素的工作的，所以Graph控件的创建应该被安排到这里。 PS：在这里讲载体的概念，是为了之后创建Graph控件时更易理解传入pHandle的原因，就是因为所有的控件都需要一个载体(如面板) 接下来的问题，Graph控件应该如何创建呢？不知道你发现没，这个问题跟我们上一小节的关于”如何创建一个面板(panel)”的问题非常相似，所以，请你首先试着自己花时间去帮助文档中查找答案(到帮助文档中查找答案的习惯对日后的独立开发有极大帮助，请务必亲试)。 在帮助文档页，索引标签栏下的搜索框中输入Graph，如上一小节查找创建Panel时一样，在搜索结果中我们会找到如下部分的内容： graph controls (user interface) attribute events fuctions operating programming with 我们尝试从programming with这个页面查找新建graph控件的方法，结果没什么收获。但你看到了，graph control(Graph控件)有一个functions页面，这里面列出了跟本控件有关的所有函数，我们点进去看看。 我们要找到的是创建控件的函数，所以函数名应该会带有New字样，对函数列表逐一查找，便会发现 NewCtrl() 这个函数。对了！就是用它来创建Graph控件的。打开这个函数的帮助页(如何打开?)，你会发现，这个函数不光能用来创建Graph控件，它还可以创建LabWindows/CVI提供的其他所有控件(点此查看控件支持列表)。 关于NewCtrl()函数的用法请自信查看帮助文档。我们这里要创建一个Graph控件，进入 NewCtrl() 函数帮助页，把第二行的函数结构复制下来： int NewCtrl (int panelHandle, int controlStyle, char controlLabel[], int controlTop, int controlLeft); 把它插入到 createGUI_Mine() 函数的第二行： int createGUI_Mine(){ int pHandle = NewPanel(0, &quot;用代码创建的图形界面&quot;, VAL_AUTO_CENTER, VAL_AUTO_CENTER, 600, 800); int NewCtrl (int panelHandle, int controlStyle, char controlLabel[], int controlTop, int controlLeft); return pHandle; } NewCtrl()创建好Graph控件后，会返回这个Graph控件的资源句柄(handle)，我们创建一个int型变量graphHdl来接收返回值； 参数方面，int型的panelHandle就用上一步生成的面板资源句柄(pHandle)赋值，即用上一步创建的面板做它的”载体”； int型的controlStyle：欲创建的控件类型，通过查函数的使用帮助可知，要想创建Graph控件，此处应填 CTRL_GRAPH； char型的controlLabel[]：Graph的标签，相当于控件标题，此处使用”Created-Graph”； int型的controlTop及controlLeft：该控件相对于它的载体的位置，top给个30，left给个250 PS：在编程领域，当需要确定一个矩形框的位置时，我们一般只需要指定它左上角那个点相对于它载体的位置即可，然后再分别给这个矩形框赋予长度和高度值。由于左上角位置已确定，长度、高度也已确定，这个矩形框的大小，及它相对于自身载体的位置便唯一确定了。这就好比在一面墙上画一个矩形，先确定它离墙的顶端和左端的距离（即它左上角点的位置），再已知长度、高度的话，从该点出发依次画出长和高，这个矩形在墙上的最终形状及位置便可以确定下来了。 于是createGUI_Mine()函数修改为： int createGUI_Mine(){ int pHandle = NewPanel(0, &quot;用代码创建的图形界面&quot;, VAL_AUTO_CENTER, VAL_AUTO_CENTER, 600, 800); int graphHdl = NewCtrl(pHandle, CTRL_GRAPH, &quot;Created-Graph&quot;, 30, 250); return pHandle; } 试运行一下程序(how?)，我们可以看到之前空空如也的面板上已经多出来一个graph了： 5.3 在主面板上创建两个按钮：show、quit并分别为他们编写回调函数以发挥各自功能 #####5.3.1. 创建按钮 请读者想一想，应该用什么函数来创建这两个按钮呢？我给你个提示：按钮属于控件范畴~ 没错，就是使用NewCtrl()函数来创建以上两个按钮！创建工作将被而且应该被安排到createGUI_Mine()函数中，我们把它安排到Graph控件的创建之后。 show按钮的图形参数，即填入NewCtrl()函数的参数列表： panelHandle = pHandle，即把本函数第一句创建好的面板作为按钮的”载体”； controlStyle = CTRL_SQUARE_COMMAND_BUTTON，即方形命令按钮，这个值通过查函数的使用方法可得； controlLabel[] = “show”，即按钮上显示的文字； controlTop = 80 ， controlLeft = 50，即按钮相对于自己”载体”的上端和左端的位置 quit按钮的图形参数： panelHandle = pHandle，即把本函数第一句创建好的面板作为按钮的”载体”； controlStyle = CTRL_SQUARE_COMMAND_BUTTON，即方形命令按钮，这个值通过查函数的使用方法可得； controlLabel[] = “quit”，即按钮上显示的文字； controlTop = 140 ， controlLeft = 50，即按钮相对于自己”载体”的上端和左端的位置 我们分别用整形变量 showBtn及quitBtn来接收创建按钮后返回的资源句柄，于是createGUI_Mine()函数更新为： int createGUI_Mine(){ int pHandle = NewPanel(0, &quot;用代码创建的图形界面&quot;, VAL_AUTO_CENTER, VAL_AUTO_CENTER, 300, 600); int graphHdl = NewCtrl(pHandle, CTRL_GRAPH, &quot;Created-Graph&quot;, 30, 250); int showBtn = NewCtrl(pHandle, CTRL_SQUARE_COMMAND_BUTTON, &quot;Show&quot;, 80, 50); int quitBtn = NewCtrl(pHandle, CTRL_SQUARE_COMMAND_BUTTON, &quot;Quit&quot;, 140, 50); return pHandle; } 试运行一下程序，添加了两个按钮的界面如下图所示： 到目前为止，我们已经完成了所有界面元素的创建工作。 5.3.2 为两个按钮编写回调函数 PS：请读者首先到 帮助文档 &amp;gt;&amp;gt; 索引 标签栏 下的搜索框中输入callback functions然后回车以打开关于回调函数的使用说明页面，请大致浏览一下该页面内容。我在这里简单说一下，回调函数(callback functions)是你绑定到某个特定用户界面元素(比如面板、按钮、Graph控件)上，用以响应发生在该元素上的所有用户事件的函数。例如，你可以给按钮A绑定一个回调函数，并在该回调函数中编写所有可能发生的事件的应对策略，如按下按钮时做动作1、按钮抬起时做动作2、单击按钮时做动作3、双击按钮时…一旦任意一个事件在该元素上发生，LabWindows/CVI便开始调用(执行)这个回调函数，预先设定好的动作便会被触发。 如何编写回调函数？在上面提到的那个帮助文档页(即Using Callback Functions to Respond to User Interface Events页面)，我们可以看到三个回调函数的使用样例代码，他们分别是面板、控件以及菜单栏这三种用户界面元素的回调函数使用样例。请读者想一下，上述三种样例，哪一个可以为我们所用？ 当然还是控件的那个样例(ControlResponse)。我们把下面的样例完整地拷贝到我们的src.c主程序中，将其放到createGUI_Mine()函数的下面： int CVICALLBACK ControlResponse (int handle, int control, int event, void *callbackdata, int eventdata1, int eventdata2){ ... } 现在要做的对这个样例进行DIY改造。 将函数名ControlResponse改为更具体的ButtonsResponse（此改动可有可无）； 去除一些无关内容 精简后，两个按钮的回调函数变为： int CVICALLBACK ButtonsResponse(int handle, int control, int event, void *callbackdata, int eventdata1, int eventdata2){ if (control == showBtn) { //如果事件发生在show按钮上 switch (event) { case EVENT_RIGHT_CLICK : //右击按钮时作出的响应 break; case EVENT_COMMIT : //单击按钮时作出的响应 break; } } if (control == quitBtn) { //如果事件发生在quit按钮上 switch (event) { case EVENT_COMMIT : //单击按钮时作出的响应 break; } } return(0); } 当有用户事件发生在按钮上，LabWindows/CVI便会调用上面的回调函数，并在调用时将该控件的载体(handle)、控件资源句柄(即资源id-control)、发生的事件id(event)等信息作为参数传入该回调函数。 我们看到上面的回调函数用到了变量showBtn和quitBtn，不过这两个变量是在createGUI_Mine()函数中创建的（局部变量）。为了能全局引用这两个变量，我们需要在函数原型声明部分的上方声明这两个全局变量。鉴于Graph控件也需要全局引用，所以我们在函数原型声明部分的上方添加这样的声明： ... /* 全局变量声明 */ static int panelHandle; int graphHdl, showBtn, quitBtn; /* 函数原型声明 */ int createGUI_Mine(void); /* main()函数 */ ... 然后在创建Graph控件以及两个Button按钮的地方(即createGUI_Mine()函数内)，去掉变量名graphHdl、showBtn和quitBtn前面的int即可。 我们来编写当事件发生在showBtn按钮上时的事件响应： if (control == showBtn) { //如果事件发生在show按钮上 switch (event) { case EVENT_COMMIT : //准备一个temp数组，用来存放按钮上要显示的&quot;show&quot;或&quot;stop&quot;字符串 char temp[8]=&quot;&quot; ; GetCtrlAttribute(panelHandle, showBtn, ATTR_LABEL_TEXT, temp); //清空graph上的内容，准备画图 DeleteGraphPlot(panelHandle, graphHdl, -1, VAL_IMMEDIATE_DRAW); if (strcmp(temp, &quot;Show&quot;) == 0 ){ //如果按钮显示的是&quot;Show&quot;的话 //准备波形数组 double waveData[100], amp, phase, cycles; int n; n = 100; amp = 90.0; phase = 0.0; cycles = 1.5; SinePattern(n, amp, phase, cycles, waveData); //将波形数组填充到graph图表上 PlotY(panelHandle, graphHdl, waveData, n, VAL_DOUBLE, VAL_THIN_LINE, VAL_EMPTY_SQUARE, VAL_SOLID, VAL_CONNECTED_POINTS , VAL_YELLOW); SetCtrlAttribute(panelHandle, showBtn, ATTR_LABEL_TEXT, &quot;Clear&quot;); } else{ //如果按钮显示的是&quot;Clear&quot;的话 SetCtrlAttribute(panelHandle, showBtn, ATTR_LABEL_TEXT, &quot;Show&quot;); } break; } } 接着编写当事件发生在quitBtn按钮上时的事件响应： if (control == quitBtn) { //如果事件发生在quit按钮上 switch (event) { case EVENT_COMMIT : //单击按钮时作出的响应 QuitUserInterface(0); break; } } 由于我们的回调函数ButtonsResponse()也是自定义函数，所以需要添加函数原型声明，读者还记得在哪里以及如何添加函数原型声明吗？ ... /* 函数原型声明 */ int createGUI_Mine(void); int CVICALLBACK ButtonsResponse(int, int, int, void, int, int); ... 5.3.3 最后一步，为按钮指派(安装)回调函数。 也许读者会有疑问：我们不是已经写好回调函数了吗？怎么还要指派(安装)回调函数？事实是：我们虽然已经写好了回调函数，但这个函数和具体控件之间仍是没有任何联系的。指派(安装)回调函数便是为两者建立关联的过程。 为某个控件指派(安装)回调函数用的是InstallCtrlCallback()这个函数，它的函数结构为： InstallCtrlCallback (int panelHandle, int controlID, CtrlCallbackPtr eventFunction, void *callbackData); 在使用时，你需要传入控件所属载体的资源句柄(panelHandle)、控件本身的资源句柄(controlID)、控件欲绑定的回调函数(eventFunction)以及在调用该回调函数时欲传给该函数的数据( *callbackData)。特别注意的是，回调函数eventFunction的类型是CtrlcallbackPtr的，这一类型的函数，都必须遵循以下的函数声明结构： int CVICALLBACK CallbackFunctionName (int panelHandle, int controlID, int event, void *callbackData, int eventData1, int eventData2); 这也就是为什么我们的ButtonsResponse()函数的前面会有一个全大写的CVICALLBACK标志了。 为show、quit按钮指派(安装)回调函数将在createGUI_Mine()函数中完成： InstallCtrlCallback(pHandle, showBtn, ButtonsResponse, 0); InstallCtrlCallback(pHandle, quitBtn, ButtonsResponse, 0); 至此，所有工作已经完成，快快试运行一下你的程序吧！ 程序源码托管在Github上，请自行前往查看。</summary></entry></feed>
+&lt;/ul&gt;</content><author><name></name></author><category term="Tech" /><category term="Python" /><category term="Unicode" /><category term="Language Study" /><summary type="html">最近接触Python比较多，尤其是在命令行(Terminal)下进行的局部代码测试有很多。而个人编写的代码通常是以UTF-8格式存储的，这在Linux下的Terminal上还好一些（它的编码默认的就是中文UTF-8），要想打印包含中文字符的变量值，基本不会出现乱码情况。但如果是在Windowss下的cmd上进行测试，则相对就要痛苦一些，因为Windows中文环境下cmd的默认编码是GBK。 所以本人为了在测试时能正常打印出中文字符（经常Linux、Windows两边跑），对Python字符编码的情况还是颇下了些功夫的。下面就是我做的一些小研究，希望能对和我当初一样迷茫的读者起到些帮助作用。 1. ASCII, Python默认的编码 在Python中，当源代码被读取进行语法校验时，会将源代码中的字符从声明的编码转换成Unicode类型，等到语法校验通过后，再将这些字符转换回初始的编码。 在Python环境下，源文件中如果没有声明编码，则将其编码设置为默认的ASCII，这可以通过下面这段代码检验： &amp;gt;&amp;gt;&amp;gt; import sys &amp;gt;&amp;gt;&amp;gt; sys.getdefaultencoding() 'ascii' 所以在编写源代码文件xxx.py时需要注意： 如果源代码没有声明编码格式，则Python在语法校验期间(compilation)使用默认的ASCII编码 如果源代码没有声明编码格式，但却在源码中使用了非ASCII字符(Non-ASCII character)，则程序在编译期间抛出SyntaxError异常，编译不被通过 如果源代码声明了Python不支持的编码格式，则程序将在编译期间抛出异常 源代码文件编码的声明 查看如何在源代码中声明编码格式PEP-0263 查看Python支持的编码格式 2. 命令行与Python——乱码篇 在命令行下的Python Shell中进行小范围测试，或者在命令行中运行Python代码时，总会遇到各种各样的乱码问题。为了搞清楚乱码的原因，我们首先来看这样一个例子。 例子：文件到底长什么样？ 首先, 在某目录(假设D:\Tem)下创建两个文本文件1.ini、2.ini，两个文件中都只写入下面这行内容。不同的是，1.ini以UTF-8格式保存，2.ini以GBK格式保存 我是Lyfing.Loo，来自中国 接着, 在命令行下，cd至该目录，键入Python 进入Python Shell, 读取两个文本文件中的内容，并打印出来 &amp;gt;&amp;gt;&amp;gt; str1 = open('1.ini','r').read() &amp;gt;&amp;gt;&amp;gt; str2 = open('2.ini','r').read() &amp;gt;&amp;gt;&amp;gt; str1 '\xef\xbb\xbf\xe6\x88\x91\xe6\x98\xafLyfing.Loo\n' #以16进制形式查看1.ini(UTF-8) efbb bfe6 8891 e698 af4c 7966 696e 672e 4c6f 6f0d 0a &amp;gt;&amp;gt;&amp;gt; str2 '\xce\xd2\xca\xc7Lyfing.Loo\n' #以16进制形式查看2.ini(GBK) ced2 cac7 4c79 6669 6e67 2e4c 6f6f 0d0a 其中0d0a是换行符，0d——回车符号——”\r”，0a——换行符号——”\n” 对比一下str内容和16进制下查看到的相应文本中的内容，我们不难发现，Python在读取文件时，除了辨认出ASCII编码范围内的字符之外，例如L(4c)、g(67)和o(6f)等，其他非ASCII的字符一律仍按16进制(由0 1二进制位组成)的原始编码储存，例如 我(efbbbf, utf-8)和我(ced2, gbk)。等到需要将变量值（字符串）打印到控制台，或者写入文件时，这一串原始编码便会原封不动地被提交给相应程序。 仍是上面的例子，当我们想要打印str1和str2的值时，我们看看会发生什么： &amp;gt;&amp;gt;&amp;gt; print str1 锘挎垜鏄疞yfing.Loo &amp;gt;&amp;gt;&amp;gt; print str2 我是Lyfing.Loo 我们看到，str1出现了乱码，而str2则正常打印出了中文字符。这是为什么呢？还是上面那句话： 等到需要将变量值（字符串）打印到控制台，或者写入文件时，这一串原始编码便会原封不动地被提交给相应程序 当需要打印str1和str2的值时，Python并不做任何编码转换的处理，它只是原封不动地将原始编码提交给了控制台，由相应的控制台（Windows下的cmd/Linux下的Terminal/SSH远程连接工具等）来进行打印处理。 所以如果在Linux下的Terminal上打印str1和str2的话，应该就是str1正常打印，str2出现乱码了，因为Terminal的编码一般是UTF-8的。 那如果想要实现多平台下表现一致的特性的话，比如说保证class的doc在多平台下打印出的效果一致或者写入效果一致（不会乱码）的话，我们该怎么做？下面引出了本篇内容的重点。 3. Unicode，Python的好伙伴儿 一门热门起来的编程语言，首先要满足的需求之一就是，对不同国家和地区所用字符的友好支持。Python很好的做到了这一点，至少，在它正式引入Unicode编码以后是这样。 我们都知道Python是一门世界通用的编程语言，如果它的源代码文件中出现的都是ASCII支持的字符，那Python会以ASCII编码的格式处理程序。不过，一旦源代码中出现了ASCII不支持的字符，它该怎么办？我用一张图来回答你吧 (图片来源：http://nltk.googlecode.com/svn/trunk/doc/book/ch03.html) 也就是说，所有超出ASCII范围的字符的处理工作，无论在输入之前，或者输出之后是什么编码格式的，它们在Python的执行内存中，都被统一转换(decode)为Unicode格式来进行程序处理。 还是上节末尾那个例子，如何保证str1和str2在各个平台下都能正常打印呢，这里的办法是：将str1和str2转换成Unicode类型。 3.1 什么是Unicode类型？那str1和str2又是什么类型的呢？ 我们先看看str1str2的类型 &amp;gt;&amp;gt;&amp;gt; print type(str1), type(str2) &amp;lt;type 'str'&amp;gt; &amp;lt;type 'str'&amp;gt; 从上面可以看出，str1、2是str类型的，也就是通常意义下的字符串类型。 Unicode类型则是Python内建的一种用来“一统江湖”的字符类型(type)。 既然已经有了用来容纳字符的类型——str——为何还要添加一种Unicode字符类型呢？要回答这个问题，我们先来想想如下几个现实中可能会遇到的情况： 在某个class的doc中，需要同时用到多个国家的字符和符号来描述class的功用。试想如果此时再用单一的、相对狭隘的编码配合str来表述，可能出现不可预期的错误。这是因为字符所处的字符集和编码不一致，同一串16进制码(code points)在不同的字符集中可能表示不同的字符，更何况，同一个源代码文件中只可以定义一种编码格式 xml文件的解析(parse)问题，xml文件中可能包含不同国家和区域的字符和符号，此时如果使用仅适用于某个区域的字符编码，可能出现无法识别某些字符而导致甚至抛异常或程序错误等等糟糕情况。 于是，一统江湖、或者说差点就一统江湖的Unicode编码出现了。再接着，Python为了更加友好地支持各种国家/区域的字符，内建了新的字符容器Unicode。于是上面两个问题以及近似的一类问题都可以迎刃而解了。 3.2 Unicode在Python中的使用 Unicode型的字符容器，在Python的具体应用中有着诸多优势。下面列举几个。 例子：在源代码中定义Unicode类型。 具体步骤，创建test.py文件，在其中添加这样的内容 # coding:utf-8 def hello(): str1 = u'我是大坏蛋' str2 = '你是小淫魔' return (str1, str2) 接着在命令行cd至test.py所在目录，键入python进入Python Shell，在Shell中输入以下内容： &amp;gt;&amp;gt;&amp;gt; import test &amp;gt;&amp;gt;&amp;gt; str1, str2 = test.hello() &amp;gt;&amp;gt;&amp;gt; str1 u'\u6211\u662f\u5927\u574f\u86cb' &amp;gt;&amp;gt;&amp;gt; str2 '\xe6\x88\x91\xe6\x98\xaf\xe5\xb0\x8f\xe6\xb7\xab\xe9\xad\x94' &amp;gt;&amp;gt;&amp;gt; print str1 我是大坏蛋 &amp;gt;&amp;gt;&amp;gt; print str2 鎴戞槸灏忔帆榄 我们看到在hello()定义时，str1是Unicode类型的，而str2则是普通的’str’字符型。也许在这里还没看出Unicode类型的优势。但是当需要打印变量内容时，二者的优劣便体现出来了：Unicode类型的str1无需进行特别编码便能正常打印出中文字符，但str类型的str2却出现了乱码情况。 此处可以介绍Unicode类型的很多优点了： 声明简单 只需要在原字符前添加该类型标记u即可，例如s1 = u'小伙伴儿' 代码编译期间，自动从声明的原始编码转码至Unicode，并创建相应的Unicode类型 在需要打印(如print）或者输入输出（如read或write）时，Unicode类型用着尤其顺手。因为你只需要像操作ASCII一样打印和输入输出就行了，而无需关心编码、乱码问题。这是因为Python会帮Unicode类型的字符做编码转码工作，而这也正是Unicode类型的字符不会出现乱码的原因。Python工作内容如下： 当需要输入中文字符时，Python会首先调取字符输入程序（命令行或者read函数）的编码格式，然后将输入的字符以该编码格式进行相应转换，即把原字符转码成Unicode类型的字符。 例如在Windows中的命令行下使用的Python Shell，其编码格式是GBK，当你在shell中键入string1 = u'我是李寻欢'时，会发生如下事件： 1, Python获取当前命令行编码（sys.stdin.encoding），为cp936(即GBK) 2, 将输入的汉字我是李寻欢按GBK编码转码成Unicode的形式，并据此创建Unicode类型的字符串，赋值给string1 当需要打印输出时，Python会首先调取字符输出程序（命令行或者输出函数）的编码格式，然后将该字符串编码成字符输出程序所用的编码（这样字符输出程序就不会因为认不出编码而出现乱码），接着字符输出程序将编码后的字符输出到目的地。该处理过程是字符输入程序（上一条）的逆过程，此处不再详细介绍这一过程 3.3 如何将str type转换成Unicode type 这是本节最开始提出的那个问题：如何将str类型的字符串str1和str2转换成Unicode类型？ 这也是下节要谈论的编码与解码的问题。 4. 编码（encode）与解码（decode） 如何将str类型的字符串str1和str2转换成Unicode类型？以及上一节最末提到关于的字符编码在GBK和Unicode之间的转换，涉及到的都是编码与解码的问题。统一来说就是 从Unicode类型到GBK或UTF-8等编码的转换，叫做编码(encode)；而这一过程的逆过程，则叫做解码(decode)。 一开始我老是搞不清楚到底从哪到哪是编码，从哪到哪是解码，后来用多了自然也就清楚了。相信初次接触这个概念的人也会有和我一样的困惑，下面用一张图来说明一下编码和解码的方向： 关于解码和编码的实现方法，网上已有很多，这里不再重述。下面引用一篇博客中的内容来做个总结： 字符串在Python内部的表示是Unicode编码。因此在做编码转换时，通常需要以Unicode作为中间编码，即先将其他编码的字符串解码(decode)成Unicode，再从Unicode编码(encode)成另一种编码。 decode的作用是将其他编码的字符串转换成Unicode编码，如str1.decode('gb2312')，表示将gb2312编码的字符串str1转换成Unicode编码； encode的作用是将Unicode编码转换成其他编码的字符串，如str2.encode('gb2312')，表示将Unicode编码的字符串str2转换成gb2312编码 因此，转码的时候一定要先搞明白，字符串str是什么编码，然后decode成Unicode，然后再encode成其他编码。（原文链接） 遇到乱码问题，按上述思路分析一遍，再将乱码所在字符串按它的原始编码decode成Unicode类型的，再使用Unicode类型的编码进行输入、输出即可解决乱码问题。 ref: http://docs.python.org/2/howto/unicode.html</summary></entry></feed>
