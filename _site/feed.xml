@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-04-14T16:51:00+08:00</updated><id>http://localhost:4000/</id><title type="html">蓝枫铭的技术博客</title><subtitle>不想做架构师的厨师不是好程序员</subtitle><entry><title type="html">跨域请求那些事</title><link href="http://localhost:4000/2018/03/15/%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82%E9%82%A3%E4%BA%9B%E4%BA%8B.html" rel="alternate" type="text/html" title="跨域请求那些事" /><published>2018-03-15T00:00:00+08:00</published><updated>2018-03-15T00:00:00+08:00</updated><id>http://localhost:4000/2018/03/15/%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82%E9%82%A3%E4%BA%9B%E4%BA%8B</id><content type="html" xml:base="http://localhost:4000/2018/03/15/%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82%E9%82%A3%E4%BA%9B%E4%BA%8B.html">&lt;div class=&quot;wiki-content&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-04-27T14:36:10+08:00</updated><id>http://localhost:4000/</id><title type="html">蓝枫铭的技术博客</title><subtitle>不想做架构师的厨师不是好程序员</subtitle><entry><title type="html">跨域请求那些事</title><link href="http://localhost:4000/2018/03/15/%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82%E9%82%A3%E4%BA%9B%E4%BA%8B.html" rel="alternate" type="text/html" title="跨域请求那些事" /><published>2018-03-15T00:00:00+08:00</published><updated>2018-03-15T00:00:00+08:00</updated><id>http://localhost:4000/2018/03/15/%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82%E9%82%A3%E4%BA%9B%E4%BA%8B</id><content type="html" xml:base="http://localhost:4000/2018/03/15/%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82%E9%82%A3%E4%BA%9B%E4%BA%8B.html">&lt;div class=&quot;wiki-content&quot;&gt;
     &lt;h2 id=&quot;id-跨域请求那些事-何为跨域请求Cross-originresourcesharing&quot;&gt;何为跨域请求(Cross-origin resource sharing)&lt;/h2&gt;
     &lt;p&gt;在网页浏览器中，当属于站点A的网页试图访问位于站点B上的某一资源&lt;span&gt;时&lt;/span&gt;（如图片、CSS、JS文件、指定URL的接口数据），这个请求就属于&lt;a href=&quot;https://en.wikipedia.org/wiki/Cross-origin_resource_sharing&quot; class=&quot;external-link&quot; rel=&quot;nofollow&quot;&gt;跨域请求&lt;/a&gt;了。&lt;/p&gt;
     &lt;p&gt;通常情况下，站点A上的网页可以访问位于站点B上的图片、视频、CSS、JS等资源，但当站点A的网页向位于站点B的HTTP接口发送Ajax请求时，浏览器默认会检查该请求是否合法，意即：只有当站点B主动返回允许站点A访问该HTTP接口的许可信息时，站点A本次的Ajax请求才会被实际发送。从这一点可以看出，跨域请求的安全限制，实际是由浏览器保证并执行的。&lt;/p&gt;
@@ -159,7 +159,76 @@
         &lt;p&gt;&lt;span style=&quot;font-size: 10.0pt;&quot;&gt;&lt;img class=&quot;confluence-embedded-image confluence-external-resource&quot; width=&quot;660&quot; src=&quot;http://wx3.sinaimg.cn/large/6480dca9gy1fqc72ghlhuj20ww0lctbc.jpg&quot; /&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
         &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
-&lt;/div&gt;</content><author><name></name></author><summary type="html">何为跨域请求(Cross-origin resource sharing) 在网页浏览器中，当属于站点A的网页试图访问位于站点B上的某一资源时（如图片、CSS、JS文件、指定URL的接口数据），这个请求就属于跨域请求了。 通常情况下，站点A上的网页可以访问位于站点B上的图片、视频、CSS、JS等资源，但当站点A的网页向位于站点B的HTTP接口发送Ajax请求时，浏览器默认会检查该请求是否合法，意即：只有当站点B主动返回允许站点A访问该HTTP接口的许可信息时，站点A本次的Ajax请求才会被实际发送。从这一点可以看出，跨域请求的安全限制，实际是由浏览器保证并执行的。 浏览器对跨域的Ajax请求的处理流程图如下（资源来自维基百科&amp;nbsp;Flowchart_showing_Simple_and_Preflight_XHR.svg&amp;nbsp;） 从上图中可以看出，一个Ajax请求无论是GET形式还是POST形式，只要包含了特定的内容数据，都会触发浏览器的安全校验，所谓的安全校验是指：浏览器在发起本次请求之前，会对同一URL优先发起一次OPTIONS请求，通过OPTION请求返回的Header信息判定本次的跨域Ajax请求是否合法，如果合法则请求被发出；否则请求被中止。 下方信息是从 hx.test.com 向 www.test.com/api/upload_img.html&amp;nbsp;发起Ajax POST请求时抓取到的、浏览器优先发起OPTIONS请求的关键信息 OPTIONS请求Header关键信息 说明 状态行 OPTIONS /api/upload_img.html HTTP/1.1&amp;nbsp; &amp;nbsp; Host www.test.com 站点B的域名 Origin&amp;nbsp; http://hx.test.com/ 站点A的网址，跨域请求需携带 Access-Control-Request-Method POST 跨域请求需携带的Header Access-Control-Request-Headers X-Requested-With 跨域请求需携带的Header OPTIONS响应Header关键信息 &amp;nbsp; 状态行 HTTP/1.1 200 OK &amp;nbsp; Access-Control-Allow-Origin http://hx.test.com/ 站点B允许站点A访问本资源若站点B设置该Header为 * ，则表示允许任意站点访问该资源 Access-Control-Allow-Headers Origin, X-Requested-With, Content-Type 站点A请求站点B时可携带的Headers Access-Control-Allow-Methods POST, OPTIONS 站点A请求站点B时可使用的Methods Access-Control-Allow-Credentials true 站点A请求站点B时，可携带站点B的Cookies若站点B未返回该Header，或将其设置为false，则站点A请求站点B不会携带站点B的Cookies） 综上可知，浏览器实现了W3C定义的安全约定，在站点跨域请求资源时，如果是Ajax请求并且请求的Header或Body中包含了触发安全校验的内容，则浏览器会优先发起（pre-flight）OPTIONS请求向目标站点询问：是否接受站点A的Ajax请求，以及可接受的请求内容（包括限定的Methods、Headers等）。最后再由浏览器检查核对后决定，允许并发起请求，或者，中止本次请求。 关于触发浏览器安全校验（pre-flight）的条件详情，请参考火狐开发者文档：https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#Preflighted_requests 如何界定请求跨域了 假如站点A的网页为：http://www.test.com ，请看下方界定请求跨域的例子 站点B列表 是否跨域 原因 http://www.test.com/dir/page2.html 未跨域 Same protocol, host and port http://www.test.com/dir2/other.html 未跨域 Same protocol, host and port http://username:password@www.test.com/dir2/other.html 未跨域 Same protocol, host and port http://www.test.com:81/dir/other.html 已跨域 Same protocol and host but different port https://www.test.com/dir/other.html 已跨域 Different protocol http://en.test.com/dir/other.html 已跨域 Different host http://test.com/dir/other.html 已跨域 Different host (exact match required) http://v2.www.test.com/dir/other.html 已跨域 Different host (exact match required) http://www.test.com:80/dir/other.html 看浏览器实现 Port explicit. Depends on implementation in browser PHP CodeIgniter框架对于跨域请求的注意点 随着业务线日益壮大，我也在日常的开发中遇到过几次跨域、跨站点请求（实则都为公司的子业务系统）失败、被阻的情况。 当遇到跨域请求失败的情况时，只需在后端代码中添加跨域允许的相关Header键值，即可通过浏览器的检查。 除此之外，PHP的CodeIgniter框架还对跨站请求伪造（CSRF）进行了防御，下面针对这种情况做一下说明。 CSRF的实现逻辑是： 1）可信用户A登录了test.com； 2）可信用户A访问危险网页或危险邮件，网页或邮件中隐藏着向test.com提交的表单内容（表单内容为普通form，由攻击发起者预先写死格式和内容）； 3）可信用户A被诱导点击了危险网页或邮件中的隐藏的form表单，导致表单内容被用户A提交至test.com，并且表单提交时携带的是可信用户A的可信Cookies CodeIgniter对此做出的防御逻辑是： 1）每一次POST请求之前，客户端应首先发起GET请求拉取可信签名(csrf_defence_sign)并将签名放入Cookie中返回给客户端 2）POST数据时，需将可信签名作为表单的一部分同时提交，并由后端校验表单中的可信签名是否有效（具体的校验逻辑为：检查请求Cookie中的可信签名与POST中的可信签名一致，且可信签名有效） 在公司做新的站点业务（testB.com)的时候，它共用了test.com的几乎所有代码，二者只是在域名上有区分，后端代码处理逻辑一模一样。由于需要从testB.com向test.com提交表单信息，此时CodeIgniter后端服务便误以为这些提交是CSRF攻击，因此直接中止了请求。</summary></entry><entry><title type="html">xdebug远程调试原理与实践</title><link href="http://localhost:4000/2018/01/10/xdebug%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5.html" rel="alternate" type="text/html" title="xdebug远程调试原理与实践" /><published>2018-01-10T00:00:00+08:00</published><updated>2018-01-10T00:00:00+08:00</updated><id>http://localhost:4000/2018/01/10/xdebug%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5</id><content type="html" xml:base="http://localhost:4000/2018/01/10/xdebug%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5.html">&lt;div class=&quot;wiki-content&quot;&gt;
+&lt;/div&gt;</content><author><name></name></author><summary type="html">何为跨域请求(Cross-origin resource sharing) 在网页浏览器中，当属于站点A的网页试图访问位于站点B上的某一资源时（如图片、CSS、JS文件、指定URL的接口数据），这个请求就属于跨域请求了。 通常情况下，站点A上的网页可以访问位于站点B上的图片、视频、CSS、JS等资源，但当站点A的网页向位于站点B的HTTP接口发送Ajax请求时，浏览器默认会检查该请求是否合法，意即：只有当站点B主动返回允许站点A访问该HTTP接口的许可信息时，站点A本次的Ajax请求才会被实际发送。从这一点可以看出，跨域请求的安全限制，实际是由浏览器保证并执行的。 浏览器对跨域的Ajax请求的处理流程图如下（资源来自维基百科&amp;nbsp;Flowchart_showing_Simple_and_Preflight_XHR.svg&amp;nbsp;） 从上图中可以看出，一个Ajax请求无论是GET形式还是POST形式，只要包含了特定的内容数据，都会触发浏览器的安全校验，所谓的安全校验是指：浏览器在发起本次请求之前，会对同一URL优先发起一次OPTIONS请求，通过OPTION请求返回的Header信息判定本次的跨域Ajax请求是否合法，如果合法则请求被发出；否则请求被中止。 下方信息是从 hx.test.com 向 www.test.com/api/upload_img.html&amp;nbsp;发起Ajax POST请求时抓取到的、浏览器优先发起OPTIONS请求的关键信息 OPTIONS请求Header关键信息 说明 状态行 OPTIONS /api/upload_img.html HTTP/1.1&amp;nbsp; &amp;nbsp; Host www.test.com 站点B的域名 Origin&amp;nbsp; http://hx.test.com/ 站点A的网址，跨域请求需携带 Access-Control-Request-Method POST 跨域请求需携带的Header Access-Control-Request-Headers X-Requested-With 跨域请求需携带的Header OPTIONS响应Header关键信息 &amp;nbsp; 状态行 HTTP/1.1 200 OK &amp;nbsp; Access-Control-Allow-Origin http://hx.test.com/ 站点B允许站点A访问本资源若站点B设置该Header为 * ，则表示允许任意站点访问该资源 Access-Control-Allow-Headers Origin, X-Requested-With, Content-Type 站点A请求站点B时可携带的Headers Access-Control-Allow-Methods POST, OPTIONS 站点A请求站点B时可使用的Methods Access-Control-Allow-Credentials true 站点A请求站点B时，可携带站点B的Cookies若站点B未返回该Header，或将其设置为false，则站点A请求站点B不会携带站点B的Cookies） 综上可知，浏览器实现了W3C定义的安全约定，在站点跨域请求资源时，如果是Ajax请求并且请求的Header或Body中包含了触发安全校验的内容，则浏览器会优先发起（pre-flight）OPTIONS请求向目标站点询问：是否接受站点A的Ajax请求，以及可接受的请求内容（包括限定的Methods、Headers等）。最后再由浏览器检查核对后决定，允许并发起请求，或者，中止本次请求。 关于触发浏览器安全校验（pre-flight）的条件详情，请参考火狐开发者文档：https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#Preflighted_requests 如何界定请求跨域了 假如站点A的网页为：http://www.test.com ，请看下方界定请求跨域的例子 站点B列表 是否跨域 原因 http://www.test.com/dir/page2.html 未跨域 Same protocol, host and port http://www.test.com/dir2/other.html 未跨域 Same protocol, host and port http://username:password@www.test.com/dir2/other.html 未跨域 Same protocol, host and port http://www.test.com:81/dir/other.html 已跨域 Same protocol and host but different port https://www.test.com/dir/other.html 已跨域 Different protocol http://en.test.com/dir/other.html 已跨域 Different host http://test.com/dir/other.html 已跨域 Different host (exact match required) http://v2.www.test.com/dir/other.html 已跨域 Different host (exact match required) http://www.test.com:80/dir/other.html 看浏览器实现 Port explicit. Depends on implementation in browser PHP CodeIgniter框架对于跨域请求的注意点 随着业务线日益壮大，我也在日常的开发中遇到过几次跨域、跨站点请求（实则都为公司的子业务系统）失败、被阻的情况。 当遇到跨域请求失败的情况时，只需在后端代码中添加跨域允许的相关Header键值，即可通过浏览器的检查。 除此之外，PHP的CodeIgniter框架还对跨站请求伪造（CSRF）进行了防御，下面针对这种情况做一下说明。 CSRF的实现逻辑是： 1）可信用户A登录了test.com； 2）可信用户A访问危险网页或危险邮件，网页或邮件中隐藏着向test.com提交的表单内容（表单内容为普通form，由攻击发起者预先写死格式和内容）； 3）可信用户A被诱导点击了危险网页或邮件中的隐藏的form表单，导致表单内容被用户A提交至test.com，并且表单提交时携带的是可信用户A的可信Cookies CodeIgniter对此做出的防御逻辑是： 1）每一次POST请求之前，客户端应首先发起GET请求拉取可信签名(csrf_defence_sign)并将签名放入Cookie中返回给客户端 2）POST数据时，需将可信签名作为表单的一部分同时提交，并由后端校验表单中的可信签名是否有效（具体的校验逻辑为：检查请求Cookie中的可信签名与POST中的可信签名一致，且可信签名有效） 在公司做新的站点业务（testB.com)的时候，它共用了test.com的几乎所有代码，二者只是在域名上有区分，后端代码处理逻辑一模一样。由于需要从testB.com向test.com提交表单信息，此时CodeIgniter后端服务便误以为这些提交是CSRF攻击，因此直接中止了请求。</summary></entry><entry><title type="html">PHP对象stdClass如何判断是否为空</title><link href="http://localhost:4000/2018/02/01/PHP%E5%AF%B9%E8%B1%A1stdClass%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA.html" rel="alternate" type="text/html" title="PHP对象stdClass如何判断是否为空" /><published>2018-02-01T00:00:00+08:00</published><updated>2018-02-01T00:00:00+08:00</updated><id>http://localhost:4000/2018/02/01/PHP%E5%AF%B9%E8%B1%A1stdClass%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA</id><content type="html" xml:base="http://localhost:4000/2018/02/01/PHP%E5%AF%B9%E8%B1%A1stdClass%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA.html">&lt;p&gt;先来看下普通的为空判断，应用于stdClass类是什么表现：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$obj = new stdClass();
+
+if (!$obj) {
+    echo '!(obj) = TRUE' . &quot;\n&quot;;
+} else {
+    echo '!(obj) = FALSE' . &quot;\n&quot;;
+}
+
+if (empty($obj)) {
+    echo 'empty(obj) = TRUE' . &quot;\n&quot;;
+} else {
+    echo 'empty(obj) = FALSE' . &quot;\n&quot;;
+}
+
+if (is_null($obj)) {
+    echo 'is_null(obj) = TRUE' . &quot;\n&quot;;
+} else {
+    echo 'is_null(obj) = FALSE' . &quot;\n&quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;输出结果（请先自己预测下？）：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;!(obj) = FALSE
+
+empty(obj) = FALSE
+
+is_null(obj) = FALSE
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;不过在我接触过的各个语言中（Java、Python、Javascript），所有常规对象在进行布尔判断时都不为空，也算是符合业界通用的规则标准了&lt;/p&gt;
+
+&lt;p&gt;那么想要判断一个stdClass是否为空时，应该使用什么方法呢？
+业界通用的做法是：将stcClass转换（cast）为数组，再对数组进行判空操作：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$obj = new stdClass();
+
+$obj_arr = (array) $obj;
+
+if (!$obj_arr) { 
+    echo 'bool judge false' . &quot;\n&quot;;
+} else {
+    echo 'bool judge true' . &quot;\n&quot;;
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;当然还有人提出这样的想法：使用get_object_vars方法获取这个对象的类属性，通过判断其返回值来间接进行判空的操作&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$obj = new stdClass();
+
+$obj_attr_arr = get_object_vars($obj);
+
+if (!$obj_attr_arr) {
+    echo 'bool judge false' . &quot;\n&quot;;
+} else {
+    echo 'bool judge true' . &quot;\n&quot;;
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;那么这两种判空方式孰优孰劣呢？我对这两种方法分别执行500万次后发现&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;方法一（转为array）执行500万次耗时仅为0.8s左右；&lt;/li&gt;
+  &lt;li&gt;方法二在执行同样次数后，耗时达到了惊人的17.8s左右&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;显然，通过将对象转为array以便间接判断stdClass是否为空是更高效的做法&lt;/p&gt;</content><author><name></name></author><category term="Tech" /><summary type="html">先来看下普通的为空判断，应用于stdClass类是什么表现：</summary></entry><entry><title type="html">xdebug远程调试原理与实践</title><link href="http://localhost:4000/2018/01/10/xdebug%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5.html" rel="alternate" type="text/html" title="xdebug远程调试原理与实践" /><published>2018-01-10T00:00:00+08:00</published><updated>2018-01-10T00:00:00+08:00</updated><id>http://localhost:4000/2018/01/10/xdebug%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5</id><content type="html" xml:base="http://localhost:4000/2018/01/10/xdebug%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5.html">&lt;div class=&quot;wiki-content&quot;&gt;
     &lt;h2 id=&quot;xdebug调试原理与实践-1前言&quot;&gt;1. 前言&lt;/h2&gt;
     &lt;p&gt;&lt;span&gt;世界上有两种人：一种了解debug工具的好处，另一种则反之。&lt;/span&gt;&lt;/p&gt;
     &lt;p&gt;&lt;span&gt;那么debug工具到底有哪些优点呢？&lt;/span&gt;&lt;/p&gt;
@@ -330,7 +399,7 @@ DBG:  good bye&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;b&gt;总结：&lt;/b&gt;遇到xdebug设置相关的问题，最终要的是了解debug底层通信协议和原理，再通过TCP/IP抓包工具(比如tcpdump）进行问题排查。通过上述步骤的排查，应该可以定位无法debug原因，并最终成功使用xdebug调试代码了。祝顺利~&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;总结：&lt;/b&gt;遇到xdebug设置相关的问题，最重要的是了解debug底层通信协议和原理，再通过TCP/IP抓包工具(比如tcpdump）进行问题排查及定位。通过上述步骤的排查，应该可以定位无法debug原因，并最终成功使用xdebug调试代码了。祝顺利~&lt;/p&gt;
 
 &lt;/div&gt;</content><author><name></name></author><summary type="html">1. 前言 世界上有两种人：一种了解debug工具的好处，另一种则反之。 那么debug工具到底有哪些优点呢？ 1）在日常开发中洞悉大型架构的流程及设计； 2）在日常开发中快速debug，省时省力，更能在debug过程中掌握程序运行流程及上下文； 3）debug驱动型开发习惯的养成 在PHP语言中有个叫xdebug的扩展，是业界最常用的PHP debug工具之一。xdebug有很多实用的特性，但本文只着重介绍远程调试这一特性的使用。 注意： 本文提到的IDE，意即：集成开发环境，例如PHPStrom、Eclipse就是很常见的IDE PHPStrom和IDE在本文中可能会被混用，但他们都代表PHPStrom 2. xdebug特性 var_dump展示优化&amp;nbsp;&amp;gt;link PHP输出notice、error等信息时，调用栈可定制化展示&amp;nbsp;&amp;gt;link 函数调用报告&amp;nbsp;&amp;gt;link 代码覆盖率报告&amp;nbsp;&amp;gt;link 程序分析报告（profiler）&amp;gt;link 远程调试。本篇内容将着重介绍这一功能。如果你想获取有关如何配置可多人同时调试一台Web服务器的DBGp代理信息的话，也推荐你读完本文，这将对你后续的代理配置有一定帮助。 3. 远程调试 xdebug的远程调试默认的通信协议为DBGp协议，它是基于XML文本传输的应用层协议，用于程序语言与IDE间的调试通信。 DBGP协议规定：IDE向程序的调试器发送的内容为ascii命令，调试器向IDE发送的内容为XML数据</summary></entry><entry><title type="html">轻文本编辑器 vs 重型IDE</title><link href="http://localhost:4000/2017/10/10/%E8%BD%BB%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8_vs_%E9%87%8D%E5%9E%8BIDE.html" rel="alternate" type="text/html" title="轻文本编辑器 vs 重型IDE" /><published>2017-10-10T00:00:00+08:00</published><updated>2017-10-10T00:00:00+08:00</updated><id>http://localhost:4000/2017/10/10/%E8%BD%BB%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8_vs_%E9%87%8D%E5%9E%8BIDE</id><content type="html" xml:base="http://localhost:4000/2017/10/10/%E8%BD%BB%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8_vs_%E9%87%8D%E5%9E%8BIDE.html">&lt;blockquote&gt;
   &lt;p&gt;注：本文所说的重型IDE，例如开发PHP用到的PHPStorm、开发Java用到的Eclipse等IDE，有别于类似Sublime Text这样的轻型文本编辑器&lt;/p&gt;
@@ -1375,206 +1444,4 @@ tree.write('qiubai.xml', encoding='utf-8', xml_declaration=True)
       &lt;li&gt;&lt;a href=&quot;http://www.crummy.com/software/BeautifulSoup/bs4/download/4.3/&quot;&gt;bs4下载链接&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="Tech" /><category term="Python" /><category term="多线程" /><category term="爬虫" /><category term="糗事百科" /><category term="BeautifulSoup" /><summary type="html">最近参加一家公司的远程笔试，其中的一道题目是： 写一个简单的爬虫，把糗事百科今天被顶超过5000的帖子爬出来，注意考虑性能和图片显示。 当时一看很感兴趣，因为看到这道题目后思路很清晰，而且我大学时周围好友都爱看糗百，所以做点有关他们喜欢的产品的信息抓取还是挺有趣的。 好的，闲话就到这里，下面进入正题。 1. 思路 1.1 单线程 or 多线程 单线程按序逐一抓取。这种思路下的实现方式是： 获取糗百所有可供抓取的页面URL，然后把他们放到一个列表里 从列表中取走一条页面URL，将该URL指向页面中的所有糗百文章解析出来 如果文章有附图，则下载至指定目录 将第2步获得的若干糗百文章追加至一个xml文件中 点评：单线程无法充分利用机器的CPU资源和带宽，性能低下，不予考虑 多线程乱序抓取。这种思路下的实现方式是： 创建两个同步队列page_q和pic_q，page_q存放页面URL，pic_q存放图片URL 获取糗百所有可供抓取页面的URL，将这些URL添加到page_q队列 开辟多条抓取解析页面文章的线程，每条线程的具体工作是： 从page_q队列取走一条URL，解析其指向的页面中的糗百文章 将这些文章内容追加到xml文件中(同步访问) 如果文章有附图，则将该附图的链接URL放入pic_q 开辟多条下载图片的线程，每条线程的具体工作是： 从pic_q队列取走一条图片URL，将其命名为idxxxxx.jpg并下载到指定目录 点评：可以充分利用CPU资源及带宽，选择该条思路进行 1.2 如何提取页面内容 思路1：通过正则表达式匹配，然后提取有用信息 思路2：通过第三方HTML内容提取工具提取有用信息 点评：思路2具有更高的扩展性、容错性，选择思路2 2. 实现 2.1 多线程实体 本文设计了两个多线程类，他们都继承自threading.Thread，这两个类是： class QiubaiReader(threading.Thread) class PicDownloader(threading.Thread) 类QiubaiReader要做的工作和本文第1部分 1.1 » 多线程 » 抓取解析页面文章的线程内容一致，以下是它的执行逻辑： &quot;&quot;&quot; 类 QiubaiReader 说明 糗事百科内容的消费者，也是糗事百科文章图片的生产者 消费者：从 pageQueue 里读取一个页面URL，解析该页面所有糗百文章，并将这些文章存储到xml文件中； 生产者：在解析页面时，如果某篇文章附带图片，则把该图片的URL放入 picQueue ,等待图片类的消费者来处理. &quot;&quot;&quot; runFlag = 1 #停止线程的开关 def __init__(self, pageQueue, picQueue, pathDict): ... def fetchContent(self, pageUrl): &quot;&quot;&quot; 每一条糗百，我们需要取出其中的三条信息： 1. 该条糗百的ID 2. 该条糗百的正文 3. 该条糗百的图片链接(可能为空，非空则等待下载) 爬取糗百的步骤是： 1. 获得该条糗百的整个大&amp;lt;div /&amp;gt;块，我们声明 div_dad 变量代表这个大&amp;lt;div /&amp;gt;块 2. 通过查找当前投票数的&amp;lt;div /&amp;gt;相关值来判断是否继续，如果投票数大于5000，则继续 3. 在大&amp;lt;div /&amp;gt;块的首行，截取该条糗百的文章ID号（每条糗百都是一篇文章，通过文章ID可以获取文章和图片的链接） 4. 在大div块中，找出带有糗百正文的&amp;lt;div /&amp;gt;块 5. 将上面提到的三条信息写入xml文件 &quot;&quot;&quot; ... def writeContent(self, list): &quot;&quot;&quot; 将list中包含的糗百文章格式化并一次性插入到xml文件中 list中包含有某个页面的所有糗百文章（一般是20条） list结构为： [ { 'id': qiuID1, 'content': qiuBaiText, 'picURL': picURL }, ... ] &quot;&quot;&quot; ... def run(self): while not self.pageQueue.empty() and self.__class__.runFlag &amp;gt; 0: #糗百页面消费者 pageUrl = self.pageQueue.get() qiuBaiList, picDictList = self.fetchContent(pageUrl) if len(qiuBaiList) &amp;gt;= 1: self.writeContent(qiuBaiList) #糗百图片生产者 if len(picDictList) &amp;gt;= 1: for item in picDictList: self.picQueue.put(item) #如果两个队列都为空，则线程退出，并通知图片下载线程也退出 if self.pageQueue.empty() and self.picQueue.empty(): ... 类PicDownloader要做的工作和本文第1部分 1.1 » 多线程 » 下载图片的线程内容一致，以下是它的执行逻辑： # 类 PicDownloader 说明 runFlag = 1 #线程停止开关 def __init__(self, queue, pathDict): ... def downloadPic(self, picDict): ... def run(self): while self.__class__.runFlag &amp;gt; 0: while not self.queue.empty(): picDict = self.queue.get() self.downloadPic(picDict) time.sleep(1) #如果图片URL队列为空，则等待一秒 2.2 线程安全队列 本文涉及到的两个队列page_q和pic_q，一个用来存取页面URL，另一个用来存取图片URL，两队列都面临着多线程同步存取的问题，而这则是所有的”生产者-消费者问题”必须解决的问题。 幸运的是，我们用的是Python！ Python已经为我们提供了一个线程安全队列：Queue，它为多个”生产者-消费者”提供了安全同步队列。引用官方的一句话便是： The Queue module implements multi-producer, multi-consumer queues. It is especially useful in threaded programming when information must be exchanged safely between multiple threads. 而且Queue的创建、使用也极为轻便 创建 import Queue queue = Queue.Queue() 使用 item_1 = queue.get() # queue.get() =&amp;gt; 从队列中移除一个item并返回该item queue.put(item_2) # queue.put() =&amp;gt; 往队列中添加一个item 对Queue更高要求的操作与使用，请查看官方文档。 2.3 HTML内容提取 该部分内容，其实是对类QiubaiReader中的fetchContent(self, pageUrl)方法的解读。从HTML中获取内容时，我们需要借助第三方开源工具BeautifulSoup(看最下方应用程序信息) 为了便于升级改动，我们为类QiubaiReader声明一个类成员变量argsDict，用来统一糗事百科HTML页面源码中的一些关键性的标记及属性 argsDict = { 'pageEncoding' : 'utf-8', #糗百html的编码格式 'dadClassAttr' : 'block untagged mb15 bs2', #某条糗百整个大&amp;lt;div /&amp;gt;块的class属性 'contClassAttr' : 'content', #某条糗百的正文所在&amp;lt;div /&amp;gt;块的class属性 'picClassAttr' : 'thumb', #包含图片的&amp;lt;div /&amp;gt;块的class属性 'voteClassAttr' : 'bar', #包含投票数的&amp;lt;div /&amp;gt;块的class属性 #包含糗百ID的那一行的id号前的前缀，例如：'qiushi_tag_55611097' 'idLinePreStr' : 'qiushi_tag_', #某条糗百只有点赞数超过该值，才进行收录。题目要求该值为5000，本人感觉偏高，故将其改成了2000 'validCountNum' : 2000, } 糗百每一个页面会包含20条糗百文章，读者可以点此查看其中某条糗百文章的HTML源码及其标记结构。 我们会发现糗百文章的HTML标记结构如下（我们姑且把如下&amp;lt;div /&amp;gt;块称作文章的&amp;lt;div /&amp;gt;块吧）： &amp;lt;div class=&quot;block untagged mb15 bs2&quot; id='qiushi_tag_idxxxxxx'&amp;gt; &amp;lt;div class=&quot;content&quot; title=&quot;2014-01-14 16:33:29&quot;&amp;gt; 糗百正文 &amp;lt;/div&amp;gt; &amp;lt;!--除非文章配有图片，否则下面这个div不会出现--&amp;gt; &amp;lt;div class=&quot;thumb&quot;&amp;gt; &amp;lt;a href=&quot;/article/url...&quot; target=&quot;_blank&quot; onclick=&quot;some js&quot;&amp;gt; &amp;lt;img src=&quot;http://the/pic/URL&quot; alt=&quot;图片描述&quot; /&amp;gt; &amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; ... 一个页面中会有20个上述结构出现，也就是20条糗百文章 ... 以下的任务是，解析给定页面中的所有糗百文章，获取它们的点赞数、ID、正文以及图片链接（如果有的话）。这些解析工作需要借助BeautifulSoup工具来完成。 step 1:我们首先引入BeautifulSoup，并实例化一个可操作的HTML结构体： import urllib2 from bs4 import BeautifulSoup #获取给定页面pageURL的HTML源码 pageCont = urllib2.urlopen(pageURL).read().decode(self.argsDict['pageEncoding']) #将HTML源码传递给BeautifulSoup，实例化一个它的对象 soup = BeautifulSoup(pageCont) step 2: 获得给定页面的所有20个上述的文章&amp;lt;div /&amp;gt;块 HTML是标记性语言，即使其中的&amp;lt;div&amp;gt;标记(tag)出现了很多次，而且分布杂乱，但我们可以根据一个&amp;lt;div&amp;gt;标记的多个属性来唯一确定某类/某个标记。 例如文章&amp;lt;div /&amp;gt;块的属性是： &amp;lt;div class=&quot;block untagged mb15 bs2&quot; id='qiushi_tag_idxxxxxx' &amp;gt;&amp;lt;/div&amp;gt; 即： class = &quot;block untagged mb15 bs2&quot; id = &quot;qiushi_tag_idxxxxxx&quot; 文章&amp;lt;div /&amp;gt;块的id属性不确定，但它的class属性是确定且唯一的，我们就使用它的class属性来找到这20个文章&amp;lt;div /&amp;gt;块，并把它们保存到一个list中 articles_div_list = soup.find_all('div', attrs={'class': 'block untagged mb15 bs2'}) step 3:接下来，我们遍历articles_div_list，并从中解析出我们需要的糗百信息 for div_article in articles_div_list: ... step 3.1 获得点赞数（点此查看点赞内容所在&amp;lt;div&amp;gt;标记） div_vote = div_article.find('div', attrs={'class': 'bar'}) #用给定的属性键值对（class='bar')查找某个标记（tag） upCount = div_vote.a.get_text() #通过 标记.字标记.get_text() 方法获得字标记的text step 3.2 获得ID（点此查看ID内容所在&amp;lt;div&amp;gt;标记） idLine = div_article.attrs['id'] #想要获得某个标记（tag）的属性，可以直接查字典一样，此处key为某个属性的name step 3.3 获得正文（点此查看正文内容所在&amp;lt;div&amp;gt;标记） div_cont = div_article.find('div', attrs={'class': 'content'}) qiubai_cont = div_cont.get_text() #通过标记的 get_text() 方法获得该标记的text step 3.4 获得配图的URL（如果有的话。点此查看配图URL内容所在&amp;lt;div&amp;gt;标记） div_pic = div_article.find('div', attrs={'class': 'thumb'}) if div_pic: #想要获得某个标记（tag）的子标记的子标记...的属性，可以直接通过 .(英文句点) 索引至该标记，然后像查字典一样查找即可 picURL = div_pic.a.img['src'] 2.4 存储内容 因为糗百内容要存储到xml文档中，我们在这里还要使用Python自带的操作XML的包：xml.etree.ElementTree step 1：我们首先创建一个用于存储糗百的xml文档： fo = open('qiubai.xml', 'w') fo.write('&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;\n&amp;lt;ROOT&amp;gt;&amp;lt;/ROOT&amp;gt;') fo.close() 此时的xml文件看起来应该是这个样子： &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt; &amp;lt;ROOT&amp;gt; &amp;lt;/ROOT&amp;gt; step 2：给qiubai.xml添加一条糗百内容 step 2.1：获得qiubai.xml文档的根节点 import xml.etree.ElementTree as ET tree = ET.parse('qiubai.xml') #也可以给 parse() 传递文档路径 root = tree.getroot() step 2.2：为根节点root添加一个子节点QiuBai，并设置该子节点的各个属性 qiubai = ET.SubElement(root, 'QiuBai') qiubai.set('id', 'idxxxxxx') qiubai.set('picURL', 'http://here/is/pic/url.jpg') qiubai.text = '此处为糗百正文...' step 2.3：将添加了新内容的root保存到文档 tree = ET.ElementTree(root) tree.write('qiubai.xml', encoding='utf-8', xml_declaration=True) 此时的xml文档看起来应该是这样子： &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt; &amp;lt;ROOT&amp;gt; &amp;lt;QiuBai id='idxxxxxx' picURL='http://here/is/pic/url.jpg'&amp;gt; 此处为糗百正文... &amp;lt;/QiuBai&amp;gt; &amp;lt;/ROOT&amp;gt; 注意事项：如果你使用的是UTF-8格式保存xml文档，那你需要注意：xml文档规范并不支持所有的UTF-8支持的字符，也就是说有些UTF-8支持的字符在xml文档中是不受支持的，如果你坚持写入，则在再次读取xml文档是会出错。 关于过滤xml不支持字符的内容，请参看源码 QiubaiReader.py » def replaceHellWord(text)方法 3. 源代码 到这里查看源码，或者直接点我下载源码。 应用程序信息： 本程序在Window7平台下开发完成并测试通过；在CentOS 6.3下测试通过 Python 2.7.5 [MSC v.1500 64 bit (AMD64)] xml.etree.ElementTree 1.3.0 键入 import xml.etree.ElementTree； ElementTree.VERSION 查看 Beautiful Soup 4.3.2 键入 import bs4；bs4.__version__ bs4下载链接</summary></entry><entry><title type="html">关于Python的编码、乱码以及Unicode的一些研究</title><link href="http://localhost:4000/2014/01/09/study-on-python-unicode-encoding-stuff.html" rel="alternate" type="text/html" title="关于Python的编码、乱码以及Unicode的一些研究" /><published>2014-01-09T00:00:00+08:00</published><updated>2014-01-09T00:00:00+08:00</updated><id>http://localhost:4000/2014/01/09/study-on-python-unicode-encoding-stuff</id><content type="html" xml:base="http://localhost:4000/2014/01/09/study-on-python-unicode-encoding-stuff.html">&lt;p&gt;最近接触Python比较多，尤其是在命令行(Terminal)下进行的局部代码测试有很多。而个人编写的代码通常是以&lt;code class=&quot;highlighter-rouge&quot;&gt;UTF-8&lt;/code&gt;格式存储的，这在Linux下的Terminal上还好一些（它的编码默认的就是中文&lt;code class=&quot;highlighter-rouge&quot;&gt;UTF-8&lt;/code&gt;），要想打印包含中文字符的变量值，基本不会出现乱码情况。但如果是在Windowss下的cmd上进行测试，则相对就要痛苦一些，因为Windows中文环境下cmd的默认编码是&lt;code class=&quot;highlighter-rouge&quot;&gt;GBK&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;所以本人为了在测试时能正常打印出中文字符（经常Linux、Windows两边跑），对Python字符编码的情况还是颇下了些功夫的。下面就是我做的一些小研究，希望能对和我当初一样迷茫的读者起到些帮助作用。&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h3 id=&quot;1-ascii-python默认的编码&quot;&gt;1. ASCII, Python默认的编码&lt;/h3&gt;
-
-&lt;p&gt;在Python中，当源代码被读取进行语法校验时，会将源代码中的字符从声明的编码转换成&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型，等到语法校验通过后，再将这些字符转换回初始的编码。&lt;/p&gt;
-
-&lt;p&gt;在Python环境下，源文件中如果没有声明编码，则将其编码设置为默认的&lt;code class=&quot;highlighter-rouge&quot;&gt;ASCII&lt;/code&gt;，这可以通过下面这段代码检验：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import sys
-&amp;gt;&amp;gt;&amp;gt; sys.getdefaultencoding()
-'ascii'
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;所以在编写源代码文件&lt;code class=&quot;highlighter-rouge&quot;&gt;xxx.py&lt;/code&gt;时需要注意：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;如果源代码没有声明编码格式，则Python在语法校验期间(compilation)使用默认的ASCII编码&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;如果源代码没有声明编码格式，但却在源码中使用了非ASCII字符(Non-ASCII character)，则程序在编译期间抛出&lt;code class=&quot;highlighter-rouge&quot;&gt;SyntaxError&lt;/code&gt;异常，编译不被通过&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;如果源代码声明了Python不支持的编码格式，则程序将在编译期间抛出异常&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;em&gt;源代码文件编码的声明&lt;/em&gt;&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;&lt;em&gt;查看如何在源代码中声明编码格式&lt;a href=&quot;http://www.python.org/peps/pep-0263.html&quot;&gt;PEP-0263&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;em&gt;查看Python支持的&lt;a href=&quot;http://docs.python.org/2/library/codecs.html#standard-encodings&quot;&gt;编码格式&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2-命令行与python乱码篇&quot;&gt;2. 命令行与Python——乱码篇&lt;/h3&gt;
-&lt;p&gt;在命令行下的Python Shell中进行小范围测试，或者在命令行中运行Python代码时，总会遇到各种各样的乱码问题。为了搞清楚乱码的原因，我们首先来看这样一个例子。&lt;/p&gt;
-
-&lt;p&gt;例子：文件到底长什么样？&lt;/p&gt;
-
-&lt;p&gt;首先, 在某目录(假设D:\Tem)下创建两个文本文件&lt;code class=&quot;highlighter-rouge&quot;&gt;1.ini&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;2.ini&lt;/code&gt;，两个文件中都只写入下面这行内容。不同的是，&lt;code class=&quot;highlighter-rouge&quot;&gt;1.ini&lt;/code&gt;以UTF-8格式保存，&lt;code class=&quot;highlighter-rouge&quot;&gt;2.ini&lt;/code&gt;以GBK格式保存&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;我是Lyfing.Loo，来自中国 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;接着, 在命令行下，&lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt;至该目录，键入&lt;code class=&quot;highlighter-rouge&quot;&gt;Python&lt;/code&gt; 进入Python Shell, 读取两个文本文件中的内容，并打印出来&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; str1 = open('1.ini','r').read()     
-&amp;gt;&amp;gt;&amp;gt; str2 = open('2.ini','r').read()    
-&amp;gt;&amp;gt;&amp;gt; str1    
-'\xef\xbb\xbf\xe6\x88\x91\xe6\x98\xafLyfing.Loo\n'    
-#以16进制形式查看1.ini(UTF-8)    
-efbb bfe6 8891 e698 af4c 7966 696e 672e 4c6f 6f0d 0a    
-&amp;gt;&amp;gt;&amp;gt; str2   
-'\xce\xd2\xca\xc7Lyfing.Loo\n'     
-#以16进制形式查看2.ini(GBK)    
-ced2 cac7 4c79 6669 6e67 2e4c 6f6f 0d0a    
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;em&gt;其中&lt;code class=&quot;highlighter-rouge&quot;&gt;0d0a&lt;/code&gt;是换行符，0d——回车符号——”\r”，0a——换行符号——”\n”&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;对比一下&lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt;内容和16进制下查看到的相应文本中的内容，我们不难发现，Python在读取文件时，除了辨认出ASCII编码范围内的字符之外，例如L(4c)、g(67)和o(6f)等，其他非ASCII的字符一律仍按16进制(由&lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;二进制位组成)的原始编码储存，例如 我(efbbbf, utf-8)和我(ced2, gbk)。等到需要将变量值（字符串）打印到控制台，或者写入文件时，这一串原始编码便会原封不动地被提交给相应程序。&lt;/p&gt;
-
-&lt;p&gt;仍是上面的例子，当我们想要打印&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;的值时，我们看看会发生什么：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; print str1
-锘挎垜鏄疞yfing.Loo
-&amp;gt;&amp;gt;&amp;gt; print str2
-我是Lyfing.Loo
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;我们看到，&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;出现了乱码，而&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;则正常打印出了中文字符。这是为什么呢？还是上面那句话：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;等到需要将变量值（字符串）打印到控制台，或者写入文件时，这一串原始编码便会原封不动地被提交给相应程序&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;当需要打印&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;的值时，Python并不做任何编码转换的处理，它只是原封不动地将原始编码提交给了控制台，由相应的控制台（Windows下的cmd/Linux下的Terminal/SSH远程连接工具等）来进行打印处理。&lt;/p&gt;
-
-&lt;p&gt;所以如果在Linux下的Terminal上打印&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;的话，应该就是&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;正常打印，&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;出现乱码了，因为Terminal的编码一般是UTF-8的。&lt;/p&gt;
-
-&lt;p&gt;那如果想要实现&lt;strong&gt;多平台下表现一致&lt;/strong&gt;的特性的话，比如说保证&lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt;的doc在多平台下打印出的效果一致或者写入效果一致（不会乱码）的话，我们该怎么做？下面引出了本篇内容的重点。&lt;/p&gt;
-
-&lt;h3 id=&quot;3-unicodepython的好伙伴儿&quot;&gt;3. Unicode，Python的好伙伴儿&lt;/h3&gt;
-&lt;p&gt;一门热门起来的编程语言，首先要满足的需求之一就是，对不同国家和地区所用字符的友好支持。Python很好的做到了这一点，至少，在它正式引入Unicode编码以后是这样。&lt;/p&gt;
-
-&lt;p&gt;我们都知道Python是一门世界通用的编程语言，如果它的源代码文件中出现的都是ASCII支持的字符，那Python会以ASCII编码的格式处理程序。不过，一旦源代码中出现了ASCII不支持的字符，它该怎么办？我用一张图来回答你吧&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://lyfing.qiniudn.com/blog/2014-01-09/unicode-in-python.png&quot; alt=&quot;&quot; /&gt;
-(图片来源：http://nltk.googlecode.com/svn/trunk/doc/book/ch03.html)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;也就是说，所有超出ASCII范围的字符的处理工作，无论在输入之前，或者输出之后是什么编码格式的，它们在Python的执行内存中，都被统一转换(decode)为Unicode格式来进行程序处理。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;还是上节末尾那个例子，如何保证&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;在各个平台下都能正常打印呢，这里的办法是：将&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;转换成&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型。&lt;/p&gt;
-
-&lt;h4 id=&quot;31-什么是unicode类型那str1和str2又是什么类型的呢&quot;&gt;3.1 什么是&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型？那&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;又是什么类型的呢？&lt;/h4&gt;
-
-&lt;p&gt;我们先看看&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;的类型&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; print type(str1), type(str2)
-&amp;lt;type 'str'&amp;gt; &amp;lt;type 'str'&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;从上面可以看出，&lt;code class=&quot;highlighter-rouge&quot;&gt;str1、2&lt;/code&gt;是&lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt;类型的，也就是通常意义下的字符串类型。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型则是Python内建的一种用来“一统江湖”的字符类型(type)。&lt;/p&gt;
-
-&lt;p&gt;既然已经有了用来容纳字符的类型——&lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt;——为何还要添加一种&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;字符类型呢？要回答这个问题，我们先来想想如下几个现实中可能会遇到的情况：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;在某个class的&lt;code class=&quot;highlighter-rouge&quot;&gt;doc&lt;/code&gt;中，需要同时用到多个国家的字符和符号来描述class的功用。试想如果此时再用单一的、相对狭隘的编码配合&lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt;来表述，可能出现不可预期的错误。这是因为字符所处的字符集和编码不一致，同一串16进制码(code points)在不同的字符集中可能表示不同的字符，更何况，同一个源代码文件中只可以定义一种编码格式&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;xml文件的解析(parse)问题，xml文件中可能包含不同国家和区域的字符和符号，此时如果使用仅适用于某个区域的字符编码，可能出现无法识别某些字符而导致甚至抛异常或程序错误等等糟糕情况。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;于是，一统江湖、或者说差点就一统江湖的&lt;a href=&quot;http://zh.wikipedia.org/wiki/Unicode&quot;&gt;Unicode编码&lt;/a&gt;出现了。再接着，Python为了更加友好地支持各种国家/区域的字符，内建了新的字符容器&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;。于是上面两个问题以及近似的一类问题都可以迎刃而解了。&lt;/p&gt;
-
-&lt;h4 id=&quot;32-unicode在python中的使用&quot;&gt;3.2 Unicode在Python中的使用&lt;/h4&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;型的字符容器，在Python的具体应用中有着诸多优势。下面列举几个。&lt;/p&gt;
-
-&lt;p&gt;例子：在源代码中定义&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型。&lt;br /&gt;
-具体步骤，创建&lt;code class=&quot;highlighter-rouge&quot;&gt;test.py&lt;/code&gt;文件，在其中添加这样的内容&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# coding:utf-8
-def hello():
-    str1 = u'我是大坏蛋'
-    str2 = '你是小淫魔' 
-    return (str1, str2)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;接着在命令行&lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt;至&lt;code class=&quot;highlighter-rouge&quot;&gt;test.py&lt;/code&gt;所在目录，键入&lt;code class=&quot;highlighter-rouge&quot;&gt;python&lt;/code&gt;进入Python Shell，在Shell中输入以下内容：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import test
-&amp;gt;&amp;gt;&amp;gt; str1, str2 = test.hello()
-&amp;gt;&amp;gt;&amp;gt; str1
-u'\u6211\u662f\u5927\u574f\u86cb'
-&amp;gt;&amp;gt;&amp;gt; str2
-'\xe6\x88\x91\xe6\x98\xaf\xe5\xb0\x8f\xe6\xb7\xab\xe9\xad\x94'
-&amp;gt;&amp;gt;&amp;gt; print str1
-我是大坏蛋
-&amp;gt;&amp;gt;&amp;gt; print str2
-鎴戞槸灏忔帆榄
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;我们看到在&lt;code class=&quot;highlighter-rouge&quot;&gt;hello()&lt;/code&gt;定义时，&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;是&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型的，而&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;则是普通的’str’字符型。也许在这里还没看出&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型的优势。但是当需要打印变量内容时，二者的优劣便体现出来了：&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型的&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;无需进行特别编码便能正常打印出中文字符，但&lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt;类型的&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;却出现了乱码情况。&lt;/p&gt;
-
-&lt;p&gt;此处可以介绍&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型的很多优点了：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;声明简单 只需要在原字符前添加该类型标记&lt;code class=&quot;highlighter-rouge&quot;&gt;u&lt;/code&gt;即可，例如&lt;code class=&quot;highlighter-rouge&quot;&gt;s1 = u'小伙伴儿'&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;代码编译期间，自动从声明的原始编码转码至Unicode，并创建相应的&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;在需要打印(如&lt;code class=&quot;highlighter-rouge&quot;&gt;print&lt;/code&gt;）或者输入输出（如&lt;code class=&quot;highlighter-rouge&quot;&gt;read&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;write&lt;/code&gt;）时，&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型用着尤其顺手。因为你只需要像操作ASCII一样打印和输入输出就行了，而无需关心编码、乱码问题。这是因为Python会帮&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型的字符做编码转码工作，而这也正是&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型的字符不会出现乱码的原因。Python工作内容如下：&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;当需要输入中文字符时，Python会首先调取字符输入程序（命令行或者read函数）的编码格式，然后将输入的字符以该编码格式进行相应转换，即把原字符转码成&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型的字符。&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;例如在Windows中的命令行下使用的Python Shell，其编码格式是&lt;code class=&quot;highlighter-rouge&quot;&gt;GBK&lt;/code&gt;，当你在shell中键入&lt;code class=&quot;highlighter-rouge&quot;&gt;string1 = u'我是李寻欢'&lt;/code&gt;时，会发生如下事件：&lt;/li&gt;
-          &lt;li&gt;1, Python获取当前命令行编码（&lt;code class=&quot;highlighter-rouge&quot;&gt;sys.stdin.encoding&lt;/code&gt;），为cp936(即GBK)&lt;/li&gt;
-          &lt;li&gt;2, 将输入的汉字&lt;code class=&quot;highlighter-rouge&quot;&gt;我是李寻欢&lt;/code&gt;按GBK编码转码成Unicode的形式，并据此创建&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型的字符串，赋值给&lt;code class=&quot;highlighter-rouge&quot;&gt;string1&lt;/code&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;当需要打印输出时，Python会首先调取字符输出程序（命令行或者输出函数）的编码格式，然后将该字符串编码成字符输出程序所用的编码（这样字符输出程序就不会因为认不出编码而出现乱码），接着字符输出程序将编码后的字符输出到目的地。该处理过程是字符输入程序（上一条）的逆过程，此处不再详细介绍这一过程&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;33-如何将str-type转换成unicode-type&quot;&gt;3.3 如何将&lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt; type转换成&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt; type&lt;/h4&gt;
-
-&lt;p&gt;这是本节最开始提出的那个问题：如何将&lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt;类型的字符串&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;转换成&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型？
-这也是下节要谈论的编码与解码的问题。&lt;/p&gt;
-
-&lt;h3 id=&quot;4-编码encode与解码decode&quot;&gt;4. 编码（encode）与解码（decode）&lt;/h3&gt;
-
-&lt;p&gt;如何将&lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt;类型的字符串&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;转换成&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型？以及上一节最末提到关于的字符编码在GBK和Unicode之间的转换，涉及到的都是编码与解码的问题。统一来说就是&lt;/p&gt;
-
-&lt;p&gt;从&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;类型到GBK或UTF-8等编码的转换，叫做&lt;strong&gt;编码(encode)&lt;/strong&gt;；而这一过程的逆过程，则叫做&lt;strong&gt;解码(decode)&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;一开始我老是搞不清楚到底从哪到哪是编码，从哪到哪是解码，后来用多了自然也就清楚了。相信初次接触这个概念的人也会有和我一样的困惑，下面用一张图来说明一下编码和解码的方向：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://lyfing.qiniudn.com/blog/2014-01-09/encode-decode.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;关于解码和编码的实现方法，网上已有很多，这里不再重述。下面引用一篇博客中的内容来做个总结：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;字符串在Python内部的表示是Unicode编码。因此在做编码转换时，通常需要以Unicode作为中间编码，即先将其他编码的字符串解码(decode)成Unicode，再从Unicode编码(encode)成另一种编码。&lt;br /&gt;
- &lt;code class=&quot;highlighter-rouge&quot;&gt;decode&lt;/code&gt;的作用是将其他编码的字符串转换成Unicode编码，如&lt;code class=&quot;highlighter-rouge&quot;&gt;str1.decode('gb2312')&lt;/code&gt;，表示将gb2312编码的字符串&lt;code class=&quot;highlighter-rouge&quot;&gt;str1&lt;/code&gt;转换成Unicode编码；&lt;br /&gt;
- &lt;code class=&quot;highlighter-rouge&quot;&gt;encode&lt;/code&gt;的作用是将Unicode编码转换成其他编码的字符串，如&lt;code class=&quot;highlighter-rouge&quot;&gt;str2.encode('gb2312')&lt;/code&gt;，表示将Unicode编码的字符串&lt;code class=&quot;highlighter-rouge&quot;&gt;str2&lt;/code&gt;转换成gb2312编码   因此，转码的时候一定要先搞明白，字符串str是什么编码，然后decode成Unicode，然后再encode成其他编码。（&lt;a href=&quot;http://blog.csdn.net/lxdcyh/article/details/4018054&quot;&gt;原文链接&lt;/a&gt;）&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;遇到乱码问题，按上述思路分析一遍，再将乱码所在字符串按它的原始编码&lt;code class=&quot;highlighter-rouge&quot;&gt;decode&lt;/code&gt;成Unicode类型的，再使用Unicode类型的编码进行输入、输出即可解决乱码问题。&lt;/p&gt;
-
-&lt;p&gt;ref:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://docs.python.org/2/howto/unicode.html&quot;&gt;http://docs.python.org/2/howto/unicode.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="Tech" /><category term="Python" /><category term="Unicode" /><category term="Language Study" /><summary type="html">最近接触Python比较多，尤其是在命令行(Terminal)下进行的局部代码测试有很多。而个人编写的代码通常是以UTF-8格式存储的，这在Linux下的Terminal上还好一些（它的编码默认的就是中文UTF-8），要想打印包含中文字符的变量值，基本不会出现乱码情况。但如果是在Windowss下的cmd上进行测试，则相对就要痛苦一些，因为Windows中文环境下cmd的默认编码是GBK。 所以本人为了在测试时能正常打印出中文字符（经常Linux、Windows两边跑），对Python字符编码的情况还是颇下了些功夫的。下面就是我做的一些小研究，希望能对和我当初一样迷茫的读者起到些帮助作用。 1. ASCII, Python默认的编码 在Python中，当源代码被读取进行语法校验时，会将源代码中的字符从声明的编码转换成Unicode类型，等到语法校验通过后，再将这些字符转换回初始的编码。 在Python环境下，源文件中如果没有声明编码，则将其编码设置为默认的ASCII，这可以通过下面这段代码检验： &amp;gt;&amp;gt;&amp;gt; import sys &amp;gt;&amp;gt;&amp;gt; sys.getdefaultencoding() 'ascii' 所以在编写源代码文件xxx.py时需要注意： 如果源代码没有声明编码格式，则Python在语法校验期间(compilation)使用默认的ASCII编码 如果源代码没有声明编码格式，但却在源码中使用了非ASCII字符(Non-ASCII character)，则程序在编译期间抛出SyntaxError异常，编译不被通过 如果源代码声明了Python不支持的编码格式，则程序将在编译期间抛出异常 源代码文件编码的声明 查看如何在源代码中声明编码格式PEP-0263 查看Python支持的编码格式 2. 命令行与Python——乱码篇 在命令行下的Python Shell中进行小范围测试，或者在命令行中运行Python代码时，总会遇到各种各样的乱码问题。为了搞清楚乱码的原因，我们首先来看这样一个例子。 例子：文件到底长什么样？ 首先, 在某目录(假设D:\Tem)下创建两个文本文件1.ini、2.ini，两个文件中都只写入下面这行内容。不同的是，1.ini以UTF-8格式保存，2.ini以GBK格式保存 我是Lyfing.Loo，来自中国 接着, 在命令行下，cd至该目录，键入Python 进入Python Shell, 读取两个文本文件中的内容，并打印出来 &amp;gt;&amp;gt;&amp;gt; str1 = open('1.ini','r').read() &amp;gt;&amp;gt;&amp;gt; str2 = open('2.ini','r').read() &amp;gt;&amp;gt;&amp;gt; str1 '\xef\xbb\xbf\xe6\x88\x91\xe6\x98\xafLyfing.Loo\n' #以16进制形式查看1.ini(UTF-8) efbb bfe6 8891 e698 af4c 7966 696e 672e 4c6f 6f0d 0a &amp;gt;&amp;gt;&amp;gt; str2 '\xce\xd2\xca\xc7Lyfing.Loo\n' #以16进制形式查看2.ini(GBK) ced2 cac7 4c79 6669 6e67 2e4c 6f6f 0d0a 其中0d0a是换行符，0d——回车符号——”\r”，0a——换行符号——”\n” 对比一下str内容和16进制下查看到的相应文本中的内容，我们不难发现，Python在读取文件时，除了辨认出ASCII编码范围内的字符之外，例如L(4c)、g(67)和o(6f)等，其他非ASCII的字符一律仍按16进制(由0 1二进制位组成)的原始编码储存，例如 我(efbbbf, utf-8)和我(ced2, gbk)。等到需要将变量值（字符串）打印到控制台，或者写入文件时，这一串原始编码便会原封不动地被提交给相应程序。 仍是上面的例子，当我们想要打印str1和str2的值时，我们看看会发生什么： &amp;gt;&amp;gt;&amp;gt; print str1 锘挎垜鏄疞yfing.Loo &amp;gt;&amp;gt;&amp;gt; print str2 我是Lyfing.Loo 我们看到，str1出现了乱码，而str2则正常打印出了中文字符。这是为什么呢？还是上面那句话： 等到需要将变量值（字符串）打印到控制台，或者写入文件时，这一串原始编码便会原封不动地被提交给相应程序 当需要打印str1和str2的值时，Python并不做任何编码转换的处理，它只是原封不动地将原始编码提交给了控制台，由相应的控制台（Windows下的cmd/Linux下的Terminal/SSH远程连接工具等）来进行打印处理。 所以如果在Linux下的Terminal上打印str1和str2的话，应该就是str1正常打印，str2出现乱码了，因为Terminal的编码一般是UTF-8的。 那如果想要实现多平台下表现一致的特性的话，比如说保证class的doc在多平台下打印出的效果一致或者写入效果一致（不会乱码）的话，我们该怎么做？下面引出了本篇内容的重点。 3. Unicode，Python的好伙伴儿 一门热门起来的编程语言，首先要满足的需求之一就是，对不同国家和地区所用字符的友好支持。Python很好的做到了这一点，至少，在它正式引入Unicode编码以后是这样。 我们都知道Python是一门世界通用的编程语言，如果它的源代码文件中出现的都是ASCII支持的字符，那Python会以ASCII编码的格式处理程序。不过，一旦源代码中出现了ASCII不支持的字符，它该怎么办？我用一张图来回答你吧 (图片来源：http://nltk.googlecode.com/svn/trunk/doc/book/ch03.html) 也就是说，所有超出ASCII范围的字符的处理工作，无论在输入之前，或者输出之后是什么编码格式的，它们在Python的执行内存中，都被统一转换(decode)为Unicode格式来进行程序处理。 还是上节末尾那个例子，如何保证str1和str2在各个平台下都能正常打印呢，这里的办法是：将str1和str2转换成Unicode类型。 3.1 什么是Unicode类型？那str1和str2又是什么类型的呢？ 我们先看看str1str2的类型 &amp;gt;&amp;gt;&amp;gt; print type(str1), type(str2) &amp;lt;type 'str'&amp;gt; &amp;lt;type 'str'&amp;gt; 从上面可以看出，str1、2是str类型的，也就是通常意义下的字符串类型。 Unicode类型则是Python内建的一种用来“一统江湖”的字符类型(type)。 既然已经有了用来容纳字符的类型——str——为何还要添加一种Unicode字符类型呢？要回答这个问题，我们先来想想如下几个现实中可能会遇到的情况： 在某个class的doc中，需要同时用到多个国家的字符和符号来描述class的功用。试想如果此时再用单一的、相对狭隘的编码配合str来表述，可能出现不可预期的错误。这是因为字符所处的字符集和编码不一致，同一串16进制码(code points)在不同的字符集中可能表示不同的字符，更何况，同一个源代码文件中只可以定义一种编码格式 xml文件的解析(parse)问题，xml文件中可能包含不同国家和区域的字符和符号，此时如果使用仅适用于某个区域的字符编码，可能出现无法识别某些字符而导致甚至抛异常或程序错误等等糟糕情况。 于是，一统江湖、或者说差点就一统江湖的Unicode编码出现了。再接着，Python为了更加友好地支持各种国家/区域的字符，内建了新的字符容器Unicode。于是上面两个问题以及近似的一类问题都可以迎刃而解了。 3.2 Unicode在Python中的使用 Unicode型的字符容器，在Python的具体应用中有着诸多优势。下面列举几个。 例子：在源代码中定义Unicode类型。 具体步骤，创建test.py文件，在其中添加这样的内容 # coding:utf-8 def hello(): str1 = u'我是大坏蛋' str2 = '你是小淫魔' return (str1, str2) 接着在命令行cd至test.py所在目录，键入python进入Python Shell，在Shell中输入以下内容： &amp;gt;&amp;gt;&amp;gt; import test &amp;gt;&amp;gt;&amp;gt; str1, str2 = test.hello() &amp;gt;&amp;gt;&amp;gt; str1 u'\u6211\u662f\u5927\u574f\u86cb' &amp;gt;&amp;gt;&amp;gt; str2 '\xe6\x88\x91\xe6\x98\xaf\xe5\xb0\x8f\xe6\xb7\xab\xe9\xad\x94' &amp;gt;&amp;gt;&amp;gt; print str1 我是大坏蛋 &amp;gt;&amp;gt;&amp;gt; print str2 鎴戞槸灏忔帆榄 我们看到在hello()定义时，str1是Unicode类型的，而str2则是普通的’str’字符型。也许在这里还没看出Unicode类型的优势。但是当需要打印变量内容时，二者的优劣便体现出来了：Unicode类型的str1无需进行特别编码便能正常打印出中文字符，但str类型的str2却出现了乱码情况。 此处可以介绍Unicode类型的很多优点了： 声明简单 只需要在原字符前添加该类型标记u即可，例如s1 = u'小伙伴儿' 代码编译期间，自动从声明的原始编码转码至Unicode，并创建相应的Unicode类型 在需要打印(如print）或者输入输出（如read或write）时，Unicode类型用着尤其顺手。因为你只需要像操作ASCII一样打印和输入输出就行了，而无需关心编码、乱码问题。这是因为Python会帮Unicode类型的字符做编码转码工作，而这也正是Unicode类型的字符不会出现乱码的原因。Python工作内容如下： 当需要输入中文字符时，Python会首先调取字符输入程序（命令行或者read函数）的编码格式，然后将输入的字符以该编码格式进行相应转换，即把原字符转码成Unicode类型的字符。 例如在Windows中的命令行下使用的Python Shell，其编码格式是GBK，当你在shell中键入string1 = u'我是李寻欢'时，会发生如下事件： 1, Python获取当前命令行编码（sys.stdin.encoding），为cp936(即GBK) 2, 将输入的汉字我是李寻欢按GBK编码转码成Unicode的形式，并据此创建Unicode类型的字符串，赋值给string1 当需要打印输出时，Python会首先调取字符输出程序（命令行或者输出函数）的编码格式，然后将该字符串编码成字符输出程序所用的编码（这样字符输出程序就不会因为认不出编码而出现乱码），接着字符输出程序将编码后的字符输出到目的地。该处理过程是字符输入程序（上一条）的逆过程，此处不再详细介绍这一过程 3.3 如何将str type转换成Unicode type 这是本节最开始提出的那个问题：如何将str类型的字符串str1和str2转换成Unicode类型？ 这也是下节要谈论的编码与解码的问题。 4. 编码（encode）与解码（decode） 如何将str类型的字符串str1和str2转换成Unicode类型？以及上一节最末提到关于的字符编码在GBK和Unicode之间的转换，涉及到的都是编码与解码的问题。统一来说就是 从Unicode类型到GBK或UTF-8等编码的转换，叫做编码(encode)；而这一过程的逆过程，则叫做解码(decode)。 一开始我老是搞不清楚到底从哪到哪是编码，从哪到哪是解码，后来用多了自然也就清楚了。相信初次接触这个概念的人也会有和我一样的困惑，下面用一张图来说明一下编码和解码的方向： 关于解码和编码的实现方法，网上已有很多，这里不再重述。下面引用一篇博客中的内容来做个总结： 字符串在Python内部的表示是Unicode编码。因此在做编码转换时，通常需要以Unicode作为中间编码，即先将其他编码的字符串解码(decode)成Unicode，再从Unicode编码(encode)成另一种编码。 decode的作用是将其他编码的字符串转换成Unicode编码，如str1.decode('gb2312')，表示将gb2312编码的字符串str1转换成Unicode编码； encode的作用是将Unicode编码转换成其他编码的字符串，如str2.encode('gb2312')，表示将Unicode编码的字符串str2转换成gb2312编码 因此，转码的时候一定要先搞明白，字符串str是什么编码，然后decode成Unicode，然后再encode成其他编码。（原文链接） 遇到乱码问题，按上述思路分析一遍，再将乱码所在字符串按它的原始编码decode成Unicode类型的，再使用Unicode类型的编码进行输入、输出即可解决乱码问题。 ref: http://docs.python.org/2/howto/unicode.html</summary></entry></feed>
+&lt;/ul&gt;</content><author><name></name></author><category term="Tech" /><category term="Python" /><category term="多线程" /><category term="爬虫" /><category term="糗事百科" /><category term="BeautifulSoup" /><summary type="html">最近参加一家公司的远程笔试，其中的一道题目是： 写一个简单的爬虫，把糗事百科今天被顶超过5000的帖子爬出来，注意考虑性能和图片显示。 当时一看很感兴趣，因为看到这道题目后思路很清晰，而且我大学时周围好友都爱看糗百，所以做点有关他们喜欢的产品的信息抓取还是挺有趣的。 好的，闲话就到这里，下面进入正题。 1. 思路 1.1 单线程 or 多线程 单线程按序逐一抓取。这种思路下的实现方式是： 获取糗百所有可供抓取的页面URL，然后把他们放到一个列表里 从列表中取走一条页面URL，将该URL指向页面中的所有糗百文章解析出来 如果文章有附图，则下载至指定目录 将第2步获得的若干糗百文章追加至一个xml文件中 点评：单线程无法充分利用机器的CPU资源和带宽，性能低下，不予考虑 多线程乱序抓取。这种思路下的实现方式是： 创建两个同步队列page_q和pic_q，page_q存放页面URL，pic_q存放图片URL 获取糗百所有可供抓取页面的URL，将这些URL添加到page_q队列 开辟多条抓取解析页面文章的线程，每条线程的具体工作是： 从page_q队列取走一条URL，解析其指向的页面中的糗百文章 将这些文章内容追加到xml文件中(同步访问) 如果文章有附图，则将该附图的链接URL放入pic_q 开辟多条下载图片的线程，每条线程的具体工作是： 从pic_q队列取走一条图片URL，将其命名为idxxxxx.jpg并下载到指定目录 点评：可以充分利用CPU资源及带宽，选择该条思路进行 1.2 如何提取页面内容 思路1：通过正则表达式匹配，然后提取有用信息 思路2：通过第三方HTML内容提取工具提取有用信息 点评：思路2具有更高的扩展性、容错性，选择思路2 2. 实现 2.1 多线程实体 本文设计了两个多线程类，他们都继承自threading.Thread，这两个类是： class QiubaiReader(threading.Thread) class PicDownloader(threading.Thread) 类QiubaiReader要做的工作和本文第1部分 1.1 » 多线程 » 抓取解析页面文章的线程内容一致，以下是它的执行逻辑： &quot;&quot;&quot; 类 QiubaiReader 说明 糗事百科内容的消费者，也是糗事百科文章图片的生产者 消费者：从 pageQueue 里读取一个页面URL，解析该页面所有糗百文章，并将这些文章存储到xml文件中； 生产者：在解析页面时，如果某篇文章附带图片，则把该图片的URL放入 picQueue ,等待图片类的消费者来处理. &quot;&quot;&quot; runFlag = 1 #停止线程的开关 def __init__(self, pageQueue, picQueue, pathDict): ... def fetchContent(self, pageUrl): &quot;&quot;&quot; 每一条糗百，我们需要取出其中的三条信息： 1. 该条糗百的ID 2. 该条糗百的正文 3. 该条糗百的图片链接(可能为空，非空则等待下载) 爬取糗百的步骤是： 1. 获得该条糗百的整个大&amp;lt;div /&amp;gt;块，我们声明 div_dad 变量代表这个大&amp;lt;div /&amp;gt;块 2. 通过查找当前投票数的&amp;lt;div /&amp;gt;相关值来判断是否继续，如果投票数大于5000，则继续 3. 在大&amp;lt;div /&amp;gt;块的首行，截取该条糗百的文章ID号（每条糗百都是一篇文章，通过文章ID可以获取文章和图片的链接） 4. 在大div块中，找出带有糗百正文的&amp;lt;div /&amp;gt;块 5. 将上面提到的三条信息写入xml文件 &quot;&quot;&quot; ... def writeContent(self, list): &quot;&quot;&quot; 将list中包含的糗百文章格式化并一次性插入到xml文件中 list中包含有某个页面的所有糗百文章（一般是20条） list结构为： [ { 'id': qiuID1, 'content': qiuBaiText, 'picURL': picURL }, ... ] &quot;&quot;&quot; ... def run(self): while not self.pageQueue.empty() and self.__class__.runFlag &amp;gt; 0: #糗百页面消费者 pageUrl = self.pageQueue.get() qiuBaiList, picDictList = self.fetchContent(pageUrl) if len(qiuBaiList) &amp;gt;= 1: self.writeContent(qiuBaiList) #糗百图片生产者 if len(picDictList) &amp;gt;= 1: for item in picDictList: self.picQueue.put(item) #如果两个队列都为空，则线程退出，并通知图片下载线程也退出 if self.pageQueue.empty() and self.picQueue.empty(): ... 类PicDownloader要做的工作和本文第1部分 1.1 » 多线程 » 下载图片的线程内容一致，以下是它的执行逻辑： # 类 PicDownloader 说明 runFlag = 1 #线程停止开关 def __init__(self, queue, pathDict): ... def downloadPic(self, picDict): ... def run(self): while self.__class__.runFlag &amp;gt; 0: while not self.queue.empty(): picDict = self.queue.get() self.downloadPic(picDict) time.sleep(1) #如果图片URL队列为空，则等待一秒 2.2 线程安全队列 本文涉及到的两个队列page_q和pic_q，一个用来存取页面URL，另一个用来存取图片URL，两队列都面临着多线程同步存取的问题，而这则是所有的”生产者-消费者问题”必须解决的问题。 幸运的是，我们用的是Python！ Python已经为我们提供了一个线程安全队列：Queue，它为多个”生产者-消费者”提供了安全同步队列。引用官方的一句话便是： The Queue module implements multi-producer, multi-consumer queues. It is especially useful in threaded programming when information must be exchanged safely between multiple threads. 而且Queue的创建、使用也极为轻便 创建 import Queue queue = Queue.Queue() 使用 item_1 = queue.get() # queue.get() =&amp;gt; 从队列中移除一个item并返回该item queue.put(item_2) # queue.put() =&amp;gt; 往队列中添加一个item 对Queue更高要求的操作与使用，请查看官方文档。 2.3 HTML内容提取 该部分内容，其实是对类QiubaiReader中的fetchContent(self, pageUrl)方法的解读。从HTML中获取内容时，我们需要借助第三方开源工具BeautifulSoup(看最下方应用程序信息) 为了便于升级改动，我们为类QiubaiReader声明一个类成员变量argsDict，用来统一糗事百科HTML页面源码中的一些关键性的标记及属性 argsDict = { 'pageEncoding' : 'utf-8', #糗百html的编码格式 'dadClassAttr' : 'block untagged mb15 bs2', #某条糗百整个大&amp;lt;div /&amp;gt;块的class属性 'contClassAttr' : 'content', #某条糗百的正文所在&amp;lt;div /&amp;gt;块的class属性 'picClassAttr' : 'thumb', #包含图片的&amp;lt;div /&amp;gt;块的class属性 'voteClassAttr' : 'bar', #包含投票数的&amp;lt;div /&amp;gt;块的class属性 #包含糗百ID的那一行的id号前的前缀，例如：'qiushi_tag_55611097' 'idLinePreStr' : 'qiushi_tag_', #某条糗百只有点赞数超过该值，才进行收录。题目要求该值为5000，本人感觉偏高，故将其改成了2000 'validCountNum' : 2000, } 糗百每一个页面会包含20条糗百文章，读者可以点此查看其中某条糗百文章的HTML源码及其标记结构。 我们会发现糗百文章的HTML标记结构如下（我们姑且把如下&amp;lt;div /&amp;gt;块称作文章的&amp;lt;div /&amp;gt;块吧）： &amp;lt;div class=&quot;block untagged mb15 bs2&quot; id='qiushi_tag_idxxxxxx'&amp;gt; &amp;lt;div class=&quot;content&quot; title=&quot;2014-01-14 16:33:29&quot;&amp;gt; 糗百正文 &amp;lt;/div&amp;gt; &amp;lt;!--除非文章配有图片，否则下面这个div不会出现--&amp;gt; &amp;lt;div class=&quot;thumb&quot;&amp;gt; &amp;lt;a href=&quot;/article/url...&quot; target=&quot;_blank&quot; onclick=&quot;some js&quot;&amp;gt; &amp;lt;img src=&quot;http://the/pic/URL&quot; alt=&quot;图片描述&quot; /&amp;gt; &amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; ... 一个页面中会有20个上述结构出现，也就是20条糗百文章 ... 以下的任务是，解析给定页面中的所有糗百文章，获取它们的点赞数、ID、正文以及图片链接（如果有的话）。这些解析工作需要借助BeautifulSoup工具来完成。 step 1:我们首先引入BeautifulSoup，并实例化一个可操作的HTML结构体： import urllib2 from bs4 import BeautifulSoup #获取给定页面pageURL的HTML源码 pageCont = urllib2.urlopen(pageURL).read().decode(self.argsDict['pageEncoding']) #将HTML源码传递给BeautifulSoup，实例化一个它的对象 soup = BeautifulSoup(pageCont) step 2: 获得给定页面的所有20个上述的文章&amp;lt;div /&amp;gt;块 HTML是标记性语言，即使其中的&amp;lt;div&amp;gt;标记(tag)出现了很多次，而且分布杂乱，但我们可以根据一个&amp;lt;div&amp;gt;标记的多个属性来唯一确定某类/某个标记。 例如文章&amp;lt;div /&amp;gt;块的属性是： &amp;lt;div class=&quot;block untagged mb15 bs2&quot; id='qiushi_tag_idxxxxxx' &amp;gt;&amp;lt;/div&amp;gt; 即： class = &quot;block untagged mb15 bs2&quot; id = &quot;qiushi_tag_idxxxxxx&quot; 文章&amp;lt;div /&amp;gt;块的id属性不确定，但它的class属性是确定且唯一的，我们就使用它的class属性来找到这20个文章&amp;lt;div /&amp;gt;块，并把它们保存到一个list中 articles_div_list = soup.find_all('div', attrs={'class': 'block untagged mb15 bs2'}) step 3:接下来，我们遍历articles_div_list，并从中解析出我们需要的糗百信息 for div_article in articles_div_list: ... step 3.1 获得点赞数（点此查看点赞内容所在&amp;lt;div&amp;gt;标记） div_vote = div_article.find('div', attrs={'class': 'bar'}) #用给定的属性键值对（class='bar')查找某个标记（tag） upCount = div_vote.a.get_text() #通过 标记.字标记.get_text() 方法获得字标记的text step 3.2 获得ID（点此查看ID内容所在&amp;lt;div&amp;gt;标记） idLine = div_article.attrs['id'] #想要获得某个标记（tag）的属性，可以直接查字典一样，此处key为某个属性的name step 3.3 获得正文（点此查看正文内容所在&amp;lt;div&amp;gt;标记） div_cont = div_article.find('div', attrs={'class': 'content'}) qiubai_cont = div_cont.get_text() #通过标记的 get_text() 方法获得该标记的text step 3.4 获得配图的URL（如果有的话。点此查看配图URL内容所在&amp;lt;div&amp;gt;标记） div_pic = div_article.find('div', attrs={'class': 'thumb'}) if div_pic: #想要获得某个标记（tag）的子标记的子标记...的属性，可以直接通过 .(英文句点) 索引至该标记，然后像查字典一样查找即可 picURL = div_pic.a.img['src'] 2.4 存储内容 因为糗百内容要存储到xml文档中，我们在这里还要使用Python自带的操作XML的包：xml.etree.ElementTree step 1：我们首先创建一个用于存储糗百的xml文档： fo = open('qiubai.xml', 'w') fo.write('&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;\n&amp;lt;ROOT&amp;gt;&amp;lt;/ROOT&amp;gt;') fo.close() 此时的xml文件看起来应该是这个样子： &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt; &amp;lt;ROOT&amp;gt; &amp;lt;/ROOT&amp;gt; step 2：给qiubai.xml添加一条糗百内容 step 2.1：获得qiubai.xml文档的根节点 import xml.etree.ElementTree as ET tree = ET.parse('qiubai.xml') #也可以给 parse() 传递文档路径 root = tree.getroot() step 2.2：为根节点root添加一个子节点QiuBai，并设置该子节点的各个属性 qiubai = ET.SubElement(root, 'QiuBai') qiubai.set('id', 'idxxxxxx') qiubai.set('picURL', 'http://here/is/pic/url.jpg') qiubai.text = '此处为糗百正文...' step 2.3：将添加了新内容的root保存到文档 tree = ET.ElementTree(root) tree.write('qiubai.xml', encoding='utf-8', xml_declaration=True) 此时的xml文档看起来应该是这样子： &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt; &amp;lt;ROOT&amp;gt; &amp;lt;QiuBai id='idxxxxxx' picURL='http://here/is/pic/url.jpg'&amp;gt; 此处为糗百正文... &amp;lt;/QiuBai&amp;gt; &amp;lt;/ROOT&amp;gt; 注意事项：如果你使用的是UTF-8格式保存xml文档，那你需要注意：xml文档规范并不支持所有的UTF-8支持的字符，也就是说有些UTF-8支持的字符在xml文档中是不受支持的，如果你坚持写入，则在再次读取xml文档是会出错。 关于过滤xml不支持字符的内容，请参看源码 QiubaiReader.py » def replaceHellWord(text)方法 3. 源代码 到这里查看源码，或者直接点我下载源码。 应用程序信息： 本程序在Window7平台下开发完成并测试通过；在CentOS 6.3下测试通过 Python 2.7.5 [MSC v.1500 64 bit (AMD64)] xml.etree.ElementTree 1.3.0 键入 import xml.etree.ElementTree； ElementTree.VERSION 查看 Beautiful Soup 4.3.2 键入 import bs4；bs4.__version__ bs4下载链接</summary></entry></feed>
