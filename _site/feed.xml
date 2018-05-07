@@ -1,4 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-07T11:58:34+08:00</updated><id>http://localhost:4000/</id><title type="html">蓝枫铭的技术博客</title><subtitle>不想做架构师的厨师不是好程序员</subtitle><entry><title type="html">PHP任务的多进程处理</title><link href="http://localhost:4000/2018/03/20/PHP%E4%BB%BB%E5%8A%A1%E7%9A%84%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%84%E7%90%86.html" rel="alternate" type="text/html" title="PHP任务的多进程处理" /><published>2018-03-20T00:00:00+08:00</published><updated>2018-03-20T00:00:00+08:00</updated><id>http://localhost:4000/2018/03/20/PHP%E4%BB%BB%E5%8A%A1%E7%9A%84%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%84%E7%90%86</id><content type="html" xml:base="http://localhost:4000/2018/03/20/PHP%E4%BB%BB%E5%8A%A1%E7%9A%84%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%84%E7%90%86.html">&lt;div class=&quot;wiki-content&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-07T13:07:47+08:00</updated><id>http://localhost:4000/</id><title type="html">蓝枫铭的技术博客</title><subtitle>不想做架构师的厨师不是好程序员</subtitle><entry><title type="html">Bughole(虫洞)工具:预发断点调试PHP利器</title><link href="http://localhost:4000/2018/04/25/Bughole(%E8%99%AB%E6%B4%9E)%E5%B7%A5%E5%85%B7-%E9%A2%84%E5%8F%91%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95PHP%E5%88%A9%E5%99%A8.html" rel="alternate" type="text/html" title="Bughole(虫洞)工具:预发断点调试PHP利器" /><published>2018-04-25T00:00:00+08:00</published><updated>2018-04-25T00:00:00+08:00</updated><id>http://localhost:4000/2018/04/25/Bughole(%E8%99%AB%E6%B4%9E)%E5%B7%A5%E5%85%B7:%E9%A2%84%E5%8F%91%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95PHP%E5%88%A9%E5%99%A8</id><content type="html" xml:base="http://localhost:4000/2018/04/25/Bughole(%E8%99%AB%E6%B4%9E)%E5%B7%A5%E5%85%B7-%E9%A2%84%E5%8F%91%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95PHP%E5%88%A9%E5%99%A8.html">&lt;div class=&quot;wiki-content&quot;&gt;
+                           &lt;h2 id=&quot;Bughole虫洞工具：预发断点调试PHP利器-true&quot;&gt;&lt;div&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;span class=&quot;TOCOutline&quot;&gt;1&lt;/span&gt; &lt;a href=&quot;#Bughole虫洞工具：预发断点调试PHP利器-效果图&quot;&gt;效果图&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span class=&quot;TOCOutline&quot;&gt;2&lt;/span&gt; &lt;a href=&quot;#Bughole虫洞工具：预发断点调试PHP利器-试用&quot;&gt;试用&lt;/a&gt;&lt;/li&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;span class=&quot;TOCOutline&quot;&gt;2.1&lt;/span&gt; &lt;a href=&quot;#Bughole虫洞工具：预发断点调试PHP利器-debug获取评价列表API- BeibeiItemRateGet&quot;&gt;debug: 获取评价列表API -&amp;nbsp;BeibeiItemRateGet&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span class=&quot;TOCOutline&quot;&gt;2.2&lt;/span&gt; &lt;a href=&quot;#Bughole虫洞工具：预发断点调试PHP利器-debugProductTestTask任务product-module &quot;&gt;debug: ProductTestTask任务(product-module)&lt;span style=&quot;font-size: 10.0pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    &lt;li&gt;&lt;span class=&quot;TOCOutline&quot;&gt;3&lt;/span&gt; &lt;a href=&quot;#Bughole虫洞工具：预发断点调试PHP利器-实战&quot;&gt;实战&lt;/a&gt;&lt;/li&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;span class=&quot;TOCOutline&quot;&gt;3.1&lt;/span&gt; &lt;a href=&quot;#Bughole虫洞工具：预发断点调试PHP利器-实战1：debug任意URL&quot;&gt;实战1：debug任意URL&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span class=&quot;TOCOutline&quot;&gt;3.2&lt;/span&gt; &lt;a href=&quot;#Bughole虫洞工具：预发断点调试PHP利器-实战2：debugPHP任务（同上方debugProductTestTask）&quot;&gt;实战2：debug PHP任务（同上方debug ProductTestTask）&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span class=&quot;TOCOutline&quot;&gt;3.3&lt;/span&gt; &lt;a href=&quot;#Bughole虫洞工具：预发断点调试PHP利器-遇到问题要反馈？&quot;&gt;遇到问题要反馈？&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    &lt;li&gt;&lt;span class=&quot;TOCOutline&quot;&gt;4&lt;/span&gt; &lt;a href=&quot;#Bughole虫洞工具：预发断点调试PHP利器-预发布如何部署&quot;&gt;预发布如何部署&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span class=&quot;TOCOutline&quot;&gt;5&lt;/span&gt; &lt;a href=&quot;#Bughole虫洞工具：预发断点调试PHP利器-Bughole原理&quot;&gt;Bughole原理&lt;/a&gt;&lt;/li&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;span class=&quot;TOCOutline&quot;&gt;5.1&lt;/span&gt; &lt;a href=&quot;#Bughole虫洞工具：预发断点调试PHP利器-工程结构图&quot;&gt;工程结构图&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span class=&quot;TOCOutline&quot;&gt;5.2&lt;/span&gt; &lt;a href=&quot;#Bughole虫洞工具：预发断点调试PHP利器-时序图&quot;&gt;时序图&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    &lt;li&gt;&lt;span class=&quot;TOCOutline&quot;&gt;6&lt;/span&gt; &lt;a href=&quot;#Bughole虫洞工具：预发断点调试PHP利器-安全考虑&quot;&gt;安全考虑&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span class=&quot;TOCOutline&quot;&gt;7&lt;/span&gt; &lt;a href=&quot;#Bughole虫洞工具：预发断点调试PHP利器-项目源码&quot;&gt;项目源码&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;&lt;/h2&gt;&lt;h2 id=&quot;Bughole虫洞工具：预发断点调试PHP利器-效果图&quot;&gt;效果图&lt;/h2&gt;&lt;p&gt;Bughole工具实现了PHPStorm中&lt;span&gt;95%以上&lt;/span&gt;的debug功能。借助该工具在预发布调试：PHP的业务代码、API甚至任务脚本，都将变得极为方便！&lt;/p&gt;&lt;p&gt;&lt;img class=&quot;confluence-embedded-image confluence-content-image-border&quot; width=&quot;900&quot; src=&quot;http://wx1.sinaimg.cn/large/6480dca9ly9fr2nh08b2kj218g0s6tog.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;Bughole虫洞工具：预发断点调试PHP利器-试用&quot;&gt;试用&lt;/h2&gt;&lt;p&gt;Bughole整套工具在预发9已经部署完备，以下步骤将分别演示：1）debug获取评价列表的API；2）debug PHP
+任务&amp;lt;/span&amp;gt;&lt;/p&gt;&lt;h3 id=&quot;Bughole虫洞工具：预发断点调试PHP利器-debug获取评价列表API-&amp;nbsp;BeibeiItemRateGet&quot;&gt;debug: 获取评价列表API -&amp;nbsp;BeibeiItemRateGet&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;打开bughole UI：&lt;a href=&quot;&quot; class=&quot;external-link&quot; rel=&quot;nofollow&quot;&gt;#(暂不对外开放)&lt;/a&gt;&amp;nbsp;，&lt;strong&gt;并且确认自己已经连上了预发9&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;添加断点。在断点模块，点击“Add”按钮，新增断点信息(可通过类似方式不断增加断点)&lt;/li&gt;&lt;ol&gt;&lt;li&gt;&lt;span class=&quot;input-group-addon&quot; style=&quot;color: rgb(85,85,85);&quot;&gt;文件路径：***/***/api/BeibeiItemRateGet.php&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span class=&quot;input-group-addon&quot; style=&quot;color: rgb(85,85,85);&quot;&gt;&lt;span class=&quot;input-group-addon&quot; style=&quot;color: rgb(85,85,85);&quot;&gt;断点行号：26&lt;br /&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;color: rgb(85,85,85);&quot;&gt;填好断点信息，点击确定&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;li&gt;&lt;span style=&quot;color: rgb(85,85,85);&quot;&gt;点击“建立连接”按钮。则服务端agent开始监听Xdebug的拦截信息&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;color: rgb(85,85,85);&quot;&gt;&lt;span style=&quot;color: rgb(85,85,85);&quot;&gt;在新标签页访问：&lt;/span&gt;&lt;/span&gt;&lt;a href=&quot;http://sapi.beibei.com/item/rate/0-27221145-1-10-1.html?preview=1&amp;amp;XDEBUG_SESSION_START=1&quot; style=&quot;font-size: 10.0pt;&quot; class=&quot;external-link&quot; rel=&quot;nofollow&quot;&gt;http://sapi.beibei.com/item/rate/0-27221145-1-10-1.html?preview=1&amp;amp;XDEBUG_SESSION_START=1&lt;/a&gt;&amp;nbsp;。这个访问也必须是预发9的！此时Xdebug会尝试拦截这个访问，具体表现为：页面hanging转圈不返回&lt;/li&gt;&lt;li&gt;回到bughole UI，点击页面顶端的“点我测试”按钮。如果一切正常，你将看到如下图所示信息，这表明Xdebug已经正确开始了&lt;/li&gt;&lt;li&gt;试试StepOver命令，StepInto命令，StepOut命令？当然你也可以使用RunToLine命令。&lt;br /&gt;想查看当前Context的变量信息，就在右侧的Context面板查找吧。右下方还有调用栈信息&lt;br /&gt;最后，&lt;strong&gt;一定要记得点击“Stop”按钮停止debug&lt;/strong&gt;&lt;br /&gt;&lt;img class=&quot;confluence-embedded-image confluence-content-image-border&quot; width=&quot;500&quot; src=&quot;http://wx2.sinaimg.cn/large/6480dca9ly9fr2osazim8j20z00oogyl.jpg&quot; /&gt;&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h3 id=&quot;Bughole虫洞工具：预发断点调试PHP利器-debugProductTestTask任务product-module&amp;nbsp;&quot;&gt;debug: ProductTestTask任务(product-module)&lt;span style=&quot;font-size: 10.0pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;打开bughole UI：&lt;a href=&quot;#&quot; class=&quot;external-link&quot; rel=&quot;nofollow&quot;&gt;#（暂不对外开放）&lt;/a&gt;&amp;nbsp;，&lt;strong&gt;并且确认自己已经连上了预发9&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;添加断点。在断点模块，点击“Add”按钮，新增断点信息(可通过类似方式不断增加断点)&lt;/li&gt;&lt;ol&gt;&lt;li&gt;&lt;span class=&quot;input-group-addon&quot; style=&quot;color: rgb(85,85,85);&quot;&gt;文件路径：***/***/src/task/ProductTestTask.php&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span class=&quot;input-group-addon&quot; style=&quot;color: rgb(85,85,85);&quot;&gt;断点行号：17&lt;br /&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;color: rgb(85,85,85);&quot;&gt;填好断点信息，点击确定&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;li&gt;点击“建立连接”按钮。则服务端agent开始监听Xdebug的拦截信息&lt;/li&gt;&lt;li&gt;&lt;p&gt;在预发9机器上依次执行：&lt;/p&gt;
+    &lt;div class=&quot;code panel&quot; style=&quot;border-width: 1px;&quot;&gt;&lt;div class=&quot;codeContent panelContent&quot;&gt;
+&lt;div&gt;&lt;div id=&quot;highlighter_722052&quot; class=&quot;syntaxhighlighter nogutter  bash&quot;&gt;&lt;div class=&quot;toolbar&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;div class=&quot;container&quot; title=&quot;Hint: double-click to select code&quot;&gt;&lt;div class=&quot;line number1 index0 alt2&quot;&gt;&lt;code class=&quot;bash comments&quot;&gt;# 切换到root用户&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number2 index1 alt1&quot;&gt;&lt;code class=&quot;bash functions&quot;&gt;sudo&lt;/code&gt; &lt;code class=&quot;bash functions&quot;&gt;su&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number3 index2 alt2&quot;&gt;&lt;code class=&quot;bash comments&quot;&gt;# 为root用户设置环境变量(设置后Xdebug会主动拦截PHP脚本的运行)&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number4 index3 alt1&quot;&gt;&lt;code class=&quot;bash functions&quot;&gt;export&lt;/code&gt; &lt;code class=&quot;bash plain&quot;&gt;XDEBUG_CONFIG=&lt;/code&gt;&lt;code class=&quot;bash string&quot;&gt;&quot;idekey=bughole&quot;&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number5 index4 alt2&quot;&gt;&lt;code class=&quot;bash comments&quot;&gt;# 执行任务（切记不要加sudo）&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number6 index5 alt1&quot;&gt;&lt;code class=&quot;bash functions&quot;&gt;bash&lt;/code&gt; &lt;code class=&quot;bash plain&quot;&gt;/task/task_admin&lt;/code&gt;&lt;code class=&quot;bash plain&quot;&gt;.sh start --module=product ProductTestTask&amp;nbsp;&lt;/code&gt;&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;回到bughole UI，点击页面顶端的“点我测试”按钮。如果一切正常，你将看到如上图所示信息，这表明Xdebug已经正确开始了&lt;/li&gt;&lt;li&gt;&lt;span&gt;试试StepOver命令，StepInto命令，StepOut命令？当然你也可以使用RunToLine命令。&lt;/span&gt;&lt;br /&gt;&lt;span&gt;想查看当前Context的变量信息，就在右侧的Context面板查找吧。右下方还有调用栈信息&lt;/span&gt;&lt;br /&gt;&lt;span&gt;最后，&lt;/span&gt;&lt;strong&gt;一定要记得点击“Stop”按钮停止debug&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10.0pt;&quot;&gt;说明：debug模式同一时间只允许一个人进行debug，如果有其他人也在debug，则可能出现错乱情况。&lt;/span&gt;&lt;span style=&quot;font-size: 10.0pt;&quot;&gt;解决办法：1）避免同时使用debug；2）如果debug已经不正常，尝试重启：kill这个任务（python bughole/agent.py);重新运行:&amp;nbsp;python /tmp/tiny-scripts/bughole/agent.py (无需sudo)&lt;/span&gt;&lt;/p&gt;&lt;h2 id=&quot;Bughole虫洞工具：预发断点调试PHP利器-实战&quot;&gt;实战&lt;/h2&gt;&lt;h3 id=&quot;Bughole虫洞工具：预发断点调试PHP利器-实战1：debug任意URL&quot;&gt;实战1：debug任意URL&lt;/h3&gt;&lt;p&gt;详细步骤，请参考：debug获取评价列表API。&lt;/p&gt;&lt;p&gt;上方步骤4中触发Xdebug启动拦截的关键在于：URL后面要增加一个query（GET、POST皆可）:&amp;nbsp;&lt;u&gt;XDEBUG_SESSION_START=1&lt;/u&gt; 即可触发调试模式&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;当然，很多API接口会&lt;u&gt;对请求参数中的sign做安全校验&lt;/u&gt;，意即URL的GET参数不能随意增删，否则会报错：sign校验失败。遇到这种情况，可以通过在&lt;u&gt;Cookie中添加参数触发Xdebug启动&lt;/u&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情况1：&lt;/strong&gt;如果你在Chrome浏览器中，可以通过Cookie管理工具为当前API域名添加Cookie:&amp;nbsp;XDEBUG_SESSION = 1, HX-BETA = 9；或者直接在网页console中输入: document.cookie = 'HX-BETA=9; XDEBUG_SESSION=1;'&amp;nbsp; &amp;nbsp;然后接着上述步骤4的指示继续即可&lt;/p&gt;&lt;p&gt;&lt;strong&gt;情况2：&lt;/strong&gt;如果你在Charlse中，可以通过Rewrite工具为API添加Cookie，然后接着上述步骤4的指示继续即可&lt;/p&gt;
+
+&lt;h3 id=&quot;Bughole虫洞工具：预发断点调试PHP利器-实战2：debugPHP任务（同上方debugProductTestTask）&quot;&gt;实战2：debug PHP任务（同上方debug ProductTestTask）&lt;/h3&gt;&lt;p&gt;步骤参考debug ProductTestTask任务。&lt;span&gt;触发Xdebug启动拦截的关键在于：当前用户的环境变量中设置了:&amp;nbsp;&lt;u&gt;XDEBUG_CONFIG=idekey=bughole&lt;/u&gt;&amp;nbsp;这个变量（使用env命令可以查看当前用户空间的变量）&lt;/span&gt;&lt;/p&gt;&lt;p&gt;由于通过sudo export命令设置环境变量会失败，所以需要切换到root用户运行任务脚本。&lt;/p&gt;&lt;p&gt;注意：&lt;span&gt;多进程的任务(worker_num &amp;gt;= 2)在debug时会出现异常，解决办法：debug时将worker_num设为1，debug完成后再改回原值。&lt;/span&gt;&lt;/p&gt;&lt;h3 id=&quot;Bughole虫洞工具：预发断点调试PHP利器-遇到问题要反馈？&quot;&gt;遇到问题要反馈？&lt;/h3&gt;&lt;p&gt;遇到使用问题，烦请联系我qq: 379396993, 我会尽快帮忙查看问题&lt;/p&gt;&lt;h2 id=&quot;Bughole虫洞工具：预发断点调试PHP利器-预发布如何部署&quot;&gt;预发布如何部署&lt;/h2&gt;&lt;p&gt;1）拉取agent代码。注意将 GitLab用户名 替换为自己的用户名&lt;/p&gt;&lt;div class=&quot;code panel&quot; style=&quot;border-width: 1px;&quot;&gt;&lt;div class=&quot;codeContent panelContent&quot;&gt;
+&lt;div&gt;&lt;div id=&quot;highlighter_530619&quot; class=&quot;syntaxhighlighter nogutter  java&quot;&gt;&lt;div class=&quot;toolbar&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;div class=&quot;container&quot; title=&quot;Hint: double-click to select code&quot;&gt;&lt;div class=&quot;line number1 index0 alt2&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;cd /tmp&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number2 index1 alt1&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;git clone http:&lt;/code&gt;&lt;code class=&quot;java comments&quot;&gt;//GitLab用户名@git.husor.com/dongxu.lu/tiny-scripts.git&lt;/code&gt;&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;p&gt;2）安装Xdebug（如果已安装请跳过本步）&lt;/p&gt;&lt;div class=&quot;code panel&quot; style=&quot;border-width: 1px;&quot;&gt;&lt;div class=&quot;codeContent panelContent&quot;&gt;
+&lt;div&gt;&lt;div id=&quot;highlighter_392489&quot; class=&quot;syntaxhighlighter nogutter  java&quot;&gt;&lt;div class=&quot;toolbar&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;div class=&quot;container&quot; title=&quot;Hint: double-click to select code&quot;&gt;&lt;div class=&quot;line number1 index0 alt2&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;# 查看是否安装Xdebug，如果已安装请跳过本步&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number2 index1 alt1&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;/opt/php-&lt;/code&gt;&lt;code class=&quot;java value&quot;&gt;7.1&lt;/code&gt;&lt;code class=&quot;java plain&quot;&gt;.&lt;/code&gt;&lt;code class=&quot;java value&quot;&gt;9&lt;/code&gt;&lt;code class=&quot;java plain&quot;&gt;/bin/php -m |grep Xdebug&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number3 index2 alt2&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;&amp;nbsp;&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number4 index3 alt1&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;# copy编译好的扩展至PHP指定目录&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number5 index4 alt2&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;cp /tmp/tiny-scripts/bughole/xdebug.so /opt/php-&lt;/code&gt;&lt;code class=&quot;java value&quot;&gt;7.1&lt;/code&gt;&lt;code class=&quot;java plain&quot;&gt;.&lt;/code&gt;&lt;code class=&quot;java value&quot;&gt;9&lt;/code&gt;&lt;code class=&quot;java plain&quot;&gt;/lib/php/extensions/no-debug-non-zts-&lt;/code&gt;&lt;code class=&quot;java value&quot;&gt;20160303&lt;/code&gt;&lt;code class=&quot;java plain&quot;&gt;/&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number6 index5 alt1&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;&amp;nbsp;&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number7 index6 alt2&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;# 新建文件: /opt/php-&lt;/code&gt;&lt;code class=&quot;java value&quot;&gt;7.1&lt;/code&gt;&lt;code class=&quot;java plain&quot;&gt;.&lt;/code&gt;&lt;code class=&quot;java value&quot;&gt;9&lt;/code&gt;&lt;code class=&quot;java plain&quot;&gt;/etc/conf.d/xdebug.ini , 内容如下&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number8 index7 alt1&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;zend_extension = xdebug.so&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number9 index8 alt2&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;xdebug.remote_enable = &lt;/code&gt;&lt;code class=&quot;java value&quot;&gt;1&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number10 index9 alt1&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;xdebug.remote_connect_back = &lt;/code&gt;&lt;code class=&quot;java value&quot;&gt;0&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number11 index10 alt2&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;xdebug.remote_host = &lt;/code&gt;&lt;code class=&quot;java value&quot;&gt;127.0&lt;/code&gt;&lt;code class=&quot;java plain&quot;&gt;.&lt;/code&gt;&lt;code class=&quot;java value&quot;&gt;0.1&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number12 index11 alt1&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;xdebug.remote_port = &lt;/code&gt;&lt;code class=&quot;java value&quot;&gt;21733&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number13 index12 alt2&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;xdebug.remote_handler = dbgp&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number14 index13 alt1&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;xdebug.remote_mode = req&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number15 index14 alt2&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;xdebug.remote_autostart = &lt;/code&gt;&lt;code class=&quot;java value&quot;&gt;0&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number16 index15 alt1&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;xdebug.idekey = &lt;/code&gt;&lt;code class=&quot;java string&quot;&gt;&quot;bughole&quot;&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number17 index16 alt2&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;&amp;nbsp;&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number18 index17 alt1&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;# 重启PHP-FPM&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number19 index18 alt2&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;service php-fpm-&lt;/code&gt;&lt;code class=&quot;java value&quot;&gt;7&lt;/code&gt; &lt;code class=&quot;java plain&quot;&gt;restart&lt;/code&gt;&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;p&gt;3）agent持久运行&lt;/p&gt;&lt;div class=&quot;code panel&quot; style=&quot;border-width: 1px;&quot;&gt;&lt;div class=&quot;codeContent panelContent&quot;&gt;
+&lt;div&gt;&lt;div id=&quot;highlighter_666068&quot; class=&quot;syntaxhighlighter nogutter  java&quot;&gt;&lt;div class=&quot;toolbar&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;div class=&quot;container&quot; title=&quot;Hint: double-click to select code&quot;&gt;&lt;div class=&quot;line number1 index0 alt2&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;python /tmp/tiny-scripts/bughole/agent.py &amp;gt; /tmp/bughole-agent.log &lt;/code&gt;&lt;code class=&quot;java value&quot;&gt;2&lt;/code&gt;&lt;code class=&quot;java plain&quot;&gt;&amp;gt;&amp;amp;&lt;/code&gt;&lt;code class=&quot;java value&quot;&gt;1&lt;/code&gt; &lt;code class=&quot;java plain&quot;&gt;&amp;amp;&lt;/code&gt;&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;p class=&quot;p1&quot;&gt;4）部署已完成。确认agent已运行&lt;/p&gt;&lt;div class=&quot;code panel&quot; style=&quot;border-width: 1px;&quot;&gt;&lt;div class=&quot;codeContent panelContent&quot;&gt;
+&lt;div&gt;&lt;div id=&quot;highlighter_831199&quot; class=&quot;syntaxhighlighter nogutter  java&quot;&gt;&lt;div class=&quot;toolbar&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;div class=&quot;container&quot; title=&quot;Hint: double-click to select code&quot;&gt;&lt;div class=&quot;line number1 index0 alt2&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;# agent会返回OK&lt;/code&gt;&lt;/div&gt;&lt;div class=&quot;line number2 index1 alt1&quot;&gt;&lt;code class=&quot;java plain&quot;&gt;curl http:&lt;/code&gt;&lt;code class=&quot;java comments&quot;&gt;//127.0.0.1:21734&lt;/code&gt;&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;Bughole虫洞工具：预发断点调试PHP利器-Bughole原理&quot;&gt;Bughole原理&lt;/h2&gt;&lt;h3 id=&quot;Bughole虫洞工具：预发断点调试PHP利器-工程结构图&quot;&gt;工程结构图&lt;/h3&gt;&lt;p&gt;&lt;img class=&quot;confluence-embedded-image confluence-content-image-border&quot; width=&quot;900&quot; src=&quot;http://wx4.sinaimg.cn/large/6480dca9gy1fr2oyic41bj211m0mqq5k.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;Bughole虫洞工具：预发断点调试PHP利器-时序图&quot;&gt;时序图&lt;/h3&gt;&lt;p&gt;以最常用的StepOver(下一行)命令的执行时序作为示例&lt;/p&gt;&lt;p&gt;&lt;img class=&quot;confluence-embedded-image confluence-content-image-border&quot; width=&quot;900&quot; src=&quot;http://wx2.sinaimg.cn/large/6480dca9gy1fr2ozus21pj21bu0tc783.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;Bughole虫洞工具：预发断点调试PHP利器-安全考虑&quot;&gt;安全考虑&lt;/h2&gt;&lt;p&gt;Bughole未提供&lt;strong&gt;eval接口&lt;/strong&gt;，所有操作都为“读”操作，不会对线上业务数据造成污染&lt;/p&gt;&lt;p&gt;待本周发布上线试用几天后会及时更新使用和部署(Agent)文档&lt;/p&gt;
+
+&lt;h2 id=&quot;Bughole虫洞工具：预发断点调试PHP利器-项目源码&quot;&gt;项目源码&lt;/h2&gt;
+暂不对外开放，如有需要请电邮我
+&lt;/div&gt;</content><author><name></name></author><summary type="html">1 效果图 2 试用 2.1 debug: 获取评价列表API -&amp;nbsp;BeibeiItemRateGet 2.2 debug: ProductTestTask任务(product-module)&amp;nbsp; 3 实战 3.1 实战1：debug任意URL 3.2 实战2：debug PHP任务（同上方debug ProductTestTask） 3.3 遇到问题要反馈？ 4 预发布如何部署 5 Bughole原理 5.1 工程结构图 5.2 时序图 6 安全考虑 7 项目源码 效果图Bughole工具实现了PHPStorm中95%以上的debug功能。借助该工具在预发布调试：PHP的业务代码、API甚至任务脚本，都将变得极为方便！</summary></entry><entry><title type="html">PHP任务的多进程处理</title><link href="http://localhost:4000/2018/03/20/PHP%E4%BB%BB%E5%8A%A1%E7%9A%84%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%84%E7%90%86.html" rel="alternate" type="text/html" title="PHP任务的多进程处理" /><published>2018-03-20T00:00:00+08:00</published><updated>2018-03-20T00:00:00+08:00</updated><id>http://localhost:4000/2018/03/20/PHP%E4%BB%BB%E5%8A%A1%E7%9A%84%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%84%E7%90%86</id><content type="html" xml:base="http://localhost:4000/2018/03/20/PHP%E4%BB%BB%E5%8A%A1%E7%9A%84%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%84%E7%90%86.html">&lt;div class=&quot;wiki-content&quot;&gt;
                            &lt;p&gt;&lt;/p&gt;&lt;div&gt;
 &lt;ul&gt;
     &lt;li&gt;&lt;span class=&quot;TOCOutline&quot;&gt;1&lt;/span&gt; &lt;a href=&quot;#PHP任务的多进程处理-概述&quot;&gt;概述&lt;/a&gt;&lt;/li&gt;
@@ -982,164 +1033,4 @@ newPos = newVel * 1 + oldPos
 
 &lt;ul&gt;
   &lt;li&gt;MOOC公开课&lt;strong&gt;Python交互式编程介绍&lt;/strong&gt;（飞船demo中所用图片素材也来自该课程）：https://class.coursera.org/interactivepython-004&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="Tech" /><category term="Javascript" /><category term="MOOC" /><summary type="html">四五月份的时候曾抱着试一试的心态参加了一门MOOC课程An Introduction to Interactive Programming in Python，课程内容主要是通过编写小游戏来完成Python编程入门。 至于为什么要参加MOOC课程，又为什么选择了这一门呢？主要是MOOC这个话题太火了，弄得好像不参加就要当奥特曼了，所以希望通过参加一门简单的课程来了解MOOC；再者自己工作有闲暇时间，正好可以用业余时间学一学Python，也顺便学着编一些小游戏玩玩。 上完课拿到证书后本想抽时间做个总结，却总是困于拖延症中无法自拔。自己这几天利用闲暇时间学了学HTML5的canvas，总算把当初在这门课程上学到的一丁点关于游戏开发的知识点 ——-穿行在摩擦系数极低的外太空中的太空飞船在飞行时的编程控制应该是怎样的—— 用javascript给实现了一下，就权当是总结吧。 想要玩一玩这个简易飞船的戳这里：简易飞船demo ###如何实现 关于这个飞船的飞行，当初最吸引我的一点是它在加速飞行时，加速方向和运动方向并不总是一致的，也就是说这个飞船在运行时是有”漂移”特效的，然后我就很好奇这种”漂移”特效是如何用编程来实现的。下面我就说一说这方面的事情。 ####将飞船拟物化 也就是说从面向对象编程的角度来思考这个问题。 #####飞船的属性 拟物化的第一步是飞船在屏幕上得有一个起始点，在2d平面里可以直接用x（横坐标轴）和y（纵坐标轴）来标志起始位置即可。于是飞船有了第一个属性：当前坐标 (x, y) 飞船从起始点(x1, y1)移动到(x2, y2)只能有一个原因，在某段时间内，它的速度不再为0(velocity)，然后用大家都熟悉的公式 s2 = vel * time + s1 便可以获得(x1,y1)到(x2, y2)的距离，所以我们需要赋予飞船第二个属性：速度 vel速度(x、y代表速度分解到两坐标轴上的大小) 飞船具有速度从而开始运动，是因为它获得了某个方向的加速度(acceleration)。我们可以用公式 vel_2 = acc * time + vel_1 来获得飞船的速度，但前提是我们需要赋予飞船第三个属性：加速度 acc加速度(x, y) #####飞船的方法 想想看如果你坐在一架飘浮于外太空的飞船上时，你最需要飞船有什么功能？ 答案当然是可以挂档啦，要不然你就只能一辈子静止在那里看流星雨了。所以飞船应该要有一个挂档的方法(功能) startAcc() // 开始加速 Note: 正如科学家牛顿说过的，挂档的动作并不是改变飞船的速度(vel)，而是在改变它的加速度(acc). 如果你不想让飞船直接撞上附近某个星球，你就应该给它个挂空档的机会（即停止加速），要不然它真的会一直加速下去最终失控的（想想都可怕） stopAcc() // 停止加速 ####万事具备，只欠挂档了 真的吗？ 于是，当你按下加速键(↑)后，飞船开始加速，这个过程是发生在某个时间段内的，我们暂且就把这段时间定义为1吧（此处速度、时间等不再继承物理世界的单位，方便演示和计算） 在时间1内，君挂上档，飞船的加速度(acc)变化为： acc = (10, 10) // 任意数值，以飞船实际飞行效果调优为准 考虑到飞船初始时是静止的，所以飞船的速度变化为： newVel = acc * 1 + (0, 0) // newVel = (10, 10); 假设飞船初始位置为(0, 0)，那么飞船的位置变化为： newPos = newVel * 1 + (0, 0) // newPos = (10, 10); 此时如果君还没有挂空挡，那么在下一个时间1内，飞船的加速度(acc)、速度(vel)以及新位置(pos)将变为： acc = (10, 10) // 加速度此处设为常量（需要优化可以自己调优变动） newVel = acc * 1 + oldVel // newVel = (20, 20); newPos = newVel * 1 + oldPos // newPos = (20, 20); 此时需要设定一个定时器，每隔一小段时间(interval)把飞船的旧图像抹掉，再根据飞船的新位置将图像重绘一次，这样一来飞船看上去就好像动起来了。 可是，说好的漂移特效呢？ ####飞船并不完整 要想有漂移，当然要有变向了。我们需要给飞船添加一个改变方向的方法，但前提是飞船要具有方向的概念（属性）。在飞船所处的2d世界，我们用弧度来表示它所朝的方向。 // 飞船新属性 ang = 0 // 0或者2π即表示水平向右的方向 // 飞船新方法 changeRotation() // 该方法的实质是改变飞船的 ang 添加新的属性和方法后，我们再来演示一遍在时间1内飞船各属性的变化（假设本时间段内飞船角度ang为 π/3，且处于加速状态，考虑到无摩擦时飞船在若干次加速后将因为速度过快而变得无法控制，我们在飞船更新速度时，为它添加一个速度磨损） // 角度 ang = π / 3 // 加速度 acc = ( 10 * cos(ang), 10 * sin(ang) ) // 速度 vel = acc * 1 + oldVel // 摩擦导致的2%的速度磨损 newVel = vel * 0.98 (小数大小以飞行体验调优为准) // 新位置 newPos = newVel * 1 + oldPos 设置键盘 ←和→按下时调用changeRotation()方法来改变飞行角度 按下↑时调用startAcc()方法启动加速 释放↑时调用stopAcc()停止加速。 这次再试一试，飞船是不是开始漂移了？ Good luck :) 备注： MOOC公开课Python交互式编程介绍（飞船demo中所用图片素材也来自该课程）：https://class.coursera.org/interactivepython-004</summary></entry><entry><title type="html">通过XHR上传浏览器端的文件资源</title><link href="http://localhost:4000/2014/06/28/upload-browser-side-resources-by-using-xhr.html" rel="alternate" type="text/html" title="通过XHR上传浏览器端的文件资源" /><published>2014-06-28T00:00:00+08:00</published><updated>2014-06-28T00:00:00+08:00</updated><id>http://localhost:4000/2014/06/28/upload-browser-side-resources-by-using-xhr</id><content type="html" xml:base="http://localhost:4000/2014/06/28/upload-browser-side-resources-by-using-xhr.html">&lt;p&gt;最近在为公司开发一个&lt;a href=&quot;https://chrome.google.com/webstore/detail/obnbgneldjmmpgkbnnbiiinijmiclpaa&quot;&gt;海淘的Chrome扩展&lt;/a&gt;，扩展的需求之一是：获取当前页面中的某张图片，并将其上传至公司的服务器保存。&lt;/p&gt;
-
-&lt;p&gt;当时的第一思路是：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;获取图片的URL，然后把URL提交给服务器，让服务器进行下载操作&lt;/li&gt;
-  &lt;li&gt;如果服务器访问图片资源时被拒绝，就需要让用户手动下载该图片，然后手动上传至我们的服务器&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;不过在后来的实践中发现，其实可以直接通过&lt;strong&gt;发起&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest&quot;&gt;XHR&lt;/a&gt;请求并指定其返回类型&lt;/strong&gt;的方式来获取浏览器返回的raw数据(&lt;code class=&quot;highlighter-rouge&quot;&gt;Blob&lt;/code&gt;)，然后将这些raw数据当作文件上传至服务器。&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;&lt;em&gt;在这里首先要说明一点是的：这种将XHR的响应内容当作文件上传的思路，通常是需要&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS&quot;&gt;跨站请求资源&lt;/a&gt;(Cross-site HTTP requests)的，所以除非是在允许跨站请求的运行环境中（如Chrome扩展内）运行这些JS，否则这种思路几乎不可用&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;###思路
-这种上传客户端资源的解决方案最先来自这里&lt;a href=&quot;http://stackoverflow.com/a/10002486/1241980&quot;&gt;upload-a-file-in-a-google-chrome-extension&lt;/a&gt;。基本思路是：当使用&lt;code class=&quot;highlighter-rouge&quot;&gt;XHR&lt;/code&gt;向某个URL发起请求时（如请求某个&lt;code class=&quot;highlighter-rouge&quot;&gt;image&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;css&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;js&lt;/code&gt;文件资源）我们可以设定它的返回类型（&lt;code class=&quot;highlighter-rouge&quot;&gt;responseType&lt;/code&gt;）；当我们把返回类型设置为&lt;code class=&quot;highlighter-rouge&quot;&gt;blob&lt;/code&gt;时，我们便可以直接把返回的raw数据当作”文件”来上传到服务器，以此来实现客户端访问资源的上传。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;###怎么做
-1) 通过XHR请求一个图片资源&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var imgURL = 'http://lyfing.qiniudn.com/external_links/pocker_cards_family.png';
-var xhr = new XMLHttpRequest(); 
-xhr.open(&quot;GET&quot;, imgURL, true);
-xhr.responseType = &quot;blob&quot;;
-xhr.onload = function(){
-    var blob = xhr.response;
-    var msg = ' Request URL = \n ' + imgURL;
-    msg += '\n\n Get Response !';
-    msg += '\n responseType = ' + blob.type;
-    msg += '\n responseSize = ' + Math.round(blob.size / 1024) + 'KB';
-    alert(msg);
-};
-xhr.send();
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;script type=&quot;text/javascript&quot;&gt;
-function getIMGRes(){
-    var imgURL = 'http://lyfing.qiniudn.com/external_links/pocker_cards_family.png';
-    var xhr = new XMLHttpRequest(); 
-    xhr.open(&quot;GET&quot;, imgURL, true);
-    xhr.responseType = &quot;blob&quot;;
-    xhr.onload = function(){
-        var blob = xhr.response;
-        var msg = ' Request URL = \n ' + imgURL;
-        msg += '\n\n Get Response !';
-        msg += '\n responseType = ' + blob.type;
-        msg += '\n responseSize = ' + Math.round(blob.size / 1024) + 'KB';
-        alert(msg);
-    };
-    xhr.send();
-};
-&lt;/script&gt;
-
-&lt;p&gt;&lt;input type=&quot;button&quot; onclick=&quot;getIMGRes();&quot; value=&quot;点击测试&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;2) 将返回的&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Blob&quot;&gt;Blob&lt;/a&gt;对象上传至服务器&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 直接使用上一步获得的blob对象
-var blob = xhr1.response;
-// 我们可以直接使用FormData构建Form表单
-var formData = new FormData();
-// 获取文件类型(例如: blob.type = 'image/png')
-var fileType = blob.type.split('/')[1]; 
-// 将返回的blob对象直接当作文件上传，并设置上传文件名为 test001.fileType
-formData.append('file', blob, 'test001.' + fileType);
-
-var xhr2 = new XMLHttpRequest();
-
-xhr2.upload.onprogress = function(event){
-    ...
-    $msg.html('正在上传 ( ' + percent + '% )');
-}
-
-xhr2.onload = function(){
-    if ( !confirm('上传完成！即将跳转至上传结果页...') ) return;
-    // 返回结果是一段纯文本，我们用正则取出本次上传的信息链接
-    var url = xhr2.response.match(/http:\/\/[^\s]+/)[0];
-    window.open(url);
-}
-
-xhr2.open('POST', 'http://posttestserver.com/post.php?dir=example', true);
-xhr2.send(formData);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;script type=&quot;text/javascript&quot;&gt;
-function upload(){
-    var imgURL = 'http://lyfing.qiniudn.com/external_links/pocker_cards_family.png';
-    var xhr1 = new XMLHttpRequest();
-    xhr1.open(&quot;GET&quot;, imgURL, true);
-    xhr1.responseType = &quot;blob&quot;;
-    xhr1.onload = function(){
-        var blob = xhr1.response;
-        var formData = new FormData();
-        var fileType = blob.type.split('/')[1];
-        formData.append('file', blob, 'test001.' + fileType);
-
-        var xhr = new XMLHttpRequest();
-        
-        xhr.upload.onprogress = function(event){
-            var $msg2 = $('#part2Msg');
-            var percent = Math.floor(event.position / event.totalSize * 100);
-            $msg2.html('正在上传 ( ' + percent + '% )');
-        }
-
-        xhr.onload = function(){
-            if ( !confirm('上传完成！即将跳转至上传结果页...') ) return;
-            var url = xhr.response.match(/http:\/\/[^\s]+/)[0];
-            window.open(url);
-        }
-        
-        xhr.open('POST', 'http://posttestserver.com/post.php?dir=example', true);
-        xhr.send(formData);        
-    };
-    xhr1.send(); 
-}
-&lt;/script&gt;
-
-&lt;p&gt;&lt;input type=&quot;button&quot; onclick=&quot;upload();&quot; value=&quot;点击测试&quot; /&gt; &lt;span id=&quot;part2Msg&quot;&gt;&lt;/span&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;用到的一些对象&quot;&gt;用到的一些&lt;code class=&quot;highlighter-rouge&quot;&gt;对象&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;上面我们用到了&lt;code class=&quot;highlighter-rouge&quot;&gt;FormData&lt;/code&gt;对象(&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/FormData&quot;&gt;详情&lt;/a&gt;)，它是一个模拟了HTML中的Form表单的实体，你可以直接使用它来构建&lt;code class=&quot;highlighter-rouge&quot;&gt;key/value pair&lt;/code&gt;，其中的&lt;code class=&quot;highlighter-rouge&quot;&gt;value&lt;/code&gt;可以是&lt;code class=&quot;highlighter-rouge&quot;&gt;文件&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;Blob&lt;/code&gt;或者纯&lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt;。下面做一个简单的使用示例（Chrome、Firefox可随便使用，IE10+才可使用)&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 创建Form表单对象formData，可在构造函数中传入一个HTML表单对象htmlForm
-// 它的键值对会被添加到formData中
-var formData = new FormData();
-// 添加一个键值对
-formData.append('userID', '112233');
-// 添加一个文件对象
-var file = document.getElementByID('fileField');
-formData.append('file1', file);
-// 添加一个Blob对象，它将被视为文件上传
-formData.append('file2', blob);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;关于&lt;code class=&quot;highlighter-rouge&quot;&gt;Blob&lt;/code&gt;对象，它是一个类似于&lt;code class=&quot;highlighter-rouge&quot;&gt;文件&lt;/code&gt;的结构体，事实上&lt;code class=&quot;highlighter-rouge&quot;&gt;文件&lt;/code&gt;接口正是在它的基础上做的扩展。&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Blob&quot;&gt;更多关于Blob&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;备注&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest&quot;&gt;跨站请求HTTP资源&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Blob&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Blob&lt;/code&gt;&lt;/a&gt;对象&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/FormData&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;FormData&lt;/code&gt;&lt;/a&gt;对象&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;示例中用到的文件上传服务：http://posttestserver.com/post.php?dir=example&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;示例中用到的图片：&lt;img src=&quot;http://lyfing.qiniudn.com/external_links/pocker_cards_family.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="Tech" /><category term="Javascript" /><category term="Chrome-Extension" /><summary type="html">最近在为公司开发一个海淘的Chrome扩展，扩展的需求之一是：获取当前页面中的某张图片，并将其上传至公司的服务器保存。 当时的第一思路是： 获取图片的URL，然后把URL提交给服务器，让服务器进行下载操作 如果服务器访问图片资源时被拒绝，就需要让用户手动下载该图片，然后手动上传至我们的服务器 不过在后来的实践中发现，其实可以直接通过发起XHR请求并指定其返回类型的方式来获取浏览器返回的raw数据(Blob)，然后将这些raw数据当作文件上传至服务器。 在这里首先要说明一点是的：这种将XHR的响应内容当作文件上传的思路，通常是需要跨站请求资源(Cross-site HTTP requests)的，所以除非是在允许跨站请求的运行环境中（如Chrome扩展内）运行这些JS，否则这种思路几乎不可用 ###思路 这种上传客户端资源的解决方案最先来自这里upload-a-file-in-a-google-chrome-extension。基本思路是：当使用XHR向某个URL发起请求时（如请求某个image、css、js文件资源）我们可以设定它的返回类型（responseType）；当我们把返回类型设置为blob时，我们便可以直接把返回的raw数据当作”文件”来上传到服务器，以此来实现客户端访问资源的上传。 ###怎么做 1) 通过XHR请求一个图片资源 var imgURL = 'http://lyfing.qiniudn.com/external_links/pocker_cards_family.png'; var xhr = new XMLHttpRequest(); xhr.open(&quot;GET&quot;, imgURL, true); xhr.responseType = &quot;blob&quot;; xhr.onload = function(){ var blob = xhr.response; var msg = ' Request URL = \n ' + imgURL; msg += '\n\n Get Response !'; msg += '\n responseType = ' + blob.type; msg += '\n responseSize = ' + Math.round(blob.size / 1024) + 'KB'; alert(msg); }; xhr.send(); 2) 将返回的Blob对象上传至服务器 // 直接使用上一步获得的blob对象 var blob = xhr1.response; // 我们可以直接使用FormData构建Form表单 var formData = new FormData(); // 获取文件类型(例如: blob.type = 'image/png') var fileType = blob.type.split('/')[1]; // 将返回的blob对象直接当作文件上传，并设置上传文件名为 test001.fileType formData.append('file', blob, 'test001.' + fileType); var xhr2 = new XMLHttpRequest(); xhr2.upload.onprogress = function(event){ ... $msg.html('正在上传 ( ' + percent + '% )'); } xhr2.onload = function(){ if ( !confirm('上传完成！即将跳转至上传结果页...') ) return; // 返回结果是一段纯文本，我们用正则取出本次上传的信息链接 var url = xhr2.response.match(/http:\/\/[^\s]+/)[0]; window.open(url); } xhr2.open('POST', 'http://posttestserver.com/post.php?dir=example', true); xhr2.send(formData);   用到的一些对象 上面我们用到了FormData对象(详情)，它是一个模拟了HTML中的Form表单的实体，你可以直接使用它来构建key/value pair，其中的value可以是文件、Blob或者纯String。下面做一个简单的使用示例（Chrome、Firefox可随便使用，IE10+才可使用) // 创建Form表单对象formData，可在构造函数中传入一个HTML表单对象htmlForm // 它的键值对会被添加到formData中 var formData = new FormData(); // 添加一个键值对 formData.append('userID', '112233'); // 添加一个文件对象 var file = document.getElementByID('fileField'); formData.append('file1', file); // 添加一个Blob对象，它将被视为文件上传 formData.append('file2', blob); 关于Blob对象，它是一个类似于文件的结构体，事实上文件接口正是在它的基础上做的扩展。更多关于Blob 备注： 跨站请求HTTP资源 Blob对象 FormData对象 示例中用到的文件上传服务：http://posttestserver.com/post.php?dir=example 示例中用到的图片：</summary></entry></feed>
+&lt;/ul&gt;</content><author><name></name></author><category term="Tech" /><category term="Javascript" /><category term="MOOC" /><summary type="html">四五月份的时候曾抱着试一试的心态参加了一门MOOC课程An Introduction to Interactive Programming in Python，课程内容主要是通过编写小游戏来完成Python编程入门。 至于为什么要参加MOOC课程，又为什么选择了这一门呢？主要是MOOC这个话题太火了，弄得好像不参加就要当奥特曼了，所以希望通过参加一门简单的课程来了解MOOC；再者自己工作有闲暇时间，正好可以用业余时间学一学Python，也顺便学着编一些小游戏玩玩。 上完课拿到证书后本想抽时间做个总结，却总是困于拖延症中无法自拔。自己这几天利用闲暇时间学了学HTML5的canvas，总算把当初在这门课程上学到的一丁点关于游戏开发的知识点 ——-穿行在摩擦系数极低的外太空中的太空飞船在飞行时的编程控制应该是怎样的—— 用javascript给实现了一下，就权当是总结吧。 想要玩一玩这个简易飞船的戳这里：简易飞船demo ###如何实现 关于这个飞船的飞行，当初最吸引我的一点是它在加速飞行时，加速方向和运动方向并不总是一致的，也就是说这个飞船在运行时是有”漂移”特效的，然后我就很好奇这种”漂移”特效是如何用编程来实现的。下面我就说一说这方面的事情。 ####将飞船拟物化 也就是说从面向对象编程的角度来思考这个问题。 #####飞船的属性 拟物化的第一步是飞船在屏幕上得有一个起始点，在2d平面里可以直接用x（横坐标轴）和y（纵坐标轴）来标志起始位置即可。于是飞船有了第一个属性：当前坐标 (x, y) 飞船从起始点(x1, y1)移动到(x2, y2)只能有一个原因，在某段时间内，它的速度不再为0(velocity)，然后用大家都熟悉的公式 s2 = vel * time + s1 便可以获得(x1,y1)到(x2, y2)的距离，所以我们需要赋予飞船第二个属性：速度 vel速度(x、y代表速度分解到两坐标轴上的大小) 飞船具有速度从而开始运动，是因为它获得了某个方向的加速度(acceleration)。我们可以用公式 vel_2 = acc * time + vel_1 来获得飞船的速度，但前提是我们需要赋予飞船第三个属性：加速度 acc加速度(x, y) #####飞船的方法 想想看如果你坐在一架飘浮于外太空的飞船上时，你最需要飞船有什么功能？ 答案当然是可以挂档啦，要不然你就只能一辈子静止在那里看流星雨了。所以飞船应该要有一个挂档的方法(功能) startAcc() // 开始加速 Note: 正如科学家牛顿说过的，挂档的动作并不是改变飞船的速度(vel)，而是在改变它的加速度(acc). 如果你不想让飞船直接撞上附近某个星球，你就应该给它个挂空档的机会（即停止加速），要不然它真的会一直加速下去最终失控的（想想都可怕） stopAcc() // 停止加速 ####万事具备，只欠挂档了 真的吗？ 于是，当你按下加速键(↑)后，飞船开始加速，这个过程是发生在某个时间段内的，我们暂且就把这段时间定义为1吧（此处速度、时间等不再继承物理世界的单位，方便演示和计算） 在时间1内，君挂上档，飞船的加速度(acc)变化为： acc = (10, 10) // 任意数值，以飞船实际飞行效果调优为准 考虑到飞船初始时是静止的，所以飞船的速度变化为： newVel = acc * 1 + (0, 0) // newVel = (10, 10); 假设飞船初始位置为(0, 0)，那么飞船的位置变化为： newPos = newVel * 1 + (0, 0) // newPos = (10, 10); 此时如果君还没有挂空挡，那么在下一个时间1内，飞船的加速度(acc)、速度(vel)以及新位置(pos)将变为： acc = (10, 10) // 加速度此处设为常量（需要优化可以自己调优变动） newVel = acc * 1 + oldVel // newVel = (20, 20); newPos = newVel * 1 + oldPos // newPos = (20, 20); 此时需要设定一个定时器，每隔一小段时间(interval)把飞船的旧图像抹掉，再根据飞船的新位置将图像重绘一次，这样一来飞船看上去就好像动起来了。 可是，说好的漂移特效呢？ ####飞船并不完整 要想有漂移，当然要有变向了。我们需要给飞船添加一个改变方向的方法，但前提是飞船要具有方向的概念（属性）。在飞船所处的2d世界，我们用弧度来表示它所朝的方向。 // 飞船新属性 ang = 0 // 0或者2π即表示水平向右的方向 // 飞船新方法 changeRotation() // 该方法的实质是改变飞船的 ang 添加新的属性和方法后，我们再来演示一遍在时间1内飞船各属性的变化（假设本时间段内飞船角度ang为 π/3，且处于加速状态，考虑到无摩擦时飞船在若干次加速后将因为速度过快而变得无法控制，我们在飞船更新速度时，为它添加一个速度磨损） // 角度 ang = π / 3 // 加速度 acc = ( 10 * cos(ang), 10 * sin(ang) ) // 速度 vel = acc * 1 + oldVel // 摩擦导致的2%的速度磨损 newVel = vel * 0.98 (小数大小以飞行体验调优为准) // 新位置 newPos = newVel * 1 + oldPos 设置键盘 ←和→按下时调用changeRotation()方法来改变飞行角度 按下↑时调用startAcc()方法启动加速 释放↑时调用stopAcc()停止加速。 这次再试一试，飞船是不是开始漂移了？ Good luck :) 备注： MOOC公开课Python交互式编程介绍（飞船demo中所用图片素材也来自该课程）：https://class.coursera.org/interactivepython-004</summary></entry></feed>
