@@ -39,9 +39,6 @@ END
 ```
 为了提升客户端命令解析的速度，提高数据内容的可扩展性，Memcached在v1.3之后引入了Binary协议(`Binary Protocol`)。对这种协议感兴趣的可自行了解一下，此处不再细说。
 
-通过对HashMap和LRU这两种核心数据结构进行分区锁/无锁的优化后，一次请求的流程图将变为下图所示的样子：
-![](https://github.com/HelloLyfing/hellolyfing.github.io/blob/master/images/cache/Memcached---1-9.png?raw=true)
-
 
 ***基于Libevent处理请求***
 Libevent是一个提供异步事件回调的C程序。它支持`/dev/poll`, `kqueue(2)`, `POSIX select(2)`, `Windows IOCP`, `poll(2)`, `epoll(4)` 以及 `Solaris event ports`等各系统的调用，并对外提供了一套统一的API，使其在Server端跨平台的高并发应用场景中拥有独特优势。
@@ -99,6 +96,9 @@ LRU的实现通常都是一个双向的链表，在不加锁的情况下对链�
 ![---1-14](https://github.com/HelloLyfing/hellolyfing.github.io/blob/master/images/cache/Memcached---1-14.png?raw=true)
 
 对LRU的高并发操作的优化是一个持续的话题，本篇不再细讲，感兴趣的同学可以自行了解下。
+
+通过对HashMap和LRU这两种核心数据结构进行分区锁/无锁的优化后，一次请求的流程图将变为下图所示的样子：
+![](https://github.com/HelloLyfing/hellolyfing.github.io/blob/master/images/cache/Memcached---1-19.png?raw=true)
 
 # 4 Memcached的网络模型
 为了支持高并发连接和跨平台部署，Memcached使用了Libevent来进行网络连接管理。
