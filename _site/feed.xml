@@ -1,4 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-07-07T16:32:04+08:00</updated><id>http://localhost:4000/</id><title type="html">蓝枫铭的技术博客</title><subtitle>立志成长为一名优秀架构师:)</subtitle><entry><title type="html">Memcached核心技术初探</title><link href="http://localhost:4000/2018/06/29/Memcached%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%88%9D%E6%8E%A2.html" rel="alternate" type="text/html" title="Memcached核心技术初探" /><published>2018-06-29T00:00:00+08:00</published><updated>2018-06-29T00:00:00+08:00</updated><id>http://localhost:4000/2018/06/29/Memcached%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%88%9D%E6%8E%A2</id><content type="html" xml:base="http://localhost:4000/2018/06/29/Memcached%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%88%9D%E6%8E%A2.html">&lt;h1 id=&quot;1-memcached概述&quot;&gt;1 Memcached概述&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-07-30T09:57:11+08:00</updated><id>http://localhost:4000/</id><title type="html">蓝枫铭的技术博客</title><subtitle>立志成长为一名优秀架构师:)</subtitle><entry><title type="html">Java并发编程之：Java内存模型</title><link href="http://localhost:4000/2018/07/30/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E4%B9%8B-Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.html" rel="alternate" type="text/html" title="Java并发编程之：Java内存模型" /><published>2018-07-30T00:00:00+08:00</published><updated>2018-07-30T00:00:00+08:00</updated><id>http://localhost:4000/2018/07/30/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E4%B9%8B:Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B</id><content type="html" xml:base="http://localhost:4000/2018/07/30/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E4%B9%8B-Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.html">&lt;p&gt;The Java memory model specifies how the Java virtual machine works with the computer’s memory (RAM). The Java virtual machine is a model of a whole computer so this model naturally includes a memory model - AKA the Java memory model.&lt;/p&gt;
+
+&lt;p&gt;It is very important to understand the Java memory model if you want to design correctly behaving concurrent programs. The Java memory model specifies how and when different threads can see values written to shared variables by other threads, and how to synchronize access to shared variables when necessary.&lt;/p&gt;
+
+&lt;p&gt;The original Java memory model was insufficient, so the Java memory model was revised in Java 1.5. This version of the Java memory model is still in use in Java 8.&lt;/p&gt;
+
+&lt;p&gt;前言：Java内存模型详细说明了Java虚拟机(以下将使用JVM这个术语)是如何与计算机的内存(RAM)进行交互的。JVM是一个完整计算机的模型，所以该模型也包含了内存模块，也就是我们熟知的Java内存模型。&lt;/p&gt;
+
+&lt;p&gt;想要设计出符合预期的并发程序，了解Java的内存模型是非常重要的。Java内存模型详细描述了不同的线程如何以及何时可以看见被其他线程写入的共享变量，以及在需要时如何同步使用共享变量。&lt;/p&gt;
+
+&lt;p&gt;Java内存模型在一开始是不够完善的，不过它在Java 1.5中被改进了。Java8依然在使用这一改进版本的内存模型。&lt;/p&gt;
+
+&lt;h1 id=&quot;一一窥java内存模型的内部&quot;&gt;一、一窥Java内存模型的内部&lt;/h1&gt;
+
+&lt;p&gt;The Java memory model used internally in the JVM divides memory between thread stacks and the heap. This diagram illustrates the Java memory model from a logic perspective:&lt;/p&gt;
+
+&lt;p&gt;JVM中的Java内存模型将内存分为线程栈(thread stacks)和堆(heap)。下图从逻辑角度演示了Java的内存模型：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/java_concurrency/java-memory-model-1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Each thread running in the Java virtual machine has its own thread stack. The thread stack contains information about what methods the thread has called to reach the current point of execution. I will refer to this as the “call stack”. As the thread executes its code, the call stack changes.&lt;/p&gt;
+
+&lt;p&gt;The thread stack also contains all local variables for each method being executed (all methods on the call stack). A thread can only access it’s own thread stack. Local variables created by a thread are invisible to all other threads than the thread who created it. Even if two threads are executing the exact same code, the two threads will still create the local variables of that code in each their own thread stack. Thus, each thread has its own version of each local variable.&lt;/p&gt;
+
+&lt;p&gt;All local variables of primitive types ( boolean, byte, short, char, int, long, float, double) are fully stored on the thread stack and are thus not visible to other threads. One thread may pass a copy of a pritimive variable to another thread, but it cannot share the primitive local variable itself.&lt;/p&gt;
+
+&lt;p&gt;The heap contains all objects created in your Java application, regardless of what thread created the object. This includes the object versions of the primitive types (e.g. Byte, Integer, Long etc.). It does not matter if an object was created and assigned to a local variable, or created as a member variable of another object, the object is still stored on the heap.&lt;/p&gt;
+
+&lt;p&gt;Here is a diagram illustrating the call stack and local variables stored on the thread stacks, and objects stored on the heap:&lt;/p&gt;
+
+&lt;p&gt;在JVM中运行的每个线程都有自己的线程栈。线程栈包含的信息为：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/java_concurrency/java-memory-model-2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;本篇文章翻译自：http://tutorials.jenkov.com/java-concurrency/java-memory-model.html&lt;/p&gt;</content><author><name></name></author><summary type="html">The Java memory model specifies how the Java virtual machine works with the computer’s memory (RAM). The Java virtual machine is a model of a whole computer so this model naturally includes a memory model - AKA the Java memory model.</summary></entry><entry><title type="html">Memcached核心技术初探</title><link href="http://localhost:4000/2018/06/29/Memcached%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%88%9D%E6%8E%A2.html" rel="alternate" type="text/html" title="Memcached核心技术初探" /><published>2018-06-29T00:00:00+08:00</published><updated>2018-06-29T00:00:00+08:00</updated><id>http://localhost:4000/2018/06/29/Memcached%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%88%9D%E6%8E%A2</id><content type="html" xml:base="http://localhost:4000/2018/06/29/Memcached%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%88%9D%E6%8E%A2.html">&lt;h1 id=&quot;1-memcached概述&quot;&gt;1 Memcached概述&lt;/h1&gt;
 &lt;h2 id=&quot;11-memcached是什么&quot;&gt;1.1 Memcached是什么&lt;/h2&gt;
 &lt;p&gt;Memcached是一个高性能、分布式的内存缓存系统，它通过在内存中缓存数据和对象来减少数据库的读取次数，从而提升动态数据库驱动型网站的访问体验。&lt;/p&gt;
 
@@ -29,9 +63,6 @@ hello
 END
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;为了提升客户端命令解析的速度，提高数据内容的可扩展性，Memcached在v1.3之后引入了Binary协议(&lt;code class=&quot;highlighter-rouge&quot;&gt;Binary Protocol&lt;/code&gt;)。对这种协议感兴趣的可自行了解一下，此处不再细说。&lt;/p&gt;
-
-&lt;p&gt;通过对HashMap和LRU这两种核心数据结构进行分区锁/无锁的优化后，一次请求的流程图将变为下图所示的样子：
-&lt;img src=&quot;https://github.com/HelloLyfing/hellolyfing.github.io/blob/master/images/cache/Memcached---1-9.png?raw=true&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;基于Libevent处理请求&lt;/em&gt;&lt;/strong&gt;
 Libevent是一个提供异步事件回调的C程序。它支持&lt;code class=&quot;highlighter-rouge&quot;&gt;/dev/poll&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;kqueue(2)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;POSIX select(2)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Windows IOCP&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;poll(2)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;epoll(4)&lt;/code&gt; 以及 &lt;code class=&quot;highlighter-rouge&quot;&gt;Solaris event ports&lt;/code&gt;等各系统的调用，并对外提供了一套统一的API，使其在Server端跨平台的高并发应用场景中拥有独特优势。&lt;/p&gt;
@@ -89,6 +120,9 @@ LRU的实现通常都是一个双向的链表，在不加锁的情况下对链�
 &lt;img src=&quot;https://github.com/HelloLyfing/hellolyfing.github.io/blob/master/images/cache/Memcached---1-14.png?raw=true&quot; alt=&quot;---1-14&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;对LRU的高并发操作的优化是一个持续的话题，本篇不再细讲，感兴趣的同学可以自行了解下。&lt;/p&gt;
+
+&lt;p&gt;通过对HashMap和LRU这两种核心数据结构进行分区锁/无锁的优化后，一次请求的流程图将变为下图所示的样子：
+&lt;img src=&quot;https://github.com/HelloLyfing/hellolyfing.github.io/blob/master/images/cache/Memcached---1-19.png?raw=true&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;4-memcached的网络模型&quot;&gt;4 Memcached的网络模型&lt;/h1&gt;
 &lt;p&gt;为了支持高并发连接和跨平台部署，Memcached使用了Libevent来进行网络连接管理。&lt;/p&gt;
@@ -747,282 +781,4 @@ DBG:  good bye&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;时间：10.23&lt;br /&gt;
 资料：《Visual Representation of SQL Joins》 | by C.L. Moffatt | http://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins&lt;br /&gt;
-评论：关系型数据库Join表的方式有哪些，每种join的使用结果如何？在对Mysql有了一定的业务层的使用经验后，再看这篇文章，觉得人家写的真是简洁而全面。&lt;/p&gt;</content><author><name></name></author><category term="资料" /><summary type="html">平时会读一些技术博客什么的，但都是零零星星不成体统的。所以在此新建一篇博客来专门记录这些自己读过的编程相关的资料。</summary></entry><entry><title type="html">MySQL技能二三事</title><link href="http://localhost:4000/2014/11/30/several-skills-about-mysql.html" rel="alternate" type="text/html" title="MySQL技能二三事" /><published>2014-11-30T00:00:00+08:00</published><updated>2014-11-30T00:00:00+08:00</updated><id>http://localhost:4000/2014/11/30/several-skills-about-mysql</id><content type="html" xml:base="http://localhost:4000/2014/11/30/several-skills-about-mysql.html">&lt;h1 id=&quot;其一-int10意欲何为&quot;&gt;其一: int(10)意欲何为&lt;/h1&gt;
-
-&lt;p&gt;MySQL的Column-Type中的&lt;strong&gt;int&lt;/strong&gt;一类，不像其他Type如&lt;strong&gt;char&lt;/strong&gt;、&lt;strong&gt;varchar&lt;/strong&gt;是根据最大size来预置存储空间的，&lt;strong&gt;int&lt;/strong&gt;这一类的Column-Type所指定的size是作为显示宽度来存储的(涉及到size不足前端补零的场景-zerofill），它们所占用的实际空间大小是&lt;a href=&quot;http://dev.mysql.com/doc/refman/5.1/en/integer-types.html&quot;&gt;固定&lt;/a&gt;的。所以想通过&lt;code class=&quot;highlighter-rouge&quot;&gt;int(10)&lt;/code&gt;来节省存储空间的想法是无效的。&lt;/p&gt;
-
-&lt;h1 id=&quot;其二-index的prefix-length&quot;&gt;其二: index的prefix length&lt;/h1&gt;
-
-&lt;p&gt;最近的一个项目需要存储互联网上的URL，并生成唯一ID，所以数据表里边会有&lt;code class=&quot;highlighter-rouge&quot;&gt;urlcmpr&lt;/code&gt;一栏&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;urlcmpr: 适当压缩过的url，用0、1代表http[s]，62进制的code代表hostname。示例：0h^/Mucinex-Sinus-Max-Pressure-Caplets-Count/dp/B009XQHSUC/ref-id=379&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;当时的建表语句是这样的（其实项目用的是SQLAlchemy的ORM-Model，这里只是复现一下当时的情况）&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CREATE TABLE `urls` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `urlcmpr` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `idx_urlcmpr` (`urlcmpr`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;查看建好的表信息&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql&amp;gt; DESC urls;
-+---------+--------------+------+-----+---------+----------------+
-| Field   | Type         | Null | Key | Default | Extra          |
-+---------+--------------+------+-----+---------+----------------+
-| id      | int(11)      | NO   | PRI | NULL    | auto_increment |
-| urlcmpr | varchar(255) | YES  | UNI | NULL    |                |
-+---------+--------------+------+-----+---------+----------------+
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;首先插入两条记录：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;insert into urls (urlcmpr) values 
-  ('0h^/Mucinex-Sinus-Max-Pressure-Caplets-Count/dp/B009XQHSUC/ref-id=0001'),
-  ('0h^/Mucinex-Sinus-Max-Pressure-Caplets-Count/dp/B009XQHSUC/ref-id=0002');
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;因为我们已经为&lt;code class=&quot;highlighter-rouge&quot;&gt;urlcmpr&lt;/code&gt;建好了唯一索引，我们来试试重复插入一下：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;insert into urls (urlcmpr) values 
-  ('0h^/Mucinex-Sinus-Max-Pressure-Caplets-Count/dp/B009XQHSUC/ref-id=0001');
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;不出所料，报错了&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ERROR 1062 (23000): 
-Duplicate entry '0h^/Mucinex-Sinus-Max-Pressure-Caplets-Count/dp/B009XQHSUC/ref-i'
-for key 'idx_urlcmpr'
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这个原本也没什么，但由于下方已删除的那部分描述的缘由，我开始关注错误报告所反映的一个信息：&lt;code class=&quot;highlighter-rouge&quot;&gt;urlcmpr&lt;/code&gt;栏是255字符的，但据此建立的&lt;code class=&quot;highlighter-rouge&quot;&gt;unique-key&lt;/code&gt;却只有64字符的长度，这是怎么回事？&lt;/p&gt;
-
-&lt;p&gt;其实后来才发现这个只是显示了&lt;em&gt;唯一Key&lt;/em&gt;的前64个字符而已，其实&lt;em&gt;唯一Key&lt;/em&gt;并不是只有64个字符。&lt;/p&gt;
-
-&lt;s&gt;这里建唯一索引的目的是为了在重复误插入的时候被拒绝并报错，结果在程序准备正常插入的时候，MySQL也开始拒绝并报错了。但是事后当我试图重现这个问题时却发现，本段所描述的问题是不存在的！&lt;/s&gt;
-
-&lt;p&gt;总之由于上面的一些误解（经过一步步查资料又自己推翻）就开始查资料了，查着查着找到了&lt;a href=&quot;http://dev.mysql.com/doc/refman/5.1/en/create-index.html&quot;&gt;官方文档&lt;/a&gt;里的这样一段话（略有删减）：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Indexes can be created that use only the leading part of column values, using col_name(length) syntax to specify an &lt;strong&gt;index prefix&lt;/strong&gt; length. Prefix lengths are given in characters… That is, index entries consist of the first length characters of each column value for CHAR, VARCHAR, and TEXT columns, and the first length bytes of each column value for BINARY, VARBINARY, and BLOB columns… using column prefixes for indexes can make the index file much smaller, which could save a lot of disk space and might also speed up INSERT operations.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;基本就是在说：chars类的column，在建立索引的时候会有&lt;strong&gt;index prefix length&lt;/strong&gt;一说，也就是只取本栏开头的若干个字符做索引（而不是本栏全部内容），这样做的好处是可以节省存储空间。&lt;/p&gt;
-
-&lt;s&gt;虽然官方文档中没有说到为什么当一栏内容过大而且你没有设定它的index-prefix-length时，它的这个值会被设为64，但目前来看事实似乎就是这样的。&lt;/s&gt;
-
-&lt;p&gt;如果是存储较长字符串(比如255 chars)的唯一索引，它的&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix-length&lt;/code&gt;该怎么定制（从节省存储空间的角度看）？用上面的例子做示例：&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;UNIQUE KEY 'idx_urlcmpr' ('urlcmpr'(100))&lt;/code&gt;&lt;br /&gt;
-即在想要建立索引的栏名后面的括号中指定prefix-length。&lt;/p&gt;
-
-&lt;p&gt;我们再来试试看&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CREATE TABLE `urls2` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `urlcmpr` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `idx_urlcmpr` (`urlcmpr`(100))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;插入一段字符个数为100的string:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZab
-
-Insert OK
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;在上一段string尾部加一个字符&lt;code class=&quot;highlighter-rouge&quot;&gt;c&lt;/code&gt;(101个字符长度)再试试：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabc 
-ERROR 1062 (23000): Duplicate entry
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;无法插入了。上面的两步说明我们设定的唯一索引的&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix-length&lt;/code&gt;成功了，不过它也反映出一个问题：如果你要存储的内容在前半部分重复度很高，那么你的唯一索引可能会因为&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix-length&lt;/code&gt;过小而导致无法插入(如果两个string在开头的&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix-length&lt;/code&gt;以内是相同的)。因为确实已经遇到无法插入的问题了(500万+的URL），考虑了一下后我把&lt;em&gt;UniqueKey&lt;/em&gt;的限制给去掉了，改用普通Key: &lt;code class=&quot;highlighter-rouge&quot;&gt;KEY 'idx_urlcmpr' ('urlcmpr'(100))&lt;/code&gt;，是否重复则交由程序来判断，一来可以节省存储空间（Key也是要被存储记录的，不宜太长），二来防止将来有高度相似的URL无法插入。&lt;/p&gt;
-
-&lt;h1 id=&quot;其三mysql搜索校验时的case--sensitive问题&quot;&gt;其三：MySQL搜索校验时的Case -Sensitive问题&lt;/h1&gt;
-
-&lt;p&gt;由于业务需要，在存储这么多url的时候，每存储一条，还需要为它生成一个唯一码(unique code)。网上已经有不少优秀的唯一ID生成器了，但想要并入业务中还有些麻烦，再者业务要求很简单，保证code在单亿数量级以内唯一，于是自己就顺手写了一个62进制的&lt;a href=&quot;https://github.com/HelloLyfing/tiny-works/blob/master/HexConverter/HexCvter.py&quot;&gt;编码程序&lt;/a&gt;来生成unique code。由于code生成器是62进制的，如果是10个字符长的话，可表示的组合便是62的10次方，换算成10进制的话应该是一个近乎天文的数字了，唯一性是绝对保证了；程序还带了code+1功能，方便用来自增，有兴趣或有需要的朋友可以去看一下。&lt;/p&gt;
-
-&lt;p&gt;言归正传，利用上面的code生成器产出的code是大小写敏感的，即&lt;code class=&quot;highlighter-rouge&quot;&gt;fooBar&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;Foobar&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;fOOBaR&lt;/code&gt;分别代表着不同的10进制数值。新建一张表，把它们三个存进MySQL中：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 新建表
-CREATE TABLE `uni_code` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `code` varchar(10) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-Query OK, 0 rows affected (0.33 sec)
-
-# 插入三条数据
-INSERT INTO uni_code (code) VALUES ('foobar'),('fooBar'),('fOOBaR');
-Query OK, 3 rows affected (0.03 sec)
-
-# 查看刚刚插入的数据
-mysql&amp;gt; SELECT * FROM uni_code;
-+----+--------+
-| id | code   |
-+----+--------+
-|  1 | foobar |
-|  2 | fooBar |
-|  3 | fOOBaR |
-+----+--------+
-3 rows in set (0.00 sec)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;我们再试着取出其中一条数据来：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql&amp;gt; SELECT * FROM uni_code WHERE code = 'foobar';
-+----+--------+
-| id | code   |
-+----+--------+
-|  1 | fooBar |
-|  2 | fooBar |
-|  3 | fOOBaR |
-+----+--------+
-3 rows in set (0.03 sec)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;预期中的&lt;strong&gt;坑&lt;/strong&gt;出现了。我的code是大小写敏感的，但MySQL在查询校验的时候似乎忽略了这一点，直接把三条数据全部取出来了！&lt;/p&gt;
-
-&lt;p&gt;当然你可以通过手动添加&lt;code class=&quot;highlighter-rouge&quot;&gt;Binary&lt;/code&gt;&lt;a href=&quot;http://dev.mysql.com/doc/refman/5.5/en/charset-binary-op.html&quot;&gt;操作符&lt;/a&gt;将字符转换成字节来进行查询校验，或者指定&lt;a href=&quot;http://dev.mysql.com/doc/refman/5.5/en/charset-general.html&quot;&gt;collation&lt;/a&gt;规则来进行查询校验&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql&amp;gt; SELECT * FROM uni_code WHERE BINARY code = 'foobar';
-+----+--------+
-| id | code   |
-+----+--------+
-|  1 | foobar |
-+----+--------+
-1 row in set (0.00 sec)
-
-mysql&amp;gt; SELECT * FROM uni_code WHERE code COLLATE utf8_bin = 'foobar';
-+----+--------+
-| id | code   |
-+----+--------+
-|  1 | foobar |
-+----+--------+
-1 row in set (0.09 sec)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;但一来我用的ORM，使用原生SQL (关键字&lt;code class=&quot;highlighter-rouge&quot;&gt;Binary&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;Collate&lt;/code&gt;) 与使用ORM目的背离；二来四处滥用这些关键字会让程序代码混乱。最好能让MySQL在数据库层就完成大小写敏感的查询校验。&lt;/p&gt;
-
-&lt;p&gt;查了查资料发现MySQL在查询校验的时候所使用的&lt;code class=&quot;highlighter-rouge&quot;&gt;Collate&lt;/code&gt;规则集是有默认值的，正是这个规则集决定了字符比对的结果。那么&lt;code class=&quot;highlighter-rouge&quot;&gt;Collate&lt;/code&gt;是什么呢？&lt;/p&gt;
-
-&lt;p&gt;在上面给出的&lt;a href=&quot;http://dev.mysql.com/doc/refman/5.5/en/charset-general.html&quot;&gt;官方文档&lt;/a&gt;已经很好的解释了&lt;code class=&quot;highlighter-rouge&quot;&gt;Collate&lt;/code&gt;的作用，我在这里再赘述一二：&lt;/p&gt;
-
-&lt;p&gt;数据库中有字符集&lt;strong&gt;charset&lt;/strong&gt;和规则集&lt;strong&gt;collate&lt;/strong&gt;一说，字符集自不必多说。规则集是&lt;strong&gt;在给定字符集上进行字符对比的规则&lt;/strong&gt;，比如大小写敏感否 (CI or CS)、&lt;code class=&quot;highlighter-rouge&quot;&gt;äöü&lt;/code&gt;与&lt;code class=&quot;highlighter-rouge&quot;&gt;aou&lt;/code&gt;对等否等规则，每个字符集都有默认规则集。&lt;/p&gt;
-
-&lt;p&gt;上面的&lt;code class=&quot;highlighter-rouge&quot;&gt;... WHERE code COLLATE utf8_bin = ...&lt;/code&gt;就是指定了字符对比的规则集。这个规则集是大小写敏感的，它会覆盖默认的规则集。是的，MySQL中的每一个单元(Column、Table、Database)都可以有自己的字符集和规则集，我们通常只是指定字符集，MySQL则帮我们指定了该字符集对应的默认&lt;a href=&quot;http://dev.mysql.com/doc/refman/5.5/en/charset-mysql.html&quot;&gt;规则集&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;这么一来就好办了，看来是MySQL为我指定了utf8编码下的默认规则集，而这个规则集在字符比对时是CI的。只要我们修改一下表(或者栏)的规则集，让它支持大小写敏感的比对就好了。&lt;/p&gt;
-
-&lt;p&gt;我们先来看看&lt;code class=&quot;highlighter-rouge&quot;&gt;utf8&lt;/code&gt;的默认规则集，及可选规则集(下面内容可能会因版本、系统而异)：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql&amp;gt; show CHARACTER SET WHERE charset LIKE &quot;utf8&quot;;
-+---------+---------------+-------------------+--------+
-| Charset | Description   | Default collation | Maxlen |
-+---------+---------------+-------------------+--------+
-| utf8    | UTF-8 Unicode | utf8_general_ci   |      3 |
-+---------+---------------+-------------------+--------+
-1 row in set (0.00 sec)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;从上可以看出，utf8编码的默认规则集是&lt;code class=&quot;highlighter-rouge&quot;&gt;utf8_general_ci&lt;/code&gt; (规则集的命名规则通常是”字符集_规则集_大小写敏感否”的格式)，可以看到最后的&lt;code class=&quot;highlighter-rouge&quot;&gt;_ci&lt;/code&gt;表名了这个规则集是大小写不敏感的。我们找一个支持大小写敏感比对的规则集出来：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql&amp;gt; SHOW COLLATION WHERE Charset LIKE 'utf8';
-+--------------------------+---------+-----+---------+----------+---------+
-| Collation                | Charset | Id  | Default | Compiled | Sortlen |
-+--------------------------+---------+-----+---------+----------+---------+
-| utf8_general_ci          | utf8    |  33 | Yes     | Yes      |       1 |
-| utf8_bin                 | utf8    |  83 |         | Yes      |       1 |
-| utf8_unicode_ci          | utf8    | 192 |         | Yes      |       8 |
-| utf8_icelandic_ci        | utf8    | 193 |         | Yes      |       8 |
-| utf8_latvian_ci          | utf8    | 194 |         | Yes      |       8 |
-| utf8_romanian_ci         | utf8    | 195 |         | Yes      |       8 |
-| utf8_slovenian_ci        | utf8    | 196 |         | Yes      |       8 |
-| utf8_polish_ci           | utf8    | 197 |         | Yes      |       8 |
-| utf8_estonian_ci         | utf8    | 198 |         | Yes      |       8 |
-| utf8_spanish_ci          | utf8    | 199 |         | Yes      |       8 |
-| utf8_swedish_ci          | utf8    | 200 |         | Yes      |       8 |
-| utf8_turkish_ci          | utf8    | 201 |         | Yes      |       8 |
-| utf8_czech_ci            | utf8    | 202 |         | Yes      |       8 |
-| utf8_danish_ci           | utf8    | 203 |         | Yes      |       8 |
-| utf8_lithuanian_ci       | utf8    | 204 |         | Yes      |       8 |
-| utf8_slovak_ci           | utf8    | 205 |         | Yes      |       8 |
-| utf8_spanish2_ci         | utf8    | 206 |         | Yes      |       8 |
-| utf8_roman_ci            | utf8    | 207 |         | Yes      |       8 |
-| utf8_persian_ci          | utf8    | 208 |         | Yes      |       8 |
-| utf8_esperanto_ci        | utf8    | 209 |         | Yes      |       8 |
-| utf8_hungarian_ci        | utf8    | 210 |         | Yes      |       8 |
-| utf8_sinhala_ci          | utf8    | 211 |         | Yes      |       8 |
-| utf8_german2_ci          | utf8    | 212 |         | Yes      |       8 |
-| utf8_croatian_ci         | utf8    | 213 |         | Yes      |       8 |
-| utf8_unicode_520_ci      | utf8    | 214 |         | Yes      |       8 |
-| utf8_vietnamese_ci       | utf8    | 215 |         | Yes      |       8 |
-| utf8_general_mysql500_ci | utf8    | 223 |         | Yes      |       1 |
-+--------------------------+---------+-----+---------+----------+---------+
-27 rows in set (0.00 sec)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;纳尼… 27个选择几乎全是大小写不敏感的（可见大小写敏感的用例不是很广），幸好还有个&lt;code class=&quot;highlighter-rouge&quot;&gt;utf8_bin&lt;/code&gt;，它是支持大小写敏感比对的(用字节而非字符进行比对)。&lt;/p&gt;
-
-&lt;p&gt;我们把上面的uni_code table的&lt;code class=&quot;highlighter-rouge&quot;&gt;code&lt;/code&gt;一栏的&lt;code class=&quot;highlighter-rouge&quot;&gt;collate&lt;/code&gt;换成&lt;code class=&quot;highlighter-rouge&quot;&gt;utf8_bin&lt;/code&gt;：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql&amp;gt; ALTER TABLE uni_code MODIFY code
-    -&amp;gt;   VARCHAR(10)
-    -&amp;gt;   CHARACTER SET utf8
-    -&amp;gt;   COLLATE utf8_bin;
-Query OK, 3 rows affected (1.44 sec)
-Records: 3  Duplicates: 0  Warnings: 0
-
-SHOW CREATE TABLE uni_code;
-CREATE TABLE `uni_code` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `code` varchar(10) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;我们看到&lt;code class=&quot;highlighter-rouge&quot;&gt;code&lt;/code&gt;一栏的&lt;strong&gt;collate&lt;/strong&gt;属性已经改过来了。Table和DB的改动格式见&lt;a href=&quot;http://dev.mysql.com/doc/refman/5.5/en/charset-table.html&quot;&gt;官方文档&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;再说说线上改表的问题。上面那张表也就3行数据，改动一栏尚且花了1.44s的时间，这要在500万+的数据表上做改动得花去多长时间，假如还要考虑线上表的访问、新增、更新请求就更需谨慎了。这里推荐一个&lt;a href=&quot;http://openarkkit.googlecode.com/svn/trunk/openarkkit/doc/html/oak-online-alter-table.html&quot;&gt;在线改表工具&lt;/a&gt;，好用的很。当时是暂停服务进行的改动整张表的collate属性的操作，有两栏是varchar的(size分别是10、255)，500万+的数据十几分钟就搞定。&lt;/p&gt;
-
-&lt;h1 id=&quot;其四-update语句并不一定真的会update&quot;&gt;其四: Update语句并不一定真的会”Update”&lt;/h1&gt;
-
-&lt;p&gt;有一张如下的表：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql&amp;gt; describe big_msg;
-+-------+-------------+------+-----+---------+-------+
-| Field | Type        | Null | Key | Default | Extra |
-+-------+-------------+------+-----+---------+-------+
-| key   | varchar(20) | YES  | MUL | NULL    |       |
-| val   | text        | YES  |     | NULL    |       |
-+-------+-------------+------+-----+---------+-------+
-2 rows in set (0.01 sec)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;插入一行：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql&amp;gt; INSERT INTO big_msg (`key`, `val`) VALUES (&quot;test-key&quot;, &quot;test-val&quot;);
-Query OK, 1 row affected (0.00 sec)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;查看：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql&amp;gt; UPDATE big_msg SET `val`=&quot;test-val&quot; WHERE `key`=&quot;test-key&quot;;
-Query OK, 0 rows affected (0.00 sec)
-Rows matched: 1  Changed: 0  Warnings: 0
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;注意这里的&lt;code class=&quot;highlighter-rouge&quot;&gt;0 rows affected (0.00 sec)&lt;/code&gt;，也就是说这里并没有更新本行。这个在普通场景下并无大碍，不过当你使用的类似&lt;code class=&quot;highlighter-rouge&quot;&gt;PHP PDO&lt;/code&gt;面向对象的数据库类库，而且你的&lt;code class=&quot;highlighter-rouge&quot;&gt;Statement&lt;/code&gt;又依赖于&lt;code class=&quot;highlighter-rouge&quot;&gt;row affected&lt;/code&gt;这个返回值时（例如PHP-PDO的&lt;code class=&quot;highlighter-rouge&quot;&gt;PDOStatement::rowCount ( void )&lt;/code&gt;），这里就需要尤其注意一下了，&lt;strong&gt;如果你的更新值和原有值相同，则本次更新会被忽略, 返回值&lt;code class=&quot;highlighter-rouge&quot;&gt;affected rows&lt;/code&gt;将为0&lt;/strong&gt;。看官方文档中的说明：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;If you set a column to the value it currently has, MySQL notices this and does not update it.&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name></name></author><category term="Tech" /><category term="Database" /><category term="Mysql" /><summary type="html">其一: int(10)意欲何为 MySQL的Column-Type中的int一类，不像其他Type如char、varchar是根据最大size来预置存储空间的，int这一类的Column-Type所指定的size是作为显示宽度来存储的(涉及到size不足前端补零的场景-zerofill），它们所占用的实际空间大小是固定的。所以想通过int(10)来节省存储空间的想法是无效的。 其二: index的prefix length 最近的一个项目需要存储互联网上的URL，并生成唯一ID，所以数据表里边会有urlcmpr一栏 urlcmpr: 适当压缩过的url，用0、1代表http[s]，62进制的code代表hostname。示例：0h^/Mucinex-Sinus-Max-Pressure-Caplets-Count/dp/B009XQHSUC/ref-id=379 当时的建表语句是这样的（其实项目用的是SQLAlchemy的ORM-Model，这里只是复现一下当时的情况） CREATE TABLE `urls` ( `id` int(11) NOT NULL AUTO_INCREMENT, `urlcmpr` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`), UNIQUE KEY `idx_urlcmpr` (`urlcmpr`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8; 查看建好的表信息 mysql&amp;gt; DESC urls; +---------+--------------+------+-----+---------+----------------+ | Field | Type | Null | Key | Default | Extra | +---------+--------------+------+-----+---------+----------------+ | id | int(11) | NO | PRI | NULL | auto_increment | | urlcmpr | varchar(255) | YES | UNI | NULL | | +---------+--------------+------+-----+---------+----------------+ 首先插入两条记录： insert into urls (urlcmpr) values ('0h^/Mucinex-Sinus-Max-Pressure-Caplets-Count/dp/B009XQHSUC/ref-id=0001'), ('0h^/Mucinex-Sinus-Max-Pressure-Caplets-Count/dp/B009XQHSUC/ref-id=0002'); 因为我们已经为urlcmpr建好了唯一索引，我们来试试重复插入一下： insert into urls (urlcmpr) values ('0h^/Mucinex-Sinus-Max-Pressure-Caplets-Count/dp/B009XQHSUC/ref-id=0001'); 不出所料，报错了 ERROR 1062 (23000): Duplicate entry '0h^/Mucinex-Sinus-Max-Pressure-Caplets-Count/dp/B009XQHSUC/ref-i' for key 'idx_urlcmpr' 这个原本也没什么，但由于下方已删除的那部分描述的缘由，我开始关注错误报告所反映的一个信息：urlcmpr栏是255字符的，但据此建立的unique-key却只有64字符的长度，这是怎么回事？ 其实后来才发现这个只是显示了唯一Key的前64个字符而已，其实唯一Key并不是只有64个字符。 这里建唯一索引的目的是为了在重复误插入的时候被拒绝并报错，结果在程序准备正常插入的时候，MySQL也开始拒绝并报错了。但是事后当我试图重现这个问题时却发现，本段所描述的问题是不存在的！ 总之由于上面的一些误解（经过一步步查资料又自己推翻）就开始查资料了，查着查着找到了官方文档里的这样一段话（略有删减）： Indexes can be created that use only the leading part of column values, using col_name(length) syntax to specify an index prefix length. Prefix lengths are given in characters… That is, index entries consist of the first length characters of each column value for CHAR, VARCHAR, and TEXT columns, and the first length bytes of each column value for BINARY, VARBINARY, and BLOB columns… using column prefixes for indexes can make the index file much smaller, which could save a lot of disk space and might also speed up INSERT operations. 基本就是在说：chars类的column，在建立索引的时候会有index prefix length一说，也就是只取本栏开头的若干个字符做索引（而不是本栏全部内容），这样做的好处是可以节省存储空间。 虽然官方文档中没有说到为什么当一栏内容过大而且你没有设定它的index-prefix-length时，它的这个值会被设为64，但目前来看事实似乎就是这样的。 如果是存储较长字符串(比如255 chars)的唯一索引，它的prefix-length该怎么定制（从节省存储空间的角度看）？用上面的例子做示例： UNIQUE KEY 'idx_urlcmpr' ('urlcmpr'(100)) 即在想要建立索引的栏名后面的括号中指定prefix-length。 我们再来试试看 CREATE TABLE `urls2` ( `id` int(11) NOT NULL AUTO_INCREMENT, `urlcmpr` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`), UNIQUE KEY `idx_urlcmpr` (`urlcmpr`(100)) ) ENGINE=InnoDB DEFAULT CHARSET=utf8 插入一段字符个数为100的string: 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZab Insert OK 在上一段string尾部加一个字符c(101个字符长度)再试试： 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabc ERROR 1062 (23000): Duplicate entry 无法插入了。上面的两步说明我们设定的唯一索引的prefix-length成功了，不过它也反映出一个问题：如果你要存储的内容在前半部分重复度很高，那么你的唯一索引可能会因为prefix-length过小而导致无法插入(如果两个string在开头的prefix-length以内是相同的)。因为确实已经遇到无法插入的问题了(500万+的URL），考虑了一下后我把UniqueKey的限制给去掉了，改用普通Key: KEY 'idx_urlcmpr' ('urlcmpr'(100))，是否重复则交由程序来判断，一来可以节省存储空间（Key也是要被存储记录的，不宜太长），二来防止将来有高度相似的URL无法插入。 其三：MySQL搜索校验时的Case -Sensitive问题 由于业务需要，在存储这么多url的时候，每存储一条，还需要为它生成一个唯一码(unique code)。网上已经有不少优秀的唯一ID生成器了，但想要并入业务中还有些麻烦，再者业务要求很简单，保证code在单亿数量级以内唯一，于是自己就顺手写了一个62进制的编码程序来生成unique code。由于code生成器是62进制的，如果是10个字符长的话，可表示的组合便是62的10次方，换算成10进制的话应该是一个近乎天文的数字了，唯一性是绝对保证了；程序还带了code+1功能，方便用来自增，有兴趣或有需要的朋友可以去看一下。 言归正传，利用上面的code生成器产出的code是大小写敏感的，即fooBar、Foobar和fOOBaR分别代表着不同的10进制数值。新建一张表，把它们三个存进MySQL中： # 新建表 CREATE TABLE `uni_code` ( `id` int(11) NOT NULL AUTO_INCREMENT, `code` varchar(10) NOT NULL, PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8; Query OK, 0 rows affected (0.33 sec) # 插入三条数据 INSERT INTO uni_code (code) VALUES ('foobar'),('fooBar'),('fOOBaR'); Query OK, 3 rows affected (0.03 sec) # 查看刚刚插入的数据 mysql&amp;gt; SELECT * FROM uni_code; +----+--------+ | id | code | +----+--------+ | 1 | foobar | | 2 | fooBar | | 3 | fOOBaR | +----+--------+ 3 rows in set (0.00 sec) 我们再试着取出其中一条数据来： mysql&amp;gt; SELECT * FROM uni_code WHERE code = 'foobar'; +----+--------+ | id | code | +----+--------+ | 1 | fooBar | | 2 | fooBar | | 3 | fOOBaR | +----+--------+ 3 rows in set (0.03 sec) 预期中的坑出现了。我的code是大小写敏感的，但MySQL在查询校验的时候似乎忽略了这一点，直接把三条数据全部取出来了！ 当然你可以通过手动添加Binary操作符将字符转换成字节来进行查询校验，或者指定collation规则来进行查询校验 mysql&amp;gt; SELECT * FROM uni_code WHERE BINARY code = 'foobar'; +----+--------+ | id | code | +----+--------+ | 1 | foobar | +----+--------+ 1 row in set (0.00 sec) mysql&amp;gt; SELECT * FROM uni_code WHERE code COLLATE utf8_bin = 'foobar'; +----+--------+ | id | code | +----+--------+ | 1 | foobar | +----+--------+ 1 row in set (0.09 sec) 但一来我用的ORM，使用原生SQL (关键字Binary、Collate) 与使用ORM目的背离；二来四处滥用这些关键字会让程序代码混乱。最好能让MySQL在数据库层就完成大小写敏感的查询校验。 查了查资料发现MySQL在查询校验的时候所使用的Collate规则集是有默认值的，正是这个规则集决定了字符比对的结果。那么Collate是什么呢？ 在上面给出的官方文档已经很好的解释了Collate的作用，我在这里再赘述一二： 数据库中有字符集charset和规则集collate一说，字符集自不必多说。规则集是在给定字符集上进行字符对比的规则，比如大小写敏感否 (CI or CS)、äöü与aou对等否等规则，每个字符集都有默认规则集。 上面的... WHERE code COLLATE utf8_bin = ...就是指定了字符对比的规则集。这个规则集是大小写敏感的，它会覆盖默认的规则集。是的，MySQL中的每一个单元(Column、Table、Database)都可以有自己的字符集和规则集，我们通常只是指定字符集，MySQL则帮我们指定了该字符集对应的默认规则集。 这么一来就好办了，看来是MySQL为我指定了utf8编码下的默认规则集，而这个规则集在字符比对时是CI的。只要我们修改一下表(或者栏)的规则集，让它支持大小写敏感的比对就好了。 我们先来看看utf8的默认规则集，及可选规则集(下面内容可能会因版本、系统而异)： mysql&amp;gt; show CHARACTER SET WHERE charset LIKE &quot;utf8&quot;; +---------+---------------+-------------------+--------+ | Charset | Description | Default collation | Maxlen | +---------+---------------+-------------------+--------+ | utf8 | UTF-8 Unicode | utf8_general_ci | 3 | +---------+---------------+-------------------+--------+ 1 row in set (0.00 sec) 从上可以看出，utf8编码的默认规则集是utf8_general_ci (规则集的命名规则通常是”字符集_规则集_大小写敏感否”的格式)，可以看到最后的_ci表名了这个规则集是大小写不敏感的。我们找一个支持大小写敏感比对的规则集出来： mysql&amp;gt; SHOW COLLATION WHERE Charset LIKE 'utf8'; +--------------------------+---------+-----+---------+----------+---------+ | Collation | Charset | Id | Default | Compiled | Sortlen | +--------------------------+---------+-----+---------+----------+---------+ | utf8_general_ci | utf8 | 33 | Yes | Yes | 1 | | utf8_bin | utf8 | 83 | | Yes | 1 | | utf8_unicode_ci | utf8 | 192 | | Yes | 8 | | utf8_icelandic_ci | utf8 | 193 | | Yes | 8 | | utf8_latvian_ci | utf8 | 194 | | Yes | 8 | | utf8_romanian_ci | utf8 | 195 | | Yes | 8 | | utf8_slovenian_ci | utf8 | 196 | | Yes | 8 | | utf8_polish_ci | utf8 | 197 | | Yes | 8 | | utf8_estonian_ci | utf8 | 198 | | Yes | 8 | | utf8_spanish_ci | utf8 | 199 | | Yes | 8 | | utf8_swedish_ci | utf8 | 200 | | Yes | 8 | | utf8_turkish_ci | utf8 | 201 | | Yes | 8 | | utf8_czech_ci | utf8 | 202 | | Yes | 8 | | utf8_danish_ci | utf8 | 203 | | Yes | 8 | | utf8_lithuanian_ci | utf8 | 204 | | Yes | 8 | | utf8_slovak_ci | utf8 | 205 | | Yes | 8 | | utf8_spanish2_ci | utf8 | 206 | | Yes | 8 | | utf8_roman_ci | utf8 | 207 | | Yes | 8 | | utf8_persian_ci | utf8 | 208 | | Yes | 8 | | utf8_esperanto_ci | utf8 | 209 | | Yes | 8 | | utf8_hungarian_ci | utf8 | 210 | | Yes | 8 | | utf8_sinhala_ci | utf8 | 211 | | Yes | 8 | | utf8_german2_ci | utf8 | 212 | | Yes | 8 | | utf8_croatian_ci | utf8 | 213 | | Yes | 8 | | utf8_unicode_520_ci | utf8 | 214 | | Yes | 8 | | utf8_vietnamese_ci | utf8 | 215 | | Yes | 8 | | utf8_general_mysql500_ci | utf8 | 223 | | Yes | 1 | +--------------------------+---------+-----+---------+----------+---------+ 27 rows in set (0.00 sec) 纳尼… 27个选择几乎全是大小写不敏感的（可见大小写敏感的用例不是很广），幸好还有个utf8_bin，它是支持大小写敏感比对的(用字节而非字符进行比对)。 我们把上面的uni_code table的code一栏的collate换成utf8_bin： mysql&amp;gt; ALTER TABLE uni_code MODIFY code -&amp;gt; VARCHAR(10) -&amp;gt; CHARACTER SET utf8 -&amp;gt; COLLATE utf8_bin; Query OK, 3 rows affected (1.44 sec) Records: 3 Duplicates: 0 Warnings: 0 SHOW CREATE TABLE uni_code; CREATE TABLE `uni_code` ( `id` int(11) NOT NULL AUTO_INCREMENT, `code` varchar(10) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL, PRIMARY KEY (`id`) ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 我们看到code一栏的collate属性已经改过来了。Table和DB的改动格式见官方文档。 再说说线上改表的问题。上面那张表也就3行数据，改动一栏尚且花了1.44s的时间，这要在500万+的数据表上做改动得花去多长时间，假如还要考虑线上表的访问、新增、更新请求就更需谨慎了。这里推荐一个在线改表工具，好用的很。当时是暂停服务进行的改动整张表的collate属性的操作，有两栏是varchar的(size分别是10、255)，500万+的数据十几分钟就搞定。 其四: Update语句并不一定真的会”Update” 有一张如下的表： mysql&amp;gt; describe big_msg; +-------+-------------+------+-----+---------+-------+ | Field | Type | Null | Key | Default | Extra | +-------+-------------+------+-----+---------+-------+ | key | varchar(20) | YES | MUL | NULL | | | val | text | YES | | NULL | | +-------+-------------+------+-----+---------+-------+ 2 rows in set (0.01 sec) 插入一行： mysql&amp;gt; INSERT INTO big_msg (`key`, `val`) VALUES (&quot;test-key&quot;, &quot;test-val&quot;); Query OK, 1 row affected (0.00 sec) 查看： mysql&amp;gt; UPDATE big_msg SET `val`=&quot;test-val&quot; WHERE `key`=&quot;test-key&quot;; Query OK, 0 rows affected (0.00 sec) Rows matched: 1 Changed: 0 Warnings: 0 注意这里的0 rows affected (0.00 sec)，也就是说这里并没有更新本行。这个在普通场景下并无大碍，不过当你使用的类似PHP PDO面向对象的数据库类库，而且你的Statement又依赖于row affected这个返回值时（例如PHP-PDO的PDOStatement::rowCount ( void )），这里就需要尤其注意一下了，如果你的更新值和原有值相同，则本次更新会被忽略, 返回值affected rows将为0。看官方文档中的说明： If you set a column to the value it currently has, MySQL notices this and does not update it.</summary></entry></feed>
+评论：关系型数据库Join表的方式有哪些，每种join的使用结果如何？在对Mysql有了一定的业务层的使用经验后，再看这篇文章，觉得人家写的真是简洁而全面。&lt;/p&gt;</content><author><name></name></author><category term="资料" /><summary type="html">平时会读一些技术博客什么的，但都是零零星星不成体统的。所以在此新建一篇博客来专门记录这些自己读过的编程相关的资料。</summary></entry></feed>
