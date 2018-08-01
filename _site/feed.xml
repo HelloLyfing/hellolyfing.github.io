@@ -1,4 +1,51 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-07-31T09:27:34+08:00</updated><id>http://localhost:4000/</id><title type="html">蓝枫铭的技术博客</title><subtitle>立志成长为一名优秀架构师:)</subtitle><entry><title type="html">Java并发编程之：Java内存模型</title><link href="http://localhost:4000/2018/07/30/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E4%B9%8B-Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.html" rel="alternate" type="text/html" title="Java并发编程之：Java内存模型" /><published>2018-07-30T00:00:00+08:00</published><updated>2018-07-30T00:00:00+08:00</updated><id>http://localhost:4000/2018/07/30/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E4%B9%8B:Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B</id><content type="html" xml:base="http://localhost:4000/2018/07/30/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E4%B9%8B-Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.html">&lt;p&gt;The Java memory model specifies how the Java virtual machine works with the computer’s memory (RAM). The Java virtual machine is a model of a whole computer so this model naturally includes a memory model - AKA the Java memory model.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-08-01T18:23:40+08:00</updated><id>http://localhost:4000/</id><title type="html">蓝枫铭的技术博客</title><subtitle>立志成长为一名优秀架构师:)</subtitle><entry><title type="html">日常开发问题记录</title><link href="http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html" rel="alternate" type="text/html" title="日常开发问题记录" /><published>2018-08-01T00:00:00+08:00</published><updated>2018-08-01T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95</id><content type="html" xml:base="http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html">&lt;h2 id=&quot;邮件发送时一直报错问题排查&quot;&gt;邮件发送时一直报错问题排查&lt;/h2&gt;
+&lt;p&gt;今天需要用Spring Boot发送邮件，使用的腾讯企业邮箱（QQ邮箱），yaml配置如下：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spring:
+  mail:
+    host: smtp.exmail.qq.com
+    port: 465
+    username: biz-noreply@example.com
+    password: password-example
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Spring Boot引入了mail包之后，使用自动注入的Bean&lt;code class=&quot;highlighter-rouge&quot;&gt;JavaMailSender&lt;/code&gt;发送邮件，代码如下：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+simpleMailMessage.setFrom(&quot;biz-noreply@example.com&quot;);
+simpleMailMessage.setTo(emails);
+simpleMailMessage.setSubject(title);
+simpleMailMessage.setText(content);
+javaMailSender.send(simpleMailMessage);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;结果每次在发送时，始终都会报&lt;code class=&quot;highlighter-rouge&quot;&gt;Could not connect to SMTP host: smtp.exmail.qq.com, port: 465, response: -1&lt;/code&gt;的错误，怎么试都是这个结果，错误详情如下：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;javax.mail.MessagingException: Could not connect to SMTP host: smtp.exmail.qq.com, port: 465, response: -1
+    at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2197)
+    at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:740)
+    at javax.mail.Service.connect(Service.java:366)
+    at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:515)
+    at org.springframework.mail.javamail.JavaMailSenderImpl.testConnection(JavaMailSenderImpl.java:396)
+    at org.springframework.boot.actuate.mail.MailHealthIndicator.doHealthCheck(MailHealthIndicator.java:43)
+    at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:84)
+    at org.springframework.boot.actuate.health.CompositeHealthIndicator.health(CompositeHealthIndicator.java:68)
+    at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:47)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke(Method.java:498)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;后来，&lt;strong&gt;把端口从&lt;code class=&quot;highlighter-rouge&quot;&gt;465&lt;/code&gt;改为&lt;code class=&quot;highlighter-rouge&quot;&gt;587&lt;/code&gt;就好了&lt;/strong&gt;，就是这么神奇。&lt;/p&gt;
+
+&lt;p&gt;而且，腾讯企业邮的帮助文档里，压根就没提到587这个端口(http://service.exmail.qq.com/cgi-bin/help?subtype=1&amp;amp;&amp;amp;id=28&amp;amp;&amp;amp;no=1000585 )！我还是在QQ邮箱的帮助页面找到的这个端口…&lt;/p&gt;</content><author><name></name></author><summary type="html">邮件发送时一直报错问题排查 今天需要用Spring Boot发送邮件，使用的腾讯企业邮箱（QQ邮箱），yaml配置如下：</summary></entry><entry><title type="html">Java并发编程之：Java内存模型</title><link href="http://localhost:4000/2018/07/30/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E4%B9%8B-Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.html" rel="alternate" type="text/html" title="Java并发编程之：Java内存模型" /><published>2018-07-30T00:00:00+08:00</published><updated>2018-07-30T00:00:00+08:00</updated><id>http://localhost:4000/2018/07/30/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E4%B9%8B:Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B</id><content type="html" xml:base="http://localhost:4000/2018/07/30/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E4%B9%8B-Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.html">&lt;p&gt;The Java memory model specifies how the Java virtual machine works with the computer’s memory (RAM). The Java virtual machine is a model of a whole computer so this model naturally includes a memory model - AKA the Java memory model.&lt;/p&gt;
 
 &lt;p&gt;It is very important to understand the Java memory model if you want to design correctly behaving concurrent programs. The Java memory model specifies how and when different threads can see values written to shared variables by other threads, and how to synchronize access to shared variables when necessary.&lt;/p&gt;
 
@@ -130,6 +177,10 @@
 &lt;p&gt;If two threads were executing the run() method then the diagram shown earlier would be the outcome. The run() method calls methodOne() and methodOne() calls methodTwo().&lt;/p&gt;
 
 &lt;p&gt;methodOne() declares a primitive local variable (localVariable1 of type int) and an local variable which is an object reference (localVariable2).&lt;/p&gt;
+
+&lt;p&gt;如果启动两个线程同时执行run()方法，就能得出上图中的那些关系图。run()方法调用了methodOne()，methodOne()又调用了methodTwo().&lt;/p&gt;
+
+&lt;p&gt;methodOne()&lt;/p&gt;
 
 &lt;p&gt;Each thread executing methodOne() will create its own copy of localVariable1 and localVariable2 on their respective thread stacks. The localVariable1 variables will be completely separated from each other, only living on each thread’s thread stack. One thread cannot see what changes another thread makes to its copy of localVariable1.&lt;/p&gt;
 
@@ -848,46 +899,4 @@ DBG:  good bye&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;然而从今年年初开始，随着公司开发人员的人才流失，到最后，基本就只剩我一个光杆司令了。Boss当时有些着急，直接允诺了不少的公司期权给我。然而我继续呆在这里，在可预见的未来，已经没有任何技术成长空间了。其实我最初来大城市的目的就是像牛人学习，结果到最后总是自己在推着自己向高处走，我觉得这样很不好，怕自己越来越狭隘。所以于最近（2015.06.28）向老板提交了辞职信，老板看我去意已决，再加上之前交流的时候有透露过这方面的想法，他也就没有再留我。当然公司这么多项目还是需要有人来接手的，所以我会再待一个月等人来接手。&lt;/p&gt;
 
 &lt;h2 id=&quot;心怀感恩重新上路&quot;&gt;心怀感恩，重新上路&lt;/h2&gt;
-&lt;p&gt;其实如果没有这份工作提供给我一个进入编程领域的入口，我是不可能有今天的。我记得刚开始就是这种态度，老板在我刚开始进公司的时候就握着我的手说，谢谢你，加入我们！我当时的回答，也是现在的回答，是：也谢谢你，给我提供这样一个平台和机会。&lt;/p&gt;</content><author><name></name></author><category term="Tech" /><category term="总结" /><summary type="html">一只编程菜鸟，只为找一份编程的工作 13年7月份毕业，听从家里人的安排，去了本省的一家国企工作，直接被派去到东北的项目基地实习。因为会和技术老外讲英语，还和第三方外包人员一起合作调试好了他们承接的电气化自动排水项目的程序，基地领导青睐有加，想把我留在那里。我考虑了一下拒绝了。等工作到12月份的时候，基本已经确定，这份工作不是我想要的。遂瞒着家里人和领导请了一个月的病假，从东北坐了33个小时的火车来到江南，杭州。当时已是冬季，但下火车后仍然觉得“春风拂面”，比起东北让人冻得骨头疼的冷，杭州的天气温和到简直像是春天。</summary></entry><entry><title type="html">我在2015年读过的编程相关的资料</title><link href="http://localhost:4000/2015/03/18/the-programming-related-materials-i-have-read-in-2015.html" rel="alternate" type="text/html" title="我在2015年读过的编程相关的资料" /><published>2015-03-18T00:00:00+08:00</published><updated>2015-03-18T00:00:00+08:00</updated><id>http://localhost:4000/2015/03/18/the-programming-related-materials-i-have-read-in-2015</id><content type="html" xml:base="http://localhost:4000/2015/03/18/the-programming-related-materials-i-have-read-in-2015.html">&lt;p&gt;平时会读一些技术博客什么的，但都是零零星星不成体统的。所以在此新建一篇博客来专门记录这些自己读过的编程相关的资料。&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;时间：02.07&lt;br /&gt;
-资料：《iptables防火墙原理详解》 | by seanlook | http://segmentfault.com/blog/seanlook/1190000002540601&lt;br /&gt;
-评论:对数据包通过一个节点时的处理流程有了全面的了解，里面的图片很不错。再配合着看完网上的《2小时玩转iptables企业版.ppt》，终于有了俯瞰整个数据包走向流程的视野。&lt;/p&gt;
-
-&lt;p&gt;时间：02.08 ~ 02.09 &lt;br /&gt;
-资料：《What Every Programmer Should Know about Memory?》 | by Ulrich Drepper | http://www.akkadia.org/drepper/cpumemory.pdf&lt;br /&gt;
-评论：论文篇幅太长，再者涉及内容偏重硬件设计，所以暂时搁置，有时间再读。&lt;/p&gt;
-
-&lt;p&gt;时间：03.03&lt;br /&gt;
-资料：《白话经典算法系列之六 快速排序 快速搞定》 | by MoreWindows | http://blog.csdn.net/morewindows/article/details/6684558&lt;br /&gt;
-评论：精简地把快速排序的一种思路用精妙的“挖坑待种”的比喻表达了出来，看完并实验后发现这种思路下的快速排序的实现是如此简单！&lt;/p&gt;
-
-&lt;p&gt;时间：03.10&lt;br /&gt;
-资料：《白话经典算法系列之七 堆与堆排序》 | by MoreWindows | http://blog.csdn.net/morewindows/article/details/6709644/&lt;br /&gt;
-评论：其实作为非科班出身的编程者，在做了很多表层的编程语言层面和公司业务层面的编程工作后，最基础的内功却几乎是空的。数据结构这一块一直是只对编程语言中的常见数据结构有接触，像更底层却很有意思的比如”堆”却几乎没接触过，所幸接触后发现至少堆结构还是很简单的。&lt;/p&gt;
-
-&lt;p&gt;时间：03.17&lt;br /&gt;
-资料：《What every web developer must know about URL encoding》 | by Stéphane Épardaud | http://blog.lunatech.com/2009/02/03/what-every-web-developer-must-know-about-url-encoding&lt;br /&gt;
-评论：这是”编程人员应该知道的xxx”系列中的一篇，主要讲URL-Encoding的种种。其实看的时候更多的是共鸣（相比于其他资料带来的透彻感），因为这样的问题在自己搞开发的时候都已经考虑、验证过了。不过作者讲得更系统、全面一些，看完后至少开阔了眼界（看似乱码实则符合RFC规范的URL，url encode/decode在不同层级的服务上的处理情况如web-server层、编程语言层）&lt;/p&gt;
-
-&lt;p&gt;时间：03.17&lt;br /&gt;
-资料：《What Every Programmer Should know about Time》 | by EmilMikulic | https://unix4lyfe.org/time/?v=1 &lt;br /&gt;
-评论：文章挺短的，还趁机看了一下其中提到的”leap seconds”和”Daylight saving”，还顺带回顾了一下两种用来计量时间的装置：石英钟和原子钟的原理。很喜欢文章中提到的一个观点：时间总是应该以Unix Timestamp的形式被保存起来，而不是”Y-m-D H:M:S”这种人类可读的方式，因为后者是表现层的事儿。&lt;/p&gt;
-
-&lt;p&gt;时间：03.27&lt;br /&gt;
-资料：《An Introduction To DOM Events》| by Wilson Page | http://www.smashingmagazine.com/2013/11/12/an-introduction-to-dom-events/&lt;br /&gt;
-评论：最大收获是终于对着w3c的&lt;a href=&quot;http://www.w3.org/TR/DOM-Level-3-Events/eventflow.svg&quot;&gt;这张图&lt;/a&gt;把一个DOM Event的生命周期看懂了（之前尝试看了一次，模棱两可）。其次是琐碎的事了：了解了&lt;code class=&quot;highlighter-rouge&quot;&gt;func.bind()&lt;/code&gt;方法&lt;/p&gt;
-
-&lt;p&gt;时间：06.12&lt;br /&gt;
-资料：《Inside NGINX: How We Designed for Performance &amp;amp; Scale》| by OWEN GARRETT | http://nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/  &lt;br /&gt;
-评论：很多架构解读型的文章，最生动和令人难忘的，大概都属随文展示出来的架构图了。这篇文章里列出了好几张非常不错的架构、流程图。它在拿自己的non-blocking设计和其他相对blocking的设计作对比时，举了个非常形象的例子：Web服务器和Web客户端的通信就像下棋一样，只不过Web服务器通常是一对多负责和很多客户端下棋。服务器可以为每个客户端分配一个棋手（blocking，每个线程/进程负责一个客户端），也可以只用一个棋手来同时跟若干个客户端轮询着下棋（non-blocking，现实中有真人1 vs 360同时进行的棋局哦http://t.cn/R2joHP0 ）。&lt;/p&gt;
-
-&lt;p&gt;时间：06.25  &lt;br /&gt;
-资料：《Thread Pools in NGINX Boost Performance 9x!》 | by VALENTIN BARTENEV | http://nginx.com/blog/thread-pools-boost-performance-9x/  &lt;br /&gt;
-评论：整篇文章其实只是一个结果报告，Event-Driven-Handling，但是handle某些event时操作确实又是blocking的，怎么办？引入线程池。线程池一直都是用的各类语言自带的(java, python)，具体实现并不是很清楚，计划有时间了看一些线程池的实现的资料。&lt;/p&gt;
-
-&lt;p&gt;时间：10.23&lt;br /&gt;
-资料：《Visual Representation of SQL Joins》 | by C.L. Moffatt | http://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins&lt;br /&gt;
-评论：关系型数据库Join表的方式有哪些，每种join的使用结果如何？在对Mysql有了一定的业务层的使用经验后，再看这篇文章，觉得人家写的真是简洁而全面。&lt;/p&gt;</content><author><name></name></author><category term="资料" /><summary type="html">平时会读一些技术博客什么的，但都是零零星星不成体统的。所以在此新建一篇博客来专门记录这些自己读过的编程相关的资料。</summary></entry></feed>
+&lt;p&gt;其实如果没有这份工作提供给我一个进入编程领域的入口，我是不可能有今天的。我记得刚开始就是这种态度，老板在我刚开始进公司的时候就握着我的手说，谢谢你，加入我们！我当时的回答，也是现在的回答，是：也谢谢你，给我提供这样一个平台和机会。&lt;/p&gt;</content><author><name></name></author><category term="Tech" /><category term="总结" /><summary type="html">一只编程菜鸟，只为找一份编程的工作 13年7月份毕业，听从家里人的安排，去了本省的一家国企工作，直接被派去到东北的项目基地实习。因为会和技术老外讲英语，还和第三方外包人员一起合作调试好了他们承接的电气化自动排水项目的程序，基地领导青睐有加，想把我留在那里。我考虑了一下拒绝了。等工作到12月份的时候，基本已经确定，这份工作不是我想要的。遂瞒着家里人和领导请了一个月的病假，从东北坐了33个小时的火车来到江南，杭州。当时已是冬季，但下火车后仍然觉得“春风拂面”，比起东北让人冻得骨头疼的冷，杭州的天气温和到简直像是春天。</summary></entry></feed>
