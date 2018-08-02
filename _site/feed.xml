@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-08-01T18:23:40+08:00</updated><id>http://localhost:4000/</id><title type="html">蓝枫铭的技术博客</title><subtitle>立志成长为一名优秀架构师:)</subtitle><entry><title type="html">日常开发问题记录</title><link href="http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html" rel="alternate" type="text/html" title="日常开发问题记录" /><published>2018-08-01T00:00:00+08:00</published><updated>2018-08-01T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95</id><content type="html" xml:base="http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html">&lt;h2 id=&quot;邮件发送时一直报错问题排查&quot;&gt;邮件发送时一直报错问题排查&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-08-02T09:39:27+08:00</updated><id>http://localhost:4000/</id><title type="html">蓝枫铭的技术博客</title><subtitle>立志成长为一名优秀架构师:)</subtitle><entry><title type="html">日常开发问题记录</title><link href="http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html" rel="alternate" type="text/html" title="日常开发问题记录" /><published>2018-08-01T00:00:00+08:00</published><updated>2018-08-01T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95</id><content type="html" xml:base="http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html">&lt;h2 id=&quot;邮件发送时一直报错问题排查&quot;&gt;邮件发送时一直报错问题排查&lt;/h2&gt;
 &lt;p&gt;今天需要用Spring Boot发送邮件，使用的腾讯企业邮箱（QQ邮箱），yaml配置如下：&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spring:
@@ -180,17 +180,57 @@ javaMailSender.send(simpleMailMessage);
 
 &lt;p&gt;如果启动两个线程同时执行run()方法，就能得出上图中的那些关系图。run()方法调用了methodOne()，methodOne()又调用了methodTwo().&lt;/p&gt;
 
-&lt;p&gt;methodOne()&lt;/p&gt;
+&lt;p&gt;methodOne()定义了一个原始int型的局部变量localVariable1，以及一个对对象引用的局部变量localVariable2。&lt;/p&gt;
 
 &lt;p&gt;Each thread executing methodOne() will create its own copy of localVariable1 and localVariable2 on their respective thread stacks. The localVariable1 variables will be completely separated from each other, only living on each thread’s thread stack. One thread cannot see what changes another thread makes to its copy of localVariable1.&lt;/p&gt;
 
+&lt;p&gt;每个执行methodOne()的线程都会在自己的线程栈中创建localVariable1和localVariable2的拷贝。各线程之间的localVariable1是完全隔离的，只存在于各自的线程栈中。线程A无法看到其他线程对拷贝来的localVariable1做出的改变。&lt;/p&gt;
+
 &lt;p&gt;Each thread executing methodOne() will also create their own copy of localVariable2. However, the two different copies of localVariable2 both end up pointing to the same object on the heap. The code sets localVariable2 to point to an object referenced by a static variable. There is only one copy of a static variable and this copy is stored on the heap. Thus, both of the two copies of localVariable2 end up pointing to the same instance of MySharedObject which the static variable points to. The MySharedObject instance is also stored on the heap. It corresponds to Object 3 in the diagram above.&lt;/p&gt;
+
+&lt;p&gt;每个执行methodOne()的方法，也都会创建属于自己的localVariable2的拷贝。然而，这两份独立的互不相干的localVariable2拷贝，其引用都指向了位于堆中的同一对象Object 3。从代码中可以看出，localVariable2的引用指向了另外一个对象MySharedObject中的静态成员变量sharedInstance。我们知道对象的静态成员变量只有一份，而且是存储在堆中的。这样一来，两份独立的localVariable2的拷贝最终都指向了MySharedObject对象中的同一个静态成员变量所指向的对象：MySharedObject的实例，也就是上图中的Object 3。&lt;/p&gt;
 
 &lt;p&gt;Notice how the MySharedObject class contains two member variables too. The member variables themselves are stored on the heap along with the object. The two member variables point to two other Integer objects. These Integer objects correspond to Object 2 and Object 4 in the diagram above.&lt;/p&gt;
 
+&lt;p&gt;注意观察MySharedObject也包含了两个Integer类型的成员变量。这两个成员变量和对象本身都存储在堆中。二者分别指向了两个即时创建的Integer对象Object 2和Object 4，如上图所示。&lt;/p&gt;
+
 &lt;p&gt;Notice also how methodTwo() creates a local variable named localVariable1. This local variable is an object reference to an Integer object. The method sets the localVariable1 reference to point to a new Integer instance. The localVariable1 reference will be stored in one copy per thread executing methodTwo(). The two Integer objects instantiated will be stored on the heap, but since the method creates a new Integer object every time the method is executed, two threads executing this method will create separate Integer instances. The Integer objects created inside methodTwo() correspond to Object 1 and Object 5 in the diagram above.&lt;/p&gt;
 
+&lt;p&gt;注意观察methodTwo()创建了一个局部变量localVariable1。这个局部变量是对一个Integer对象的引用。该方法将localVariable1的引用指向了一个新的Integer对象实例。局部变量localVariable1储存在每个执行methodTwo()的线程的线程栈中。由于每个线程每次执行methodTwo()时都会创建新的Integer对象，所以当两个线程执行该方法时会创建两个独立的Integer对象，即上图中的Object 1和Object 5。&lt;/p&gt;
+
 &lt;p&gt;Notice also the two member variables in the class MySharedObject of type long which is a primitive type. Since these variables are member variables, they are still stored on the heap along with the object. Only local variables are stored on the thread stack.&lt;/p&gt;
+
+&lt;p&gt;注意MySharedObject对象中的两个原始long类型的成员变量。由于这些变量是原始类型的成员变量，所以他们和对象本身都会存储在堆中。只有方法中的局部变量会存储在线程栈中。&lt;/p&gt;
+
+&lt;h1 id=&quot;二物理内存的架构&quot;&gt;二、物理内存的架构&lt;/h1&gt;
+
+&lt;p&gt;Modern hardware memory architecture is somewhat different from the internal Java memory model. It is important to understand the hardware memory architecture too, to understand how the Java memory model works with it. This section describes the common hardware memory architecture, and a later section will describe how the Java memory model works with it.&lt;/p&gt;
+
+&lt;p&gt;Here is a simplified diagram of modern computer hardware architecture:&lt;/p&gt;
+
+&lt;p&gt;现代的物理内存架构和JVM中的Java内存模型有些不同。为了更好地理解Java内存模型是如何与硬件内存相关协作的，我们也同样需要了解下物理内存的架构。本节会描述一个常见的物理内存架构，后续章节则会介绍Java内存模型是如何与之协作的。&lt;/p&gt;
+
+&lt;p&gt;下面是一个简化版的现代计算机硬件结构图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/java_concurrency/java-memory-model-4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A modern computer often has 2 or more CPUs in it. Some of these CPUs may have multiple cores too. The point is, that on a modern computer with 2 or more CPUs it is possible to have more than one thread running simultaneously. Each CPU is capable of running one thread at any given time. That means that if your Java application is multithreaded, one thread per CPU may be running simultaneously (concurrently) inside your Java application.&lt;/p&gt;
+
+&lt;p&gt;一个现代计算机通常会有2个或更多的CPU，有些CPU还会有多个核心。关键在于，一个拥有两个及更多CPU的现代计算机，同步执行多个线程任务是完全可能的。每个CPU在任何时间都可以执行一个线程。也就是说，如果你的Java应用时多线程的，那么为每个线程分配一个CPU，同步(并行)地进行的Java任务也是有可能的。&lt;/p&gt;
+
+&lt;p&gt;Each CPU contains a set of registers which are essentially in-CPU memory. The CPU can perform operations much faster on these registers than it can perform on variables in main memory. That is because the CPU can access these registers much faster than it can access main memory.&lt;/p&gt;
+
+&lt;p&gt;每个CPU都包含了一组寄存器，这些寄存器本质上其实是更靠近CPU的内存(in-CPU memory). CPU在寄存器上执行的操作比在主内存(main memory)上执行操作要快得多。这是因为CPU访问寄存器的速度比访问主内存要快得多。&lt;/p&gt;
+
+&lt;p&gt;Each CPU may also have a CPU cache memory layer. In fact, most modern CPUs have a cache memory layer of some size. The CPU can access its cache memory much faster than main memory, but typically not as fast as it can access its internal registers. So, the CPU cache memory is somewhere in between the speed of the internal registers and main memory. Some CPUs may have multiple cache layers (Level 1 and Level 2), but this is not so important to know to understand how the Java memory model interacts with memory. What matters is to know that CPUs can have a cache memory layer of some sort.&lt;/p&gt;
+
+&lt;p&gt;每个CPU可能也会有一个CPU缓存层。事实上，大多数现代CPU都有一个大小不一的缓存层。CPU访问缓存的速度虽然没有访问内部寄存器快，都却比访问主内存要快的多。所以CPU访问缓存的速度是介于访问内部寄存器和访问主内存之间的。有些CPU可能会有多层级的缓存（Level 1 and Level 2等），但这跟理解Java内存模型的原理关系不大，重要的是了解到CPU有一个缓存层。&lt;/p&gt;
+
+&lt;p&gt;A computer also contains a main memory area (RAM). All CPUs can access the main memory. The main memory area is typically much bigger than the cache memories of the CPUs.&lt;/p&gt;
+
+&lt;p&gt;Typically, when a CPU needs to access main memory it will read part of main memory into its CPU cache. It may even read part of the cache into its internal registers and then perform operations on it. When the CPU needs to write the result back to main memory it will flush the value from its internal register to the cache memory, and at some point flush the value back to main memory.&lt;/p&gt;
+
+&lt;p&gt;The values stored in the cache memory is typically flushed back to main memory when the CPU needs to store something else in the cache memory. The CPU cache can have data written to part of its memory at a time, and flush part of its memory at a time. It does not have to read / write the full cache each time it is updated. Typically the cache is updated in smaller memory blocks called “cache lines”. One or more cache lines may be read into the cache memory, and one or mor cache lines may be flushed back to main memory again.&lt;/p&gt;
 
 &lt;p&gt;本篇文章翻译自：http://tutorials.jenkov.com/java-concurrency/java-memory-model.html&lt;/p&gt;</content><author><name></name></author><summary type="html">The Java memory model specifies how the Java virtual machine works with the computer’s memory (RAM). The Java virtual machine is a model of a whole computer so this model naturally includes a memory model - AKA the Java memory model.</summary></entry><entry><title type="html">Memcached核心技术初探</title><link href="http://localhost:4000/2018/06/29/Memcached%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%88%9D%E6%8E%A2.html" rel="alternate" type="text/html" title="Memcached核心技术初探" /><published>2018-06-29T00:00:00+08:00</published><updated>2018-06-29T00:00:00+08:00</updated><id>http://localhost:4000/2018/06/29/Memcached%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%88%9D%E6%8E%A2</id><content type="html" xml:base="http://localhost:4000/2018/06/29/Memcached%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%88%9D%E6%8E%A2.html">&lt;h1 id=&quot;1-memcached概述&quot;&gt;1 Memcached概述&lt;/h1&gt;
 &lt;h2 id=&quot;11-memcached是什么&quot;&gt;1.1 Memcached是什么&lt;/h2&gt;
