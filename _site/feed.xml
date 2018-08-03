@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-08-03T08:57:09+08:00</updated><id>http://localhost:4000/</id><title type="html">蓝枫铭的技术博客</title><subtitle>立志成长为一名优秀架构师:)</subtitle><entry><title type="html">日常开发问题记录</title><link href="http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html" rel="alternate" type="text/html" title="日常开发问题记录" /><published>2018-08-01T00:00:00+08:00</published><updated>2018-08-01T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95</id><content type="html" xml:base="http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html">&lt;h2 id=&quot;邮件发送时一直报错问题排查&quot;&gt;邮件发送时一直报错问题排查&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-08-03T09:17:46+08:00</updated><id>http://localhost:4000/</id><title type="html">蓝枫铭的技术博客</title><subtitle>立志成长为一名优秀架构师:)</subtitle><entry><title type="html">日常开发问题记录</title><link href="http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html" rel="alternate" type="text/html" title="日常开发问题记录" /><published>2018-08-01T00:00:00+08:00</published><updated>2018-08-01T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95</id><content type="html" xml:base="http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html">&lt;h2 id=&quot;邮件发送时一直报错问题排查&quot;&gt;邮件发送时一直报错问题排查&lt;/h2&gt;
 &lt;p&gt;今天需要用Spring Boot发送邮件，使用的腾讯企业邮箱（QQ邮箱），yaml配置如下：&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spring:
@@ -262,7 +262,7 @@ Both of these problems will be explained in the following sections.&lt;/p&gt;
 &lt;h2 id=&quot;31-共享对象的可见性问题&quot;&gt;3.1 共享对象的可见性问题&lt;/h2&gt;
 &lt;p&gt;If two or more threads are sharing an object, without the proper use of either volatile declarations or synchronization, updates to the shared object made by one thread may not be visible to other threads.&lt;/p&gt;
 
-&lt;p&gt;如果两个或更多的线程在同时访问一个对象，又没有恰当地使用volatile声明或synchronization声明，那么当线程A更新共享对象的信息时，其他线程可能看不到。&lt;/p&gt;
+&lt;p&gt;如果两个或更多的线程共享同一对象，又没有恰当地使用volatile声明或synchronization声明，那么当线程A更新共享对象的信息时，其他线程可能看不到。&lt;/p&gt;
 
 &lt;p&gt;Imagine that the shared object is initially stored in main memory. A thread running on CPU one then reads the shared object into its CPU cache. There it makes a change to the shared object. As long as the CPU cache has not been flushed back to main memory, the changed version of the shared object is not visible to threads running on other CPUs. This way each thread may end up with its own copy of the shared object, each copy sitting in a different CPU cache.&lt;/p&gt;
 
@@ -282,21 +282,34 @@ Both of these problems will be explained in the following sections.&lt;/p&gt;
 
 &lt;p&gt;If two or more threads share an object, and more than one thread updates variables in that shared object, race conditions may occur.&lt;/p&gt;
 
+&lt;p&gt;如果两个或以上的线程共享同一对象，并且有一个或多个线程在更新共享的对象，竞争情形便会出现。&lt;/p&gt;
+
 &lt;p&gt;Imagine if thread A reads the variable count of a shared object into its CPU cache. Imagine too, that thread B does the same, but into a different CPU cache. Now thread A adds one to count, and thread B does the same. Now var1 has been incremented two times, once in each CPU cache.&lt;/p&gt;
+
+&lt;p&gt;想象一下：线程A将共享对象的count变量读入CPU缓存中，接着线程B也做了同样的事，不过读入了另外一个CPU缓存中。现在线程A将count加1，线程B也会这么做。那么count变量实际自增了两次，分别在两个CPU缓存中完成。&lt;/p&gt;
 
 &lt;p&gt;If these increments had been carried out sequentially, the variable count would be been incremented twice and had the original value + 2 written back to main memory.&lt;/p&gt;
 
+&lt;p&gt;如果这些自增是按顺序执行的（发生在同一CPU缓存中），那么count变量会被自增两次，最后以count + 2的结果写回主内存。&lt;/p&gt;
+
 &lt;p&gt;However, the two increments have been carried out concurrently without proper synchronization. Regardless of which of thread A and B that writes its updated version of count back to main memory, the updated value will only be 1 higher than the original value, despite the two increments.&lt;/p&gt;
 
-&lt;p&gt;This diagram illustrates an occurrence of the problem with race conditions as described above:&lt;/p&gt;
+&lt;p&gt;然而，这两次的自增实际上是并行执行的，并且没有保证顺序。尽管线程A和B分别对count自增了一次，之后也会将更新后的结果回写至主内存，但最终的结果是count只增加了1个单位。&lt;/p&gt;
+
+&lt;p&gt;This diagram illustrates an occurrence of the problem with race conditions as described above:
+下面的图例演示了上面提到的竞争情形：&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/java_concurrency/java-memory-model-5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;To solve this problem you can use a Java synchronized block. A synchronized block guarantees that only one thread can enter a given critical section of the code at any given time. Synchronized blocks also guarantee that all variables accessed inside the synchronized block will be read in from main memory, and when the thread exits the synchronized block, all updated variables will be flushed back to main memory again, regardless of whether the variable is declared volatile or not.&lt;/p&gt;
 
+&lt;p&gt;你可以使用Java中的synchronized结构体来避免这种情况。一个synchronized代码块保证在同一时间只有一个线程可以进入关键区域执行代码。Synchronized代码块也会保证所有包含在代码块中的变量，直接从内存中读取，在线程步出代码块时，所有更新过的变量会被回写至主内存中，无论这些变量是否用volatile声明过。&lt;/p&gt;
+
+&lt;hr /&gt;
+
 &lt;p&gt;本篇文章翻译自：http://tutorials.jenkov.com/java-concurrency/java-memory-model.html&lt;/p&gt;
 
-&lt;p&gt;后记：前段时间看《Java并发编程的艺术》这本书，发现书中对&lt;code class=&quot;highlighter-rouge&quot;&gt;volatile&lt;/code&gt;关键字的介绍有些深入不浅出(概念抽象不太到位，要么具体到无关紧要的细节，要么太笼统一带而过)。后来在网上找相关资料时发现了这个并发编程系列的博客，一读之后豁然开朗，于是便有了翻译过来与各位共享的想法。后续还会继续翻译几篇这个系列的博客。&lt;/p&gt;</content><author><name></name></author><summary type="html">The Java memory model specifies how the Java virtual machine works with the computer’s memory (RAM). The Java virtual machine is a model of a whole computer so this model naturally includes a memory model - AKA the Java memory model.</summary></entry><entry><title type="html">Memcached核心技术初探</title><link href="http://localhost:4000/2018/06/29/Memcached%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%88%9D%E6%8E%A2.html" rel="alternate" type="text/html" title="Memcached核心技术初探" /><published>2018-06-29T00:00:00+08:00</published><updated>2018-06-29T00:00:00+08:00</updated><id>http://localhost:4000/2018/06/29/Memcached%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%88%9D%E6%8E%A2</id><content type="html" xml:base="http://localhost:4000/2018/06/29/Memcached%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%88%9D%E6%8E%A2.html">&lt;h1 id=&quot;1-memcached概述&quot;&gt;1 Memcached概述&lt;/h1&gt;
+&lt;p&gt;后记：前段时间看《Java并发编程的艺术》这本书，发现书中对&lt;code class=&quot;highlighter-rouge&quot;&gt;volatile&lt;/code&gt;关键字的介绍有些深入不浅出(概念抽象不太到位，要么具体到无关紧要的细节，要么太笼统一带而过)。后来在网上找相关资料时发现了这个并发编程系列的博客，一读之后豁然开朗，于是便有了翻译过来与各位共享的想法。后续还会继续翻译一些该系列中的博客。&lt;/p&gt;</content><author><name></name></author><summary type="html">The Java memory model specifies how the Java virtual machine works with the computer’s memory (RAM). The Java virtual machine is a model of a whole computer so this model naturally includes a memory model - AKA the Java memory model.</summary></entry><entry><title type="html">Memcached核心技术初探</title><link href="http://localhost:4000/2018/06/29/Memcached%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%88%9D%E6%8E%A2.html" rel="alternate" type="text/html" title="Memcached核心技术初探" /><published>2018-06-29T00:00:00+08:00</published><updated>2018-06-29T00:00:00+08:00</updated><id>http://localhost:4000/2018/06/29/Memcached%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%88%9D%E6%8E%A2</id><content type="html" xml:base="http://localhost:4000/2018/06/29/Memcached%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%88%9D%E6%8E%A2.html">&lt;h1 id=&quot;1-memcached概述&quot;&gt;1 Memcached概述&lt;/h1&gt;
 &lt;h2 id=&quot;11-memcached是什么&quot;&gt;1.1 Memcached是什么&lt;/h2&gt;
 &lt;p&gt;Memcached是一个高性能、分布式的内存缓存系统，它通过在内存中缓存数据和对象来减少数据库的读取次数，从而提升动态数据库驱动型网站的访问体验。&lt;/p&gt;
 
