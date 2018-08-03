@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-08-02T09:39:27+08:00</updated><id>http://localhost:4000/</id><title type="html">蓝枫铭的技术博客</title><subtitle>立志成长为一名优秀架构师:)</subtitle><entry><title type="html">日常开发问题记录</title><link href="http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html" rel="alternate" type="text/html" title="日常开发问题记录" /><published>2018-08-01T00:00:00+08:00</published><updated>2018-08-01T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95</id><content type="html" xml:base="http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html">&lt;h2 id=&quot;邮件发送时一直报错问题排查&quot;&gt;邮件发送时一直报错问题排查&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-08-03T08:57:09+08:00</updated><id>http://localhost:4000/</id><title type="html">蓝枫铭的技术博客</title><subtitle>立志成长为一名优秀架构师:)</subtitle><entry><title type="html">日常开发问题记录</title><link href="http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html" rel="alternate" type="text/html" title="日常开发问题记录" /><published>2018-08-01T00:00:00+08:00</published><updated>2018-08-01T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95</id><content type="html" xml:base="http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html">&lt;h2 id=&quot;邮件发送时一直报错问题排查&quot;&gt;邮件发送时一直报错问题排查&lt;/h2&gt;
 &lt;p&gt;今天需要用Spring Boot发送邮件，使用的腾讯企业邮箱（QQ邮箱），yaml配置如下：&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spring:
@@ -202,13 +202,13 @@ javaMailSender.send(simpleMailMessage);
 
 &lt;p&gt;注意MySharedObject对象中的两个原始long类型的成员变量。由于这些变量是原始类型的成员变量，所以他们和对象本身都会存储在堆中。只有方法中的局部变量会存储在线程栈中。&lt;/p&gt;
 
-&lt;h1 id=&quot;二物理内存的架构&quot;&gt;二、物理内存的架构&lt;/h1&gt;
+&lt;h1 id=&quot;二物理内存的结构&quot;&gt;二、物理内存的结构&lt;/h1&gt;
 
 &lt;p&gt;Modern hardware memory architecture is somewhat different from the internal Java memory model. It is important to understand the hardware memory architecture too, to understand how the Java memory model works with it. This section describes the common hardware memory architecture, and a later section will describe how the Java memory model works with it.&lt;/p&gt;
 
 &lt;p&gt;Here is a simplified diagram of modern computer hardware architecture:&lt;/p&gt;
 
-&lt;p&gt;现代的物理内存架构和JVM中的Java内存模型有些不同。为了更好地理解Java内存模型是如何与硬件内存相关协作的，我们也同样需要了解下物理内存的架构。本节会描述一个常见的物理内存架构，后续章节则会介绍Java内存模型是如何与之协作的。&lt;/p&gt;
+&lt;p&gt;现代的物理内存架构和JVM中的Java内存模型有些不同。为了更好地理解Java内存模型是如何与硬件内存相关协作的，我们也同样需要了解下物理内存的结构。本节会描述一个常见的物理内存架构，后续章节则会介绍Java内存模型是如何与之协作的。&lt;/p&gt;
 
 &lt;p&gt;下面是一个简化版的现代计算机硬件结构图：&lt;/p&gt;
 
@@ -228,11 +228,75 @@ javaMailSender.send(simpleMailMessage);
 
 &lt;p&gt;A computer also contains a main memory area (RAM). All CPUs can access the main memory. The main memory area is typically much bigger than the cache memories of the CPUs.&lt;/p&gt;
 
+&lt;p&gt;计算机还有一个主内存(main memory area，即RAM)。所有CPU都可以访问主内存。主内存的大小通常也比CPU的缓存更大一些。&lt;/p&gt;
+
 &lt;p&gt;Typically, when a CPU needs to access main memory it will read part of main memory into its CPU cache. It may even read part of the cache into its internal registers and then perform operations on it. When the CPU needs to write the result back to main memory it will flush the value from its internal register to the cache memory, and at some point flush the value back to main memory.&lt;/p&gt;
+
+&lt;p&gt;通常情况下，当CPU需要访问主内存时，它会读取部分主内存中的信息放入CPU缓存。它也可能会读取部分缓存中的信息放入内部寄存器，然后在其之上进行操作。当CPU需要把计算结果写回主内存时，它会把内部寄存器的值flush(拷贝后清空)至缓存，然后在某个时间点再把缓存中值flush至主内存。&lt;/p&gt;
 
 &lt;p&gt;The values stored in the cache memory is typically flushed back to main memory when the CPU needs to store something else in the cache memory. The CPU cache can have data written to part of its memory at a time, and flush part of its memory at a time. It does not have to read / write the full cache each time it is updated. Typically the cache is updated in smaller memory blocks called “cache lines”. One or more cache lines may be read into the cache memory, and one or mor cache lines may be flushed back to main memory again.&lt;/p&gt;
 
-&lt;p&gt;本篇文章翻译自：http://tutorials.jenkov.com/java-concurrency/java-memory-model.html&lt;/p&gt;</content><author><name></name></author><summary type="html">The Java memory model specifies how the Java virtual machine works with the computer’s memory (RAM). The Java virtual machine is a model of a whole computer so this model naturally includes a memory model - AKA the Java memory model.</summary></entry><entry><title type="html">Memcached核心技术初探</title><link href="http://localhost:4000/2018/06/29/Memcached%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%88%9D%E6%8E%A2.html" rel="alternate" type="text/html" title="Memcached核心技术初探" /><published>2018-06-29T00:00:00+08:00</published><updated>2018-06-29T00:00:00+08:00</updated><id>http://localhost:4000/2018/06/29/Memcached%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%88%9D%E6%8E%A2</id><content type="html" xml:base="http://localhost:4000/2018/06/29/Memcached%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%88%9D%E6%8E%A2.html">&lt;h1 id=&quot;1-memcached概述&quot;&gt;1 Memcached概述&lt;/h1&gt;
+&lt;p&gt;CPU缓存中的值flush至主内存，通常发生在CPU需要在缓存中存储其他值时。在某个时间点，CPU缓存中写入的数据只占了缓存空间的一部分，同样在某个时间点，它会flush back部分数据至主内存。当数据更新时，它并不需要读取或写入整个缓存。通常情况下，缓存以一个更小的内存块来更新，这个内存块就叫做”缓存行”(cache lines)。一条或多条缓存行会被读入缓存中，另外一条或多条缓存行又会被flush back至主内存中。&lt;/p&gt;
+
+&lt;h1 id=&quot;三打通java内存模型与物理内存结构&quot;&gt;三、打通Java内存模型与物理内存结构&lt;/h1&gt;
+&lt;p&gt;As already mentioned, the Java memory model and the hardware memory architecture are different. The hardware memory architecture does not distinguish between thread stacks and heap. On the hardware, both the thread stack and the heap are located in main memory. Parts of the thread stacks and heap may sometimes be present in CPU caches and in internal CPU registers. This is illustrated in this diagram:&lt;/p&gt;
+
+&lt;p&gt;上面已经说过Java内存模型和物理内存结构是不同的。物理内存结构不会区分线程栈和堆。在硬件层面，线程栈和堆都是存储在主内存中的。部分线程栈或堆的信息会出现在CPU缓存及内部寄存器中。线程栈和堆在CPU寄存器、缓存以及主内存中的存储关系如下图所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/java_concurrency/java-memory-model-5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When objects and variables can be stored in various different memory areas in the computer, certain problems may occur. The two main problems are:&lt;/p&gt;
+
+&lt;p&gt;Visibility of thread updates (writes) to shared variables.
+Race conditions when reading, checking and writing shared variables.
+Both of these problems will be explained in the following sections.&lt;/p&gt;
+
+&lt;p&gt;当对象和变量存储在计算机中不同的存储区域（如CPU缓存和主内存中）时，某些问题便会出现。两个主要的问题有：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;线程更新共享变量时的可见性&lt;/li&gt;
+  &lt;li&gt;共同读、检查以及写共享变量时引发的竞争情形(Race conditions)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;下面章节会讨论这两个问题。&lt;/p&gt;
+
+&lt;h2 id=&quot;31-共享对象的可见性问题&quot;&gt;3.1 共享对象的可见性问题&lt;/h2&gt;
+&lt;p&gt;If two or more threads are sharing an object, without the proper use of either volatile declarations or synchronization, updates to the shared object made by one thread may not be visible to other threads.&lt;/p&gt;
+
+&lt;p&gt;如果两个或更多的线程在同时访问一个对象，又没有恰当地使用volatile声明或synchronization声明，那么当线程A更新共享对象的信息时，其他线程可能看不到。&lt;/p&gt;
+
+&lt;p&gt;Imagine that the shared object is initially stored in main memory. A thread running on CPU one then reads the shared object into its CPU cache. There it makes a change to the shared object. As long as the CPU cache has not been flushed back to main memory, the changed version of the shared object is not visible to threads running on other CPUs. This way each thread may end up with its own copy of the shared object, each copy sitting in a different CPU cache.&lt;/p&gt;
+
+&lt;p&gt;想象一下，共享的对象一开始存储在主内存中。运行在CPU-1中的线程A将共享对象读入CPU缓存中，接着对共享对象做了一个更新操作。只要CPU-1中的缓存没有被flush back至主内存，那么共享对象变更后的版本对运行在其他CPU上的线程便是不可见的。这样一来，运行在不同CPU中的线程，在自己CPU的缓存中对共享的对象会有一份各自的临时拷贝。&lt;/p&gt;
+
+&lt;p&gt;The following diagram illustrates the sketched situation. One thread running on the left CPU copies the shared object into its CPU cache, and changes its count variable to 2. This change is not visible to other threads running on the right CPU, because the update to count has not been flushed back to main memory yet.&lt;/p&gt;
+
+&lt;p&gt;下面的图例演示了这种情况：运行在左侧CPU中的线程将共享对象拷贝至CPU缓存中，然后将该对象的count变量更新为2. 但这个变更对运行在右侧CPU中的线程是不可见的，因为此时更新后的count值还没有被flush back至主内存中。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/java_concurrency/java-memory-model-6.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To solve this problem you can use Java’s volatile keyword. The volatile keyword can make sure that a given variable is read directly from main memory, and always written back to main memory when updated.&lt;/p&gt;
+
+&lt;p&gt;你可以使用Java中的&lt;code class=&quot;highlighter-rouge&quot;&gt;volatile&lt;/code&gt;关键字来避免这种情况。&lt;code class=&quot;highlighter-rouge&quot;&gt;volatile&lt;/code&gt;关键字可以保证在读取给定变量时直接从主内存中读取，当变量值更新时又会被写回主内存中。&lt;/p&gt;
+
+&lt;h2 id=&quot;32-竞争情形race-conditions&quot;&gt;3.2 竞争情形（Race conditions）&lt;/h2&gt;
+
+&lt;p&gt;If two or more threads share an object, and more than one thread updates variables in that shared object, race conditions may occur.&lt;/p&gt;
+
+&lt;p&gt;Imagine if thread A reads the variable count of a shared object into its CPU cache. Imagine too, that thread B does the same, but into a different CPU cache. Now thread A adds one to count, and thread B does the same. Now var1 has been incremented two times, once in each CPU cache.&lt;/p&gt;
+
+&lt;p&gt;If these increments had been carried out sequentially, the variable count would be been incremented twice and had the original value + 2 written back to main memory.&lt;/p&gt;
+
+&lt;p&gt;However, the two increments have been carried out concurrently without proper synchronization. Regardless of which of thread A and B that writes its updated version of count back to main memory, the updated value will only be 1 higher than the original value, despite the two increments.&lt;/p&gt;
+
+&lt;p&gt;This diagram illustrates an occurrence of the problem with race conditions as described above:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/java_concurrency/java-memory-model-5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To solve this problem you can use a Java synchronized block. A synchronized block guarantees that only one thread can enter a given critical section of the code at any given time. Synchronized blocks also guarantee that all variables accessed inside the synchronized block will be read in from main memory, and when the thread exits the synchronized block, all updated variables will be flushed back to main memory again, regardless of whether the variable is declared volatile or not.&lt;/p&gt;
+
+&lt;p&gt;本篇文章翻译自：http://tutorials.jenkov.com/java-concurrency/java-memory-model.html&lt;/p&gt;
+
+&lt;p&gt;后记：前段时间看《Java并发编程的艺术》这本书，发现书中对&lt;code class=&quot;highlighter-rouge&quot;&gt;volatile&lt;/code&gt;关键字的介绍有些深入不浅出(概念抽象不太到位，要么具体到无关紧要的细节，要么太笼统一带而过)。后来在网上找相关资料时发现了这个并发编程系列的博客，一读之后豁然开朗，于是便有了翻译过来与各位共享的想法。后续还会继续翻译几篇这个系列的博客。&lt;/p&gt;</content><author><name></name></author><summary type="html">The Java memory model specifies how the Java virtual machine works with the computer’s memory (RAM). The Java virtual machine is a model of a whole computer so this model naturally includes a memory model - AKA the Java memory model.</summary></entry><entry><title type="html">Memcached核心技术初探</title><link href="http://localhost:4000/2018/06/29/Memcached%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%88%9D%E6%8E%A2.html" rel="alternate" type="text/html" title="Memcached核心技术初探" /><published>2018-06-29T00:00:00+08:00</published><updated>2018-06-29T00:00:00+08:00</updated><id>http://localhost:4000/2018/06/29/Memcached%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%88%9D%E6%8E%A2</id><content type="html" xml:base="http://localhost:4000/2018/06/29/Memcached%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%88%9D%E6%8E%A2.html">&lt;h1 id=&quot;1-memcached概述&quot;&gt;1 Memcached概述&lt;/h1&gt;
 &lt;h2 id=&quot;11-memcached是什么&quot;&gt;1.1 Memcached是什么&lt;/h2&gt;
 &lt;p&gt;Memcached是一个高性能、分布式的内存缓存系统，它通过在内存中缓存数据和对象来减少数据库的读取次数，从而提升动态数据库驱动型网站的访问体验。&lt;/p&gt;
 
