@@ -17,7 +17,7 @@
 title: 蓝枫铭的技术博客 
 email: ""
 description: >- # this means to ignore newlines until "baseurl:"
-    好好学习，天天向上
+    深入学习，天天向上
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
