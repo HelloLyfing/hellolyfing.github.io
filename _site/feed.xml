@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-08-30T13:57:46+08:00</updated><id>http://localhost:4000/</id><title type="html">蓝枫铭的技术博客</title><subtitle>深入学习，天天向上</subtitle><entry><title type="html">微信客服项目简单介绍</title><link href="http://localhost:4000/2018/08/13/%E5%BE%AE%E4%BF%A1%E5%AE%A2%E6%9C%8D%E9%A1%B9%E7%9B%AE%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D.html" rel="alternate" type="text/html" title="微信客服项目简单介绍" /><published>2018-08-13T00:00:00+08:00</published><updated>2018-08-13T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/13/%E5%BE%AE%E4%BF%A1%E5%AE%A2%E6%9C%8D%E9%A1%B9%E7%9B%AE%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D</id><content type="html" xml:base="http://localhost:4000/2018/08/13/%E5%BE%AE%E4%BF%A1%E5%AE%A2%E6%9C%8D%E9%A1%B9%E7%9B%AE%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D.html">&lt;p&gt;最近与同事协作完成微信客服项目的设计和开发工作。系统要完成的功能也很简单：打通微信与客服IM系统，让用户（像跟普通好友聊天一样）在自己微信上就可以实现与客服系统的直接对话。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-08-30T14:01:37+08:00</updated><id>http://localhost:4000/</id><title type="html">蓝枫铭的技术博客</title><subtitle>深入学习，天天向上</subtitle><entry><title type="html">微信客服项目简单介绍</title><link href="http://localhost:4000/2018/08/13/%E5%BE%AE%E4%BF%A1%E5%AE%A2%E6%9C%8D%E9%A1%B9%E7%9B%AE%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D.html" rel="alternate" type="text/html" title="微信客服项目简单介绍" /><published>2018-08-13T00:00:00+08:00</published><updated>2018-08-13T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/13/%E5%BE%AE%E4%BF%A1%E5%AE%A2%E6%9C%8D%E9%A1%B9%E7%9B%AE%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D</id><content type="html" xml:base="http://localhost:4000/2018/08/13/%E5%BE%AE%E4%BF%A1%E5%AE%A2%E6%9C%8D%E9%A1%B9%E7%9B%AE%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D.html">&lt;p&gt;最近与同事协作完成微信客服项目的设计和开发工作。系统要完成的功能也很简单：打通微信与客服IM系统，让用户（像跟普通好友聊天一样）在自己微信上就可以实现与客服系统的直接对话。&lt;/p&gt;
 
 &lt;p&gt;对微信生态中好友、消息和群的第三方管理系统也有很多，不过为了稳定性和功能快速定制化，我们依然决定自研这套系统。现简单介绍一下这个系统。&lt;/p&gt;
 
@@ -604,7 +604,7 @@ for ($i = 0; $i &amp;lt; 200; $i++) {
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;结论&quot;&gt;结论&lt;/h2&gt;
-&lt;p&gt;通过将对象转为array以间接判断stdClass是否为空，是更高效的做法&lt;/p&gt;</content><author><name></name></author><category term="Tech" /><summary type="html">背景 先来看下普通的为空判断，应用于stdClass类是什么表现：</summary></entry><entry><title type="html">xdebug远程调试原理与实践</title><link href="http://localhost:4000/2018/01/10/xdebug%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5.html" rel="alternate" type="text/html" title="xdebug远程调试原理与实践" /><published>2018-01-10T00:00:00+08:00</published><updated>2018-01-10T00:00:00+08:00</updated><id>http://localhost:4000/2018/01/10/xdebug%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5</id><content type="html" xml:base="http://localhost:4000/2018/01/10/xdebug%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5.html">&lt;div class=&quot;wiki-content&quot;&gt;
+&lt;p&gt;通过将对象转为array以间接判断stdClass是否为空，是更高效的做法&lt;/p&gt;</content><author><name></name></author><category term="Tech" /><summary type="html">背景 先来看下普通的为空判断，应用于stdClass类是什么表现：</summary></entry><entry><title type="html">Xdebug远程调试原理与实践</title><link href="http://localhost:4000/2018/01/10/Xdebug%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5.html" rel="alternate" type="text/html" title="Xdebug远程调试原理与实践" /><published>2018-01-10T00:00:00+08:00</published><updated>2018-01-10T00:00:00+08:00</updated><id>http://localhost:4000/2018/01/10/Xdebug%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5</id><content type="html" xml:base="http://localhost:4000/2018/01/10/Xdebug%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5.html">&lt;div class=&quot;wiki-content&quot;&gt;
     &lt;h2 id=&quot;xdebug调试原理与实践-1前言&quot;&gt;1. 前言&lt;/h2&gt;
     &lt;p&gt;&lt;span&gt;世界上有两种人：一种了解debug工具的好处，另一种则反之。&lt;/span&gt;&lt;/p&gt;
     &lt;p&gt;&lt;span&gt;那么debug工具到底有哪些优点呢？&lt;/span&gt;&lt;/p&gt;
@@ -777,41 +777,35 @@ DBG:  good bye&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;b&gt;总结：&lt;/b&gt;遇到xdebug设置相关的问题，最重要的是了解debug底层通信协议和原理，再通过TCP/IP抓包工具(比如tcpdump）进行问题排查及定位。通过上述步骤的排查，应该可以定位无法debug原因，并最终成功使用xdebug调试代码了。祝顺利~&lt;/p&gt;
 
-&lt;/div&gt;</content><author><name></name></author><summary type="html">1. 前言 世界上有两种人：一种了解debug工具的好处，另一种则反之。 那么debug工具到底有哪些优点呢？ 1）在日常开发中洞悉大型架构的流程及设计； 2）在日常开发中快速debug，省时省力，更能在debug过程中掌握程序运行流程及上下文； 3）debug驱动型开发习惯的养成 在PHP语言中有个叫xdebug的扩展，是业界最常用的PHP debug工具之一。xdebug有很多实用的特性，但本文只着重介绍远程调试这一特性的使用。 注意： 本文提到的IDE，意即：集成开发环境，例如PHPStrom、Eclipse就是很常见的IDE PHPStrom和IDE在本文中可能会被混用，但他们都代表PHPStrom 2. xdebug特性 var_dump展示优化&amp;nbsp;&amp;gt;link PHP输出notice、error等信息时，调用栈可定制化展示&amp;nbsp;&amp;gt;link 函数调用报告&amp;nbsp;&amp;gt;link 代码覆盖率报告&amp;nbsp;&amp;gt;link 程序分析报告（profiler）&amp;gt;link 远程调试。本篇内容将着重介绍这一功能。如果你想获取有关如何配置可多人同时调试一台Web服务器的DBGp代理信息的话，也推荐你读完本文，这将对你后续的代理配置有一定帮助。 3. 远程调试 xdebug的远程调试默认的通信协议为DBGp协议，它是基于XML文本传输的应用层协议，用于程序语言与IDE间的调试通信。 DBGP协议规定：IDE向程序的调试器发送的内容为ascii命令，调试器向IDE发送的内容为XML数据</summary></entry><entry><title type="html">轻文本编辑器 vs 重型IDE</title><link href="http://localhost:4000/2017/10/10/%E8%BD%BB%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8_vs_%E9%87%8D%E5%9E%8BIDE.html" rel="alternate" type="text/html" title="轻文本编辑器 vs 重型IDE" /><published>2017-10-10T00:00:00+08:00</published><updated>2017-10-10T00:00:00+08:00</updated><id>http://localhost:4000/2017/10/10/%E8%BD%BB%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8_vs_%E9%87%8D%E5%9E%8BIDE</id><content type="html" xml:base="http://localhost:4000/2017/10/10/%E8%BD%BB%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8_vs_%E9%87%8D%E5%9E%8BIDE.html">&lt;blockquote&gt;
-  &lt;p&gt;注：本文所说的重型IDE，例如开发PHP用到的PHPStorm、开发Java用到的Eclipse等IDE，有别于类似Sublime Text这样的轻型文本编辑器&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;/div&gt;</content><author><name></name></author><summary type="html">1. 前言 世界上有两种人：一种了解debug工具的好处，另一种则反之。 那么debug工具到底有哪些优点呢？ 1）在日常开发中洞悉大型架构的流程及设计； 2）在日常开发中快速debug，省时省力，更能在debug过程中掌握程序运行流程及上下文； 3）debug驱动型开发习惯的养成 在PHP语言中有个叫xdebug的扩展，是业界最常用的PHP debug工具之一。xdebug有很多实用的特性，但本文只着重介绍远程调试这一特性的使用。 注意： 本文提到的IDE，意即：集成开发环境，例如PHPStrom、Eclipse就是很常见的IDE PHPStrom和IDE在本文中可能会被混用，但他们都代表PHPStrom 2. xdebug特性 var_dump展示优化&amp;nbsp;&amp;gt;link PHP输出notice、error等信息时，调用栈可定制化展示&amp;nbsp;&amp;gt;link 函数调用报告&amp;nbsp;&amp;gt;link 代码覆盖率报告&amp;nbsp;&amp;gt;link 程序分析报告（profiler）&amp;gt;link 远程调试。本篇内容将着重介绍这一功能。如果你想获取有关如何配置可多人同时调试一台Web服务器的DBGp代理信息的话，也推荐你读完本文，这将对你后续的代理配置有一定帮助。 3. 远程调试 xdebug的远程调试默认的通信协议为DBGp协议，它是基于XML文本传输的应用层协议，用于程序语言与IDE间的调试通信。 DBGP协议规定：IDE向程序的调试器发送的内容为ascii命令，调试器向IDE发送的内容为XML数据</summary></entry><entry><title type="html">URL中的Hostname VS RequestHeader中的Host字段</title><link href="http://localhost:4000/2017/12/11/URL%E4%B8%AD%E7%9A%84Hostname_VS_RequestHeader%E4%B8%AD%E7%9A%84Host%E5%AD%97%E6%AE%B5.html" rel="alternate" type="text/html" title="URL中的Hostname VS RequestHeader中的Host字段" /><published>2017-12-11T00:00:00+08:00</published><updated>2017-12-11T00:00:00+08:00</updated><id>http://localhost:4000/2017/12/11/URL%E4%B8%AD%E7%9A%84Hostname_VS_RequestHeader%E4%B8%AD%E7%9A%84Host%E5%AD%97%E6%AE%B5</id><content type="html" xml:base="http://localhost:4000/2017/12/11/URL%E4%B8%AD%E7%9A%84Hostname_VS_RequestHeader%E4%B8%AD%E7%9A%84Host%E5%AD%97%E6%AE%B5.html">&lt;h2 id=&quot;概述&quot;&gt;概述&lt;/h2&gt;
+&lt;p&gt;通常情况下访问URL的时候，我们直接使用一个字段标明这个URL所属的HOST信息&lt;/p&gt;
 
-&lt;p&gt;在刚开始学习和使用PHP，乃至在学习和使用python、js的时候，我都在使用Sublime Text(以下简称SbText)进行编码工作。相较于每次打开重型IDE时”漫长”的等待时间，SbText一类编辑器却可以做到秒开！
-于是新手便会有一个错觉，以为同样的工作量，使用重型IDE会花费更多时间。&lt;/p&gt;
+&lt;p&gt;但是如果你的URL中的HostName是IPV4地址，同时在请求的Header中设置了”Host”字段，那么这个资源(URI)的寻找依据会是什么呢？&lt;/p&gt;
 
-&lt;p&gt;可是后来我自己实践下来的经验是：重型IDE的协同开发效率更高。注意这里提到的一个关键词：协同开发，它指的是团队间的共同开发，有别于独自开发一个项目。&lt;/p&gt;
+&lt;h2 id=&quot;准备步骤&quot;&gt;准备步骤：&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;把&lt;code class=&quot;highlighter-rouge&quot;&gt;i-dev.beibei.com&lt;/code&gt;的host指向&lt;code class=&quot;highlighter-rouge&quot;&gt;192.168.33.10&lt;/code&gt; (本机eth1的网卡IP地址)&lt;/li&gt;
+  &lt;li&gt;访问&lt;code class=&quot;highlighter-rouge&quot;&gt;http://127.0.0.1/account/coupon.html&lt;/code&gt;，同时设置RequetHeader的Host字段为 &lt;code class=&quot;highlighter-rouge&quot;&gt;i-dev.beibei.com&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;开始访问: &lt;code class=&quot;highlighter-rouge&quot;&gt;curl -v --head --header &quot;host: i-dev.beibei.com&quot; &lt;/code&gt;
+ (-v指明verbose详细信息；–head指明打印RequestHeader；–header用于设置RequestHeader的字段)&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;为什么在协同开发时，重型IDE的效率更高呢？你可能会开始思考：下列的功能明明轻型IDE也是可以支持的啊&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;代码提示及自动补全&lt;/li&gt;
-  &lt;li&gt;语法高亮&lt;/li&gt;
-  &lt;li&gt;拼写检查&lt;/li&gt;
-  &lt;li&gt;代码格式化工具&lt;/li&gt;
-  &lt;li&gt;断点调试&lt;/li&gt;
-  &lt;li&gt;……&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/4111-60fda1fdbe323bbd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;在一个独立开发者进行项目开发时，上面这些功能貌似已经够用了。但是在协同开发的场景下，重型IDE许多特性是轻型IDE所不具备的：&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;接口文档自动解析及提示。轻型IDE往往不具备这样的特性，例如：
-    &lt;ul&gt;
-      &lt;li&gt;想要查看一个接口参数的定义，后者往往要进入到这个文件中的接口位置处才能看到。&lt;/li&gt;
-      &lt;li&gt;再者，如果这个接口已经被声明为已废弃或已删除，说明接口开发者不希望外界继续使用本接口了。但轻型IDE是不会提示到的，如果此时开发者恰好是复制的其他部分的代码，就很有可能继续用到这些已经废弃的接口，从而让团队协作的效率变得低下&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;接口调用的动态提示及检测。轻型IDE一般只提供程序语言无关的文本编辑功能，但是涉及到程序语言相关的内容检测时，它的短板便显现出来。你在调用某个对象的某个接口时，下面这些检查会大幅提升你的编码效率：
-    &lt;ul&gt;
-      &lt;li&gt;这个接口是否存在&lt;/li&gt;
-      &lt;li&gt;你调用接口传入的参数类型、参数个数是否正确&lt;/li&gt;
-      &lt;li&gt;你所定义的参数的返回值类型是否和接口声明的一致&lt;/li&gt;
-      &lt;li&gt;阅读代码时，之前老代码相关的调用是否正确&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;强大且丰富的断点调试功能。我之前在一个技术分享上曾听到这样一种观点：开发项目时如果你连断点调试工具都没有配置好，那么基本可以判断：1) 你的debug效率将会极其低下；2) 你对项目的整体架构的了解将不会有很大增长（大牛请忽略这样一种论断）。轻型IDE的debug功能一般都很精简，此处推荐重型IDE的debug功能&lt;/li&gt;
-  &lt;li&gt;阅读代码时的展示一致性。你能看到的IDE为你做出的通用提示、警告，其他开发者也会看到。这一方面会敦促你编写不会让IDE出现烦人提示的代码(一定意义上更规范的代码)，另一方面也督促你，要求其他开发者不要写类似的代码。&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="Tech" /><summary type="html">注：本文所说的重型IDE，例如开发PHP用到的PHPStorm、开发Java用到的Eclipse等IDE，有别于类似Sublime Text这样的轻型文本编辑器</summary></entry></feed>
+&lt;p&gt;通过curl结果可以看到，寻找这个资源时，HTTP1.1 优先通过url中的ipv4地址和80端口直连web-server，RequestHeader中的Host绑定的ip：192.168.33.10并未出现在请求过程中&lt;/p&gt;
+
+&lt;h2 id=&quot;应用场景&quot;&gt;应用场景&lt;/h2&gt;
+&lt;h4 id=&quot;场景1&quot;&gt;场景1&lt;/h4&gt;
+&lt;p&gt;现有：一个HTTP的调用方(例如RocketMQ的proxy)，同时有一个HTTP的提供方（server，例如www.beibei.com）。&lt;/p&gt;
+
+&lt;p&gt;如何做到将这两个程序部署在同一机器上，而且HTTP调用方只会访问本机的HTTP提供方的服务？&lt;/p&gt;
+
+&lt;p&gt;方法1：改动/etc/hosts文件，将host指向本机。方案点评：如果部署100台机器，就需要改动100次hosts文件。&lt;/p&gt;
+
+&lt;p&gt;方法2：访问http://127.0.0.1/，同时在HTTP Request的Header中设置host为&lt;code class=&quot;highlighter-rouge&quot;&gt;www.beibei.com&lt;/code&gt;
+方案点评：只需部署代码，无需改动机器配置&lt;/p&gt;
+
+&lt;h4 id=&quot;场景2&quot;&gt;场景2&lt;/h4&gt;
+&lt;p&gt;另一个应用场景：在本地开发时，需要触发某个URL被访问时，可以这样：
+&lt;code class=&quot;highlighter-rouge&quot;&gt;curl --header &quot;host: 
+ www.beibei.com&quot; http://127.0.0.1/preview/detail.html&lt;/code&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">概述 通常情况下访问URL的时候，我们直接使用一个字段标明这个URL所属的HOST信息</summary></entry></feed>
