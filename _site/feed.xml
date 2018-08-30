@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-08-14T22:09:29+08:00</updated><id>http://localhost:4000/</id><title type="html">蓝枫铭的技术博客</title><subtitle>好好学习Java，天天上Java</subtitle><entry><title type="html">微信客服项目简单介绍</title><link href="http://localhost:4000/2018/08/13/%E5%BE%AE%E4%BF%A1%E5%AE%A2%E6%9C%8D%E9%A1%B9%E7%9B%AE%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D.html" rel="alternate" type="text/html" title="微信客服项目简单介绍" /><published>2018-08-13T00:00:00+08:00</published><updated>2018-08-13T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/13/%E5%BE%AE%E4%BF%A1%E5%AE%A2%E6%9C%8D%E9%A1%B9%E7%9B%AE%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D</id><content type="html" xml:base="http://localhost:4000/2018/08/13/%E5%BE%AE%E4%BF%A1%E5%AE%A2%E6%9C%8D%E9%A1%B9%E7%9B%AE%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D.html">&lt;p&gt;最近与同事协作完成微信客服项目的设计和开发工作。系统要完成的功能也很简单：打通微信与客服IM系统，让用户（像跟普通好友聊天一样）在自己微信上就可以实现与客服的直接对话。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-08-30T13:57:46+08:00</updated><id>http://localhost:4000/</id><title type="html">蓝枫铭的技术博客</title><subtitle>深入学习，天天向上</subtitle><entry><title type="html">微信客服项目简单介绍</title><link href="http://localhost:4000/2018/08/13/%E5%BE%AE%E4%BF%A1%E5%AE%A2%E6%9C%8D%E9%A1%B9%E7%9B%AE%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D.html" rel="alternate" type="text/html" title="微信客服项目简单介绍" /><published>2018-08-13T00:00:00+08:00</published><updated>2018-08-13T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/13/%E5%BE%AE%E4%BF%A1%E5%AE%A2%E6%9C%8D%E9%A1%B9%E7%9B%AE%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D</id><content type="html" xml:base="http://localhost:4000/2018/08/13/%E5%BE%AE%E4%BF%A1%E5%AE%A2%E6%9C%8D%E9%A1%B9%E7%9B%AE%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D.html">&lt;p&gt;最近与同事协作完成微信客服项目的设计和开发工作。系统要完成的功能也很简单：打通微信与客服IM系统，让用户（像跟普通好友聊天一样）在自己微信上就可以实现与客服系统的直接对话。&lt;/p&gt;
 
-&lt;p&gt;对微信生态中好友、消息和群的第三方管理系统也有很多，不过为了高效能和功能快速定制化，我们依然决定自研这套系统。现简单介绍一下这个系统。&lt;/p&gt;
+&lt;p&gt;对微信生态中好友、消息和群的第三方管理系统也有很多，不过为了稳定性和功能快速定制化，我们依然决定自研这套系统。现简单介绍一下这个系统。&lt;/p&gt;
 
-&lt;h3 id=&quot;系统消息流转图&quot;&gt;系统消息流转图&lt;/h3&gt;
+&lt;h3 id=&quot;系统功能介绍图&quot;&gt;系统功能介绍图&lt;/h3&gt;
+
+&lt;p&gt;目前该系统在登录的时候仍然需要用手机扫码登录，不过一经登录基本不会掉线。&lt;/p&gt;
+
 &lt;p&gt;&lt;img src=&quot;/images/2018-08/weixin-kefu-1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;开发难点--技术点&quot;&gt;开发难点 / 技术点&lt;/h2&gt;
@@ -42,7 +45,9 @@
 
 &lt;p&gt;但问题是，我们处理消息的方式是并发的，上面的步骤有可能被并发执行，但是我们的system_uid又没有设置唯一索引，所以在高并发下场景下我们发现有多条记录保存的是一模一样的值。&lt;/p&gt;
 
-&lt;p&gt;遇到这种问题，在插入前使用分布式锁也是可以的，不过能不能利用Mysql的特性去实现“已存在的记录不再插入”的目的呢？答案是：可以的。由于system_uid未使用唯一索引，所以无法利用：INSERT ON DUPLICATE KEY UPDATE 或者 INSERT IGNORE，但是利用INSERT INTO SELECT句式可以达到：如果system_uid已存在，则不插入记录的目的：&lt;/p&gt;
+&lt;p&gt;遇到这种问题，在插入前使用分布式锁也是可以的，不过能不能利用Mysql的特性去实现“已存在的记录不再插入”的目的呢？答案是：可以的。由于system_uid未使用唯一索引，所以无法利用：INSERT ON DUPLICATE KEY UPDATE 或者 INSERT IGNORE，但是利用INSERT INTO SELECT句式可以达到：如果system_uid已存在，则不插入记录的目的。&lt;/p&gt;
+
+&lt;p&gt;从SQL语句中可以看出，这是直接SELECT的值（而不是某表的字段）作为INSERT的入参，而且SELECT内容在WHERE判断记录已存在的情况下将会为空，即插入操作由于未发现值而被跳过。&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;INSERT INTO `wx_bb_uid_map` ( wxuin, nick_name, remark_name, system_uid, gmt_create, gmt_modified ) 
 SELECT
@@ -57,7 +62,10 @@ FROM
 WHERE
     NOT EXISTS ( SELECT id FROM `wx_bb_uid_map` WHERE system_uid = 1024) 
     LIMIT 1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">最近与同事协作完成微信客服项目的设计和开发工作。系统要完成的功能也很简单：打通微信与客服IM系统，让用户（像跟普通好友聊天一样）在自己微信上就可以实现与客服的直接对话。</summary></entry><entry><title type="html">日常开发问题记录</title><link href="http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html" rel="alternate" type="text/html" title="日常开发问题记录" /><published>2018-08-01T00:00:00+08:00</published><updated>2018-08-01T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95</id><content type="html" xml:base="http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html">&lt;h2 id=&quot;邮件发送时一直报错问题排查&quot;&gt;邮件发送时一直报错问题排查&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;客服回复消息频率控制&quot;&gt;客服回复消息频率控制&lt;/h3&gt;
+&lt;p&gt;由于我方的微信账号(个销号)是：给每个账号分配若干个人工客服进行消息收发，为防止由于消息发送频率过高导致的被风控，我们对人工客服对单个微信账号的回复频率做了频率限制。此处的频率限制使用了Redis做频率计数器，并以秒为单位过期计数器，达到控制发送速率的目的。&lt;/p&gt;</content><author><name></name></author><summary type="html">最近与同事协作完成微信客服项目的设计和开发工作。系统要完成的功能也很简单：打通微信与客服IM系统，让用户（像跟普通好友聊天一样）在自己微信上就可以实现与客服系统的直接对话。</summary></entry><entry><title type="html">日常开发问题记录</title><link href="http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html" rel="alternate" type="text/html" title="日常开发问题记录" /><published>2018-08-01T00:00:00+08:00</published><updated>2018-08-01T00:00:00+08:00</updated><id>http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95</id><content type="html" xml:base="http://localhost:4000/2018/08/01/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html">&lt;h2 id=&quot;邮件发送时一直报错问题排查&quot;&gt;邮件发送时一直报错问题排查&lt;/h2&gt;
 &lt;p&gt;今天需要用Spring Boot发送邮件，使用的腾讯企业邮箱（QQ邮箱），yaml配置如下：&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spring:
