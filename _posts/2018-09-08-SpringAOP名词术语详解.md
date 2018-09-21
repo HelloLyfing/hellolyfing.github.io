@@ -50,7 +50,7 @@ Advice：切面实际要执行的动作，它通常就是切面所在类中的�
 ### @Joinpoint（重要度:🥇）
 Joinpoint：它通常作为@Advice方法的唯一入参，用来表示被切入切面处的方法（被代理方法）并控制其运行，它实际是控制被代理方法执行的句柄。
 
-例如对于有返回值的@Advice方法，你需要主动通过`return JoinPoint.proceed()`才可以得到被代理方法的原始返回值，如果直接`return 其他值`并且不调用`ProceedingJoinPoint.proceed()`，那么被代理方法将直接被忽略不执行。
+例如对于有返回值的@Advice方法，你需要主动通过`return JoinPoint.proceed()`才可以得到被代理方法的原始返回值，如果直接`return 其他值`并且不调用`JoinPoint.proceed()`，那么被代理方法将直接被忽略不执行。
 
 ------
 
