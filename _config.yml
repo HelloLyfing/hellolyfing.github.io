@@ -21,7 +21,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 
 github_username: HelloLyfing
 
-comments: true
+comments: false
 
 
 # Build settings

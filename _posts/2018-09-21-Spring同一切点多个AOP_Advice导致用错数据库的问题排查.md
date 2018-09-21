@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Spring同一切点多个AOP Advice导致用错数据库的问题排查
+title: Spring同一切点多个AOP Advice导致错用数据库的问题排查
 ---
 
 # 一、背景描述
@@ -17,7 +17,7 @@ title: Spring同一切点多个AOP Advice导致用错数据库的问题排查
 #### 出现问题
 背景1的需求已经上线并稳定运行了很长时间。在此基础上，我们针对背景2开发出了小范围接口替换的demo版本，写好测试用例并测试没有问题后，我们将这个demo版本发布上线。
 
-但上线之后问题开始出现了：一些原本应该访问master主库的写操作，却用错了访问方式，直接访问了slave从库，然而从库是禁止写操作执行的，于是写操作失败并抛出了如下异常：
+但上线之后问题开始出现了：一些原本应该访问master主库的写操作，却访问了slave从库，然而从库是禁止写操作执行的，于是写操作失败并抛出了如下异常：
 
 ```
 ### Error updating database.  Cause: java.sql.SQLException: 
@@ -25,14 +25,17 @@ The MySQL server is running with the --read-only option so it cannot execute thi
 ```
 
 # 二、问题分析
+
+### 2.1 技术实现细节
 在分析 *数据源为什么会连错的情况* 之前，我们最好先了解一下上述每个背景的技术实现的细节。
 
-**先说背景1**。如果有多个数据源，如何通过AOP实现数据源的动态切换呢？这个方案本身已经非常成熟了，这里不再赘述。总结来说就是：
+**先说背景1的技术实现细节**。如果有多个数据源，如何通过AOP实现数据源的动态切换呢？这个方案本身已经非常成熟了，这里不再赘述。总结来说就是：
  1. 首先给DAO中需要切换数据源的方法(就拿`selectAccountById`方法举例吧)添加自定义注解，注解内容包含了数据源信息。也就是为方法打上一个自定义标签
  1. 编写切面Advice，在方法`selectAccountById`执行前，解析该方法的自定义标签，判断该方法期望使用的数据源，并将**数据源信息暂存起来**
  1. 新建类，并继承Spring JDBC的`AbstractRoutingDataSource`类，覆盖其`determineCurrentLookupKey`方法。`determineCurrentLookupKey`用于Spring在获得数据库连接(getConnection)之前执行，以便在出现多数据源的情况时，由该方法确定使用哪个数据源key。我们覆盖该方法，并将上一步**暂存**的**数据源信息**作为返回值返回
 
 由于DAO层每个方法在执行之前，都会调用一次`determineCurrentLookupKey`以获取该方法需要的数据源(这句话不够严谨，后面细讲)。这样一来，同一DAO中的每个方法，便都可以指定数据源了，而背景1需要实现的需求也就迎刃而解。
+
 
 **背景1示例代码**
 
@@ -57,14 +60,19 @@ public interface AccountDao {
 AOP中的Advice（执行动作）的示例代码如下。它只做一件事：解析每个方法上的数据源注解，如果存在则交由`DataSourceKeyHolder`类暂存。
 
 ```
-public void invoke(JoinPoint joinPoint) {
-        Method method = joinPoint.getCalledMethod();
-        // 如果切点处的方法，含有@DataSource注解，则获取其注解值并暂存到DataSourceKeyHolder类中
-        if (method != null && method.isAnnotationPresent(DataSource.class)) {
-            DataSource dataSourceKey = method.getAnnotation(DataSource.class);
-            DataSourceKeyHolder.setDataSourceKey(dataSourceKey);
+public class MultipleDataSourceAspectAdvice {
+    
+    // 切点切入时机为: @Before
+    public void invoke(JoinPoint joinPoint) {
+            Method method = joinPoint.getCalledMethod();
+            // 如果切点处的方法，含有@DataSource注解，则获取其注解值并暂存到DataSourceKeyHolder类中
+            if (method != null && method.isAnnotationPresent(DataSource.class)) {
+                DataSource dataSourceKey = method.getAnnotation(DataSource.class);
+                DataSourceKeyHolder.setDataSourceKey(dataSourceKey);
+            }
         }
     }
+
 }
 ```
 
@@ -84,13 +92,98 @@ public class DataSourceKeyHolder extends AbstractRoutingDataSource {
         // Spring JDBC将执行本方法获取数据源key，以便选择数据源
         String dataSource = KEY_HOLDER.get();
 
-        // 数据源被索取之后，立即重置，防止造成后续数据源的污染
+        // 数据源被索取之后，立即重置KEY_HOLDER，防止造成后续数据源的污染
         KEY_HOLDER.set(null);
 
         return dataSource;
     }
 }    
 ```
+
+**在此需要拆解一下上述方案**。看上去它只有一个AOP切面，该切面完成了：解析DAO的方法注解并暂存方法注解中的数据源信息的工作。
+
+需要注意的是：**上述方案其实还有另外一个AOP切面，并没有被提到！**这另外一个切面就是：Mybatis对DAO接口解析、匹配对应mapper文件中的SQL，并最终通过Spring JDBC进行数据库查询的切面，我们暂且称其为MybatisMapper切面吧。正是这个切面，间接调用了`determineCurrentLookupKey()`方法，从类线程变量`KEY_HOLDER`中获取暂存的数据源信息，并完成`KEY_HOLDER`的重置工作。
+
+所谓间接调用是指，MybatisMapper调用了Spring JDBC，而后者又调用了`determineCurrentLookupKey()`方法。
+
+
+
+**再说背景2的技术实现细节**
+
+背景2的需求：把DAO中直接访问数据库的方法，动态替换为调用远程RPC服务，避免DAO的方法继续直接访问数据库。当然在此过程中要保证替换前后方法的返回值一模一样。
+
+背景2需求的实现，分为两个部分：1）给需要替换为RPC调用的DAO方法添加自定义注解；2）**在AOP中拦截该DAO方法的执行，识别该自定义注解，并转为调用远程RPC服务，将RPC的返回结果格式化为该方法的返回类型，直接return结果，*并放弃对该方法的继续执行*。**
+
+**背景2示例代码**
+
+DAO中，同时结合了数据源的注解@DataSource，和调用RPC服务的注解@UseUserCenterApi。代码示例如下：
+
+```
+@Repository
+public interface AccountDao {
+    /**
+     * 接口未设置数据源，则默认走master主库，效果等同于添加注解: @DataSource("master")
+     */
+    int insertAccount(AccountDO accountDO);
+
+    /**
+     * @DataSource设置该方法的数据源为slave从库
+     * @UseUserCenterApi 标识该方法需要使用RPC返回结果，并放弃对数据库的访问
+     */
+    @DataSource("slave")
+    @UseUserCenterApi
+    AccountDO selectAccountById(int accountId);
+}
+```
+
+借助AOP实现替换原方法调用的示例代码如下：
+
+```
+public class Switch2UserServiceApiInterceptor implements MethodInterceptor {
+
+    // 切面切入时机为@Around
+    @Override
+    public Object invoke(MethodInvocation invocation) throws Throwable {
+        if (invocation.getMethod().isAnnotationPresent(UseUserCenterApi.class)) {
+            // !!! 被拦截的方法不再正常向下执行，而且，后续其他切面的执行也被放弃
+            return callUserCenterApi(invocation.getMethod(), invocation.getArguments());
+        }
+
+        // 在@Around型切入中，只有执行如下代码，被拦截的方法才会正常向下执行。
+        // 此时如果有后续切面，只有调用该方法才能保证后续切面被执行
+        return invocation.proceed();
+    }
+
+    // 远程调用实现细节
+    private Object callUserCenterApi(arg1, arg2)...
+}
+```
+
+### 2.2 AOP之间的相互影响
+通过上面对技术实现细节的讨论，我们可以得出这样的结论：
+ > 同一个接口（例如`selectAccountById`）最多可能会被三个切面作用。这三个切面按执行顺序排列分别是
+  1. 第一个，背景1中负责解析数据源信息并暂存数据源key的切面 —— "数据源切面"
+  1. 第二个，背景2中负责替换DAO对数据库的直接访问的 —— "替换RPC切面"
+  1. 第三个，Spring中负责解析DAO接口并执行数据库查询的 —— "Mybatis切面"
+
+![](/images/2018-09/dao-aop正常流程.png)
+
+通过分析技术细节、切面执行顺序以及流程，有些人已经隐约能猜出本文标题的问题是怎么造成的了。
+
+ - DAO层方法被执行前，假如“数据源切面1”设置（暂存）了数据源：
+     - 按正常执行流程，“Mybatis切面3”将读取并重置该数据源信息，则下次其他方法被执行前，数据源仍然为默认数据源，不会造成问题和数据源污染
+     
+ - 然而两个切面之间插入了另外一个切面“替换RPC切面2”，该切面可通过直接返回RPC结果，放弃调用`joinPoint.proceed()`而导致后续切面不再被执行！这也就造成第一步“数据源切面1”暂存的数据源key，不会被清空，当任意DAO层其他方法被调用时，假如该方法未指定数据源，则会沿用上一次设置的数据源。这与“方法未指定数据源，则默认使用主库”的原始意图相左了。
+
+![](/images/2018-09/dao-aop跳过执行.png)
+
+# 解决问题（第一次尝试）
+
+知道了原理，解决问题的方案也就能够给出来了，当时给出的解决方案有两个：
+ - 方案1：改变切面的执行顺序，让“数据源切面”和"Mybatis切面"紧密且连续地执行。由于"Mybatis切面"的执行order永远在最后一位，所以“数据源切面”必须放在倒数第2位执行。这种方式可以保证前者设置的数据源，一定会由后者索取并重置掉
+ - 方案2：改进“数据源切面”的代码逻辑，无论DAO层方法有无注解数据源，“数据源切面”始终在第一行就重置数据源为空，后续代码逻辑不变。这样有数据源注解的依然可以在之后被设置，而无数据源注解的则一定会使用主库
+
+上面两个方案中，我选了后者，稍微改动代码发布上线后，脸就被啪啪啪地打了 —— 本文标题中描述的问题仍在低频地出现。
 
 
 未完待续...
