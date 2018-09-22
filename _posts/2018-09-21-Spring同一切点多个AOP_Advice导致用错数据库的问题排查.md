@@ -36,6 +36,10 @@ The MySQL server is running with the --read-only option so it cannot execute thi
 
 由于DAO层每个方法在执行之前，都会调用一次`determineCurrentLookupKey`以获取该方法需要的数据源(这句话不够严谨，后面细讲)。这样一来，同一DAO中的每个方法，便都可以指定数据源了，而背景1需要实现的需求也就迎刃而解。
 
+背景1技术结构图如下：
+
+![](/images/2018-09/dao-aop-设数据源切面.png)
+
 
 **背景1示例代码**
 
@@ -202,8 +206,14 @@ public class Switch2UserServiceApiInterceptor implements MethodInterceptor {
 那么数据源错用问题，在方案2上线后仍然低频出现的现象也就得到了解释：
  > 方案2中，“数据源切面”在每个DAO的每个方法被执行前，都会在一开始就执行重置数据源的操作；然而，“事务切面”在更高层拦截Service方法的执行时，事务的数据源的初始化工作会提前进行，而且只进行一次。然而此时，DAO层任何方法根本没来得及执行，那么“数据源切面”想要完成的重置数据源的操作也就不会发生了。
 
-
 ![](/images/2018-09/dao-aop-全局图.png)
+
+从上图的切面关系中可以看出，使用方案1，即：改变切面的执行顺序，让“数据源切面”和"Mybatis切面"紧密且连续地执行，可以解决本文遇到的问题。
+
+此外，返回数据源信息的`determineCurrentLookupKey()`方法如果增加如下逻辑判断，应该也可以解决问题：
+ - 如果当前Context位于事务中，则返回主库数据源信息
+
+
 
 
 
