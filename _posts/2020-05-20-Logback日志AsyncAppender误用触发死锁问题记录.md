@@ -121,6 +121,15 @@ Worker线程中`logger.info()`函数的具体调用方为：LogAlarmFilter。该
  - 2）为了实现：将收集到的应用的Error日志进行异步钉钉群通知的需求，其实把LogAlarmFilter设计为Appender类更好。因为Appender就是作为一个输出终端来设计的，而钉钉群通知，无疑就是一个类似文件和控制台一样的"终端"。
 
 文章最后，解释下`discardingThreshold`参数的含义，以及如何合理配置。
+以下是我的生产环境配置，其中队列queueSize设置为512，丢弃阈值设置为30
+```
+<!--异步输出-->
+<appender name="ASYNC_INFO" class="ch.qos.logback.classic.AsyncAppender">
+    <queueSize>512</queueSize>
+    <discardingThreshold>30</discardingThreshold>
+    <appender-ref ref="INFO"/>
+</appender>
+```
 
 感觉直接看下源代码（为便于阅读适当调整了源代码）更有意义
 ```
@@ -131,14 +140,14 @@ if (discardingThreshold == UNDEFINED)
 // 日志事件输出逻辑
 @Override
 protected void append(E eventObject) {
-    // 如果日志级别在Info及以下，则为true
+    // 如果日志级别在Info及以下为true
     boolean isDiscardable = event.getLevel().toInt() <= Level.INFO_INT;
     
-    // 如果队列可用size < discardingThreshold，则为true
+    // 如果队列可用size < discardingThreshold为true
     boolean isQueueBelowThreshold = blockingQueue.remainingCapacity() < discardingThreshold;
     
-    if (isQueueBelowThreshold && isDiscardable) { // 如果上述两个条件都满足
-        // 直接丢弃日志事件，不处理
+    if (isQueueBelowThreshold && isDiscardable) {
+        // 如果上述两个条件都满足, 直接丢弃日志事件，不处理
         return;
     }
     
