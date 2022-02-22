@@ -7,7 +7,7 @@ title: Logback日志AsyncAppender误用触发死锁问题记录
 {:toc}
 
 # 一、背景描述
-我司的某个应用使用的Logback输出日志，之前应用的info日志是通过`RollingFileAppender`输出的。
+我司(格家网络)的某个应用使用的Logback输出日志，之前应用的info日志是通过`RollingFileAppender`输出的。
 其中RollingFileAppender的工作流程图示如下：
 ![](/images/2020-05/AsyncAppender死锁问题记录-RollingFileAppender工作原理图示.png)
 
